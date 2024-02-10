@@ -1,6 +1,3 @@
----
-icon: FasCalendarCheck
----
 ## Unveiling the Developer's Odyssey
 
 Embarking on the professional realm from 2010 to 2020 marked a decade of evolution—a journey from a coding enthusiast to a seasoned software developer. These years witnessed a dedicated focus on honing skills, delving into the intricacies of web development, mastering PHP, navigating the realms of databases like PostgreSQL, and embracing the robust ecosystem of Linux systems.

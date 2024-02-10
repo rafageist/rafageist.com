@@ -6,11 +6,11 @@
     "emojiStyle": "none",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "FasCalendarDays",
       "FasCube",
       "FasBlog",
       "FasCubes",
-      "FasDiagramProject",
-      "FasCalendarCheck"
+      "FasDiagramProject"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -26,5 +26,6 @@
     "iconsBackgroundCheckEnabled": false,
     "iconsInNotesEnabled": true,
     "iconIdentifier": ":"
-  }
+  },
+  "Professional Journey Overview.md": "FasCalendarDays"
 }
