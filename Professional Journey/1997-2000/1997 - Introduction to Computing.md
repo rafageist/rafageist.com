@@ -1,3 +1,6 @@
+---
+title: 1997 - Introduction to Computing
+---
 #History
 
 In February 1997, at the age of 11 and while in the 6th grade, I had my first encounter with a computer. This moment marked the beginning of my fascination with technology.

@@ -6,11 +6,11 @@
     "emojiStyle": "none",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "FasCalendarCheck",
       "FasCalendarDays",
       "FasCube",
       "FasBlog",
-      "FasCubes",
-      "FasDiagramProject"
+      "FasCubes"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -27,5 +27,10 @@
     "iconsInNotesEnabled": true,
     "iconIdentifier": ":"
   },
-  "Professional Journey Overview.md": "FasCalendarDays"
+  "Professional Journey Overview.md": "FasCalendarDays",
+  "Professional Journey/1997-2000/1997 - Introduction to Computing.md": "FasCalendarCheck",
+  "Professional Journey/1997-2000/1997 - Unveiling the World of Locoscript.md": "FasCalendarCheck",
+  "Professional Journey/1997-2000/1998 - Journey into MS-DOS and GW-BASIC.md": "FasCalendarCheck",
+  "Professional Journey/1997-2000/1999 - Transitioning to MS-DOS on Amstrad PC XT 86.md": "FasCalendarCheck",
+  "Professional Journey/1997-2000/2000 - Embracing WordStar, SuperCalc, and dBase.md": "FasCalendarCheck"
 }
