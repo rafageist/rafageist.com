@@ -1,3 +1,10 @@
+---
+title: 1999 - Transitioning to MS-DOS on Amstrad PC XT 86
+icon: FasCalendarCheck
+---
+
+#History 
+
 ![[Amstrad XT 86.png]]
 
 In the evolving landscape of 1999, my programming odyssey took a leap forward with the transition to the Amstrad PC XT 86. Adorned with CGA and EGA monitors, this platform not only expanded the visual dimensions of my coding environment but also marked the continued embrace of MS-DOS.

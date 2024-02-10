@@ -29,8 +29,9 @@
   },
   "Professional Journey Overview.md": "FasCalendarDays",
   "Professional Journey/1997-2000/1997 - Introduction to Computing.md": "FasCalendarCheck",
-  "Professional Journey/1997-2000/1997 - Unveiling the World of Locoscript.md": "FasCalendarCheck",
   "Professional Journey/1997-2000/1998 - Journey into MS-DOS and GW-BASIC.md": "FasCalendarCheck",
   "Professional Journey/1997-2000/1999 - Transitioning to MS-DOS on Amstrad PC XT 86.md": "FasCalendarCheck",
-  "Professional Journey/1997-2000/2000 - Embracing WordStar, SuperCalc, and dBase.md": "FasCalendarCheck"
+  "Professional Journey/1997-2000/2000 - Embracing WordStar, SuperCalc, and dBase.md": "FasCalendarCheck",
+  "Professional Journey/1997-2000/1997 - Unveiling the World of LocoScript.md": "FasCalendarCheck",
+  "Professional Journey/1997-2000": "FasCalendarDays"
 }

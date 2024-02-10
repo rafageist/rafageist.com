@@ -1,4 +1,10 @@
-_My Introduction to Word Processing_
+---
+title: 1997 - Unveiling the World of LocoScript
+icon: FasCalendarCheck
+---
+#History 
+## My Introduction to Word Processing
+
 ![[LocoScript.png]]
 In the intricate tapestry of 1997, a pivotal chapter unfolds as I delve into the world of [Locoscript](https://es.wikipedia.org/wiki/LocoScript) on the Amstrad PCW. Developed by Locomotive Software, Locoscript served as the cornerstone of word processing for these personal computers. This period not only marked my initiation into word processing but also revealed the remarkable capabilities of the PCW keyboard, which could seamlessly transcribe text even in Cyrillic.
 

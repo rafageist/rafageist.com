@@ -1,4 +1,8 @@
-
+---
+title: 1999 - Transitioning to MS-DOS on Amstrad PC XT 86
+icon: FasCalendarCheck
+---
+#History 
 ## Embracing WordStar: A Journey into Word Processing Mastery
 
 The turn of the century not only marked a transition in technology but also a period of broadening my skill set. Amid the evolving landscape of word processing software, I ventured into the realm of **WordStar**. This classic word processing program, known for its robust features and popularity in the early days of personal computing, offered a distinct approach to document creation.

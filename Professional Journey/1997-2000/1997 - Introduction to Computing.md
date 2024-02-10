@@ -1,5 +1,6 @@
 ---
 title: 1997 - Introduction to Computing
+icon: FasCalendarCheck
 ---
 #History
 

@@ -1,3 +1,10 @@
+---
+title: 1998 - Journey into MS-DOS and GW-BASIC
+icon: FasCalendarCheck
+---
+
+#History 
+
 ![[XT8086-GWBASIC.png|300]]
 [Picture from Internet](https://www.reddit.com/r/retrobattlestations/comments/tq2wvg/team_orange_unknown_ibm_pcxt_8088_clone_w/)
 
