@@ -6,11 +6,11 @@
     "emojiStyle": "none",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "FasCube",
       "FasBlog",
       "FasCubes",
       "FasDiagramProject",
-      "FasCalendarCheck",
-      "FasCalendarDay"
+      "FasCalendarCheck"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -40,5 +40,10 @@
   "Professional Journey/2020-today - Advancing Professional Frontiers.md": "FasCalendarCheck",
   "Projects": "FasDiagramProject",
   "Resources": "FasCubes",
-  "Blog": "FasBlog"
+  "Blog": "FasBlog",
+  "Resources/Mallard Basic.md": "FasCube",
+  "Blog.md": "FasBlog",
+  "Projects.md": "FasDiagramProject",
+  "Resources.md": "FasCubes",
+  "Professional Journey Overview.md": "FasCalendarCheck"
 }

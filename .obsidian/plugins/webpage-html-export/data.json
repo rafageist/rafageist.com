@@ -4,8 +4,8 @@
   "includePluginCSS": "convert-url-to-iframe",
   "includeSvelteCSS": true,
   "titleProperty": "title",
-  "customHeadContentPath": "D:\\workspace\\rafageist\\.web\\.dev\\header.html",
-  "faviconPath": "D:\\workspace\\rafageist\\.web\\.dev\\favicon.png",
+  "customHeadContentPath": "D:\\workspace\\rafageist\\rafageist\\.web\\.dev\\header.html",
+  "faviconPath": "D:\\workspace\\rafageist\\rafageist\\.web\\.dev\\favicon.png",
   "makeNamesWebStyle": true,
   "allowFoldingHeadings": true,
   "allowFoldingLists": true,
@@ -37,7 +37,7 @@
   "defaultFileIcon": "lucide//file",
   "defaultFolderIcon": "lucide//folder",
   "defaultMediaIcon": "lucide//file-image",
-  "exportPath": "D:\\workspace\\rafageist\\.web\\public",
+  "exportPath": "D:\\workspace\\rafageist\\rafageist\\.web\\public",
   "filesToExport": [
     [
       "Professional Journey",
