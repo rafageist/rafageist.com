@@ -1,5 +1,5 @@
 ---
-title: 1999 - Transitioning to MS-DOS on Amstrad PC XT 86
+title: 2000 - Embracing WordStar, SuperCalc, and dBase
 icon: FasCalendarCheck
 ---
 #History 

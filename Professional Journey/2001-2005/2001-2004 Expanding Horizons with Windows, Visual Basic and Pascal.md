@@ -1,3 +1,8 @@
+---
+title: 2001-2004 Expanding Horizons with Windows, Visual Basic and Pascal
+---
+#History 
+
 ![[AT 386.png]]
 The turn of the millennium marked a significant expansion of my programming horizons as I delved into the realms of Microsoft Windows 95 and 98, the Office suite of '98, and the powerful Visual Studio 6. This period, coinciding with my high school years, witnessed my initiation into the world of Visual Basic 6 and Pascal programming through Turbo Pascal.
 

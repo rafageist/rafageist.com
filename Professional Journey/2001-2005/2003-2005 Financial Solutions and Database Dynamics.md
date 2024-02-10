@@ -1,3 +1,7 @@
+---
+title: 2003-2005 Financial Solutions and Database Dynamics
+---
+#History 
 ## Advanced VBA Mastery (2003-2005)
 
 Entering the realm of advanced technology in 2003, the focus shifted towards **Visual Basic for Applications (VBA)**. This period witnessed an intensified engagement with VBA within the Microsoft Office suite, particularly Excel. The projects undertaken were no longer confined to basic applications; instead, they delved into the intricacies of financial modeling and automation.

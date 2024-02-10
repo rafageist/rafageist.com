@@ -1,3 +1,7 @@
+---
+title: 2020-today - Advancing Professional Frontiers
+---
+#History 
 ## A New Epoch of Specialization
 
 Entering the domain of 2020 and beyond has been a phase of profound specialization—a leap into intricate realms of software development. The focus broadened beyond the foundations, venturing into complex domains such as mobile app development, large-scale systems architecture, automation, and the orchestration of DevOps practices.
