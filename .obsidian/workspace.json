@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Professional Journey Overview.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Professional Journey Overview.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Professional Journey Overview.md"
+                "file": "index.md"
               }
             }
           }
@@ -146,10 +146,45 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "da82bb4d7b199c1d",
+  "floating": {
+    "id": "a971df225ff99f0e",
+    "type": "floating",
+    "children": [
+      {
+        "id": "f5c18fa63ae663cd",
+        "type": "window",
+        "children": [
+          {
+            "id": "720074c2add3b967",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "7852623980b0d912",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "index.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 510,
+        "y": 555,
+        "width": 800,
+        "height": 400,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "7852623980b0d912",
   "lastOpenFiles": [
-    "Resources.md",
-    "index.md",
     "Projects.md",
     "Professional Journey Overview.md",
     "Blog.md",
@@ -167,6 +202,8 @@
     "Professional Journey/1997-2000/1998 - Journey into MS-DOS and GW-BASIC.md",
     "Professional Journey/1997-2000/1997 - Unveiling the World of Locoscript.md",
     "Professional Journey/1997-2000/1997 - Introduction to Computing.md",
+    "Resources.md",
+    "index.md",
     "images/AT 386.png",
     "images/Amstrad PCW.png",
     "images/Amstrad XT 86.png",
