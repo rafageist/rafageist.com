@@ -15,9 +15,9 @@ Explore my professional presence on these platforms:
 
 For direct communication and quick contact, feel free to reach out through:
 
-- `fas:Telegram`**Telegram:** [@rafageist](https://t.me/rafageist)
-- `fas:Whatsapp`**WhatsApp:** [+5978401275](https://wa.me/+5978401275)
-- `ris:MailSend`**Email:** [rafageist@divengine.com](mailto:rafageist@divengine.com?subject=Hello rafa&body=Type your message here)
+- **Telegram:** [@rafageist](https://t.me/rafageist)
+- **WhatsApp:** [+5978401275](https://wa.me/+5978401275)
+- **Email:** [rafageist@divengine.com](mailto:rafageist@divengine.com)
 
 Thanks for stopping by and exploring my professional space! 🚀
 

@@ -1,5 +1,6 @@
 ---
 icon: FasCubes
+title: Resources
 ---
 🛠️ Welcome to the Resources Hub, a curated collection of tools, software, literature, and more, available for the benefit of the community. This section serves as a gateway to a wealth of knowledge and utilities that have proven valuable in my professional journey. Whether you're a fellow developer seeking powerful software, an avid reader looking for insightful literature, or someone eager to explore a trove of useful resources, you've come to the right place.
 

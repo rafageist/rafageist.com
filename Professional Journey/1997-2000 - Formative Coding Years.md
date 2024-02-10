@@ -1,5 +1,5 @@
 ---
-icon: FasCalendarCheck
+icon: FasCalendarDay
 title: 1997-2000 - Formative Coding Years
 ---
 ## Early Coding Ventures (1997-1998)

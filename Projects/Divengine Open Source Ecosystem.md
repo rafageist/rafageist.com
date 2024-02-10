@@ -1,5 +1,6 @@
 ---
 title: Divengine Open Source Ecosystem
+icon: RiOrganizationChart
 ---
 
 #Project #OpenSource

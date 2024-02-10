@@ -1,5 +1,6 @@
 ---
 title: 2010-2020 - Professional Evolution
+icon: FasCalendarDay
 ---
 #History 
 ## Unveiling the Developer's Odyssey

@@ -1,5 +1,5 @@
 ---
-icon: FasCalendarCheck
+icon: FasCalendarDay
 title: 2000-2005 - Technological Evolution
 ---
 ## Windows Era and Competitive Programming (2000-2001)

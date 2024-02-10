@@ -1,5 +1,6 @@
 ---
 title: 2005-2010 - University Years
+icon: FasCalendarDay
 ---
 
 The period spanning from 2005 to 2010 represents a transformative chapter in my journey—an epoch marked by academic pursuits, profound learning, and the shaping of a burgeoning engineer. As the academic corridors of university beckoned, the focus shifted from foundational experiences to a comprehensive immersion in the realms of **Computer Engineering**.

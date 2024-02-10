@@ -1,5 +1,6 @@
 ---
-icon: FasDiagramProject
+icon: SiAwsorganizations
+title: Projects
 ---
 Dive into the realm of my projects, a dynamic portfolio that encapsulates my journey through various technological endeavors. From past achievements to ongoing ventures and future innovations, this space showcases the diverse range of projects that have shaped my career. Whether it's crafting robust software solutions, experimenting with cutting-edge technologies, or envisioning the next big thing, each project reflects a commitment to innovation, problem-solving, and continuous improvement.
 

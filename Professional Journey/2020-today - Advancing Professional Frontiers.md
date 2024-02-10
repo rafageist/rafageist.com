@@ -1,5 +1,6 @@
 ---
 title: 2020-today - Advancing Professional Frontiers
+icon: FasCalendarDay
 ---
 #History 
 ## A New Epoch of Specialization

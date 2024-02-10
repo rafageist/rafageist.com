@@ -1,5 +1,6 @@
 ---
 title: 2001-2004 Expanding Horizons with Windows, Visual Basic and Pascal
+icon: FasCalendarCheck
 ---
 #History 
 

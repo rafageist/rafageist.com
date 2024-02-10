@@ -1,5 +1,6 @@
 ---
 title: 2003-2005 Financial Solutions and Database Dynamics
+icon: FasCalendarCheck
 ---
 #History 
 ## Advanced VBA Mastery (2003-2005)
