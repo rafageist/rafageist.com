@@ -1,5 +1,6 @@
 ---
 icon: FasCube
+title: Mallard Basic Manual
 ---
 #Resource
 
