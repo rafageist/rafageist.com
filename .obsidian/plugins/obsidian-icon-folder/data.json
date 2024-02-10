@@ -1,0 +1,44 @@
+{
+  "settings": {
+    "migrated": 4,
+    "iconPacksPath": ".obsidian/icons",
+    "fontSize": 16,
+    "emojiStyle": "none",
+    "iconColor": null,
+    "recentlyUsedIcons": [
+      "FasBlog",
+      "FasCubes",
+      "FasDiagramProject",
+      "FasCalendarCheck",
+      "FasCalendarDay"
+    ],
+    "recentlyUsedIconsSize": 5,
+    "rules": [],
+    "extraMargin": {
+      "top": 0,
+      "right": 4,
+      "bottom": 0,
+      "left": 0
+    },
+    "iconInTabsEnabled": false,
+    "iconInTitleEnabled": false,
+    "iconInFrontmatterEnabled": false,
+    "iconsBackgroundCheckEnabled": false,
+    "iconsInNotesEnabled": true,
+    "iconIdentifier": ":"
+  },
+  "Professional Journey": "FasCalendarDays",
+  "Professional Journey/1997-2000": "FasCalendarDay",
+  "Professional Journey/2001-2005": "FasCalendarDay",
+  "Professional Journey/2005-2010": "FasCalendarDay",
+  "Professional Journey/2010-2020": "FasCalendarDay",
+  "Professional Journey/2020-today": "FasCalendarDay",
+  "Professional Journey/1997-2000 - Formative Coding Years.md": "FasCalendarCheck",
+  "Professional Journey/2000-2005 - Technological Evolution.md": "FasCalendarCheck",
+  "Professional Journey/2005-2010 - University Years.md": "FasCalendarCheck",
+  "Professional Journey/2010-2020 - Professional Evolution.md": "FasCalendarCheck",
+  "Professional Journey/2020-today - Advancing Professional Frontiers.md": "FasCalendarCheck",
+  "Projects": "FasDiagramProject",
+  "Resources": "FasCubes",
+  "Blog": "FasBlog"
+}

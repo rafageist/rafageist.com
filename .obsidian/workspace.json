@@ -1,0 +1,176 @@
+{
+  "main": {
+    "id": "18cc45890e738cf0",
+    "type": "split",
+    "children": [
+      {
+        "id": "5b465f36ecac9584",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3bc10e640f78a828",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "index.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "6e674f568283c4eb",
+    "type": "split",
+    "children": [
+      {
+        "id": "30ed4b5a8a23fae6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c898f082d95995cc",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "163a46e0e9206e23",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0dc8b97d4734c1c8",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "d2e911a91e061208",
+    "type": "split",
+    "children": [
+      {
+        "id": "04987dea83eb7b0c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "da74edac426116b9",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "index.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f2be9866d9bb001c",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "index.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "016256fdda13e683",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "ddb8b85ce4b59ece",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "index.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "webpage-html-export:Export Vault to HTML": false
+    }
+  },
+  "active": "3bc10e640f78a828",
+  "lastOpenFiles": [
+    "Resources.md",
+    "index.md",
+    "Projects.md",
+    "Professional Journey Overview.md",
+    "Blog.md",
+    "Resources/Mallard Basic.md",
+    "Projects/Divengine Open Source.md",
+    "Professional Journey/2020-today - Advancing Professional Frontiers.md",
+    "Professional Journey/2010-2020 - Professional Evolution.md",
+    "Professional Journey/2005-2010 - University Years.md",
+    "Professional Journey/2000-2005 - Technological Evolution.md",
+    "Professional Journey/1997-2000 - Formative Coding Years.md",
+    "Professional Journey/2001-2005/2003-2005 Financial Solutions and Database Dynamics.md",
+    "Professional Journey/2001-2005/2001-2004 Expanding Horizons with Windows, Visual Basic and Pascal.md",
+    "Professional Journey/1997-2000/2000 - Embracing WordStar, SuperCalc, and dBase.md",
+    "Professional Journey/1997-2000/1999 - Transitioning to MS-DOS on Amstrad PC XT 86.md",
+    "Professional Journey/1997-2000/1998 - Journey into MS-DOS and GW-BASIC.md",
+    "Professional Journey/1997-2000/1997 - Unveiling the World of Locoscript.md",
+    "Professional Journey/1997-2000/1997 - Introduction to Computing.md",
+    "index.canvas",
+    "New folder",
+    "Blog",
+    "Projects"
+  ]
+}
