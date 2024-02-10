@@ -1,4 +1,4 @@
-
+![[AT 386.png]]
 The turn of the millennium marked a significant expansion of my programming horizons as I delved into the realms of Microsoft Windows 95 and 98, the Office suite of '98, and the powerful Visual Studio 6. This period, coinciding with my high school years, witnessed my initiation into the world of Visual Basic 6 and Pascal programming through Turbo Pascal.
 
 ## Visual Basic 6: Unleashing the Power of Windows
@@ -18,6 +18,6 @@ The **IOI** stands as a prestigious annual programming competition for secondary
 
 ### High-Performance Training for Algorithmic Mastery
 
-Participation in the IOI necessitated rigorous training sessions that transcended conventional classroom teachings. These high-performance training programs focused on honing algorithmic thinking, problem-solving strategies, and efficient coding practices. The experience not only prepared me for the IOI challenges but also instilled a profound appreciation for the elegance and efficiency of well-crafted algorithms.
+Participation in the [IOI](https://ioinformatics.org/) necessitated rigorous training sessions that transcended conventional classroom teachings. These high-performance training programs focused on honing algorithmic thinking, problem-solving strategies, and efficient coding practices. The experience not only prepared me for the IOI challenges but also instilled a profound appreciation for the elegance and efficiency of well-crafted algorithms.
 
 This era of exploration in Windows development and competitive programming laid the foundation for the diverse skills that would become integral to my future as a software developer. The fusion of practical application in Windows environments and the abstract beauty of algorithmic problem-solving fueled a passion that would continue to shape my programming journey in the years to come.
