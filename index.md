@@ -1,18 +1,28 @@
 ---
 title: Home
 ---
-
 🚀 Welcome to my digital haven! 📅 Explore the curated chronicle from coding beginnings to present-day expertise. 💻 Dive into foundational coding ventures and academic pursuits. 🌐 Navigate a decade of professional development and specialization. 📱 Witness the transition to mobile app development. 🌐 Explore the intricacies of architecting large-scale systems. 🤖 Master automation and embrace DevOps practices. 📈 Continuous learning is not just a choice—it's a necessity. 🔍 Whether you're here for early coding insights or contemporary tech, welcome aboard!
 
 ## 🌐 Professional Profiles
 
 Explore my professional presence on these platforms:
+### GitHub
 
-- **GitHub:** [@rafageist](https://github.com/rafageist)
-- **LinkedIn:** [rafageist](https://www.linkedin.com/in/rafageist)
-- **PHPClasses.org:** [Profile](https://www.phpclasses.org/browse/author/1094404.html)
-	- Discover my contributions on PHPClasses.org and explore more about my PHP projects. See [my current position in the PHP Classes ranking](https://www.phpclasses.org/reputation/user/1094404/ranking/) with gratitude for the PHP community's support.
+Explore my repositories, projects, and contributions on GitHub. Connect with me and discover the code that drives my passion for technology.
 
+👉 [@rafageist](https://github.com/rafageist)
+
+ [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=rafageist&show_icons=true&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage)](https://github.com/rafageist)
+### LinkedIn
+
+Visit my LinkedIn profile to learn more about my professional journey, skills, and connections in the industry.
+
+👉 [rafageist](https://www.linkedin.com/in/rafageist)
+### PHPClasses.org
+
+Discover my contributions on PHPClasses.org and explore more about my PHP projects. See [my current position in the PHP Classes ranking](https://www.phpclasses.org/reputation/user/1094404/ranking/) with gratitude for the PHP community's support.
+
+👉 [Profile](https://www.phpclasses.org/browse/author/1094404.html)
 
 ## 📫 Contact
 
