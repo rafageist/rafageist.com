@@ -1,7 +1,7 @@
 ---
+title: Rejecting the notion of Most Important Programming Language
 icon: IbDocument
 date: 2024-02-11
-title: Rejecting the notion of 'Most Important' programming language
 ---
 #Blog #Article #Opinion #Programming
 
