@@ -27,7 +27,6 @@
     "iconsInNotesEnabled": true,
     "iconIdentifier": ":"
   },
-  "Professional Journey Overview.md": "FasCalendarDays",
   "Professional Journey/1997-2000/1997 - Introduction to Computing.md": "FasCalendarCheck",
   "Professional Journey/1997-2000/1998 - Journey into MS-DOS and GW-BASIC.md": "FasCalendarCheck",
   "Professional Journey/1997-2000/1999 - Transitioning to MS-DOS on Amstrad PC XT 86.md": "FasCalendarCheck",
@@ -54,5 +53,6 @@
   "Blog": "FasBook",
   "Blog.md": "FasBook",
   "Blog/2024": "FarCalendarDays",
-  "Professional Journey/2001-2005 - Technological Evolution.md": "FasCalendarDay"
+  "Professional Journey/2001-2005 - Technological Evolution.md": "FasCalendarDay",
+  "Professional Journey.md": "FasCalendarDays"
 }
