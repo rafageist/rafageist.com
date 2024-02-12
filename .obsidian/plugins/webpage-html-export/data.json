@@ -1,7 +1,7 @@
 {
   "settingsVersion": "1.8.0-2b",
   "inlineAssets": false,
-  "includePluginCSS": "convert-url-to-iframe",
+  "includePluginCSS": "obsidian-icons-plugin\nobsidian-emoji-toolbar\nobsidian-activity-history",
   "includeSvelteCSS": true,
   "titleProperty": "title",
   "customHeadContentPath": "D:\\workspace\\rafageist\\rafageist\\.web\\.dev\\header.html",
