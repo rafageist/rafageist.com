@@ -24,6 +24,20 @@ function agregarGoogleAnalytics($ruta) {
     }
 }
 
+function agregarSufijoTitulo($ruta) {
+	echo "[INFO] Checking title of $ruta\n";
+    $contenido = file_get_contents($ruta);
+
+    // Verifica si la etiqueta </title> está presente
+    if (strpos($contenido, '</title>') !== false && strpos($contenido, ' | rafageist</title>') === false) {
+        // Agrega el sufijo al título
+        $contenido = str_replace('</title>', ' | rafageist</title>', $contenido);
+
+        // Guarda el archivo modificado
+        file_put_contents($ruta, $contenido);
+    }
+}
+
 function explorarDirectorio($directorio) {
 	echo "[INFO] Exploring $directorio\n";
     $archivos = scandir($directorio);
@@ -41,6 +55,7 @@ function explorarDirectorio($directorio) {
         } elseif (pathinfo($ruta)['extension'] == 'html') {
             // Si es un archivo HTML, agrega Google Analytics
             agregarGoogleAnalytics($ruta);
+			agregarSufijoTitulo($ruta);
         }
     }
 }
