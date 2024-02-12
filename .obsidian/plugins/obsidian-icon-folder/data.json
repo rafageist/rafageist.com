@@ -6,11 +6,11 @@
     "emojiStyle": "none",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "FarCalendarDays",
+      "IbDocument",
       "FasBook",
       "RiOrganizationChart",
-      "SiAwsorganizations",
-      "FasCube",
-      "FasCubes"
+      "SiAwsorganizations"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -53,5 +53,7 @@
   "Projects.md": "SiAwsorganizations",
   "Resources.md": "FasCubes",
   "Blog": "FasBook",
-  "Blog.md": "FasBook"
+  "Blog.md": "FasBook",
+  "Blog/2024/Rejecting the notion of 'Most Important' programming language.md": "IbDocument",
+  "Blog/2024": "FarCalendarDays"
 }

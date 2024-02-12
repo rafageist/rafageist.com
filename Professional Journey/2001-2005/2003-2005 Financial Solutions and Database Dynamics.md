@@ -5,7 +5,7 @@ icon: FasCalendarCheck
 #History 
 ## Advanced VBA Mastery (2003-2005)
 
-Entering the realm of advanced technology in 2003, the focus shifted towards **Visual Basic for Applications (VBA)**. This period witnessed an intensified engagement with VBA within the Microsoft Office suite, particularly Excel. The projects undertaken were no longer confined to basic applications; instead, they delved into the intricacies of financial modeling and automation.
+Entering the realm of advanced technology in 2003, the focus shifted towards [Visual Basic for Applications (VBA)](https://learn.microsoft.com/en-us/office/vba/api/overview/). This period witnessed an intensified engagement with VBA within the Microsoft Office suite, particularly Excel. The projects undertaken were no longer confined to basic applications; instead, they delved into the intricacies of financial modeling and automation.
 
 ## Excel as a Financial Powerhouse
 
