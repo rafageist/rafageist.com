@@ -1,10 +1,11 @@
 <?php
 
 function agregarGoogleAnalytics($ruta) {
+	echo "[INFO] Checking $ruta\n";
     $contenido = file_get_contents($ruta);
 
     // Verifica si la etiqueta </head> está presente
-    if (strpos($contenido, '</head>') !== false) {
+    if (strpos($contenido, '</head>') !== false && strpos($contenido, 'G-T7XEVFZK6N') === false) {
         // Agrega el código de Google Analytics antes de la etiqueta </head>
         $codigoAnalytics = "
             <script src=\"https://www.googletagmanager.com/gtag/js?id=G-T7XEVFZK6N\"></script>
@@ -17,13 +18,14 @@ function agregarGoogleAnalytics($ruta) {
         ";
 
         $contenido = str_replace('</head>', $codigoAnalytics . '</head>', $contenido);
-
+		echo "[INFO] ... adding gtag to $ruta\n";
         // Guarda el archivo modificado
         file_put_contents($ruta, $contenido);
     }
 }
 
 function explorarDirectorio($directorio) {
+	echo "[INFO] Exploring $directorio\n";
     $archivos = scandir($directorio);
 
     foreach ($archivos as $archivo) {

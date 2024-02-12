@@ -16,3 +16,5 @@ Embracing Microsoft Office '98 and Visual Studio 6, the years 2001 to 2003 marke
 The early 2000s brought a deeper exploration of databases. SuperCalc's spreadsheet prowess remained relevant, while dBase II and III introduced fundamental concepts of data organization. These years laid the groundwork for understanding relational databases, data manipulation, and the crucial role of efficient data management in the software development lifecycle.
 
 The period from 1997 to 2005 represents a dynamic trajectory—transitioning from the rudiments of programming to mastering diverse tools and languages. The amalgamation of experiences during these years forms the bedrock of a multifaceted journey into the expansive realm of information technology.
+
+[[2003-2005 Financial Solutions and Database Dynamics]]

@@ -12,7 +12,7 @@ From my early encounters with computing on an Amstrad PCW at the age of 11 to na
 Join me on this dynamic timeline, reflecting on the past, embracing the present, and looking forward to the future of innovation and growth.
 
 - [[1997-2000 - Formative Coding Years]]
-- [[2000-2005 - Technological Evolution]]
+- [[2001-2005 - Technological Evolution]]
 - [[2005-2010 - University Years]]
 - [[2010-2020 - Professional Evolution]]
 - [[2020-today - Advancing Professional Frontiers]]

@@ -11,7 +11,7 @@ Explore my professional presence on these platforms:
 - **GitHub:** [@rafageist](https://github.com/rafageist)
 - **LinkedIn:** [rafageist](https://www.linkedin.com/in/rafageist)
 - **PHPClasses.org:** [Profile](https://www.phpclasses.org/browse/author/1094404.html)
-	- Discover my contributions on PHPClasses.org and explore more about my PHP projects. See my [[PHP Classes Site Ranking Position]] with gratitude for the PHP community's support.
+	- Discover my contributions on PHPClasses.org and explore more about my PHP projects. See [my current position in the PHP Classes ranking](https://www.phpclasses.org/reputation/user/1094404/ranking/) with gratitude for the PHP community's support.
 ## 📫 Contact
 
 For direct communication and quick contact, feel free to reach out through:
