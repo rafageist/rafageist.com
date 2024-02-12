@@ -6,11 +6,11 @@
     "emojiStyle": "none",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "FasCube",
       "FarCalendarDays",
       "IbDocument",
       "FasBook",
-      "RiOrganizationChart",
-      "SiAwsorganizations"
+      "RiOrganizationChart"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -54,5 +54,6 @@
   "Resources.md": "FasCubes",
   "Blog": "FasBook",
   "Blog.md": "FasBook",
-  "Blog/2024": "FarCalendarDays"
+  "Blog/2024": "FarCalendarDays",
+  "Resources/PHP Classes Site Ranking Position.md": "FasCube"
 }
