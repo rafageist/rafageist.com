@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "52199e163995343c",
+        "id": "d2fd6bc7a44ffa97",
         "type": "tabs",
         "children": [
           {
-            "id": "da82bb4d7b199c1d",
+            "id": "a3fa621b068da042",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Professional Journey/1997-2000/1997 - Introduction to Computing.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "Professional Journey/1997-2000/1997 - Introduction to Computing.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "Professional Journey/1997-2000/1997 - Introduction to Computing.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -121,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "Professional Journey/1997-2000/1997 - Introduction to Computing.md"
               }
             }
           }
@@ -142,56 +146,21 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "floating": {
-    "id": "a971df225ff99f0e",
-    "type": "floating",
-    "children": [
-      {
-        "id": "f5c18fa63ae663cd",
-        "type": "window",
-        "children": [
-          {
-            "id": "720074c2add3b967",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "7852623980b0d912",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "index.md",
-                    "mode": "source",
-                    "source": false
-                  }
-                }
-              }
-            ]
-          }
-        ],
-        "direction": "vertical",
-        "x": 510,
-        "y": 555,
-        "width": 800,
-        "height": 400,
-        "maximize": false,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "7852623980b0d912",
+  "active": "a3fa621b068da042",
   "lastOpenFiles": [
+    "Professional Journey/1997-2000 - Formative Coding Years.md",
+    "Professional Journey.md",
     "Projects.md",
+    "Professional Journey/2001-2005/2003-2005 Financial Solutions and Database Dynamics.md",
+    "Projects/Divengine Open Source Ecosystem.md",
+    "index.md",
     "Professional Journey Overview.md",
     "Blog.md",
     "Resources/Mallard Basic.md",
-    "Projects/Divengine Open Source Ecosystem.md",
     "Professional Journey/2020-today - Advancing Professional Frontiers.md",
     "Professional Journey/2010-2020 - Professional Evolution.md",
     "Professional Journey/2005-2010 - University Years.md",
     "Professional Journey/2000-2005 - Technological Evolution.md",
-    "Professional Journey/1997-2000 - Formative Coding Years.md",
-    "Professional Journey/2001-2005/2003-2005 Financial Solutions and Database Dynamics.md",
     "Professional Journey/2001-2005/2001-2004 Expanding Horizons with Windows, Visual Basic and Pascal.md",
     "Professional Journey/1997-2000/2000 - Embracing WordStar, SuperCalc, and dBase.md",
     "Professional Journey/1997-2000/1999 - Transitioning to MS-DOS on Amstrad PC XT 86.md",
@@ -199,7 +168,6 @@
     "Professional Journey/1997-2000/1997 - Unveiling the World of Locoscript.md",
     "Professional Journey/1997-2000/1997 - Introduction to Computing.md",
     "Resources.md",
-    "index.md",
     "images/AT 386.png",
     "images/Amstrad PCW.png",
     "images/Amstrad XT 86.png",

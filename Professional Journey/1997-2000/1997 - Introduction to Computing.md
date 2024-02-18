@@ -8,7 +8,7 @@ In February 1997, at the age of 11 and while in the 6th grade, I had my first en
 
 ## Learning Program Design with Flowcharts
 
-Before typing a single line of code, I was introduced to the art of planning and designing programs using flowcharts. This foundational step involved mapping out the logical flow of the program's execution, identifying decision points, and specifying the sequence of operations. Understanding the importance of a well-structured plan laid the groundwork for my programming endeavors on the [Amstrad PCW](https://en.wikipedia.org/wiki/Amstrad_PCW). Armed with flowcharts, I translated these visual representations into Mallard BASIC code, fostering a holistic approach to problem-solving in the world of computing.
+Before typing a single line of code, I was introduced to the art of planning and designing programs using flowcharts. This foundational step involved mapping out the logical flow of the program's execution, identifying decision points, and specifying the sequence of operations. Understanding the importance of a well-structured plan laid the groundwork for my programming endeavors on the [Amstrad PCW](https://en.wikipedia.org/wiki/Amstrad_PCW). Armed with flowcharts, I translated these visual representations into [Mallard BASIC language](https://en.wikipedia.org/wiki/Mallard_BASIC). (Resource: [[Mallard Basic]]) code, fostering a holistic approach to problem-solving in the world of computing.
 
 ```plantuml
 @startuml
@@ -45,7 +45,7 @@ stop
 
 ![[Amstrad PCW.png|300]]
 
-The first computer I started working with was an Amstrad PCW. This device operated on the [CP/M](https://en.wikipedia.org/wiki/CP/M) operating system, and it was here that I initiated my programming journey using the [Mallard BASIC language](https://en.wikipedia.org/wiki/Mallard_BASIC). (Resource: [[Mallard Basic]])
+The first computer I started working with was an Amstrad PCW. This device operated on the [CP/M](https://en.wikipedia.org/wiki/CP/M) operating system, and it was here that I initiated my programming journey using the Mallard BASIC language.
 
 My first program, written in Mallard BASIC, was a simple yet meaningful one. It prompted the user to input a list of integers, calculated their average, and displayed the result. 
 # Navigating the Complexities of Basic Programming
