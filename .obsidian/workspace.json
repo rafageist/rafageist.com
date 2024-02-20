@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "d2fd6bc7a44ffa97",
+        "id": "afab7166c819d613",
         "type": "tabs",
         "children": [
           {
-            "id": "a3fa621b068da042",
+            "id": "277c396a29e8b714",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Professional Journey/1997-2000/1997 - Introduction to Computing.md",
+                "file": "Projects/Divengine Open Source Ecosystem.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Professional Journey/1997-2000/1997 - Introduction to Computing.md",
+                "file": "Projects/Divengine Open Source Ecosystem.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Professional Journey/1997-2000/1997 - Introduction to Computing.md",
+                "file": "Projects/Divengine Open Source Ecosystem.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Professional Journey/1997-2000/1997 - Introduction to Computing.md"
+                "file": "Projects/Divengine Open Source Ecosystem.md"
               }
             }
           }
@@ -146,8 +146,9 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "a3fa621b068da042",
+  "active": "277c396a29e8b714",
   "lastOpenFiles": [
+    "Professional Journey/1997-2000/1997 - Introduction to Computing.md",
     "Professional Journey/1997-2000 - Formative Coding Years.md",
     "Professional Journey.md",
     "Projects.md",
@@ -166,7 +167,6 @@
     "Professional Journey/1997-2000/1999 - Transitioning to MS-DOS on Amstrad PC XT 86.md",
     "Professional Journey/1997-2000/1998 - Journey into MS-DOS and GW-BASIC.md",
     "Professional Journey/1997-2000/1997 - Unveiling the World of Locoscript.md",
-    "Professional Journey/1997-2000/1997 - Introduction to Computing.md",
     "Resources.md",
     "images/AT 386.png",
     "images/Amstrad PCW.png",
