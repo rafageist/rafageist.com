@@ -98,14 +98,14 @@ $uuid[19] = ['8', '9', 'a', 'b'][(int) (time() % 4)];
 
 Incorporates the Process ID (PID) to determine the 19th character replacement. The PID is used for selecting the replacement from the array.
 
-```
+```php
  $uuid[19] = ['8', '9', 'a', 'b'][getmypid() % 4)];
 ```
 ## Challenges with Variant 7
 
 Despite initial consideration, Variant 7, which involved the Process ID (PID), faced challenges related to predictability and potential loss of randomness. The PID's incorporation raised concerns about its suitability for a truly random selection process, leading to its eventual exclusion.
 
-See discussion: 
+See discussion: https://github.com/symfony/symfony/pull/54027
 ## Conclusion
 
 The optimization journey emphasized the importance of balancing randomness and performance in UUIDv4 generation. While certain variants showcased improvements, challenges persisted in achieving the optimal assignment of the 19th character. Ongoing efforts will focus on refining the process to strike the perfect balance between speed and unpredictability.
