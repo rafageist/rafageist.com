@@ -25,14 +25,14 @@ $uuid[19] = ['8', '9', 'a', 'b', '8', '9',
 			 'e' => 'a', 'f' => 'b'][$uuid[19]] ?? $uuid[19];
 ```
 
-### Analysis:
+### Analysis
 
 1. **Redundant Character Generation:** The process generates characters that are later replaced, introducing unnecessary computation.
 
 3. **Randomness Reduction:** The current variant employs a deterministic assignment based on a character mapping. This results in a loss of randomness in the generation of the 19th character since it is conditioned by its original value.
 
 4. **Array Access and Null Coalescing:** Array access and the null coalescing operator (`??`) are used to assign a new value to the 19th character. However, this may introduce some complexity and impact performance, especially if the mapping array is extensive.
-### Possible Improvements:
+### Possible Improvements
 
 1. **Explore Strategies without Direct Mapping:** Consider alternatives that don't rely on direct mapping, such as arithmetic operations or logical combinations to determine the new value of the 19th character.
 2. **Reduce Secondary Actions:** The insertion of dashes and the assignment of the version number could also be areas for improvement to optimize performance.
