@@ -49,6 +49,17 @@ These suggestions are intended to encourage reflection on the current implementa
 
 The original implementation relied on `random_bytes` followed by `bin2hex`, proving to be computationally expensive. The immediate target was to alleviate the bottleneck caused by hex conversion while preserving the uniqueness of generated UUIDs.
 
+The original implementation used:
+
+```php
+$uuid = bin2hex(random_bytes(18));
+```
+
+Efforts were made to optimize this process due to its computational cost. Various strategies were explored to generate the required 36 characters without relying on hex conversion. The goal was to find a faster alternative to `random_bytes` followed by `bin2hex` while preserving the uniqueness of the generated UUIDs.
+
+Attempts included bitwise operations, mathematical transformations, and random selection. However, none of these strategies proved more efficient than the current implementation. The efficiency of generating 36 characters from the set \[0-9a-f] and subsequently replacing specific positions remained a challenge to surpass.
+
+While exploring alternatives, the focus shifted to eliminating unnecessary character generation and finding a more direct method without compromising randomness or uniqueness. The discussion on this topic involves various strategies and considerations made in the pursuit of optimizing this crucial aspect of UUIDv4 generation.
 ## Crafting Variants for 19th Character Assignment
 
 ### Variant 2: Least Significant Bits
