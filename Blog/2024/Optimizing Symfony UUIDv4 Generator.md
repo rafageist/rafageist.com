@@ -1,6 +1,7 @@
 ---
 date: 2024-02-23
 ---
+#Blog #Programming #PHP #Optimization #Symfony #UUID
 ## The "problem"
 
 The UUIDv4 generation algorithm implemented in Symfony's Variant 1 involves the creation of a complete UUID string with subsequent replacements of specific positions. This process is designed to replace the 19th character based on a predetermined value. However, a potential area for improvement lies in the generation of the entire string, introducing redundancy. Let's delve into the algorithm and subsequently discuss the specific challenge associated with replacing the 19th character.
@@ -50,38 +51,61 @@ The original implementation relied on `random_bytes` followed by `bin2hex`, prov
 
 ## Crafting Variants for 19th Character Assignment
 
-### Variant 1: Mapping Array
-
-The current version replaces the 19th character based on a predefined mapping array. An array is used to determine the replacement for the 19th character. 
-
 ### Variant 2: Least Significant Bits
 
-Description: Uses the least significant 2 bits of the first character to select the 19th character replacement. Implementation: The first character's 2 least significant bits determine the replacement.
+Uses the least significant 2 bits of the first character to select the 19th character replacement. The first character's 2 least significant bits determine the replacement.
+
+```php
+$uuid[19] = ['8', '9', 'a', 'b'][ord($uuid[0]) & 0x3];
+```
 
 ### Variant 3: ASCII Mathematical Operations
 
-Description: Utilizes mathematical operations on the ASCII value of the 19th character for replacement. Implementation: The ASCII value undergoes transformations based on a specific formula.
+Utilizes mathematical operations on the ASCII value of the 19th character for replacement. The ASCII value undergoes transformations based on a specific formula.
 
+```php
+$o = ord($uuid[19]);
+
+$c = ((int)(($o + 3) / 100)) * 41 + (($o % 97) % 2) + 56;
+
+$uuid[19] = chr($c);
+```
 ### Variant 4: Bitwise and Mathematical Operations
 
-Description: Applies bitwise and mathematical operations to the ASCII value of the 19th character for replacement. Implementation: Complex bitwise operations and mathematical transformations are employed.
+Applies bitwise and mathematical operations to the ASCII value of the 19th character for replacement. Complex bitwise operations and mathematical transformations are employed.
 
+```php
+$o = ord($uuid[19]) & 0x3;
+
+$x = (($o + 10) % 12);
+
+$uuid[19] = chr($x + 31 * ((int)($x / 10)) + 56);
+```
 ### Variant 5: Random Selection
 
-Description: Randomly selects a replacement for the 19th character. Implementation: A replacement is chosen randomly from available options.
+Randomly selects a replacement for the 19th character. A replacement is chosen randomly from available options.
 
+```php
+$uuid[19] = ['8', '9', 'a', 'b'][random_int(0, 3)];
+```
 ### Variant 6: Timestamp Modulo 4
 
-Description: Uses the current timestamp modulo 4 to determine the 19th character replacement. Implementation: The timestamp remainder after division by 4 selects the replacement.
-
+Uses the current timestamp modulo 4 to determine the 19th character replacement. The timestamp remainder after division by 4 selects the replacement.
+```php
+$uuid[19] = ['8', '9', 'a', 'b'][(int) (time() % 4)];
+```
 ### Variant 7: PID Incorporation
 
-Description: Incorporates the Process ID (PID) to determine the 19th character replacement. Implementation: The PID is used for selecting the replacement from the array.
+Incorporates the Process ID (PID) to determine the 19th character replacement. The PID is used for selecting the replacement from the array.
 
+```
+ $uuid[19] = ['8', '9', 'a', 'b'][getmypid() % 4)];
+```
 ## Challenges with Variant 7
 
 Despite initial consideration, Variant 7, which involved the Process ID (PID), faced challenges related to predictability and potential loss of randomness. The PID's incorporation raised concerns about its suitability for a truly random selection process, leading to its eventual exclusion.
 
+See discussion: 
 ## Conclusion
 
 The optimization journey emphasized the importance of balancing randomness and performance in UUIDv4 generation. While certain variants showcased improvements, challenges persisted in achieving the optimal assignment of the 19th character. Ongoing efforts will focus on refining the process to strike the perfect balance between speed and unpredictability.
