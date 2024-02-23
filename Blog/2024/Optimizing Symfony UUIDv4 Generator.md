@@ -61,6 +61,8 @@ Attempts included bitwise operations, mathematical transformations, and random s
 
 While exploring alternatives, the focus shifted to eliminating unnecessary character generation and finding a more direct method without compromising randomness or uniqueness. The discussion on this topic involves various strategies and considerations made in the pursuit of optimizing this crucial aspect of UUIDv4 generation.
 
+The investigation also delved into the possibility of directly working with buffers or memory, akin to C++, to enhance efficiency. However, limitations within PHP and the need for cross-platform compatibility presented obstacles.
+
 ## Hex Conversion Overhead
 
 In my quest to enhance Symfony's UUIDv4 generation, one significant hurdle lies in the hex conversion process. Converting the binary data produced by `random_bytes` into a hexadecimal representation using `bin2hex` introduces a notable overhead. This seemingly innocent step consumes a considerable chunk of the overall processing time, potentially surpassing 50%.
