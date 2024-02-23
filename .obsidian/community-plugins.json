@@ -1,9 +1,9 @@
 [
-  "webpage-html-export",
   "obsidian-icon-folder",
   "obsidian-plantuml",
   "obsidian-emoji-toolbar",
   "obsidian-activity-history",
   "obsidian-git",
-  "obsidian-icons-plugin"
+  "obsidian-icons-plugin",
+  "webpage-html-export"
 ]
