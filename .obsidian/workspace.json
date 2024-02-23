@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "afab7166c819d613",
+        "id": "8cbb0ed1239158ed",
         "type": "tabs",
         "children": [
           {
-            "id": "277c396a29e8b714",
+            "id": "6af67d00542956ed",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/Divengine Open Source Ecosystem.md",
+                "file": "Blog/2024/Optimizing Symfony UUIDv4 Generator.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Projects/Divengine Open Source Ecosystem.md",
+                "file": "Blog/2024/Optimizing Symfony UUIDv4 Generator.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Projects/Divengine Open Source Ecosystem.md",
+                "file": "Blog/2024/Optimizing Symfony UUIDv4 Generator.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Projects/Divengine Open Source Ecosystem.md"
+                "file": "Blog/2024/Optimizing Symfony UUIDv4 Generator.md"
               }
             }
           }
@@ -146,14 +146,16 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "277c396a29e8b714",
+  "active": "6af67d00542956ed",
   "lastOpenFiles": [
+    "Blog/2024/Rejecting the notion of 'Most Important' Programming Language.md",
+    "Blog/2024/Optimizing Symfony UUIDv4 Generator.md",
+    "Projects/Divengine Open Source Ecosystem.md",
     "Professional Journey/1997-2000/1997 - Introduction to Computing.md",
     "Professional Journey/1997-2000 - Formative Coding Years.md",
     "Professional Journey.md",
     "Projects.md",
     "Professional Journey/2001-2005/2003-2005 Financial Solutions and Database Dynamics.md",
-    "Projects/Divengine Open Source Ecosystem.md",
     "index.md",
     "Professional Journey Overview.md",
     "Blog.md",
