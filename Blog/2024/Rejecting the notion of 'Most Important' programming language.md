@@ -1,6 +1,6 @@
 ---
 title: Rejecting the notion of Most Important Programming Language
-icon: IbDocument
+icon: RiFilePaper2Line
 date: 2024-02-11
 ---
 #Blog #Article #Opinion #Programming

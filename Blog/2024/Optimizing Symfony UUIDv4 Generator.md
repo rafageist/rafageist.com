@@ -1,5 +1,6 @@
 ---
 date: 2024-02-23
+icon: RiFilePaper2Line
 ---
 #Blog #Programming #PHP #Optimization #Symfony #UUID
 ## The "problem"
