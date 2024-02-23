@@ -34,13 +34,13 @@ $uuid[19] = ['8', '9', 'a', 'b', '8', '9',
 ### Possible Improvements:
 
 1. **Explore Strategies without Direct Mapping:** Consider alternatives that don't rely on direct mapping, such as arithmetic operations or logical combinations to determine the new value of the 19th character.
-    
+   
 2. **Reduce Secondary Actions:** The insertion of dashes and the assignment of the version number could also be areas for improvement to optimize performance.
-    
+
 3. **Eliminate Null Coalescing:** Evaluate whether the null coalescing operator is necessary or if the assignment can be simplified without the need for a null coalescing operator.
-    
+   
 4. **Maintain Randomness:** Look for methods that preserve randomness in the generation, even when making specific adjustments.
-    
+   
 
 These suggestions are intended to encourage reflection on the current implementation and explore approaches that may enhance both performance and randomness in UUIDv4 generation.
 ## Initial Bottleneck: Hex Conversion
