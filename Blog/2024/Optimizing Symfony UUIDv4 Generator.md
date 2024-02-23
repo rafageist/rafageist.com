@@ -5,7 +5,7 @@ In the quest to optimize Symfony's UUIDv4 generator, the focus was primarily on 
 
 ## The "problem"
 
-The current implementation of Variant 1 in Symfony for generating UUIDv4 relies on replacing the 19th character with a predetermined value based on its original value. Let's analyze key aspects and potential points for improvement:
+The UUIDv4 generation algorithm implemented in Symfony's Variant 1 involves the creation of a complete UUID string with subsequent replacements of specific positions. This process is designed to replace the 19th character based on a predetermined value. However, a potential area for improvement lies in the generation of the entire string, introducing redundancy. Let's delve into the algorithm and subsequently discuss the specific challenge associated with replacing the 19th character.
 
 ```php
 
@@ -27,9 +27,11 @@ $uuid[19] = ['8', '9', 'a', 'b', '8', '9',
 
 ### Analysis:
 
-1. **Randomness Reduction:** The current variant employs a deterministic assignment based on a character mapping. This results in a loss of randomness in the generation of the 19th character since it is conditioned by its original value.
+1. **Redundant Character Generation:** The process generates characters that are later replaced, introducing unnecessary computation.
 
-2. **Array Access and Null Coalescing:** Array access and the null coalescing operator (`??`) are used to assign a new value to the 19th character. However, this may introduce some complexity and impact performance, especially if the mapping array is extensive.
+3. **Randomness Reduction:** The current variant employs a deterministic assignment based on a character mapping. This results in a loss of randomness in the generation of the 19th character since it is conditioned by its original value.
+
+4. **Array Access and Null Coalescing:** Array access and the null coalescing operator (`??`) are used to assign a new value to the 19th character. However, this may introduce some complexity and impact performance, especially if the mapping array is extensive.
 
 ### Possible Improvements:
 
