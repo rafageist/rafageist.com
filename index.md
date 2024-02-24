@@ -5,7 +5,7 @@ title: Home
 
 ## 🌐 Professional Profiles
 ### daily.dev
-<a href="https://app.daily.dev/rafageist"><img src="https://api.daily.dev/devcards/v2/YhEpwXdlkRpAA491aj7nP.png?type=wide&r=zbn&nocache=3" width="652" alt="Rafa Rodríguez's Dev Card"/></a>
+<a href="https://app.daily.dev/rafageist"><img src="https://api.daily.dev/devcards/v2/YhEpwXdlkRpAA491aj7nP.png?type=wide&r=zbn&nocache={$nocache}" width="652" alt="Rafa Rodríguez's Dev Card"/></a>
 
 Explore my professional presence on these platforms:
 ### GitHub
