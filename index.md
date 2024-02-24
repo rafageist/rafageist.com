@@ -50,6 +50,11 @@ Explore my Professional Journey, a retrospective voyage that unfolds my trajecto
 Dive into the realm of my projects, a dynamic portfolio that encapsulates my journey through various technological endeavors. 
 
 👉[[Projects]]
+
+## ♟️Chess Enthusiast
+
+Welcome to my world of chess! As an avid chess player, I find joy in the intricacies of each move and the strategic dance on the board. Whether you're a fellow enthusiast or just curious, feel free to join me for a game on [chess.com](your-chess.com-profile-link). Let's make our moves and enjoy the beauty of this timeless game together!
+
 ## 🛠️ Resources Hub
 
 This section serves as a gateway to a wealth of knowledge and utilities that have proven valuable in my professional journey. 
