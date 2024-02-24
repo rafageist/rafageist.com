@@ -1,7 +1,13 @@
 <?php
 
-function agregarGoogleAnalytics($ruta) {
-	echo "[INFO] Checking $ruta\n";
+include __DIR__.'/vendor/autoload.php';
+
+use divengine\div;
+/*
+function agregarGoogleAnalytics($ruta)
+{
+    
+    echo "[INFO] Checking $ruta\n";
     $contenido = file_get_contents($ruta);
 
     // Verifica si la etiqueta </head> está presente
@@ -18,14 +24,15 @@ function agregarGoogleAnalytics($ruta) {
         ";
 
         $contenido = str_replace('</head>', $codigoAnalytics . '</head>', $contenido);
-		echo "[INFO] ... adding gtag to $ruta\n";
+        echo "[INFO] ... adding gtag to $ruta\n";
         // Guarda el archivo modificado
         file_put_contents($ruta, $contenido);
     }
 }
-
-function agregarSufijoTitulo($ruta) {
-	echo "[INFO] Checking title of $ruta\n";
+/*
+function agregarSufijoTitulo($ruta)
+{
+    echo "[INFO] Checking title of $ruta\n";
     $contenido = file_get_contents($ruta);
 
     // Verifica si la etiqueta </title> está presente
@@ -37,9 +44,10 @@ function agregarSufijoTitulo($ruta) {
         file_put_contents($ruta, $contenido);
     }
 }
-
-function explorarDirectorio($directorio) {
-	echo "[INFO] Exploring $directorio\n";
+*/
+function explorarDirectorio($directorio)
+{
+    echo "[INFO] Exploring $directorio\n";
     $archivos = scandir($directorio);
 
     foreach ($archivos as $archivo) {
@@ -53,9 +61,15 @@ function explorarDirectorio($directorio) {
             // Si es un directorio, explóralo recursivamente
             explorarDirectorio($ruta);
         } elseif (pathinfo($ruta)['extension'] == 'html') {
+            $tpl = new div($ruta, [
+                "nocache" => uniqid(),
+                "sitename" => "rafageist"
+            ]);
+            
+            file_put_contents($ruta, "$tpl");
             // Si es un archivo HTML, agrega Google Analytics
-            agregarGoogleAnalytics($ruta);
-			agregarSufijoTitulo($ruta);
+            //agregarGoogleAnalytics($ruta);
+            //agregarSufijoTitulo($ruta);
         }
     }
 }

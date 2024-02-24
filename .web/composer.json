@@ -1,0 +1,5 @@
+{
+    "require": {
+        "divengine/div": "^6.0"
+    }
+}
