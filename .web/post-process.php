@@ -1,50 +1,9 @@
 <?php
 
-include __DIR__.'/vendor/autoload.php';
+include __DIR__ . '/vendor/autoload.php';
 
 use divengine\div;
-/*
-function agregarGoogleAnalytics($ruta)
-{
-    
-    echo "[INFO] Checking $ruta\n";
-    $contenido = file_get_contents($ruta);
 
-    // Verifica si la etiqueta </head> está presente
-    if (strpos($contenido, '</head>') !== false && strpos($contenido, 'G-T7XEVFZK6N') === false) {
-        // Agrega el código de Google Analytics antes de la etiqueta </head>
-        $codigoAnalytics = "
-            <script src=\"https://www.googletagmanager.com/gtag/js?id=G-T7XEVFZK6N\"></script>
-            <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-T7XEVFZK6N');
-            </script>
-        ";
-
-        $contenido = str_replace('</head>', $codigoAnalytics . '</head>', $contenido);
-        echo "[INFO] ... adding gtag to $ruta\n";
-        // Guarda el archivo modificado
-        file_put_contents($ruta, $contenido);
-    }
-}
-/*
-function agregarSufijoTitulo($ruta)
-{
-    echo "[INFO] Checking title of $ruta\n";
-    $contenido = file_get_contents($ruta);
-
-    // Verifica si la etiqueta </title> está presente
-    if (strpos($contenido, '</title>') !== false && strpos($contenido, ' | rafageist</title>') === false) {
-        // Agrega el sufijo al título
-        $contenido = str_replace('</title>', ' | rafageist</title>', $contenido);
-
-        // Guarda el archivo modificado
-        file_put_contents($ruta, $contenido);
-    }
-}
-*/
 function explorarDirectorio($directorio)
 {
     echo "[INFO] Exploring $directorio\n";
@@ -56,20 +15,43 @@ function explorarDirectorio($directorio)
         }
 
         $ruta = $directorio . '/' . $archivo;
+        $ext = is_dir($ruta) ? "" : pathinfo($ruta)['extension'];
 
         if (is_dir($ruta)) {
             // Si es un directorio, explóralo recursivamente
             explorarDirectorio($ruta);
-        } elseif (pathinfo($ruta)['extension'] == 'html') {
+        } elseif ($ext == 'html' || $ext == 'json' || $ext == 'xml' || strpos($ruta, 'graph-data.js') !== false) {
+
             $tpl = new div($ruta, [
                 "nocache" => uniqid(),
                 "sitename" => "rafageist"
             ]);
+
+            $output = "$tpl";
+
+            if ($ext == 'html') {
+                $analyticsCode = file_get_contents(__DIR__ . "/.dev/analytics.html");
+                if (strpos($output, '</head>') !== false && strpos($output, 'https://www.googletagmanager.com') === false) {
+                    $output = str_replace('</head>', $analyticsCode . '</head>', $output);
+                }
+            }
             
-            file_put_contents($ruta, "$tpl");
-            // Si es un archivo HTML, agrega Google Analytics
-            //agregarGoogleAnalytics($ruta);
-            //agregarSufijoTitulo($ruta);
+           /* // Configuración de Tidy
+            $config = array(
+                'indent'         => true,
+                'output-xhtml'   => false,
+                'wrap'           => 200
+            );
+
+            // Crear instancia de Tidy
+            $tidy = new \Tidy();
+            $tidy->parseString($output, $config, 'utf8');
+            $tidy->cleanRepair();
+
+            // Mostrar el HTML formateado
+            $output = "$tidy";*/
+
+            file_put_contents($ruta, $output);
         }
     }
 }
