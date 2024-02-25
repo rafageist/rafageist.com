@@ -18,7 +18,6 @@ function explorarDirectorio($directorio)
         $ext = is_dir($ruta) ? "" : pathinfo($ruta)['extension'];
 
         if (is_dir($ruta)) {
-            // Si es un directorio, explóralo recursivamente
             explorarDirectorio($ruta);
         } elseif ($ext == 'html' || $ext == 'json' || $ext == 'xml' || strpos($ruta, 'graph-data.js') !== false) {
 
@@ -35,21 +34,10 @@ function explorarDirectorio($directorio)
                     $output = str_replace('</head>', $analyticsCode . '</head>', $output);
                 }
             }
-            
-           /* // Configuración de Tidy
-            $config = array(
-                'indent'         => true,
-                'output-xhtml'   => false,
-                'wrap'           => 200
-            );
 
-            // Crear instancia de Tidy
-            $tidy = new \Tidy();
-            $tidy->parseString($output, $config, 'utf8');
-            $tidy->cleanRepair();
-
-            // Mostrar el HTML formateado
-            $output = "$tidy";*/
+            if (strpos($output, '</title>') !== false && strpos($output, ' | rafageist</title>') === false) {
+                $output = str_replace('</title>', ' | rafageist</title>', $output);
+            }
 
             file_put_contents($ruta, $output);
         }
