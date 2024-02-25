@@ -6,4 +6,4 @@ title: Resources
 
 Browse through the carefully selected resources, each chosen for its contribution to productivity, learning, and creativity. From coding tools to recommended books, this hub is designed to empower and inspire. Feel free to explore, discover, and leverage these resources to enhance your own endeavors. Together, let's foster a culture of shared knowledge and continuous growth.
 
-- [[Mallard Basic]] manual
+- [[Mallard Basic Manual]] manual

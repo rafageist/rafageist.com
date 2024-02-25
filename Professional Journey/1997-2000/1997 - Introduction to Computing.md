@@ -8,7 +8,7 @@ In February 1997, at the age of 11 and while in the 6th grade, I had my first en
 
 ## Learning Program Design with Flowcharts
 
-Before typing a single line of code, I was introduced to the art of planning and designing programs using flowcharts. This foundational step involved mapping out the logical flow of the program's execution, identifying decision points, and specifying the sequence of operations. Understanding the importance of a well-structured plan laid the groundwork for my programming endeavors on the [Amstrad PCW](https://en.wikipedia.org/wiki/Amstrad_PCW). Armed with flowcharts, I translated these visual representations into [Mallard BASIC language](https://en.wikipedia.org/wiki/Mallard_BASIC). (Resource: [[Mallard Basic]]) code, fostering a holistic approach to problem-solving in the world of computing.
+Before typing a single line of code, I was introduced to the art of planning and designing programs using flowcharts. This foundational step involved mapping out the logical flow of the program's execution, identifying decision points, and specifying the sequence of operations. Understanding the importance of a well-structured plan laid the groundwork for my programming endeavors on the [Amstrad PCW](https://en.wikipedia.org/wiki/Amstrad_PCW). Armed with flowcharts, I translated these visual representations into [Mallard BASIC language](https://en.wikipedia.org/wiki/Mallard_BASIC). (Resource: [[Mallard Basic Manual]]) code, fostering a holistic approach to problem-solving in the world of computing.
 
 ```plantuml
 @startuml

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Resources/Mallard Basic.md",
+                "file": "Resources/Mallard Basic Manual.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Resources/Mallard Basic.md",
+                "file": "Resources/Mallard Basic Manual.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Resources/Mallard Basic.md",
+                "file": "Resources/Mallard Basic Manual.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Resources/Mallard Basic.md"
+                "file": "Resources/Mallard Basic Manual.md"
               }
             }
           }
@@ -169,7 +169,7 @@
     "Professional Journey/2001-2005/2003-2005 Financial Solutions and Database Dynamics.md",
     "Professional Journey Overview.md",
     "Blog.md",
-    "Resources/Mallard Basic.md",
+    "Resources/Mallard Basic Manual.md",
     "Professional Journey/2020-today - Advancing Professional Frontiers.md",
     "Professional Journey/2010-2020 - Professional Evolution.md",
     "Professional Journey/2005-2010 - University Years.md",

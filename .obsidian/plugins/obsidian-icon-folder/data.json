@@ -47,7 +47,6 @@
   "Projects/Divengine Open Source Ecosystem.md": "RiOrganizationChart",
   "Projects": "SiAwsorganizations",
   "Resources": "FasCubes",
-  "Resources/Mallard Basic.md": "FasCube",
   "Projects.md": "SiAwsorganizations",
   "Resources.md": "FasCubes",
   "Blog": "FasBook",
@@ -56,5 +55,6 @@
   "Professional Journey/2001-2005 - Technological Evolution.md": "FasCalendarDay",
   "Professional Journey.md": "FasCalendarDays",
   "Blog/2024/Optimizing Symfony UUIDv4 Generator.md": "IbDocument",
-  "Blog/2024/Rejecting the notion of 'Most Important' Programming Language.md": "IbDocument"
+  "Blog/2024/Rejecting the notion of 'Most Important' Programming Language.md": "IbDocument",
+  "Resources/Mallard Basic Manual.md": "FasCube"
 }
