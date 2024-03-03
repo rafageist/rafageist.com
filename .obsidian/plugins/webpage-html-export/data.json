@@ -2,7 +2,7 @@
   "settingsVersion": "1.8.0",
   "makeOfflineCompatible": true,
   "inlineAssets": false,
-  "includePluginCSS": "obsidian-emoji-toolbar\nobsidian-icons-plugin",
+  "includePluginCSS": "obsidian-icons-plugin",
   "includeSvelteCSS": true,
   "titleProperty": "title",
   "customHeadContentPath": "D:\\\\workspace\\rafageist\\rafageist\\.web\\.dev\\header.html",
