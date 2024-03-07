@@ -2,7 +2,7 @@
   "settingsVersion": "1.8.01",
   "makeOfflineCompatible": false,
   "inlineAssets": false,
-  "includePluginCSS": "obsidian-icons-plugin",
+  "includePluginCSS": "obsidian-icons-plugin\nobsidian-emoji-toolbar",
   "includeSvelteCSS": true,
   "titleProperty": "title",
   "customHeadContentPath": "",
