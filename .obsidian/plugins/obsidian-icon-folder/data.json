@@ -6,11 +6,11 @@
     "emojiStyle": "none",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "FiCalendar",
       "RiFilePaper2Line",
       "FasCube",
       "FarCalendarDays",
-      "IbDocument",
-      "FasBook"
+      "IbDocument"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -58,5 +58,7 @@
   "Blog/2024/Rejecting the notion of 'Most Important' Programming Language.md": "IbDocument",
   "Resources/Mallard Basic.md": "FasCube",
   "Blog/2024/Celebrating Recognition in the PHP Innovation Awards January 2024.md": "IbDocument",
-  "Resources/PHP Innovation Adward January 2024.pdf": "RiFilePaper2Line"
+  "Resources/PHP Innovation Adward January 2024.pdf": "RiFilePaper2Line",
+  "Blog/2024/Conditional Logic in PHP with Short-Circuiting for Cleaner Code.md": "IbDocument",
+  "Blog/2024.md": "FiCalendar"
 }
