@@ -62,6 +62,7 @@ $isUserLoggedIn and performAdminActions();
 !$isLoggedIn and handleUnauthorizedAccess();
 ```
 
+- [i] For complete reference about logical operator in PHP, see the online manual: https://www.php.net/manual/en/language.operators.logical.php
 ## Advantages of Short-Circuiting
 
 1. **Conciseness:** Short-circuiting reduces the need for nested `if-else` constructs, resulting in more concise code.
