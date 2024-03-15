@@ -10,17 +10,27 @@ title: Home
 ___
 ## 💪 Skills
 
+## #Programming
+
 #Basic #VisualBasic #CPlusPlus #Java #PHP #Pascal #HTML 
 
 #JavaScript #NodeJs #ReactJS #VueJS #VisalBasicForApplications
+
+#Csharp #dotnet #MAUI #Xamarin #UItest #Automation
+
+## #Databases
 
 #PostgresSQL #plPgSQL #MySQL #SQLite 
 
 #MicrosoftAccess #MicrosoftSQLServer #Excel
 
+## #Systems
+
+#AmazonAWS #AzureDevOps
+
 #Linux #Ubuntu #Debian #Windows
 
-#AzureDevOps #Trello #Jira #AmazonAWS #Microsoft365
+#Trello #Jira  #Microsoft365
 
 #Git #GitHub #Gitea #Gogs
 
