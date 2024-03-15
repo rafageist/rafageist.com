@@ -39,7 +39,7 @@
   "graphMinNodeSize": 3,
   "graphMaxNodeSize": 9,
   "showDefaultTreeIcons": true,
-  "emojiStyle": "FluentUI",
+  "emojiStyle": "Native",
   "defaultFileIcon": "lucide//file",
   "defaultFolderIcon": "lucide//folder",
   "defaultMediaIcon": "lucide//file-image",
