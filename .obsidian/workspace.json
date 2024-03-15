@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "Blog.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "Blog.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "Blog.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "Blog.md"
               }
             }
           }
@@ -150,9 +150,9 @@
   },
   "active": "760b6e5404abba6b",
   "lastOpenFiles": [
-    "index.md",
     "Blog/2024.md",
     "Blog.md",
+    "index.md",
     "Blog/2024/Celebrating Recognition in the PHP Innovation Awards January 2024.md",
     "Blog/2024/Conditional Logic in PHP with Short-Circuiting for Cleaner Code.md",
     "Blog/2024/Optimizing Symfony UUIDv4 Generator.md",
