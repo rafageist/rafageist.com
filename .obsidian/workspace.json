@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Blog/2024/Conditional Logic in PHP with Short-Circuiting for Clean Code.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Blog/2024/Conditional Logic in PHP with Short-Circuiting for Clean Code.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Blog/2024/Conditional Logic in PHP with Short-Circuiting for Clean Code.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Blog/2024/Conditional Logic in PHP with Short-Circuiting for Clean Code.md"
+                "file": "index.md"
               }
             }
           }
@@ -149,8 +149,9 @@
   },
   "active": "c294f851070aaad6",
   "lastOpenFiles": [
-    "Resources.md",
     "index.md",
+    "Blog/2024/Conditional Logic in PHP with Short-Circuiting for Clean Code.md",
+    "Resources.md",
     "Resources/Mallard Basic.md",
     "Professional Journey/2001-2005/2001-2004 Expanding Horizons with Windows, Visual Basic and Pascal.md",
     "Professional Journey/1997-2000/2000 - Embracing WordStar, SuperCalc, and dBase.md",
@@ -160,7 +161,6 @@
     "Professional Journey/1997-2000/1997 - Introduction to Computing.md",
     "Blog/2024/Data Composition Made Easy with cop in Div PHP Template Engine.md",
     "Blog/2024/Celebrating Recognition in the PHP Innovation Awards January 2024.md",
-    "Blog/2024/Conditional Logic in PHP with Short-Circuiting for Clean Code.md",
     "Blog/2024.md",
     "images/Populate from JSON using the  Compose Object Properties function  of Div PHP Template Engine.png",
     "images/Div PHP Ways Overview.png",
