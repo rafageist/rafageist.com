@@ -6,4 +6,5 @@ Welcome to my professional blog, a space where I share insights, experiences, an
 
 Feel free to explore the articles, and don't hesitate to share your thoughts or engage in discussions. Let's embark on this intellectual adventure together!
 
+- [[2023]]
 - [[2024]]
