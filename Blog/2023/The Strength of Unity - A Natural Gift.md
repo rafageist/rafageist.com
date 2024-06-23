@@ -5,7 +5,7 @@ icon: IbDocument
 ---
 #Blog #Reflections 
 
-![[The Strength of Unity.webp]]
+![[The Strength of Unity.png]]
 
 If you believe that nature has made us weak as individuals, it is because it has granted us strength when we are united.
 

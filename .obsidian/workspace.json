@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Blog/2023.md",
+                "file": "Blog/2023/War harms those who do not want it.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Blog/2023.md",
+                "file": "Blog/2023/War harms those who do not want it.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Blog/2023.md",
+                "file": "Blog/2023/War harms those who do not want it.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Blog/2023.md"
+                "file": "Blog/2023/War harms those who do not want it.md"
               }
             }
           }
@@ -150,10 +150,12 @@
   },
   "active": "c294f851070aaad6",
   "lastOpenFiles": [
-    "Professional Journey/2001-2005/2001-2004 Expanding Horizons with Windows, Visual Basic and Pascal.md",
+    "Blog/2023.md",
     "Blog/2023/War harms those who do not want it.md",
     "Blog/2023/The Strength of Unity - A Natural Gift.md",
-    "Blog/2023.md",
+    "images/War harms those who do not want it.png",
+    "images/The Strength of Unity.png",
+    "Professional Journey/2001-2005/2001-2004 Expanding Horizons with Windows, Visual Basic and Pascal.md",
     "Blog/2024.md",
     "Blog/2024/Celebrating Recognition in the PHP Innovation Awards January 2024.md",
     "images/War harms those who do not want it.webp",
@@ -191,8 +193,6 @@
     "header.html",
     "header.htm",
     "images/AT 386.png",
-    "images/Amstrad PCW.png",
-    "images/Amstrad XT 86.png",
     "index.canvas",
     "New folder",
     "Blog"
