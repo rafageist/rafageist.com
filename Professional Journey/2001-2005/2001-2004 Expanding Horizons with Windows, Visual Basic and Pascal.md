@@ -18,6 +18,15 @@ The turn of the millennium marked a significant expansion of my programming hori
 
 In parallel, my journey into the world of competitive programming took a significant leap with the adoption of **Turbo Pascal**. Motivated by the prospect of participating in the International Olympiad in Informatics (IOI), I joined high-performance computing training programs. These programs aimed to equip participants with advanced algorithmic skills to tackle complex problems.
 
+**Simple Hello World in PASCAL**
+
+```pascal
+program HelloWorld;
+
+begin
+  Writeln('Hello, World!');
+end.
+```
 ## International Olympiad in Informatics (IOI)
 
 The **IOI** stands as a prestigious annual programming competition for secondary school students from around the globe. It challenges participants with algorithmic problems that demand creativity, problem-solving prowess, and a deep understanding of computer science principles.

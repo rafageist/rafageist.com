@@ -1,16 +1,19 @@
 {
   "vaultName": "rafageist",
-  "lastExport": 1710614266270,
+  "lastExport": 1719155735615,
   "pluginVersion": "1.8.01",
-  "validBodyClasses": "publish css-settings-manager theme-light show-inline-title",
+  "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon",
   "useCustomHeadContent": true,
   "useCustomFavicon": true,
   "files": [
+    "Blog/2023/The Strength of Unity - A Natural Gift.md",
+    "Blog/2023/War harms those who do not want it.md",
     "Blog/2024/Celebrating Recognition in the PHP Innovation Awards January 2024.md",
     "Blog/2024/Conditional Logic in PHP with Short-Circuiting for Clean Code.md",
     "Blog/2024/Data Composition Made Easy with cop in Div PHP Template Engine.md",
     "Blog/2024/Optimizing Symfony UUIDv4 Generator.md",
     "Blog/2024/Rejecting the notion of 'Most Important' Programming Language.md",
+    "Blog/2023.md",
     "Blog/2024.md",
     "Professional Journey/1997-2000/1997 - Introduction to Computing.md",
     "Professional Journey/1997-2000/1997 - Unveiling the World of LocoScript.md",
@@ -32,6 +35,11 @@
     "Professional Journey.md",
     "Projects.md",
     "Resources.md",
+    "lib/media/the-strength-of-unity.webp",
+    "lib/media/war-harms-those-who-do-not-want-it.webp",
+    "lib/media/at-386.png",
+    "lib/media/visualbasic6.png",
+    "lib/media/turbo-pascal.png",
     "lib/scripts/graph-wasm.wasm",
     "lib/fonts/94f2f163d4b698242fef.otf",
     "lib/fonts/72505e6a122c6acd5471.woff2",
@@ -47,6 +55,7 @@
     "lib/fonts/05b618077343fbbd92b7.ttf",
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
     "lib/media/874d8b8e340f75575caa.svg",
+    "lib/media/3d6c1bdc4d87cde4de67.svg",
     "lib/html/file-tree.html",
     "lib/scripts/webpage.js",
     "lib/scripts/graph-view.js",
@@ -73,10 +82,7 @@
     "lib/media/amstrad-xt-86.png",
     "lib/media/quickbasic.png",
     "lib/media/supercalc.png",
-    "lib/media/dbase.png",
-    "lib/media/at-386.png",
-    "lib/media/visualbasic6.png",
-    "lib/media/turbo-pascal.png"
+    "lib/media/dbase.png"
   ],
   "mainDependencies": [
     "lib/scripts/graph-wasm.wasm",
@@ -94,6 +100,7 @@
     "lib/fonts/05b618077343fbbd92b7.ttf",
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
     "lib/media/874d8b8e340f75575caa.svg",
+    "lib/media/3d6c1bdc4d87cde4de67.svg",
     "lib/html/file-tree.html",
     "lib/scripts/webpage.js",
     "lib/scripts/graph-view.js",
@@ -197,8 +204,8 @@
       ]
     },
     "Professional Journey/2001-2005/2001-2004 Expanding Horizons with Windows, Visual Basic and Pascal.md": {
-      "modifiedTime": 1710612799597,
-      "sourceSize": 2639,
+      "modifiedTime": 1719155735615,
+      "sourceSize": 2747,
       "exportedPath": "professional-journey/2001-2005/2001-2004-expanding-horizons-with-windows,-visual-basic-and-pascal.html",
       "dependencies": [
         "lib/media/at-386.png",
@@ -357,207 +364,247 @@
       "dependencies": []
     },
     "lib/media/at-386.png": {
-      "modifiedTime": 1710612799597,
+      "modifiedTime": 1719155735615,
       "sourceSize": 114190,
       "exportedPath": "lib/media/at-386.png",
       "dependencies": []
     },
     "lib/media/visualbasic6.png": {
-      "modifiedTime": 1710612799597,
+      "modifiedTime": 1719155735615,
       "sourceSize": 81530,
       "exportedPath": "lib/media/visualbasic6.png",
       "dependencies": []
     },
     "lib/media/turbo-pascal.png": {
-      "modifiedTime": 1710612799597,
+      "modifiedTime": 1719155735615,
       "sourceSize": 27678,
       "exportedPath": "lib/media/turbo-pascal.png",
       "dependencies": []
     },
     "lib/scripts/graph-wasm.wasm": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 23377,
       "exportedPath": "lib/scripts/graph-wasm.wasm",
       "dependencies": []
     },
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/874d8b8e340f75575caa.svg": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 317,
       "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1710614266270,
-      "sourceSize": 51587,
+      "modifiedTime": 1719155735615,
+      "sourceSize": 58077,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/graph-view.js": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 15519,
       "exportedPath": "lib/scripts/graph-view.js",
       "dependencies": []
     },
     "lib/scripts/graph-wasm.js": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 14021,
       "exportedPath": "lib/scripts/graph-wasm.js",
       "dependencies": []
     },
     "lib/scripts/graph-render-worker.js": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 5179,
       "exportedPath": "lib/scripts/graph-render-worker.js",
       "dependencies": []
     },
     "lib/scripts/tinycolor.js": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 29832,
       "exportedPath": "lib/scripts/tinycolor.js",
       "dependencies": []
     },
     "lib/scripts/pixi.js": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 449509,
       "exportedPath": "lib/scripts/pixi.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 5097,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
     "lib/html/custom-head-content.html": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 393,
       "exportedPath": "lib/html/custom-head-content.html",
       "dependencies": []
     },
     "lib/scripts/graph-data.js": {
-      "modifiedTime": 1710614266270,
-      "sourceSize": 3191,
+      "modifiedTime": 1719155735615,
+      "sourceSize": 3463,
       "exportedPath": "lib/scripts/graph-data.js",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1710614266270,
-      "sourceSize": 157356,
+      "modifiedTime": 1719155735615,
+      "sourceSize": 130183,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/other-plugins.css": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 8407,
       "exportedPath": "lib/styles/other-plugins.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 41004,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 311,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1710614266270,
+      "modifiedTime": 1719155735615,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
+      "dependencies": []
+    },
+    "Blog/2023/The Strength of Unity - A Natural Gift.md": {
+      "modifiedTime": 1719155735615,
+      "sourceSize": 3522,
+      "exportedPath": "blog/2023/the-strength-of-unity-a-natural-gift.html",
+      "dependencies": [
+        "lib/media/the-strength-of-unity.webp"
+      ]
+    },
+    "Blog/2023/War harms those who do not want it.md": {
+      "modifiedTime": 1719155735615,
+      "sourceSize": 2801,
+      "exportedPath": "blog/2023/war-harms-those-who-do-not-want-it.html",
+      "dependencies": [
+        "lib/media/war-harms-those-who-do-not-want-it.webp"
+      ]
+    },
+    "Blog/2023.md": {
+      "modifiedTime": 1719155735615,
+      "sourceSize": 132,
+      "exportedPath": "blog/2023.html",
+      "dependencies": []
+    },
+    "lib/media/the-strength-of-unity.webp": {
+      "modifiedTime": 1719155735615,
+      "sourceSize": 513168,
+      "exportedPath": "lib/media/the-strength-of-unity.webp",
+      "dependencies": []
+    },
+    "lib/media/war-harms-those-who-do-not-want-it.webp": {
+      "modifiedTime": 1719155735615,
+      "sourceSize": 447194,
+      "exportedPath": "lib/media/war-harms-those-who-do-not-want-it.webp",
+      "dependencies": []
+    },
+    "lib/media/3d6c1bdc4d87cde4de67.svg": {
+      "modifiedTime": 1719155735615,
+      "sourceSize": 279,
+      "exportedPath": "lib/media/3d6c1bdc4d87cde4de67.svg",
       "dependencies": []
     }
   }

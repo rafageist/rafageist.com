@@ -1,9 +1,9 @@
 {
   "settings": {
-    "migrated": 4,
+    "migrated": 5,
     "iconPacksPath": ".obsidian/icons",
     "fontSize": 16,
-    "emojiStyle": "none",
+    "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
       "FiCalendar",
@@ -25,7 +25,12 @@
     "iconInFrontmatterEnabled": false,
     "iconsBackgroundCheckEnabled": false,
     "iconsInNotesEnabled": true,
-    "iconIdentifier": ":"
+    "iconIdentifier": ":",
+    "iconInTitlePosition": "above",
+    "iconInFrontmatterFieldName": "icon",
+    "iconColorInFrontmatterFieldName": "iconColor",
+    "iconsInLinksEnabled": true,
+    "debugMode": false
   },
   "Professional Journey/1997-2000/1997 - Introduction to Computing.md": "FasCalendarCheck",
   "Professional Journey/1997-2000/1998 - Journey into MS-DOS and GW-BASIC.md": "FasCalendarCheck",
@@ -61,5 +66,9 @@
   "Resources/PHP Innovation Adward January 2024.pdf": "RiFilePaper2Line",
   "Blog/2024.md": "FiCalendar",
   "Blog/2024/Data Composition Made Easy with cop in Div PHP Template Engine.md": "IbDocument",
-  "Blog/2024/Conditional Logic in PHP with Short-Circuiting for Clean Code.md": "IbDocument"
+  "Blog/2024/Conditional Logic in PHP with Short-Circuiting for Clean Code.md": "IbDocument",
+  "Blog/2023": "FiCalendar",
+  "Blog/2023/The Strength of Unity - A Natural Gift.md": "IbDocument",
+  "Blog/2023/War harms those who do not want it.md": "IbDocument",
+  "Blog/2023.md": "FiCalendar"
 }

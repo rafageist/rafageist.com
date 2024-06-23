@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "Blog/2023.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "index.md",
+                "file": "Blog/2023.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "index.md",
+                "file": "Blog/2023.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "index.md"
+                "file": "Blog/2023.md"
               }
             }
           }
@@ -134,7 +134,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -149,19 +150,32 @@
   },
   "active": "c294f851070aaad6",
   "lastOpenFiles": [
+    "Professional Journey/2001-2005/2001-2004 Expanding Horizons with Windows, Visual Basic and Pascal.md",
+    "Blog/2023/War harms those who do not want it.md",
+    "Blog/2023/The Strength of Unity - A Natural Gift.md",
+    "Blog/2023.md",
+    "Blog/2024.md",
+    "Blog/2024/Celebrating Recognition in the PHP Innovation Awards January 2024.md",
+    "images/War harms those who do not want it.webp",
+    "images/DALL·E 2024-06-23 12.09.57 - A joyful, monochromatic image of children playing in a park. The scene shows several children of diverse ethnicities, laughing and running with kites .webp",
+    "images/The Strength of Unity.webp",
+    "images/DALL·E 2024-06-23 12.03.13 - A monochrome image depicting a diverse group of people of different ages and cultures, holding hands in a circle from an aerial view. In the center of.webp",
+    "Blog/2023",
+    "Professional Journey/1997-2000/2000 - Embracing WordStar, SuperCalc, and dBase.md",
+    "Professional Journey/1997-2000/1999 - Transitioning to MS-DOS on Amstrad PC XT 86.md",
+    "Professional Journey/1997-2000/1998 - Journey into MS-DOS and GW-BASIC.md",
+    "Professional Journey/2001-2005 - Technological Evolution.md",
+    "Professional Journey/1997-2000 - Formative Coding Years.md",
+    "Professional Journey/2005-2010 - University Years.md",
+    "Professional Journey/2010-2020 - Professional Evolution.md",
+    "Professional Journey/2020-today - Advancing Professional Frontiers.md",
     "index.md",
     "Blog/2024/Conditional Logic in PHP with Short-Circuiting for Clean Code.md",
     "Resources.md",
     "Resources/Mallard Basic.md",
-    "Professional Journey/2001-2005/2001-2004 Expanding Horizons with Windows, Visual Basic and Pascal.md",
-    "Professional Journey/1997-2000/2000 - Embracing WordStar, SuperCalc, and dBase.md",
-    "Professional Journey/1997-2000/1999 - Transitioning to MS-DOS on Amstrad PC XT 86.md",
-    "Professional Journey/1997-2000/1998 - Journey into MS-DOS and GW-BASIC.md",
     "Professional Journey/1997-2000/1997 - Unveiling the World of LocoScript.md",
     "Professional Journey/1997-2000/1997 - Introduction to Computing.md",
     "Blog/2024/Data Composition Made Easy with cop in Div PHP Template Engine.md",
-    "Blog/2024/Celebrating Recognition in the PHP Innovation Awards January 2024.md",
-    "Blog/2024.md",
     "images/Populate from JSON using the  Compose Object Properties function  of Div PHP Template Engine.png",
     "images/Div PHP Ways Overview.png",
     "Blog/2024/images",
@@ -176,21 +190,11 @@
     "model_1.bpmn",
     "header.html",
     "header.htm",
-    "Professional Journey/1997-2000 - Formative Coding Years.md",
-    "Professional Journey.md",
-    "Projects.md",
-    "Professional Journey/2001-2005/2003-2005 Financial Solutions and Database Dynamics.md",
-    "Professional Journey Overview.md",
-    "Professional Journey/2020-today - Advancing Professional Frontiers.md",
-    "Professional Journey/2010-2020 - Professional Evolution.md",
-    "Professional Journey/2005-2010 - University Years.md",
     "images/AT 386.png",
     "images/Amstrad PCW.png",
     "images/Amstrad XT 86.png",
-    "images/Amstrad PC.png",
     "index.canvas",
     "New folder",
-    "Blog",
-    "Projects"
+    "Blog"
   ]
 }
