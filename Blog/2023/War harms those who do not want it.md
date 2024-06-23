@@ -5,7 +5,7 @@ icon: IbDocument
 ---
 #Blog #War #Reflections 
 
-![[War harms those who do not want it.png]]
+![[War harms those who do not want it.webp]]
 In the narrative of war, much is said about the warriors and the battlegrounds. However, the impact on those who neither choose nor desire conflict is often a footnote, overshadowed by the drama of military strategy and national pride. War, in its essence, is a disruptor of life and peace, affecting countless innocent lives who find themselves caught in the crossfire of ideologies and ambitions.
 
 At the heart of every war are the civilians, who bear the brunt of the suffering. These are individuals who have not enlisted in a cause but find their daily lives upturned by it. The destruction of infrastructure—schools, hospitals, and homes—creates a cascade of crises, from education interruptions to healthcare emergencies. The physical landscape of a city can be rebuilt, but the psychological scars carried by its residents often persist, manifesting as trauma that can span generations.

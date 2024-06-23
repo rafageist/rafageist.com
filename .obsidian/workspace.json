@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Blog.md",
+                "file": "Blog/2023/War harms those who do not want it.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Blog.md",
+                "file": "Blog/2023/War harms those who do not want it.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Blog.md",
+                "file": "Blog/2023/War harms those who do not want it.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Blog.md"
+                "file": "Blog/2023/War harms those who do not want it.md"
               }
             }
           }
@@ -164,13 +164,15 @@
     "Blog/2023/War harms those who do not want it.md",
     "Blog/2023/The Strength of Unity - A Natural Gift.md",
     "Blog.md",
+    "images/War harms those who do not want it.webp",
+    "images/The Strength of Unity.webp",
+    "images/DALL·E 2024-06-23 12.27.59 - A monochrome image depicting a diverse group of people of different ages and cultures, holding hands in a circle from an aerial view. In the center of.webp",
+    "images/DALL·E 2024-06-23 12.27.53 - A joyful, monochromatic image of children playing in a park. The scene shows several children of diverse ethnicities, laughing and running with kites .webp",
     "Blog/2023.md",
     "images/War harms those who do not want it.png",
     "images/The Strength of Unity.png",
     "Blog/2024.md",
-    "images/War harms those who do not want it.webp",
     "images/DALL·E 2024-06-23 12.09.57 - A joyful, monochromatic image of children playing in a park. The scene shows several children of diverse ethnicities, laughing and running with kites .webp",
-    "images/The Strength of Unity.webp",
     "images/DALL·E 2024-06-23 12.03.13 - A monochrome image depicting a diverse group of people of different ages and cultures, holding hands in a circle from an aerial view. In the center of.webp",
     "Blog/2023",
     "Professional Journey/2001-2005 - Technological Evolution.md",
@@ -186,13 +188,11 @@
     "Blog/2024/Rejecting the notion of 'Most Important' Programming Language.md",
     "Resources/PHP Innovation Adward January 2024.pdf",
     "Resources/13115.pdf.crdownload",
-    "images/Pasted image 20240310185330.png",
     "Projects/Divengine Open Source Ecosystem.md",
     "model_2.bpmn",
     "model_1.bpmn",
     "header.html",
     "header.htm",
-    "images/AT 386.png",
     "index.canvas",
     "New folder",
     "Blog"
