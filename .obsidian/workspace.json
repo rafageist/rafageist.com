@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "420fbe030610d4d4",
+        "id": "b2891f8d0c1af17b",
         "type": "tabs",
         "children": [
           {
-            "id": "5abc96d64e03b84c",
+            "id": "a6f57ec4b236d83a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Blog.md",
+                "file": "Blog/en/2024/Solving ListView Issues in MAUI.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 468.5
   },
   "right": {
     "id": "d2e911a91e061208",
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Blog.md",
+                "file": "Blog/en/2024/Solving ListView Issues in MAUI.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Blog.md",
+                "file": "Blog/en/2024/Solving ListView Issues in MAUI.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Blog.md"
+                "file": "Blog/en/2024/Solving ListView Issues in MAUI.md"
               }
             }
           }
@@ -148,7 +148,7 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "5abc96d64e03b84c",
+  "active": "a6f57ec4b236d83a",
   "lastOpenFiles": [
     "Resources.md",
     "index.md",
@@ -159,17 +159,18 @@
     "Professional Journey/1997-2000/1998 - Journey into MS-DOS and GW-BASIC.md",
     "Professional Journey/1997-2000/1997 - Unveiling the World of LocoScript.md",
     "Professional Journey/1997-2000/1997 - Introduction to Computing.md",
+    "Blog/en/2024/Structuring PHP Projects - Approaches and Practices without Frameworks.md",
     "Blog/en/2024/Data Composition Made Easy with cop in Div PHP Template Engine.md",
     "Blog/en/2024/Celebrating Recognition in the PHP Innovation Awards January 2024.md",
     "Blog/en/2023/War harms those who do not want it.md",
     "Blog/en/2023/The Strength of Unity - A Natural Gift.md",
+    "Blog/en/2024/Solving ListView Issues in MAUI.md",
+    "Blog/en/2024/Rejecting the notion of 'Most Important' Programming Language.md",
+    "Blog/en/2024.md",
     "Blog.md",
     "Blog/es/2024.md",
     "Blog/es/2024/Enfoques y Prácticas para estructurar proyectos PHP sin Frameworks.md",
-    "Blog/en/2024/Structuring PHP Projects - Approaches and Practices without Frameworks.md",
     "Blog/en/2024/Optimizing Symfony UUIDv4 Generator.md",
-    "Blog/en/2024/Rejecting the notion of 'Most Important' Programming Language.md",
-    "Blog/en/2024.md",
     "Blog/es/2024",
     "Blog/en",
     "Blog/es",
@@ -187,7 +188,6 @@
     "Professional Journey/2001-2005 - Technological Evolution.md",
     "Professional Journey/1997-2000 - Formative Coding Years.md",
     "Professional Journey/2005-2010 - University Years.md",
-    "Professional Journey/2010-2020 - Professional Evolution.md",
     "images/Populate from JSON using the  Compose Object Properties function  of Div PHP Template Engine.png",
     "images/Div PHP Ways Overview.png",
     "Blog/2024/images",
