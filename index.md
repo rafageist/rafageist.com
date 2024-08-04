@@ -3,10 +3,18 @@ title: Home
 ---
 #software #engineer #developer #scientist #entrepreneur #philosopher #writer #enthusiast
 
-🚀 Welcome to my digital haven! 📅 Explore the curated chronicle from coding beginnings to present-day expertise. 💻 Dive into foundational coding ventures and academic pursuits. 🌐 Navigate a decade of professional development and specialization. 📱 Witness the transition to mobile app development. 🌐 Explore the intricacies of architecting large-scale systems. 🤖 Master automation and embrace DevOps practices. 📈 Continuous learning is not just a choice—it's a necessity. 🔍 Whether you're here for early coding insights or contemporary tech, welcome aboard!
+ Welcome to my digital haven! 
+ - Explore the curated chronicle from coding beginnings to present-day expertise.  
+ - Dive into foundational coding ventures and academic pursuits. 
+ - Navigate a decade of professional development and specialization. 
+ - Witness the transition to mobile app development. 
+ - Explore the intricacies of architecting large-scale systems. 
+ - Master automation and embrace DevOps practices.  
+ - Continuous learning is not just a choice—it's a necessity. 
+ - Whether you're here for early coding insights or contemporary tech, welcome aboard!
 
 ___
-## 💪 Skills
+## Skills
 
 I have nearly 30 years of experience in software development, with a strong focus on PHP for the last 15 years. I started my programming journey at the age of 11 in 1997. Over the years, I have expanded my expertise to various platforms and languages, making me a versatile developer capable of adapting to different technologies and project requirements.
 
@@ -72,11 +80,10 @@ Additionally, I hold a Bachelor’s degree in Engineering, where I gained a soli
 This comprehensive blend of formal education and hands-on experience has equipped me with the knowledge and skills necessary to excel in software development and contribute effectively to any team.
 
 ___
-## ✍️ Blog
+## Blog
 
-My blog is a space where I share insights, experiences, and thoughts on the intersection of technology, programming, and beyond. 
+My [[Blog]] is a space where I share insights, experiences, and thoughts on the intersection of technology, programming, and beyond. 
 
-👉[[Blog]]
 ___
 ## 🌐 Professional Profiles
 
@@ -96,40 +103,28 @@ Explore my repositories, projects, and contributions on GitHub. Connect with me 
  
 - [>] **LinkedIn**
 
-Visit my LinkedIn profile to learn more about my professional journey, skills, and connections in the industry.
+Visit my [LinkedIn profile](https://www.linkedin.com/in/rafageist) to learn more about my professional journey, skills, and connections in the industry.
 
-👉 [rafageist](https://www.linkedin.com/in/rafageist)
+- [>] **PHPClasses.org**
 
-- [>] PHPClasses.org
-
-Discover my contributions on PHPClasses.org and explore more about my PHP projects. See [my current position in the PHP Classes ranking](https://www.phpclasses.org/reputation/user/1094404/ranking/) with gratitude for the PHP community's support.
-
-👉 [Profile](https://www.phpclasses.org/browse/author/1094404.html)
+Discover my contributions on PHPClasses.org and explore more about my [PHP projects](https://www.phpclasses.org/browse/author/1094404.html). See [my current position in the PHP Classes ranking](https://www.phpclasses.org/reputation/user/1094404/ranking/) with gratitude for the PHP community's support.
 
 ___
-## 🗓️Professional Journey 
+## Professional Journey 
 
-Explore my Professional Journey, a retrospective voyage that unfolds my trajectory in the realm of technology and programming from 1997 to the present day. 
+Explore my [[Professional Journey]], a retrospective voyage that unfolds my trajectory in the realm of technology and programming from 1997 to the present day. 
+## Projects Portfolio
 
-👉[[Professional Journey]]
-## 🚀 Projects Portfolio
-
-Dive into the realm of my projects, a dynamic portfolio that encapsulates my journey through various technological endeavors. 
-
-👉 [[Projects]]
-
+Dive into the realm of my [[Projects]], a dynamic portfolio that encapsulates my journey through various technological endeavors. 
 ## ♟️Chess Enthusiast
 
-As an avid chess player, I find joy in the intricacies of each move and the strategic dance on the board. Whether you're a fellow enthusiast or just curious, feel free to join me for a game on [chess.com](https://www.chess.com/). Let's make our moves and enjoy the beauty of this timeless game together!
+As an avid [chess playe](https://www.chess.com/member/rafageist)r, I find joy in the intricacies of each move and the strategic dance on the board. Whether you're a fellow enthusiast or just curious, feel free to join me for a game on [chess.com](https://www.chess.com/). Let's make our moves and enjoy the beauty of this timeless game together!
 
-👉 https://www.chess.com/member/rafageist
-## 🛠️ Resources Hub
+## Resources Hub
 
-This section serves as a gateway to a wealth of knowledge and utilities that have proven valuable in my professional journey. 
-
-👉 [[Resources]]
+[[Resources]] section serves as a gateway to a wealth of knowledge and utilities that have proven valuable in my professional journey. 
 ___
-## 📫 Contact
+## Contact
 
 For direct communication and quick contact, feel free to reach out through:
 
@@ -137,4 +132,4 @@ For direct communication and quick contact, feel free to reach out through:
 - [>]  **WhatsApp:** [+5978401275](https://wa.me/+5978401275)
 - [>]  **Email:** [rafageist@divengine.com](mailto:rafageist@divengine.com)
 
-Thanks for stopping by and exploring my professional space! 🚀
+Thanks for stopping by and exploring my professional space! 
