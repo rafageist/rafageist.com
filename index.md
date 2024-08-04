@@ -12,6 +12,7 @@ title: Home
  - Master automation and embrace DevOps practices.  
  - Continuous learning is not just a choice—it's a necessity. 
  - Whether you're here for early coding insights or contemporary tech, welcome aboard!
+ - Check my [[Curriculum Vitae]]
 
 ___
 ## Skills
@@ -85,7 +86,7 @@ ___
 My [[Blog]] is a space where I share insights, experiences, and thoughts on the intersection of technology, programming, and beyond. 
 
 ___
-## 🌐 Professional Profiles
+## Professional Profiles
 
 Explore my professional presence on these platforms:
 
@@ -95,9 +96,7 @@ Explore my professional presence on these platforms:
 
 - [>] **GitHub**
 
-Explore my repositories, projects, and contributions on GitHub. Connect with me and discover the code that drives my passion for technology.
-
-👉 [@rafageist](https://github.com/rafageist)
+Explore [my repositories]((https://github.com/rafageist)), projects, and contributions on GitHub. Connect with me and discover the code that drives my passion for technology.
 
  [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=rafageist&show_icons=true&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage)](https://github.com/rafageist)
  
@@ -116,9 +115,9 @@ Explore my [[Professional Journey]], a retrospective voyage that unfolds my traj
 ## Projects Portfolio
 
 Dive into the realm of my [[Projects]], a dynamic portfolio that encapsulates my journey through various technological endeavors. 
-## ♟️Chess Enthusiast
+## Chess Enthusiast
 
-As an avid [chess playe](https://www.chess.com/member/rafageist)r, I find joy in the intricacies of each move and the strategic dance on the board. Whether you're a fellow enthusiast or just curious, feel free to join me for a game on [chess.com](https://www.chess.com/). Let's make our moves and enjoy the beauty of this timeless game together!
+As an avid [chess player](https://www.chess.com/member/rafageist)r, I find joy in the intricacies of each move and the strategic dance on the board. Whether you're a fellow enthusiast or just curious, feel free to join me for a game on [chess.com](https://www.chess.com/). Let's make our moves and enjoy the beauty of this timeless game together!
 
 ## Resources Hub
 

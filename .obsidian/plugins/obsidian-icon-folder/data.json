@@ -80,7 +80,6 @@
   "Blog/en/2024/Structuring PHP Projects - Approaches and Practices without Frameworks.md": "IbDocument",
   "Blog/es/2024.md": "RiCalendarCheckLine",
   "Blog/en/2024/Solving ListView Issues in MAUI.md": "IbDocument",
-  "Curriculum": "RiAwardFill",
-  "Curriculum/Rafael Rodriguez, Software Engineer, PHP Developer.md": "IbDocumentText",
-  "Blog/en/2024/Converting SQL WHERE Clauses to Prisma Queries Using TypeScript and Jison.md": "IbDocument"
+  "Blog/en/2024/Converting SQL WHERE Clauses to Prisma Queries Using TypeScript and Jison.md": "IbDocument",
+  "Curriculum Vitae.md": "RiAwardFill"
 }

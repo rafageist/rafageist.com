@@ -1,5 +1,5 @@
 ---
-icon: IbDocumentText
+icon: RiAwardFill
 ---
 ![[rafageist.jpg|100]]
 # Rafael Rodríguez
@@ -7,7 +7,7 @@ _Software Engineer_
 
 With nearly 30 years of experience in software development and 15 years focused on PHP, I bring extensive expertise in various programming languages and technologies. As the founder of a long-term projects, I have demonstrated strong leadership and innovation. My participation in international programming competitions and my academic background in engineering and operations research further highlight my technical and analytical skills.
 
-- **Email:** [rafageist@hotmail.com](mailto:rafageist@hotmail.com)
+- **Email:** [rafageist@divengine.com](mailto:rafageist@divengine.com)
 - **LinkedIn:** [linkedin.com/in/rafageist](https://www.linkedin.com/in/rafageist)
 - **GitHub:** [github.com/rafageist](https://github.com/rafageist)
 - **Website:** [rafageist.com](https://rafageist.com)
