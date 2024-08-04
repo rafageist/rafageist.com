@@ -8,6 +8,29 @@ title: Home
 ___
 ## 💪 Skills
 
+I have nearly 30 years of experience in software development, with a strong focus on PHP for the last 15 years. I started my programming journey at the age of 11 in 1997. Over the years, I have expanded my expertise to various platforms and languages, making me a versatile developer capable of adapting to different technologies and project requirements.
+
+- Proficient in PHP, including frameworks such as Symfony and Laravel.
+- Extensive experience with front-end technologies, particularly React.
+- Strong knowledge of software architecture and design patterns.
+- Experience in testing frameworks and methodologies, as well as automation.
+- Proficient in Git for version control and collaborative development.
+- Knowledge of Pascal, C++, JavaScript, C#, Visual Basic, Java, HTML+CSS, SQL & PL/pgSQL.
+- Expertise in development methodologies, documentation, and UML modeling.
+- Knowledge of BPM and service orchestration.
+- Strong algorithm development skills
+
+Achievements and Responsibilities:
+
+- Founded a software project over 10 years ago, which I have actively maintained and evolved.
+- Owner of a sole proprietorship software company in Suriname, providing software solutions and services to clients.
+- Nominated for Innovation Awards three times on phpclases.org, recognizing my contributions to the developer community.
+- Developed and maintained open-source libraries, helping other developers streamline their work.
+- Lead various projects, guiding teams through the development lifecycle from planning to deployment.
+- Active in the developer community, sharing knowledge and collaborating on projects.
+
+I am currently active in a project with PHP, where I apply my extensive knowledge and experience to deliver high-quality solutions.
+
 - [>] Programming
 
 #Basic #VisualBasic #CPlusPlus #Java #PHP #Pascal #HTML 
@@ -31,6 +54,22 @@ ___
 #Trello #Jira  #Microsoft365
 
 #Git #GitHub #Gitea #Gogs
+
+## Education
+
+My educational background is dedicated to various areas relevant to software development and technology:
+
+- **Operations Research**: My thesis was a system for generating schedules for universities and schools, developed in PHP with PostgreSQL and PL/pgSQL. This work included mathematical modeling and researching algorithms, culminating in the creation of a new algorithm based on dynamic programming. This was a second version of a similar system I had previously developed in Visual Basic 6 during my studies.
+- **Business Process Administration**: I studied tools and methodologies for effective business process management.
+- **Content Management Systems**: I have specialized in systems such as Drupal.
+- **Artificial Intelligence**: I worked on generating conceptual maps from text using AI techniques.
+- **Model-Driven Architecture (MDA)**: Focused on Java Enterprise Environment technology.
+- **Linux Server Administration and Network Configuration**: Actively participated in managing the university's network.
+- **Data Warehouse Systems**: Developed systems to manage data for schools in my home country.
+
+Additionally, I hold a Bachelor’s degree in Engineering, where I gained a solid foundation in software engineering, algorithms, and data structures. During high school, I was part of high-performance computing groups focused on algorithm competitions and operations research, which led to my participation in the International Olympiad in Informatics (IOI). In university, I continued to hone my skills and participated in the ACM ICPC programming competitions.
+
+This comprehensive blend of formal education and hands-on experience has equipped me with the knowledge and skills necessary to excel in software development and contribute effectively to any team.
 
 ___
 ## ✍️ Blog

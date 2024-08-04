@@ -1,16 +1,16 @@
 {
   "settings": {
-    "migrated": 5,
+    "migrated": 6,
     "iconPacksPath": ".obsidian/icons",
     "fontSize": 16,
     "emojiStyle": "native",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "IbDocumentText",
+      "RiAwardFill",
       "IbDocument",
       "FiGlobe",
-      "RiCalendarCheckLine",
-      "FiCalendar",
-      "RiFilePaper2Line"
+      "RiCalendarCheckLine"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -30,7 +30,8 @@
     "iconInFrontmatterFieldName": "icon",
     "iconColorInFrontmatterFieldName": "iconColor",
     "iconsInLinksEnabled": true,
-    "debugMode": false
+    "debugMode": false,
+    "lucideIconPackType": "native"
   },
   "Professional Journey/1997-2000/1997 - Introduction to Computing.md": "FasCalendarCheck",
   "Professional Journey/1997-2000/1998 - Journey into MS-DOS and GW-BASIC.md": "FasCalendarCheck",
@@ -78,5 +79,8 @@
   "Blog/es": "FiGlobe",
   "Blog/en/2024/Structuring PHP Projects - Approaches and Practices without Frameworks.md": "IbDocument",
   "Blog/es/2024.md": "RiCalendarCheckLine",
-  "Blog/en/2024/Solving ListView Issues in MAUI.md": "IbDocument"
+  "Blog/en/2024/Solving ListView Issues in MAUI.md": "IbDocument",
+  "Curriculum": "RiAwardFill",
+  "Curriculum/Rafael Rodriguez, Software Engineer, PHP Developer.md": "IbDocumentText",
+  "Blog/en/2024/Converting SQL WHERE Clauses to Prisma Queries Using TypeScript and Jison.md": "IbDocument"
 }

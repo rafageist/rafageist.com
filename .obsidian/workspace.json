@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "b2891f8d0c1af17b",
+        "id": "dfb9f7f7ef14b5c2",
         "type": "tabs",
         "children": [
           {
-            "id": "a6f57ec4b236d83a",
+            "id": "8cf178bd65964c55",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Blog/en/2024/Solving ListView Issues in MAUI.md",
+                "file": "Blog/en/2024/Converting SQL WHERE Clauses to Prisma Queries Using TypeScript and Jison.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Blog/en/2024/Solving ListView Issues in MAUI.md",
+                "file": "Blog/en/2024/Converting SQL WHERE Clauses to Prisma Queries Using TypeScript and Jison.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Blog/en/2024/Solving ListView Issues in MAUI.md",
+                "file": "Blog/en/2024/Converting SQL WHERE Clauses to Prisma Queries Using TypeScript and Jison.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Blog/en/2024/Solving ListView Issues in MAUI.md"
+                "file": "Blog/en/2024/Converting SQL WHERE Clauses to Prisma Queries Using TypeScript and Jison.md"
               }
             }
           }
@@ -139,6 +139,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "digitalgarden:Digital Garden Publication Center": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -148,7 +149,7 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "a6f57ec4b236d83a",
+  "active": "8cf178bd65964c55",
   "lastOpenFiles": [
     "Resources.md",
     "index.md",
@@ -159,15 +160,20 @@
     "Professional Journey/1997-2000/1998 - Journey into MS-DOS and GW-BASIC.md",
     "Professional Journey/1997-2000/1997 - Unveiling the World of LocoScript.md",
     "Professional Journey/1997-2000/1997 - Introduction to Computing.md",
-    "Blog/en/2024/Structuring PHP Projects - Approaches and Practices without Frameworks.md",
+    "Curriculum/Rafael Rodriguez, Software Engineer, PHP Developer.md",
+    "Blog/en/2023.md",
     "Blog/en/2024/Data Composition Made Easy with cop in Div PHP Template Engine.md",
     "Blog/en/2024/Celebrating Recognition in the PHP Innovation Awards January 2024.md",
     "Blog/en/2023/War harms those who do not want it.md",
     "Blog/en/2023/The Strength of Unity - A Natural Gift.md",
-    "Blog/en/2024/Solving ListView Issues in MAUI.md",
-    "Blog/en/2024/Rejecting the notion of 'Most Important' Programming Language.md",
+    "Blog/en/2024/Converting SQL WHERE Clauses to Prisma Queries Using TypeScript and Jison.md",
     "Blog/en/2024.md",
     "Blog.md",
+    "images/Amstrad PCW.png",
+    "Curriculum",
+    "Blog/en/2024/Solving ListView Issues in MAUI.md",
+    "Blog/en/2024/Structuring PHP Projects - Approaches and Practices without Frameworks.md",
+    "Blog/en/2024/Rejecting the notion of 'Most Important' Programming Language.md",
     "Blog/es/2024.md",
     "Blog/es/2024/Enfoques y Prácticas para estructurar proyectos PHP sin Frameworks.md",
     "Blog/en/2024/Optimizing Symfony UUIDv4 Generator.md",
@@ -179,23 +185,18 @@
     "images/The Strength of Unity.webp",
     "images/DALL·E 2024-06-23 12.27.59 - A monochrome image depicting a diverse group of people of different ages and cultures, holding hands in a circle from an aerial view. In the center of.webp",
     "images/DALL·E 2024-06-23 12.27.53 - A joyful, monochromatic image of children playing in a park. The scene shows several children of diverse ethnicities, laughing and running with kites .webp",
-    "Blog/en/2023.md",
     "images/War harms those who do not want it.png",
     "images/The Strength of Unity.png",
     "images/DALL·E 2024-06-23 12.09.57 - A joyful, monochromatic image of children playing in a park. The scene shows several children of diverse ethnicities, laughing and running with kites .webp",
     "images/DALL·E 2024-06-23 12.03.13 - A monochrome image depicting a diverse group of people of different ages and cultures, holding hands in a circle from an aerial view. In the center of.webp",
     "Blog/en/2023",
     "Professional Journey/2001-2005 - Technological Evolution.md",
-    "Professional Journey/1997-2000 - Formative Coding Years.md",
-    "Professional Journey/2005-2010 - University Years.md",
     "images/Populate from JSON using the  Compose Object Properties function  of Div PHP Template Engine.png",
-    "images/Div PHP Ways Overview.png",
     "Blog/2024/images",
     "Resources/PHP Innovation Adward January 2024.pdf",
     "Resources/13115.pdf.crdownload",
     "model_2.bpmn",
     "model_1.bpmn",
-    "header.html",
     "index.canvas"
   ]
 }
