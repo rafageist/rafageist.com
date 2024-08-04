@@ -30,7 +30,7 @@
   "authorName": "Rafa Rodriguez",
   "vaultTitle": "rafageist",
   "exportPreset": "website",
-  "openAfterExport": true,
+  "openAfterExport": false,
   "graphAttractionForce": 1,
   "graphLinkLength": 40,
   "graphRepulsionForce": 81,

@@ -1,6 +1,6 @@
 {
   "vaultName": "rafageist",
-  "lastExport": 1722740397762,
+  "lastExport": 1722741551739,
   "pluginVersion": "1.8.01",
   "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon",
   "useCustomHeadContent": true,
@@ -88,6 +88,7 @@
     "lib/scripts/graph-data.js",
     "lib/styles/obsidian.css",
     "lib/styles/other-plugins.css",
+    "lib/styles/theme.css",
     "lib/styles/global-variable-styles.css",
     "lib/styles/main-styles.css"
   ],
@@ -121,12 +122,13 @@
     "lib/scripts/graph-data.js",
     "lib/styles/obsidian.css",
     "lib/styles/other-plugins.css",
+    "lib/styles/theme.css",
     "lib/styles/global-variable-styles.css",
     "lib/styles/main-styles.css"
   ],
   "fileInfo": {
     "Professional Journey/1997-2000/1997 - Introduction to Computing.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 12883,
       "exportedPath": "professional-journey/1997-2000/1997-introduction-to-computing.html",
       "dependencies": [
@@ -136,7 +138,7 @@
       ]
     },
     "Professional Journey/1997-2000/1997 - Unveiling the World of LocoScript.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 1119,
       "exportedPath": "professional-journey/1997-2000/1997-unveiling-the-world-of-locoscript.html",
       "dependencies": [
@@ -144,7 +146,7 @@
       ]
     },
     "Professional Journey/1997-2000/1998 - Journey into MS-DOS and GW-BASIC.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 1561,
       "exportedPath": "professional-journey/1997-2000/1998-journey-into-ms-dos-and-gw-basic.html",
       "dependencies": [
@@ -152,7 +154,7 @@
       ]
     },
     "Professional Journey/1997-2000/1999 - Transitioning to MS-DOS on Amstrad PC XT 86.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 6601,
       "exportedPath": "professional-journey/1997-2000/1999-transitioning-to-ms-dos-on-amstrad-pc-xt-86.html",
       "dependencies": [
@@ -161,7 +163,7 @@
       ]
     },
     "Professional Journey/1997-2000/2000 - Embracing WordStar, SuperCalc, and dBase.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 3559,
       "exportedPath": "professional-journey/1997-2000/2000-embracing-wordstar,-supercalc,-and-dbase.html",
       "dependencies": [
@@ -170,7 +172,7 @@
       ]
     },
     "Professional Journey/2001-2005/2001-2004 Expanding Horizons with Windows, Visual Basic and Pascal.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 2747,
       "exportedPath": "professional-journey/2001-2005/2001-2004-expanding-horizons-with-windows,-visual-basic-and-pascal.html",
       "dependencies": [
@@ -180,379 +182,379 @@
       ]
     },
     "Professional Journey/2001-2005/2003-2005 Financial Solutions and Database Dynamics.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 1714,
       "exportedPath": "professional-journey/2001-2005/2003-2005-financial-solutions-and-database-dynamics.html",
       "dependencies": []
     },
     "Professional Journey/1997-2000 - Formative Coding Years.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 1458,
       "exportedPath": "professional-journey/1997-2000-formative-coding-years.html",
       "dependencies": []
     },
     "Professional Journey/2001-2005 - Technological Evolution.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 1765,
       "exportedPath": "professional-journey/2001-2005-technological-evolution.html",
       "dependencies": []
     },
     "Professional Journey/2005-2010 - University Years.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 2235,
       "exportedPath": "professional-journey/2005-2010-university-years.html",
       "dependencies": []
     },
     "Professional Journey/2010-2020 - Professional Evolution.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 1954,
       "exportedPath": "professional-journey/2010-2020-professional-evolution.html",
       "dependencies": []
     },
     "Professional Journey/2020-today - Advancing Professional Frontiers.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 2193,
       "exportedPath": "professional-journey/2020-today-advancing-professional-frontiers.html",
       "dependencies": []
     },
     "Projects/Divengine Open Source Ecosystem.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 1136,
       "exportedPath": "projects/divengine-open-source-ecosystem.html",
       "dependencies": []
     },
     "Resources/Mallard Basic.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 1132,
       "exportedPath": "resources/mallard-basic.html",
       "dependencies": []
     },
     "Resources/PHP Innovation Adward January 2024.pdf": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 193266,
       "exportedPath": "resources/php-innovation-adward-january-2024.pdf",
       "dependencies": []
     },
     "Blog.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 803,
       "exportedPath": "blog.html",
       "dependencies": []
     },
     "index.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 7433,
       "exportedPath": "index.html",
       "dependencies": []
     },
     "Professional Journey.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 843,
       "exportedPath": "professional-journey.html",
       "dependencies": []
     },
     "Projects.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 885,
       "exportedPath": "projects.html",
       "dependencies": []
     },
     "Resources.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 917,
       "exportedPath": "resources.html",
       "dependencies": []
     },
     "lib/media/pasted-image-20240310185330.png": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 287060,
       "exportedPath": "lib/media/pasted-image-20240310185330.png",
       "dependencies": []
     },
     "lib/media/populate-from-json-using-the-compose-object-properties-function-of-div-php-template-engine.png": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 317319,
       "exportedPath": "lib/media/populate-from-json-using-the-compose-object-properties-function-of-div-php-template-engine.png",
       "dependencies": []
     },
     "lib/media/amstrad-pcw.png": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 7441991,
       "exportedPath": "lib/media/amstrad-pcw.png",
       "dependencies": []
     },
     "lib/media/cpm-disketes.png": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 1227314,
       "exportedPath": "lib/media/cpm-disketes.png",
       "dependencies": []
     },
     "lib/media/carmen-san-diego-game.png": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 9539,
       "exportedPath": "lib/media/carmen-san-diego-game.png",
       "dependencies": []
     },
     "lib/media/locoscript.png": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 1709893,
       "exportedPath": "lib/media/locoscript.png",
       "dependencies": []
     },
     "lib/media/xt8086-gwbasic.png": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 476245,
       "exportedPath": "lib/media/xt8086-gwbasic.png",
       "dependencies": []
     },
     "lib/media/amstrad-xt-86.png": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 598459,
       "exportedPath": "lib/media/amstrad-xt-86.png",
       "dependencies": []
     },
     "lib/media/quickbasic.png": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 17260,
       "exportedPath": "lib/media/quickbasic.png",
       "dependencies": []
     },
     "lib/media/supercalc.png": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 32287,
       "exportedPath": "lib/media/supercalc.png",
       "dependencies": []
     },
     "lib/media/dbase.png": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 24475,
       "exportedPath": "lib/media/dbase.png",
       "dependencies": []
     },
     "lib/media/at-386.png": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 114190,
       "exportedPath": "lib/media/at-386.png",
       "dependencies": []
     },
     "lib/media/visualbasic6.png": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 81530,
       "exportedPath": "lib/media/visualbasic6.png",
       "dependencies": []
     },
     "lib/media/turbo-pascal.png": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 27678,
       "exportedPath": "lib/media/turbo-pascal.png",
       "dependencies": []
     },
     "lib/scripts/graph-wasm.wasm": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 23377,
       "exportedPath": "lib/scripts/graph-wasm.wasm",
       "dependencies": []
     },
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/874d8b8e340f75575caa.svg": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 317,
       "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 77723,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/graph-view.js": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 15519,
       "exportedPath": "lib/scripts/graph-view.js",
       "dependencies": []
     },
     "lib/scripts/graph-wasm.js": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 14021,
       "exportedPath": "lib/scripts/graph-wasm.js",
       "dependencies": []
     },
     "lib/scripts/graph-render-worker.js": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 5179,
       "exportedPath": "lib/scripts/graph-render-worker.js",
       "dependencies": []
     },
     "lib/scripts/tinycolor.js": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 29832,
       "exportedPath": "lib/scripts/tinycolor.js",
       "dependencies": []
     },
     "lib/scripts/pixi.js": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 449509,
       "exportedPath": "lib/scripts/pixi.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 5097,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
     "lib/html/custom-head-content.html": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 393,
       "exportedPath": "lib/html/custom-head-content.html",
       "dependencies": []
     },
     "lib/scripts/graph-data.js": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 4325,
       "exportedPath": "lib/scripts/graph-data.js",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 130471,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/other-plugins.css": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 8407,
       "exportedPath": "lib/styles/other-plugins.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1722739736169,
-      "sourceSize": 41004,
+      "modifiedTime": 1722741551739,
+      "sourceSize": 28797,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 311,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []
     },
     "lib/media/3d6c1bdc4d87cde4de67.svg": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 279,
       "exportedPath": "lib/media/3d6c1bdc4d87cde4de67.svg",
       "dependencies": []
     },
     "lib/media/the-strength-of-unity.webp": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 513168,
       "exportedPath": "lib/media/the-strength-of-unity.webp",
       "dependencies": []
     },
     "lib/media/war-harms-those-who-do-not-want-it.webp": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 447194,
       "exportedPath": "lib/media/war-harms-those-who-do-not-want-it.webp",
       "dependencies": []
     },
     "Blog/en/2023/The Strength of Unity - A Natural Gift.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 3522,
       "exportedPath": "blog/en/2023/the-strength-of-unity-a-natural-gift.html",
       "dependencies": [
@@ -560,7 +562,7 @@
       ]
     },
     "Blog/en/2023/War harms those who do not want it.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 2801,
       "exportedPath": "blog/en/2023/war-harms-those-who-do-not-want-it.html",
       "dependencies": [
@@ -568,13 +570,13 @@
       ]
     },
     "Blog/en/2024/Elegant JavaScript Solutions for Time-Based Greetings.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 7190,
       "exportedPath": "blog/en/2024/elegant-javascript-solutions-for-time-based-greetings.html",
       "dependencies": []
     },
     "Blog/en/2024/Celebrating Recognition in the PHP Innovation Awards January 2024.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 1018,
       "exportedPath": "blog/en/2024/celebrating-recognition-in-the-php-innovation-awards-january-2024.html",
       "dependencies": [
@@ -582,13 +584,13 @@
       ]
     },
     "Blog/en/2024/Conditional Logic in PHP with Short-Circuiting for Clean Code.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 5898,
       "exportedPath": "blog/en/2024/conditional-logic-in-php-with-short-circuiting-for-clean-code.html",
       "dependencies": []
     },
     "Blog/en/2024/Data Composition Made Easy with cop in Div PHP Template Engine.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 4456,
       "exportedPath": "blog/en/2024/data-composition-made-easy-with-cop-in-div-php-template-engine.html",
       "dependencies": [
@@ -596,61 +598,61 @@
       ]
     },
     "Blog/en/2024/Optimizing Symfony UUIDv4 Generator.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 9203,
       "exportedPath": "blog/en/2024/optimizing-symfony-uuidv4-generator.html",
       "dependencies": []
     },
     "Blog/en/2024/Rejecting the notion of 'Most Important' Programming Language.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 2047,
       "exportedPath": "blog/en/2024/rejecting-the-notion-of-'most-important'-programming-language.html",
       "dependencies": []
     },
     "Blog/en/2024/Structuring PHP Projects - Approaches and Practices without Frameworks.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 4974,
       "exportedPath": "blog/en/2024/structuring-php-projects-approaches-and-practices-without-frameworks.html",
       "dependencies": []
     },
     "Blog/en/2023.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 141,
       "exportedPath": "blog/en/2023.html",
       "dependencies": []
     },
     "Blog/en/2024.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 586,
       "exportedPath": "blog/en/2024.html",
       "dependencies": []
     },
     "Blog/es/2024/Enfoques y Prácticas para estructurar proyectos PHP sin Frameworks.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 5489,
       "exportedPath": "blog/es/2024/enfoques-y-prácticas-para-estructurar-proyectos-php-sin-frameworks.html",
       "dependencies": []
     },
     "Blog/es/2024.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 136,
       "exportedPath": "blog/es/2024.html",
       "dependencies": []
     },
     "Blog/en/2024/Solving ListView Issues in MAUI.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 3386,
       "exportedPath": "blog/en/2024/solving-listview-issues-in-maui.html",
       "dependencies": []
     },
     "Blog/en/2024/Converting SQL WHERE Clauses to Prisma Queries Using TypeScript and Jison.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 17793,
       "exportedPath": "blog/en/2024/converting-sql-where-clauses-to-prisma-queries-using-typescript-and-jison.html",
       "dependencies": []
     },
     "Curriculum/Rafael Rodriguez, Software Engineer, PHP Developer.md": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 2678,
       "exportedPath": "curriculum/rafael-rodriguez,-software-engineer,-php-developer.html",
       "dependencies": [
@@ -658,7 +660,7 @@
       ]
     },
     "lib/media/rafageist.jpg": {
-      "modifiedTime": 1722740397762,
+      "modifiedTime": 1722741551739,
       "sourceSize": 226742,
       "exportedPath": "lib/media/rafageist.jpg",
       "dependencies": []
