@@ -4,7 +4,7 @@ icon: IbDocument
 #Blog #TypeScript #Prisma #ORM #Challenges #Jison #Parsers
 #### Introduction
 
-In this article, we will explore how to convert SQL WHERE clauses into Prisma queries using TypeScript and Jison. Prisma is a powerful ORM tool for Node.js and TypeScript, and converting SQL WHERE clauses to its format can be very useful. We will use Jison to create a parser that performs this conversion efficiently.
+In this article, we will explore how to convert [SQL](https://blog.ansi.org/sql-standard-iso-iec-9075-2023-ansi-x3-135/) WHERE clauses into Prisma queries using [TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html) and [Jison](https://gerhobbelt.github.io/jison/docs/). [Prisma](https://www.prisma.io/docs) is a powerful [ORM](https://www.freecodecamp.org/news/what-is-an-orm-the-meaning-of-object-relational-mapping-database-tools/) tool for [Node.js](https://nodejs.org/docs/latest/api/) and TypeScript, and converting [SQL WHERE](https://www.ibm.com/docs/en/iotdmfz/11.3?topic=criteria-sql-where-clause-specifications) clauses to its format can be very useful. We will use Jison to create a parser that performs this conversion efficiently.
 
 #### The Challenge
 
@@ -898,4 +898,8 @@ By using Jison to create a custom parser, we can efficiently convert SQL WHERE c
 ### References and Related Resources
 
 - [i] https://www.prisma.io/docs/getting-started/quickstart
+- [i] https://gerhobbelt.github.io/jison/docs/
+- [i] https://www.typescriptlang.org/docs/
+- [i] https://nodejs.org/docs/latest/api/
+- [i] https://blog.ansi.org/sql-standard-iso-iec-9075-2023-ansi-x3-135/
 
