@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "dfb9f7f7ef14b5c2",
+        "id": "10e7355004c34e9b",
         "type": "tabs",
         "children": [
           {
-            "id": "8cf178bd65964c55",
+            "id": "65226b2d3a71dbfd",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Curriculum Vitae/CV de Desarrollador PHP.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -85,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Curriculum Vitae/CV de Desarrollador PHP.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Curriculum Vitae/CV de Desarrollador PHP.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -124,9 +118,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Curriculum Vitae/CV de Desarrollador PHP.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -139,7 +131,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "digitalgarden:Digital Garden Publication Center": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -149,7 +140,7 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "8cf178bd65964c55",
+  "active": "65226b2d3a71dbfd",
   "lastOpenFiles": [
     "Resources.md",
     "index.md",
@@ -166,9 +157,10 @@
     "Blog/en/2024/Celebrating Recognition in the PHP Innovation Awards January 2024.md",
     "Blog/en/2023/War harms those who do not want it.md",
     "Blog/en/2023/The Strength of Unity - A Natural Gift.md",
+    "Blog/en/2024/Converting SQL WHERE Clauses to Prisma Queries Using TypeScript and Jison.md",
+    "Blog/es/2024/Enfoques y Prácticas para estructurar proyectos PHP sin Frameworks.md",
     "Curriculum Vitae.md",
     "Curriculum Vitae",
-    "Blog/en/2024/Converting SQL WHERE Clauses to Prisma Queries Using TypeScript and Jison.md",
     "Professional Journey.md",
     "Blog/en/2024.md",
     "Blog/en/2023.md",
@@ -179,7 +171,6 @@
     "Blog/en/2024/Structuring PHP Projects - Approaches and Practices without Frameworks.md",
     "Blog/en/2024/Rejecting the notion of 'Most Important' Programming Language.md",
     "Blog/es/2024.md",
-    "Blog/es/2024/Enfoques y Prácticas para estructurar proyectos PHP sin Frameworks.md",
     "Blog/es/2024",
     "Blog/en",
     "Blog/es",
