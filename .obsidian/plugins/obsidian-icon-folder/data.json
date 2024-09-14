@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "RiFilePaper2Line",
       "IbDocumentText",
       "RiAwardFill",
       "IbDocument",
-      "FiGlobe",
-      "RiCalendarCheckLine"
+      "FiGlobe"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -84,5 +84,11 @@
   "Curriculum Vitae.md": "RiAwardFill",
   "Curriculum Vitae/PHP Developer CV.md": "IbDocumentText",
   "Curriculum Vitae": "RiAwardFill",
-  "Curriculum Vitae/CV de Desarrollador PHP.md": "IbDocumentText"
+  "Curriculum Vitae/CV de Desarrollador PHP.md": "IbDocumentText",
+  "Contributions": "RiFilePaper2Line",
+  "Contributions/Universal and Flexible Error Handling in ECMAScript.md": "IbDocumentText",
+  "Blog/en/2024/Reconsidering the Need for a New Operator in Error Handling Proposals.md": "IbDocument",
+  "Blog/en/2024/JavaScript - Implementing Safe Assignment Without new Operator.md": "IbDocument",
+  "Blog/en/2024/The Myth of -Less Code is Better- in Programming Languages.md": "IbDocument",
+  "Contributions.md": "RiFilePaper2Line"
 }

@@ -47,11 +47,13 @@
   "filesToExport": [
     [
       "Blog",
+      "Contributions",
       "Curriculum Vitae",
       "Professional Journey",
       "Projects",
       "Resources",
       "Blog.md",
+      "Contributions.md",
       "Curriculum Vitae.md",
       "index.md",
       "Professional Journey.md",

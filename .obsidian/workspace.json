@@ -11,8 +11,12 @@
             "id": "65226b2d3a71dbfd",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Contributions.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -44,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#English",
+                "query": "tag:#contribution",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Contributions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Contributions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -118,7 +124,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Contributions.md"
+              }
             }
           }
         ],
@@ -144,6 +152,7 @@
   "lastOpenFiles": [
     "Resources.md",
     "index.md",
+    "Contributions.md",
     "Resources/Mallard Basic.md",
     "Professional Journey/2001-2005/2001-2004 Expanding Horizons with Windows, Visual Basic and Pascal.md",
     "Professional Journey/1997-2000/2000 - Embracing WordStar, SuperCalc, and dBase.md",
@@ -153,24 +162,24 @@
     "Professional Journey/1997-2000/1997 - Introduction to Computing.md",
     "Curriculum Vitae/PHP Developer CV.md",
     "Curriculum Vitae/CV de Desarrollador PHP.md",
+    "Blog/en/2024/Reconsidering the Need for a New Operator in Error Handling Proposals.md",
     "Blog/en/2024/Data Composition Made Easy with cop in Div PHP Template Engine.md",
     "Blog/en/2024/Celebrating Recognition in the PHP Innovation Awards January 2024.md",
     "Blog/en/2023/War harms those who do not want it.md",
     "Blog/en/2023/The Strength of Unity - A Natural Gift.md",
+    "Contributions/Universal and Flexible Error Handling in ECMAScript.md",
+    "Blog/en/2024/The Myth of -Less Code is Better- in Programming Languages.md",
+    "Blog/en/2024/JavaScript - Implementing Safe Assignment Without new Operator.md",
+    "Blog/en/2024/Multiple catch blocks with when clause in JavaScript.md",
+    "Contributions",
     "Blog/en/2024/Converting SQL WHERE Clauses to Prisma Queries Using TypeScript and Jison.md",
     "Blog/es/2024/Enfoques y Prácticas para estructurar proyectos PHP sin Frameworks.md",
     "Curriculum Vitae.md",
     "Curriculum Vitae",
     "Professional Journey.md",
     "Blog/en/2024.md",
-    "Blog/en/2023.md",
-    "Blog.md",
     "images/Amstrad PCW.png",
     "Curriculum",
-    "Blog/en/2024/Solving ListView Issues in MAUI.md",
-    "Blog/en/2024/Structuring PHP Projects - Approaches and Practices without Frameworks.md",
-    "Blog/en/2024/Rejecting the notion of 'Most Important' Programming Language.md",
-    "Blog/es/2024.md",
     "Blog/es/2024",
     "Blog/en",
     "Blog/es",
@@ -187,7 +196,6 @@
     "Blog/2024/images",
     "Resources/PHP Innovation Adward January 2024.pdf",
     "Resources/13115.pdf.crdownload",
-    "model_2.bpmn",
     "index.canvas"
   ]
 }
