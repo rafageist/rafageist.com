@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Contributions/Universal and Flexible Error Handling in ECMAScript.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Contributions/Universal and Flexible Error Handling in ECMAScript.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Contributions/Universal and Flexible Error Handling in ECMAScript.md"
+                "file": "index.md"
               }
             }
           }
@@ -148,10 +148,45 @@
       "webpage-html-export:Export Vault to HTML": false
     }
   },
-  "active": "65226b2d3a71dbfd",
+  "floating": {
+    "id": "5dfc34c013776e7a",
+    "type": "floating",
+    "children": [
+      {
+        "id": "9a1e153982669ad9",
+        "type": "window",
+        "children": [
+          {
+            "id": "3ac8110f3cfcadc0",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "91652ad7dc5f6ba2",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Resources.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 510,
+        "y": 555,
+        "width": 800,
+        "height": 400,
+        "maximize": false,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "91652ad7dc5f6ba2",
   "lastOpenFiles": [
-    "Resources.md",
-    "index.md",
     "Contributions.md",
     "Resources/Mallard Basic.md",
     "Professional Journey/2001-2005/2001-2004 Expanding Horizons with Windows, Visual Basic and Pascal.md",
@@ -168,6 +203,8 @@
     "Blog/en/2024/Celebrating Recognition in the PHP Innovation Awards January 2024.md",
     "Blog/en/2023/War harms those who do not want it.md",
     "Blog/en/2023/The Strength of Unity - A Natural Gift.md",
+    "Resources.md",
+    "index.md",
     "images/Pasted image 20240914184950.png",
     "Blog/en/2024/The Myth of -Less Code is Better- in Programming Languages.md",
     "Blog/en/2024/JavaScript - Implementing Safe Assignment Without new Operator.md",
