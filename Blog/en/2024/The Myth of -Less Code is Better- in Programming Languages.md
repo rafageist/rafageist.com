@@ -1,7 +1,10 @@
 ---
 title: The Myth of "Less Code is Better" in Programming Languages
 icon: IbDocument
+date: 2024-09-01
 ---
+#Blog 
+
 In the world of programming, many developers compare Python to other languages, often highlighting the advantage that Python allows you to "write less code." While this may sound appealing, it’s essential to understand that writing less code does not inherently make a language better or easier to read.
 
 One common point of comparison is the use of semicolons to terminate statements. Languages like Java and C# require a semicolon at the end of each statement, while Python does not. At first glance, it might seem like Python is simpler because it has fewer syntactical requirements. However, the absence of semicolons doesn't necessarily make Python objectively easier to read. **In both cases, the programmer needs to be aware of where a statement ends**—whether it’s marked by a semicolon or a newline character. The cognitive load is similar; it's just a different convention.

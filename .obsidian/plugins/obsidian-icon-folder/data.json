@@ -6,11 +6,11 @@
     "emojiStyle": "twemoji",
     "iconColor": null,
     "recentlyUsedIcons": [
+      "RiDoubleQuotesR",
+      "LiQuote",
+      "✍",
       "RiFilePaper2Line",
-      "IbDocumentText",
-      "RiAwardFill",
-      "IbDocument",
-      "FiGlobe"
+      "IbDocumentText"
     ],
     "recentlyUsedIconsSize": 5,
     "rules": [],
@@ -82,13 +82,18 @@
   "Blog/en/2024/Solving ListView Issues in MAUI.md": "IbDocument",
   "Blog/en/2024/Converting SQL WHERE Clauses to Prisma Queries Using TypeScript and Jison.md": "IbDocument",
   "Curriculum Vitae.md": "RiAwardFill",
-  "Curriculum Vitae/PHP Developer CV.md": "IbDocumentText",
   "Curriculum Vitae": "RiAwardFill",
-  "Curriculum Vitae/CV de Desarrollador PHP.md": "IbDocumentText",
   "Contributions": "RiFilePaper2Line",
-  "Contributions/Universal and Flexible Error Handling in ECMAScript.md": "IbDocumentText",
   "Blog/en/2024/Reconsidering the Need for a New Operator in Error Handling Proposals.md": "IbDocument",
   "Blog/en/2024/JavaScript - Implementing Safe Assignment Without new Operator.md": "IbDocument",
   "Blog/en/2024/The Myth of -Less Code is Better- in Programming Languages.md": "IbDocument",
-  "Contributions.md": "RiFilePaper2Line"
+  "Contributions.md": "RiFilePaper2Line",
+  "Writing": "✍",
+  "Contributions/2024/Divide and conquer with the existing is a clean alternative to the proposed HTTP QUERY method.md": "IbDocumentText",
+  "Contributions/2024/Universal and Flexible Error Handling in ECMAScript.md": "IbDocumentText",
+  "Quotes": "LiQuote",
+  "Quotes/No hay espacio en el todo para una copia del todo mismo.md": "RiDoubleQuotesR",
+  "Blog/en/2024/Legacy Bytes' strategy to pay off technical debt.md": "IbDocumentText",
+  "Curriculum Vitae/Ing. Rafael Rodríguez Ramírez - CV 2025.md": "IbDocumentText",
+  "Curriculum Vitae/Eng. Rafael Rodríguez Ramírez - CV 2025.md": "IbDocumentText"
 }

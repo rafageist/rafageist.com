@@ -3,6 +3,9 @@ title: Home
 ---
 #software #engineer #developer #scientist #entrepreneur #philosopher #writer #enthusiast
 
+>[!IMPORTANT]
+>Site under construction
+
  Welcome to my digital haven! 
  - Explore the curated chronicle from coding beginnings to present-day expertise.  
  - Dive into foundational coding ventures and academic pursuits. 
@@ -108,7 +111,8 @@ Visit my [LinkedIn profile](https://www.linkedin.com/in/rafageist) to learn more
 
 Discover my contributions on PHPClasses.org and explore more about my [PHP projects](https://www.phpclasses.org/browse/author/1094404.html). See [my current position in the PHP Classes ranking](https://www.phpclasses.org/reputation/user/1094404/ranking/) with gratitude for the PHP community's support.
 
-___
+## Contributions
+- [[Contributions]]
 ## Professional Journey 
 
 Explore my [[Professional Journey]], a retrospective voyage that unfolds my trajectory in the realm of technology and programming from 1997 to the present day. 

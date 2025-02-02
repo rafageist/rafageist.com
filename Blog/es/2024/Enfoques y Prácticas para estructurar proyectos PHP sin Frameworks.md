@@ -2,6 +2,8 @@
 date: 2024-01-01
 lang: es
 icon: IbDocument
+aliases:
+  - Structuring PHP Projects - Approaches and Practices without Frameworks
 ---
 
 #Blog #PHP #GoodPractices 

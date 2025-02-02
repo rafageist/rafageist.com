@@ -116,4 +116,4 @@ Choosing a folder structure for PHP projects should be based on various factors,
 - [Composer Official Site](https://getcomposer.org/)
 
 ---
-- [x] Spanish version: [[Enfoques y Prácticas para estructurar proyectos PHP sin Frameworks]]
+- [ ] Spanish version: [[Enfoques y Prácticas para estructurar proyectos PHP sin Frameworks]]

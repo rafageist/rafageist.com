@@ -1,8 +1,9 @@
 ---
 icon: RiAwardFill
 ---
-## English
-- [[PHP Developer CV]]
+### English version
 
-## Spanish
-- [[CV de Desarrollador PHP]]
+[[Eng. Rafael Rodríguez Ramírez - CV 2025]]
+### Spanish version
+
+[[Ing. Rafael Rodríguez Ramírez - CV 2025]]
