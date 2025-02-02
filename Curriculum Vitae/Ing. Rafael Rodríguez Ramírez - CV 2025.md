@@ -4,7 +4,7 @@ icon: IbDocumentText
 ![[rafageist.jpg|80]] 
 **Rafael Rodríguez Ramírez**, Ingeniero en Informática
 _Kristalstraat 39, Paramaribo, Suriname_
-+5978401275, [rafageist@divengine.com](mailto:rafageist@divengine.com), https://rafageist.com
++5978401275, rafageist@divengine.com, https://rafageist.com
 
 Desarrollador de software con casi 30 años de experiencia en desarrollo. Experto en múltiples lenguajes de programación y arquitecturas de software escalables. Destacado en la solución de problemas mediante algoritmia, investigación de operaciones y optimización de sistemas. Participante en competencias internacionales de programación. Amplia experiencia en liderazgo de proyectos, innovación tecnológica y automatización de procesos.
 ## **Experiencia Profesional**
