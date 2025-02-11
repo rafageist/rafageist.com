@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "09ec4eb6f989e33f",
+        "id": "3d0864d70b817cba",
         "type": "tabs",
         "children": [
           {
-            "id": "60ff6b099d5b9314",
+            "id": "734d4f9c9d002cf6",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Curriculum Vitae/Ing. Rafael Rodríguez Ramírez - CV 2025.md",
+                "file": "Contributions/2024/Legacy Bytes, a strategy to pay off technical debt.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ing. Rafael Rodríguez Ramírez - CV 2025"
+              "title": "Legacy Bytes, a strategy to pay off technical debt"
             }
           }
         ]
@@ -140,13 +140,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Curriculum Vitae/Ing. Rafael Rodríguez Ramírez - CV 2025.md",
+                "file": "Contributions/2024/Legacy Bytes, a strategy to pay off technical debt.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Ing. Rafael Rodríguez Ramírez - CV 2025"
+              "title": "Outline of Legacy Bytes, a strategy to pay off technical debt"
             }
           }
         ],
@@ -169,7 +169,7 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "60ff6b099d5b9314",
+  "active": "734d4f9c9d002cf6",
   "lastOpenFiles": [
     "Resources.md",
     "index.md",
@@ -188,16 +188,17 @@
     "Curriculum Vitae/Ing. Rafael Rodríguez Ramírez - CV 2025.md",
     "Curriculum Vitae/Eng. Rafael Rodríguez Ramírez - CV 2025.md",
     "Contributions/2024/Universal and Flexible Error Handling in ECMAScript.md",
+    "Contributions/2024/Legacy Bytes, a strategy to pay off technical debt.md",
     "Blog/en/2024/Reconsidering the Need for a New Operator in Error Handling Proposals.md",
-    "Blog/en/2024/Legacy Bytes' strategy to pay off technical debt.md",
     "Blog/en/2024/Data Composition Made Easy with cop in Div PHP Template Engine.md",
     "Blog/en/2024/Celebrating Recognition in the PHP Innovation Awards January 2024.md",
     "Blog/en/2023/War harms those who do not want it.md",
     "Blog/en/2023/The Strength of Unity - A Natural Gift.md",
-    "Quotes/No hay espacio en el todo para una copia del todo mismo.md",
-    "Blog/en/2024/Drawing 2024-11-11 22.19.00.excalidraw.md",
+    "Blog/en/2024/Optimizing Symfony UUIDv4 Generator.md",
+    "Contributions/2025/Cloud-driven Business App.md",
+    "Contributions/2024/Divide and conquer with the existing is a clean alternative to the proposed HTTP QUERY method.md",
+    "Contributions/2025",
     "images/Legacy bytes.png",
-    "test.md",
     "model_1.bpmn",
     "Blog/en/2024/model_1.bpmn",
     "Contributions/2024",
@@ -207,7 +208,6 @@
     "Writing/The History of Computing/The History of Computers/1. Early Mechanical Devices (1600s - 1800s)",
     "Writing/The History of Computing/The History of Computers",
     "Writing/The History of Computing",
-    "Writing",
     "images/Pasted image 20240914184950.png",
     "images/Amstrad PCW.png",
     "images/War harms those who do not want it.webp",

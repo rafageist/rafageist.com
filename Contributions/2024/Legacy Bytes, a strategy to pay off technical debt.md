@@ -1,5 +1,5 @@
 ---
-title: Legacy Bytes' strategy to pay off technical debt
+title: Legacy Bytes, a strategy to pay off technical debt
 icon: IbDocumentText
 ---
 
