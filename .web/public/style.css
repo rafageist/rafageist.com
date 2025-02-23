@@ -99,8 +99,8 @@ body {
 
 .social-links li:nth-child(1) a i,
 .social-links li:nth-child(2) a i,
-.social-links li:nth-child(6) a i,
-.social-links li:nth-child(7) a i {
+.social-links li:nth-child(7) a i,
+.social-links li:nth-child(8) a i {
 	font-size: 1.2rem;
 }
 
@@ -108,11 +108,12 @@ body {
 	font-size: 2rem;
 }
 
-.social-links li:nth-child(4) a i {
-	font-size: 2.5rem;
+.social-links li:nth-child(4) a i,
+.social-links li:nth-child(5) a i {
+	font-size: 2.8rem;
 }
 
-.social-links li:nth-child(5) a i {
+.social-links li:nth-child(6) a i {
 	font-size: 2rem;
 }
 
