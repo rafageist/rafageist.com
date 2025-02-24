@@ -10,7 +10,7 @@ body {
 	align-items: center;
 	height: 100vh;
 	text-align: center;
-	background: url('rafageist.jpg') no-repeat center center fixed;
+	background: url('background.png') no-repeat center center fixed;
 	background-size: cover;
 	overflow: hidden;
 }
