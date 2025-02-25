@@ -207,3 +207,7 @@ margin:0px;
 .nowrap {
 	white-space: nowrap;
 }
+
+.header-right {
+	margin-right: 1rem;
+}
