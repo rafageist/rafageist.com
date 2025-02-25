@@ -10,7 +10,6 @@ body {
 	align-items: center;
 	height: 100vh;
 	text-align: center;
-	background: url('background.png') no-repeat center center fixed;
 	background-size: cover;
 	overflow: hidden;
 }
@@ -146,4 +145,37 @@ body {
     text-decoration: none;
     font-weight: bold;
     text-shadow: 0px 0px 6px #000000;
+}
+
+#slideshow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#slideshow img {
+    position: absolute;
+    width: 120%;  /* Se agranda para evitar bordes vacíos */
+    height: 100%;
+    object-fit: cover;
+    left: -10%; /* Posición inicial a la izquierda */
+    opacity: 0;
+    transform: translateX(0);
+    transition: opacity 1.5s ease-in-out, transform 10s linear;
+}
+
+/* Imagen activa */
+#slideshow img.active {
+    opacity: 1;
+    transform: translateX(5%); /* Movimiento hacia la derecha */
+}
+
+/* Imagen saliente */
+#slideshow img.exit {
+    opacity: 0;
+    transform: translateX(-5%); /* Se mueve hacia la izquierda */
 }
