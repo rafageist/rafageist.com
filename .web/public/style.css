@@ -37,9 +37,11 @@ body {
 	animation: lightDarkCycle 10s infinite alternate ease-in-out;
 	height: 17rem;
 }
-.header img, .header p, .header h1, .header a {
-	margin: 1rem;
+
+.header-right {
+	margin-right: 1rem;
 }
+
 .footer {
 	z-index: 1;
 	position: fixed;
@@ -90,11 +92,11 @@ body {
 .social-links li:nth-child(2) a i,
 .social-links li:nth-child(7) a i,
 .social-links li:nth-child(8) a i {
-	font-size: 1rem;
+	font-size: 1.2rem;
 }
 
 .social-links li:nth-child(3) a i {
-	font-size: 1.2rem;
+	font-size: 1.6rem;
 }
 
 .social-links li:nth-child(4) a i,
@@ -103,7 +105,7 @@ body {
 }
 
 .social-links li:nth-child(6) a i {
-	font-size: 1.2rem;
+	font-size: 1.6rem;
 }
 
 .cta-button {
@@ -117,15 +119,12 @@ body {
     font-size: 1rem;
     text-transform: uppercase;
     font-family: monospace;
-    /* border: 2px solid #000000; */
-    /* box-shadow: 2px 4px 0px #0000004f, 4px 8px 10px rgba(0, 0, 0, 0.5); */
-    /* transform: perspective(200px) rotateX(355deg) rotateZ(10deg) rotateY(343deg); */
     transition: all 0.2s ease;
     position: fixed;
     bottom: 150px;
     width: 100px;
     opacity: 0.9;
-	left: calc(50% - 50px);
+	left: calc(50% - 75px);
 }
 
 .cta-button:hover {
@@ -139,13 +138,28 @@ body {
     transform: perspective(200px) rotateX(2deg);
 }
 
+.header a {
+	color: #ffffff;
+    text-decoration: none;
+}
 
 .header, .email {
-    color: #ffffff;
-    text-decoration: none;
     font-weight: bold;
     text-shadow: 0px 0px 6px #000000;
 }
+/*
+.email {
+	padding: 5px;
+	border-top: 1px solid #ffffff;
+}*/
+
+.email {
+    color: white; /* O usa #f8f8f8 para un tono más suave */
+    background: rgba(0, 0, 0, 0.4);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
 
 #slideshow {
     position: fixed;
