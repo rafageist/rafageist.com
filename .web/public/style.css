@@ -36,6 +36,7 @@ body {
 	width: 100%;
 	text-align: right;
 	animation: lightDarkCycle 10s infinite alternate ease-in-out;
+	height: 17rem;
 }
 .header img, .header p, .header h1, .header a {
 	margin: 1rem;
@@ -55,10 +56,8 @@ body {
 }
 
 .profile-pic {
-	width: 8em;
 	height: 8em;
 	border-radius: 50%;
-	opacity: 0.9;
 	float: left;
 	margin: 1rem;
 }
@@ -92,41 +91,59 @@ body {
 .social-links li:nth-child(2) a i,
 .social-links li:nth-child(7) a i,
 .social-links li:nth-child(8) a i {
-	font-size: 1.2rem;
+	font-size: 1rem;
 }
 
 .social-links li:nth-child(3) a i {
-	font-size: 2rem;
+	font-size: 1.2rem;
 }
 
 .social-links li:nth-child(4) a i,
 .social-links li:nth-child(5) a i {
-	font-size: 2.8rem;
-}
-
-.social-links li:nth-child(6) a i {
 	font-size: 2rem;
 }
 
+.social-links li:nth-child(6) a i {
+	font-size: 1.2rem;
+}
+
 .cta-button {
-	display: inline-block;
-	background: black;
-	color: white;
-	padding: 10px 20px;
-	border-radius: 5px;
-	text-decoration: none;
-	font-weight: bold;
-	font-size: 1rem;
-	transition: background 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    background: #181818;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-family: monospace;
+    /* border: 2px solid #000000; */
+    /* box-shadow: 2px 4px 0px #0000004f, 4px 8px 10px rgba(0, 0, 0, 0.5); */
+    /* transform: perspective(200px) rotateX(355deg) rotateZ(10deg) rotateY(343deg); */
+    transition: all 0.2s ease;
+    position: fixed;
+    bottom: 150px;
+    width: 100px;
+    opacity: 0.9;
+	left: calc(50% - 50px);
 }
 
 .cta-button:hover {
-	background: #333;
-	transform: scale(1.05);
+    background: #333;
+    box-shadow: 1px 2px 0px #666, 2px 4px 10px rgba(0, 0, 0, 0.5);
+    transform: perspective(200px) rotateX(5deg);
 }
 
-.email {
-	color: rgb(255, 255, 255); 
-	text-decoration: none;
-	font-weight: bold	;
+.cta-button:active {
+    box-shadow: 0px 0px 0px #666, 1px 2px 5px rgba(0, 0, 0, 0.5);
+    transform: perspective(200px) rotateX(2deg);
+}
+
+
+.header, .email {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    text-shadow: 0px 0px 6px #000000;
 }
