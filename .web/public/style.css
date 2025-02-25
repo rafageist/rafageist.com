@@ -38,6 +38,16 @@ body {
 	height: 17rem;
 }
 
+.header-left {
+	float: left !important;
+	margin-left: 10px;
+	text-align: center;
+}
+
+.header-left p{
+margin:0px;
+}
+
 .header-right {
 	margin-right: 1rem;
 }
@@ -57,10 +67,10 @@ body {
 }
 
 .profile-pic {
-	height: 8em;
+	height: 10vh;
 	border-radius: 50%;
-	float: left;
-	margin: 1rem;
+	margin: 10px;
+	float:left;
 }
 
 .social-links {
@@ -192,4 +202,8 @@ body {
 #slideshow img.exit {
     opacity: 0;
     transform: translateX(-5%); /* Se mueve hacia la izquierda */
+}
+
+.nowrap {
+	white-space: nowrap;
 }
