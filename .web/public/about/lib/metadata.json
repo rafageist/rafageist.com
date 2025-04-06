@@ -93,7 +93,7 @@
     "lib/fonts/05b618077343fbbd92b7.ttf",
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
     "lib/media/6155340132a851f6089e.svg",
-    "lib/html/file-tree.html",
+    "/about/lib/html/file-tree.html",
     "lib/scripts/webpage.js",
     "lib/scripts/graph-view.js",
     "lib/scripts/graph-wasm.js",
@@ -102,7 +102,7 @@
     "lib/scripts/pixi.js",
     "lib/scripts/minisearch.js",
     "lib/media/favicon.png",
-    "lib/html/custom-head-content.html",
+    "/about/lib/html/custom-head-content.html",
     "lib/scripts/graph-data.js",
     "lib/styles/obsidian.css",
     "lib/styles/other-plugins.css",
@@ -125,7 +125,7 @@
     "lib/fonts/05b618077343fbbd92b7.ttf",
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
     "lib/media/6155340132a851f6089e.svg",
-    "lib/html/file-tree.html",
+    "/about/lib/html/file-tree.html",
     "lib/scripts/webpage.js",
     "lib/scripts/graph-view.js",
     "lib/scripts/graph-wasm.js",
@@ -134,7 +134,7 @@
     "lib/scripts/pixi.js",
     "lib/scripts/minisearch.js",
     "lib/media/favicon.png",
-    "lib/html/custom-head-content.html",
+    "/about/lib/html/custom-head-content.html",
     "lib/scripts/graph-data.js",
     "lib/styles/obsidian.css",
     "lib/styles/other-plugins.css",
@@ -699,10 +699,10 @@
       "exportedPath": "lib/media/6155340132a851f6089e.svg",
       "dependencies": []
     },
-    "lib/html/file-tree.html": {
+    "/about/lib/html/file-tree.html": {
       "modifiedTime": 1743955473796,
       "sourceSize": 113622,
-      "exportedPath": "lib/html/file-tree.html",
+      "exportedPath": "/about/lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
@@ -753,10 +753,10 @@
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
-    "lib/html/custom-head-content.html": {
+    "/about/lib/html/custom-head-content.html": {
       "modifiedTime": 1743955473796,
       "sourceSize": 393,
-      "exportedPath": "lib/html/custom-head-content.html",
+      "exportedPath": "/about/lib/html/custom-head-content.html",
       "dependencies": []
     },
     "lib/scripts/graph-data.js": {
