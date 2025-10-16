@@ -69,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
         { text: "Dart, .NET MAUI, Docker, DigitalOcean (2018–present)", type: 'tech', value: 1, year: 2018 },
         { text: "Software Engineer — Magaya (2020–2025)", type: 'skill', value: 1, year: 2020 },
         { text: "R (2020–present)", type: 'tech', value: 1, year: 2020 },
-        { text: "Joining Magaya (2020)", type: 'exp', value: 1, year: 2020 },
         { text: "Odoo (2024–present)", type: 'tech', value: 1, year: 2024 },
         { text: "Entering Odoo Ecosystem (2024)", type: 'exp', value: 1, year: 2024 },
         { text: "Exploring new tech, always learning", type: 'exp', value: 1, year: 2025 }
@@ -136,10 +135,19 @@ document.addEventListener("DOMContentLoaded", function () {
         // Alternate position
         const pos = creditPositions[creditIndex % creditPositions.length];
         if (pos !== "center") msg.classList.add(pos);
-        msg.textContent = creditMessages[creditIndex].text;
+        // Split text into main and time (if parenthesis at end)
+        const credit = creditMessages[creditIndex];
+        let mainText = credit.text;
+        let timeText = "";
+        const parenMatch = mainText.match(/^(.*)\s*\(([^()]*)\)\s*$/);
+        if (parenMatch) {
+            mainText = parenMatch[1].trim();
+            timeText = parenMatch[2].trim();
+        }
+        msg.innerHTML = `<span class="credit-main">${mainText}</span>` + (timeText ? `<br><em class="credit-time">${timeText}</em>` : "");
         container.appendChild(msg);
         // Update scores
-        updateScores(creditMessages[creditIndex].type, creditMessages[creditIndex].value);
+        updateScores(credit.type, credit.value);
         // Entry effect
         setTimeout(() => {
             msg.classList.add("show", "slide-in");
