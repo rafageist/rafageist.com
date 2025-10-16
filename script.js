@@ -221,4 +221,54 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     setTimeout(typeTerminalLine, 1200);
+
+    // --- Preload only the first 2 slideshow images, then hide loading overlay ---
+    const loadingOverlay = document.getElementById("loading-overlay");
+    const slideshowImgs = Array.from(document.querySelectorAll("#slideshow img"));
+    let loadedCount = 0;
+
+    // ASCII progress bar logic
+    const progressBar = document.getElementById("loading-progressbar");
+    const PROGRESS_BAR_LENGTH = 18; // Number of ASCII blocks
+    function setProgressBar(percent) {
+        const filled = Math.round(PROGRESS_BAR_LENGTH * percent);
+        const empty = PROGRESS_BAR_LENGTH - filled;
+        // Use █ for filled, ░ for empty (classic 80s look)
+        progressBar.textContent = `[${'█'.repeat(filled)}${'░'.repeat(empty)}]`;
+    }
+    setProgressBar(0);
+
+    function hideLoading() {
+        loadingOverlay.style.opacity = 0;
+        setTimeout(() => loadingOverlay.style.display = "none", 700);
+    }
+    function checkFirstLoaded() {
+        loadedCount++;
+        setProgressBar(loadedCount / 2);
+        if (loadedCount === 2) {
+            setTimeout(hideLoading, 250); // Small delay for effect
+            // Start loading the rest in the background
+            for (let i = 2; i < slideshowImgs.length; i++) {
+                if (!slideshowImgs[i].complete || slideshowImgs[i].naturalWidth === 0) {
+                    slideshowImgs[i].src = slideshowImgs[i].src; // trigger load if not already
+                }
+            }
+        }
+    }
+    // Preload only first 2 images
+    for (let i = 0; i < 2; i++) {
+        const img = slideshowImgs[i];
+        if (img.complete && img.naturalWidth > 0) {
+            checkFirstLoaded();
+        } else {
+            img.addEventListener('load', checkFirstLoaded);
+            img.addEventListener('error', checkFirstLoaded);
+        }
+    }
+    // Prevent interaction until loaded
+    document.body.style.overflow = 'hidden';
+    function enableScrollAfterLoad() {
+        document.body.style.overflow = '';
+    }
+    loadingOverlay.addEventListener('transitionend', enableScrollAfterLoad);
 });
