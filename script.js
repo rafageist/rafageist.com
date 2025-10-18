@@ -35,41 +35,39 @@ document.addEventListener("DOMContentLoaded", function () {
     const totalYears = currentYear - startYear + 1; // inclusive
     let expSoFar = 0, techSoFar = 0, skillSoFar = 0;
     const creditMessages = [
-        { text: "Started with logic and algorithms (1997)", type: 'exp', value: 1, year: 1997 },
-        { text: "ACPOL Game (ASCII, BASIC/CP-M → MS-DOS, 1997)", type: 'exp', value: 1, year: 1997 },
-        { text: "ASCII Paint & Custom Format for Sprites (1997)", type: 'exp', value: 1, year: 1997 },
-        { text: "QBasic Inventory System (1998)", type: 'exp', value: 1, year: 1998 },
-        { text: "Dot-Matrix Printer Reports (1999)", type: 'exp', value: 1, year: 1999 },
-        { text: "First logic puzzles and games (late 90s)", type: 'exp', value: 2, year: 1999 },
-        { text: "Mallard/GW/QBasic (ASCII graphics, UI framework, 1997–2000)", type: 'tech', value: 1, year: 2000 },
-        { text: "High School: Exact Sciences (2001–2004)", type: 'exp', value: 3, year: 2001 },
-        { text: "Pascal, C (2000–2004)", type: 'tech', value: 1, year: 2002 },
-        { text: "JavaScript (2003–present)", type: 'tech', value: 1, year: 2003 },
-        { text: "First Drupal Websites (2005)", type: 'exp', value: 1, year: 2005 },
-        { text: "B.Sc. Software Engineering (CUJAE, 2005–2010)", type: 'exp', value: 5, year: 2005 },
-        { text: "University: Calculus, Physics, Computer Architecture, Numerical Methods, Statistics, AI (2005–2010)", type: 'exp', value: 5, year: 2005 },
-        { text: "C++ / C# / Java (2005–present)", type: 'tech', value: 1, year: 2005 },
-        { text: "PHP + Drupal + WordPress (2005–present)", type: 'tech', value: 1, year: 2005 },
-        { text: "PostgreSQL / SQL (2005–present)", type: 'tech', value: 1, year: 2005 },
-        { text: "Operations Research, Office Tools (Excel, Access, VBA, 2000–present)", type: 'skill', value: 1, year: 2006 },
-        { text: "Software Engineering (RUP, UML, 2006–present)", type: 'skill', value: 1, year: 2006 },
-        { text: "Artificial Intelligence (since university, 2006–present)", type: 'skill', value: 1, year: 2006 },
-        { text: "BPM, Node-RED (2007–present)", type: 'skill', value: 1, year: 2007 },
-        { text: "Linux / GitHub (2007–present)", type: 'skill', value: 1, year: 2007 },
-        { text: "Python / Prolog (2011–present)", type: 'tech', value: 1, year: 2011 },
-        { text: "Launch of Apretaste! (2011)", type: 'exp', value: 1, year: 2011 },
-        { text: "Start with Python (2011)", type: 'exp', value: 1, year: 2011 },
-        { text: "Co-founder — Apretaste! (2011–present)", type: 'skill', value: 1, year: 2011 },
-        { text: "Founder — Divengine (2011–present)", type: 'skill', value: 1, year: 2011 },
-        { text: "Mentoring and growing developers (2010–present)", type: 'skill', value: 1, year: 2012 },
-        { text: "Workflow automation & scalable solutions (2010–present)", type: 'skill', value: 1, year: 2012 },
-        { text: "Node.js (2015–present)", type: 'tech', value: 1, year: 2015 },
-        { text: "TypeScript (2016–present)", type: 'tech', value: 1, year: 2016 },
-        { text: "React / Vue / Vite (2016–present)", type: 'tech', value: 1, year: 2016 },
-        { text: "Dart, .NET MAUI, Docker, DigitalOcean (2018–present)", type: 'tech', value: 1, year: 2018 },
-        { text: "Software Engineer — Magaya (2020–2025)", type: 'skill', value: 1, year: 2020 },
-        { text: "R (2020–present)", type: 'tech', value: 1, year: 2020 },
-        { text: "Odoo (2024–present)", type: 'tech', value: 1, year: 2024 },
+        { text: "Logic and algorithms (1997...)", type: 'exp', value: 1, year: 1997 },
+        { text: "Police Academy Game [ASCII, BASIC/CP-M → MS-DOS] (1997...2000)", type: 'exp', value: 1, year: 1997 },
+        { text: "ASCII Paint & Custom Format for Sprites (1997...2000)", type: 'exp', value: 1, year: 1997 },
+        { text: "QBasic Inventory System (1998...2000)", type: 'exp', value: 1, year: 1998 },
+        { text: "Dot-Matrix Printer Reports (1999...2002)", type: 'exp', value: 1, year: 1999 },
+        { text: "High School: Exact Sciences (2001...2004)", type: 'exp', value: 3, year: 2001 },
+        { text: "Pascal, C (2000...2004)", type: 'tech', value: 1, year: 2002 },
+        { text: "JavaScript (2003...)", type: 'tech', value: 1, year: 2003 },
+        { text: "First Drupal Websites (2005...)", type: 'exp', value: 1, year: 2005 },
+        { text: "B.Sc. Software Engineering (2005...2010)", type: 'exp', value: 5, year: 2005 },
+        { text: "Calculus, Physics, Computer Architecture, Numerical Methods, Statistics, AI (2005...2010)", type: 'exp', value: 5, year: 2005 },
+        { text: "PHP + Drupal + WordPress (2005...)", type: 'tech', value: 1, year: 2005 },
+        { text: "PostgreSQL / SQL (2005...)", type: 'tech', value: 1, year: 2005 },
+        { text: "Operations Research, Office Tools [Excel, Access, VBA] (2000...)", type: 'skill', value: 1, year: 2006 },
+        { text: "Software Engineering [RUP, UML] (2006...)", type: 'skill', value: 1, year: 2006 },
+        { text: "Artificial Intelligence (2006...)", type: 'skill', value: 1, year: 2006 },
+        { text: "Business Process Management (2007...)", type: 'skill', value: 1, year: 2007 },
+        { text: "Linux SysAdmin (2007...)", type: 'skill', value: 1, year: 2007 },
+        { text: "GitHub (2011...)", type: 'skill', value: 1, year: 2011 },
+        { text: "Prolog (2011...)", type: 'tech', value: 1, year: 2011 },
+        { text: "Python (2011...)", type: 'tech', value: 1, year: 2011 },
+        { text: "Co-founder — Apretaste! (2011...)", type: 'skill', value: 1, year: 2011 },
+        { text: "Founder — Divengine (2011...)", type: 'skill', value: 1, year: 2011 },
+        { text: "Mentoring and growing developers (2010...)", type: 'skill', value: 1, year: 2012 },
+        { text: "Workflow automation & scalable solutions (2010...)", type: 'skill', value: 1, year: 2012 },
+        { text: "Node.js (2015...)", type: 'tech', value: 1, year: 2015 },
+        { text: "TypeScript (2016...)", type: 'tech', value: 1, year: 2016 },
+        { text: "Node-RED (2016...)", type: 'skill', value: 1, year: 2016 },
+        { text: "React / Vue / Vite (2016...)", type: 'tech', value: 1, year: 2016 },
+        { text: "Dart, .NET MAUI, Docker, DigitalOcean (2018...)", type: 'tech', value: 1, year: 2018 },
+        { text: "Software Engineer — Magaya (2020...2025)", type: 'skill', value: 1, year: 2020 },
+        { text: "R (2020...)", type: 'tech', value: 1, year: 2020 },
+        { text: "Odoo (2024...)", type: 'tech', value: 1, year: 2024 },
         { text: "Entering Odoo Ecosystem (2024)", type: 'exp', value: 1, year: 2024 },
         { text: "Exploring new tech, always learning", type: 'exp', value: 1, year: 2025 }
     ];
@@ -175,60 +173,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     showCreditMessage();
-
-    // --- Terminal overlay for career commands ---
-    const terminalLines = [
-        "$ whoami",
-        "rafageist — Senior Software Engineer",
-        "$ date",
-        "Started: 1997",
-        "$ echo $EDUCATION",
-        "High School: Exact Sciences (2001–2004)",
-        "B.Sc. Software Engineering (CUJAE, 2005–2010)",
-        "$ skills --list",
-        "Python, C, C++, Pascal, PHP, JavaScript, Node.js, TypeScript, Dart, C#, Java, .NET MAUI, React, Vue, Vite, Docker, Linux, SQL, Odoo, TLA+",
-        "$ experience | grep -i 'project'",
-        "Project Manager (2015–present)",
-        "$ companies",
-        "Apretaste! (Co-founder)",
-        "Divengine (Founder)",
-        "Magaya (Software Engineer)",
-        "$ milestones",
-        "ACPOL Game (1997)",
-        "ASCII Paint (1997)",
-        "QBasic Inventory (1998)",
-        "First Drupal Websites (2005)",
-        "Launch of Apretaste! (2011)",
-        "Joining Magaya (2020)",
-        "$ motto",
-        "Always learning. Always building. Always sharing."
-    ];
-    let terminalIndex = 0;
-    function typeTerminalLine() {
-        const terminal = document.getElementById("terminal-content");
-        if (!terminal) return;
-        if (terminalIndex === 0) terminal.textContent = "";
-        if (terminalIndex < terminalLines.length) {
-            let line = terminalLines[terminalIndex];
-            let i = 0;
-            function typeChar() {
-                if (i <= line.length) {
-                    terminal.textContent = terminal.textContent.replace(/\u2588$/,"") + line.slice(0, i) + "\u2588";
-                    i++;
-                    setTimeout(typeChar, 18 + Math.random() * 32);
-                } else {
-                    terminal.textContent = terminal.textContent.replace(/\u2588$/,"") + line + "\n";
-                    terminalIndex++;
-                    setTimeout(typeTerminalLine, 400 + Math.random() * 600);
-                }
-            }
-            typeChar();
-        } else {
-            terminalIndex = 0;
-            setTimeout(typeTerminalLine, 2000);
-        }
-    }
-    setTimeout(typeTerminalLine, 1200);
 
     // --- Preload only the first 2 slideshow images, then hide loading overlay ---
     const loadingOverlay = document.getElementById("loading-overlay");
