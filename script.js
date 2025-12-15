@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll("#slideshow img");
     let index = 0;
     const slideMessages = [
-        "If you are learning computing and it still does not click, I will slow down with you.",
-        "When you follow steps but do not know why they work, I will unpack them with you.",
-        "If classes move too fast, I fill the gaps at your pace.",
-        "Personal guidance focused on understanding, not noise."
+        "Learning computing, but nothing makes sense yet?",
+        "You follow steps and still feel lost.",
+        "Too many concepts, no clear picture.",
+        "Things work, but you do not know why."
     ];
     const heroSlideText = document.getElementById("hero-slide-text");
 

@@ -235,9 +235,9 @@ a:hover {
 
 .hero-subline {
 	margin: 0;
-	color: #4f4338;
+	color: white;
+    text-align: center;
 	font-size: 1rem;
-	max-width: 620px;
 }
 
 .hero-actions {
