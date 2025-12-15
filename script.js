@@ -1,226 +1,247 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let images = document.querySelectorAll("#slideshow img");
+    // --- Slideshow ---
+    const images = document.querySelectorAll("#slideshow img");
     let index = 0;
-    let direction = -5; // Initial movement direction
+    const slideMessages = [
+        "If you are learning computing and it still does not click, I will slow down with you.",
+        "When you follow steps but do not know why they work, I will unpack them with you.",
+        "If classes move too fast, I fill the gaps at your pace.",
+        "Personal guidance focused on understanding, not noise."
+    ];
+    const heroSlideText = document.getElementById("hero-slide-text");
 
     function changeImage() {
-        let current = document.querySelector("#slideshow img.active");
+        const current = images[index];
         if (current) {
             current.classList.remove("active");
-            current.classList.add("exit"); // Moves to the left
-            setTimeout(() => current.classList.remove("exit"), 1500); // Reset after fade
+            current.classList.add("exit");
+            // Reset position after exit transition ends
+            setTimeout(() => {
+                current.classList.remove("exit");
+            }, 1500);
         }
 
-        index = (index + 1) % images.length;
-        let next = images[index];
+        const nextIndex = (index + 1) % images.length;
+        const next = images[nextIndex];
 
         next.classList.add("active");
-        next.style.left = "-10%"; // Reset position
-        next.style.transform = `translateX(${direction}%)`; // Apply movement
+        // Ensure starting position fully covers viewport
+        if (heroSlideText) {
+            const msg = slideMessages[nextIndex % slideMessages.length];
+            heroSlideText.textContent = msg;
+        }
 
-        // Alternate movement direction
-        direction = direction === -5 ? 5 : -5;
+        index = nextIndex;
     }
 
-    // Start with the first image
-    changeImage();
-
-    // Change image every 5 seconds
-    setInterval(changeImage, 5000);
-
-    // --- Movie-style credits ---
-    // Each credit: { text, type: 'exp'|'tech'|'skill', value: number, year: number }
-    const currentYear = new Date().getFullYear();
-    const startYear = 1997;
-    const totalYears = currentYear - startYear + 1; // inclusive
-    let expSoFar = 0, techSoFar = 0, skillSoFar = 0;
-    const creditMessages = [
-        { text: "Logic and algorithms (1997...)", type: 'exp', value: 1, year: 1997 },
-        { text: "Police Academy Game [ASCII, BASIC/CP-M → MS-DOS] (1997...2000)", type: 'exp', value: 1, year: 1997 },
-        { text: "ASCII Paint & Custom Format for Sprites (1997...2000)", type: 'exp', value: 1, year: 1997 },
-        { text: "QBasic Inventory System (1998...2000)", type: 'exp', value: 1, year: 1998 },
-        { text: "Dot-Matrix Printer Reports (1999...2002)", type: 'exp', value: 1, year: 1999 },
-        { text: "High School: Exact Sciences (2001...2004)", type: 'exp', value: 3, year: 2001 },
-        { text: "Pascal, C (2000...2004)", type: 'tech', value: 1, year: 2002 },
-        { text: "JavaScript (2003...)", type: 'tech', value: 1, year: 2003 },
-        { text: "First Drupal Websites (2005...)", type: 'exp', value: 1, year: 2005 },
-        { text: "B.Sc. Software Engineering (2005...2010)", type: 'exp', value: 5, year: 2005 },
-        { text: "Calculus, Physics, Computer Architecture, Numerical Methods, Statistics, AI (2005...2010)", type: 'exp', value: 5, year: 2005 },
-        { text: "PHP + Drupal + WordPress (2005...)", type: 'tech', value: 1, year: 2005 },
-        { text: "PostgreSQL / SQL (2005...)", type: 'tech', value: 1, year: 2005 },
-        { text: "Operations Research, Office Tools [Excel, Access, VBA] (2000...)", type: 'skill', value: 1, year: 2006 },
-        { text: "Software Engineering [RUP, UML] (2006...)", type: 'skill', value: 1, year: 2006 },
-        { text: "Artificial Intelligence (2006...)", type: 'skill', value: 1, year: 2006 },
-        { text: "Business Process Management (2007...)", type: 'skill', value: 1, year: 2007 },
-        { text: "Linux SysAdmin (2007...)", type: 'skill', value: 1, year: 2007 },
-        { text: "GitHub (2011...)", type: 'skill', value: 1, year: 2011 },
-        { text: "Prolog (2011...)", type: 'tech', value: 1, year: 2011 },
-        { text: "Python (2011...)", type: 'tech', value: 1, year: 2011 },
-        { text: "Co-founder — Apretaste! (2011...)", type: 'skill', value: 1, year: 2011 },
-        { text: "Founder — Divengine (2011...)", type: 'skill', value: 1, year: 2011 },
-        { text: "Mentoring and growing developers (2010...)", type: 'skill', value: 1, year: 2012 },
-        { text: "Workflow automation & scalable solutions (2010...)", type: 'skill', value: 1, year: 2012 },
-        { text: "Node.js (2015...)", type: 'tech', value: 1, year: 2015 },
-        { text: "TypeScript (2016...)", type: 'tech', value: 1, year: 2016 },
-        { text: "Node-RED (2016...)", type: 'skill', value: 1, year: 2016 },
-        { text: "React / Vue / Vite (2016...)", type: 'tech', value: 1, year: 2016 },
-        { text: "Dart, .NET MAUI, Docker, DigitalOcean (2018...)", type: 'tech', value: 1, year: 2018 },
-        { text: "Software Engineer — Magaya (2020...2025)", type: 'skill', value: 1, year: 2020 },
-        { text: "R (2020...)", type: 'tech', value: 1, year: 2020 },
-        { text: "Odoo (2024...)", type: 'tech', value: 1, year: 2024 },
-        { text: "Entering Odoo Ecosystem (2024)", type: 'exp', value: 1, year: 2024 },
-        { text: "Exploring new tech, always learning", type: 'exp', value: 1, year: 2025 }
-    ];
-
-    // Sort credits by year for a chronological experience
-    creditMessages.sort((a, b) => a.year - b.year);
-
-    // Dynamically adjust values so exp reaches totalYears, and tech/skill never stay at 0
-    let expSum = 0, techSum = 0, skillSum = 0;
-    creditMessages.forEach(c => {
-        if (c.type === 'exp') expSum += c.value;
-        if (c.type === 'tech') techSum += c.value;
-        if (c.type === 'skill') skillSum += c.value;
+    // Swap slide sources for portrait (use *.vertical.png)
+    images.forEach(img => {
+        if (!img.dataset.originalSrc) {
+            img.dataset.originalSrc = img.getAttribute("src");
+            const original = img.dataset.originalSrc;
+            const vertical = original.replace(/\.png(\?.*)?$/, ".vertical.png$1");
+            img.dataset.verticalSrc = vertical;
+        }
     });
-    // Adjust exp values proportionally if needed
-    if (expSum !== totalYears) {
-        let diff = totalYears - expSum;
-        // Distribute the difference over exp credits
-        for (let i = 0; i < creditMessages.length && diff !== 0; i++) {
-            if (creditMessages[i].type === 'exp') {
-                creditMessages[i].value += 1;
-                diff--;
+
+    function updateSlideSources() {
+        const useVertical = window.innerHeight > window.innerWidth;
+        images.forEach(img => {
+            const target = useVertical ? img.dataset.verticalSrc : img.dataset.originalSrc;
+            if (target && img.getAttribute("src") !== target) {
+                img.setAttribute("src", target);
             }
-        }
-    }
-    // Ensure tech and skill start >0
-    if (techSum === 0) creditMessages.find(c => c.type === 'tech').value = 1;
-    if (skillSum === 0) creditMessages.find(c => c.type === 'skill').value = 1;
-
-    let scores = { exp: 0, tech: 0, skill: 0 };
-    const creditPositions = ["center", "left", "right"]; // Alternate positions
-    let creditIndex = 0;
-    let creditTimeout;
-
-    function updateScores(type, value) {
-        if (value > 0) {
-            scores[type] += value;
-            const el = document.querySelector(`#score-${type} .score-value`);
-            if (el) {
-                el.textContent = scores[type];
-                el.animate([
-                    { transform: 'scale(1)', color: '#ffe066' },
-                    { transform: 'scale(1.25)', color: '#fff' },
-                    { transform: 'scale(1)', color: '#ffe066' }
-                ], { duration: 400, fill: 'forwards' });
-            }
-        }
-    }
-
-    function resetScores() {
-        scores = { exp: 0, tech: 0, skill: 0 };
-        ["exp", "tech", "skill"].forEach(type => {
-            const el = document.querySelector(`#score-${type} .score-value`);
-            if (el) el.textContent = 0;
         });
     }
 
-    function showCreditMessage() {
-        const container = document.getElementById("movie-credits");
-        container.innerHTML = "";
-        const msg = document.createElement("div");
-        msg.className = "movie-credit-message";
-        // Alternate position
-        const pos = creditPositions[creditIndex % creditPositions.length];
-        if (pos !== "center") msg.classList.add(pos);
-        // Split text into main and time (if parenthesis at end)
-        const credit = creditMessages[creditIndex];
-        let mainText = credit.text;
-        let timeText = "";
-        const parenMatch = mainText.match(/^(.*)\s*\(([^()]*)\)\s*$/);
-        if (parenMatch) {
-            mainText = parenMatch[1].trim();
-            timeText = parenMatch[2].trim();
-        }
-        msg.innerHTML = `<span class="credit-main">${mainText}</span>` + (timeText ? `<br><em class="credit-time">${timeText}</em>` : "");
-        container.appendChild(msg);
-        // Update scores
-        updateScores(credit.type, credit.value);
-        // Entry effect
-        setTimeout(() => {
-            msg.classList.add("show", "slide-in");
-            // Randomly trigger TV glitch effect 1-2 times during show
-            let glitchCount = Math.random() > 0.5 ? 2 : 1;
-            for (let i = 0; i < glitchCount; i++) {
-                setTimeout(() => {
-                    msg.style.animation = (msg.style.animation ? msg.style.animation + ',' : '') + `tvGlitch 0.18s linear`;
-                    setTimeout(() => {
-                        msg.style.animation = msg.style.animation.replace(/tvGlitch 0.18s linear,?/g, '');
-                    }, 180);
-                }, 500 + Math.random() * 1800);
-            }
-        }, 50);
-        // Exit effect
-        creditTimeout = setTimeout(() => {
-            msg.classList.remove("slide-in");
-            msg.classList.add("slide-out");
-            setTimeout(() => {
-                creditIndex = (creditIndex + 1) % creditMessages.length;
-                if (creditIndex === 0) resetScores();
-                showCreditMessage();
-            }, 800);
-        }, 3200);
+    updateSlideSources();
+
+    if (heroSlideText) {
+        heroSlideText.textContent = slideMessages[0];
     }
 
-    showCreditMessage();
+    setInterval(changeImage, 5000);
 
-    // --- Preload only the first 2 slideshow images, then hide loading overlay ---
-    const loadingOverlay = document.getElementById("loading-overlay");
-    const slideshowImgs = Array.from(document.querySelectorAll("#slideshow img"));
-    let loadedCount = 0;
+    // Loading overlay intentionally disabled for instant access.
 
-    // ASCII progress bar logic
-    const progressBar = document.getElementById("loading-progressbar");
-    const PROGRESS_BAR_LENGTH = 18; // Number of ASCII blocks
-    function setProgressBar(percent) {
-        const filled = Math.round(PROGRESS_BAR_LENGTH * percent);
-        const empty = PROGRESS_BAR_LENGTH - filled;
-        // Use █ for filled, ░ for empty (classic 80s look)
-        progressBar.textContent = `[${'█'.repeat(filled)}${'░'.repeat(empty)}]`;
+    window.addEventListener("resize", updateSlideSources);
+    window.addEventListener("orientationchange", updateSlideSources);
+
+    // Survey modal controls
+    const openSurvey = document.getElementById("open-survey");
+    const closeSurvey = document.getElementById("close-survey");
+    const surveyModal = document.getElementById("survey-modal");
+    const surveyBackdrop = document.getElementById("survey-backdrop");
+    const openSurveyHero = document.getElementById("open-survey-hero");
+    let wizardStep = 1;
+    const totalWizardSteps = 9;
+
+    function toggleSurvey(show) {
+        if (!surveyModal) return;
+        surveyModal.classList.toggle("show", show);
+        surveyModal.setAttribute("aria-hidden", show ? "false" : "true");
+        document.body.classList.toggle("nav-open", show);
     }
-    setProgressBar(0);
 
-    function hideLoading() {
-        loadingOverlay.style.opacity = 0;
-        setTimeout(() => loadingOverlay.style.display = "none", 700);
+    if (openSurvey) {
+        openSurvey.addEventListener("click", () => toggleSurvey(true));
     }
-    function checkFirstLoaded() {
-        loadedCount++;
-        setProgressBar(loadedCount / 2);
-        if (loadedCount === 2) {
-            setTimeout(hideLoading, 250); // Small delay for effect
-            // Start loading the rest in the background
-            for (let i = 2; i < slideshowImgs.length; i++) {
-                if (!slideshowImgs[i].complete || slideshowImgs[i].naturalWidth === 0) {
-                    slideshowImgs[i].src = slideshowImgs[i].src; // trigger load if not already
-                }
+    if (openSurveyHero) {
+        openSurveyHero.addEventListener("click", () => toggleSurvey(true));
+    }
+    if (closeSurvey) {
+        closeSurvey.addEventListener("click", () => toggleSurvey(false));
+    }
+    if (surveyBackdrop) {
+        surveyBackdrop.addEventListener("click", () => toggleSurvey(false));
+    }
+
+    const prevStep = document.getElementById("prevStep");
+    const nextStep = document.getElementById("nextStep");
+    const wizardSteps = document.querySelectorAll(".wizard-step");
+    const wizardIndicators = document.querySelectorAll(".wizard-progress .step");
+    const summaryBlock = document.getElementById("wizard-summary");
+    const summaryField = document.getElementById("generatedSurveyMessage");
+    const copyBtn = document.getElementById("copy-survey");
+    const emailBtn = document.getElementById("email-survey");
+    const whatsappBtn = document.getElementById("whatsapp-survey");
+
+    function showWizardStep(step) {
+        wizardSteps.forEach((el, idx) => {
+            el.classList.toggle("active", idx + 1 === step);
+        });
+        wizardIndicators.forEach((el, idx) => {
+            el.classList.remove("active", "completed");
+            if (idx + 1 < step) el.classList.add("completed");
+            if (idx + 1 === step) el.classList.add("active");
+        });
+        if (prevStep) prevStep.style.display = step === 1 ? "none" : "inline-flex";
+        if (nextStep) nextStep.textContent = step === totalWizardSteps ? "Finish" : "Next";
+        if (summaryBlock) summaryBlock.style.display = step === totalWizardSteps ? "block" : "none";
+    }
+
+    function validateWizardStep(step) {
+        const current = document.querySelector(`.wizard-step[data-step="${step}"]`);
+        if (!current) return true;
+        const requiredFields = current.querySelectorAll("input[required], textarea[required]");
+        for (const field of requiredFields) {
+            if ((field.type === "radio" || field.type === "checkbox")) {
+                const groupChecked = current.querySelectorAll(`input[name="${field.name}"]:checked`).length > 0;
+                if (!groupChecked) return false;
+            } else if (!field.value.trim()) {
+                return false;
             }
         }
+        return true;
     }
-    // Preload only first 2 images
-    for (let i = 0; i < 2; i++) {
-        const img = slideshowImgs[i];
-        if (img.complete && img.naturalWidth > 0) {
-            checkFirstLoaded();
-        } else {
-            img.addEventListener('load', checkFirstLoaded);
-            img.addEventListener('error', checkFirstLoaded);
+
+    function generateSurveyMessage() {
+        const form = document.getElementById("surveyForm");
+        if (!form || !summaryField) return;
+        const data = new FormData(form);
+        const name = data.get("name") || "";
+        const situation = data.get("situation") || "";
+        const experienceTime = data.get("experience_time") || "";
+        const currentTech = data.get("current-tech") || "";
+        const perception = data.get("perception") || "";
+        const partialTopics = data.get("partial-topics") || "";
+        const built = data.getAll("built[]").join(", ");
+        const troubleshoot = data.get("troubleshoot") || "";
+        const confusing = data.get("confusing") || "";
+        const progressFeeling = data.get("progress_feeling") || "";
+        const missing = data.getAll("missing[]").join(", ");
+        const outcome = data.get("outcome") || "";
+        const priority = data.get("priority") || "";
+        const learn = data.getAll("learn[]").join(", ");
+        const comfort = data.get("comfort") || "";
+        const oneQuestion = data.get("one-question") || "";
+        const closingNotes = data.get("closing-notes") || "";
+
+        const message = `
+Context survey
+Name: ${name}
+
+Context:
+- Situation: ${situation}
+- Time learning/working with computing or software: ${experienceTime}
+- Currently studying/working in tech: ${currentTech}
+
+Self-perception:
+- Closest statement: ${perception}
+- Topics I "kind of know" but don't fully trust: ${partialTopics}
+
+Practical experience:
+- Built/worked on: ${built}
+- When something fails, I usually: ${troubleshoot}
+
+Blockers and expectations:
+- Most confusing/frustrating: ${confusing}
+- Felt learning a lot but not progressing: ${progressFeeling}
+- Missing right now: ${missing}
+- Good outcome in next months: ${outcome}
+- What matters more right now: ${priority}
+
+Learning style:
+- Preferred ways to learn: ${learn}
+- Comfort admitting I don't understand: ${comfort}
+
+Open reflection:
+- One question I'd ask now: ${oneQuestion}
+- Other notes: ${closingNotes}
+`;
+        summaryField.value = message.trim();
+    }
+
+    function goToStep(direction) {
+        if (direction === 1) {
+            if (!validateWizardStep(wizardStep)) return;
+            wizardStep = Math.min(totalWizardSteps, wizardStep + 1);
+        } else if (direction === -1) {
+            wizardStep = Math.max(1, wizardStep - 1);
         }
+        if (wizardStep === totalWizardSteps) {
+            generateSurveyMessage();
+        }
+        showWizardStep(wizardStep);
     }
-    // Prevent interaction until loaded
-    document.body.style.overflow = 'hidden';
-    function enableScrollAfterLoad() {
-        document.body.style.overflow = '';
+
+    if (prevStep) prevStep.addEventListener("click", () => goToStep(-1));
+    if (nextStep) nextStep.addEventListener("click", () => goToStep(1));
+    wizardIndicators.forEach((indicator, idx) => {
+        indicator.style.cursor = "pointer";
+        indicator.addEventListener("click", () => {
+            const target = idx + 1;
+            if (target <= wizardStep && target >= 1) {
+                wizardStep = target;
+                showWizardStep(wizardStep);
+            }
+        });
+    });
+
+    function copySurvey() {
+        if (!summaryField) return;
+        summaryField.select();
+        summaryField.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(summaryField.value);
+        alert("Copied to clipboard.");
     }
-    loadingOverlay.addEventListener('transitionend', enableScrollAfterLoad);
+
+    function emailSurvey() {
+        if (!summaryField) return;
+        const subject = "Context survey";
+        const body = encodeURIComponent(summaryField.value);
+        window.location.href = `mailto:rafageist@divengine.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    }
+
+    function whatsappSurvey() {
+        if (!summaryField) return;
+        const msg = encodeURIComponent(summaryField.value);
+        window.open(`https://wa.me/5978401275?text=${msg}`, "_blank");
+    }
+
+    if (copyBtn) copyBtn.addEventListener("click", copySurvey);
+    if (emailBtn) emailBtn.addEventListener("click", emailSurvey);
+    if (whatsappBtn) whatsappBtn.addEventListener("click", whatsappSurvey);
+
+    showWizardStep(wizardStep);
 });
