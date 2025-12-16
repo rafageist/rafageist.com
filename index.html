@@ -309,6 +309,10 @@
 				<div class="step" data-step="8">8</div>
 				<div class="step" data-step="9">9</div>
 			</div>
+			<div class="wizard-preview" aria-live="polite">
+				<div class="wizard-preview-avatar"><i class="fas fa-user"></i></div>
+				<div class="wizard-preview-bubble" id="wizard-preview-text">Your answers will appear here as a short note.</div>
+			</div>
 			<form class="survey-form" id="surveyForm">
 				<div class="wizard-step active" data-step="1">
 					<fieldset>
@@ -458,8 +462,7 @@
 
 				<div class="wizard-step" data-step="9">
 					<div class="summary-block" id="wizard-summary" aria-live="polite">
-						<h4>Summary</h4>
-						<textarea id="generatedSurveyMessage" readonly rows="8"></textarea>
+						<textarea id="generatedSurveyMessage" readonly class="sr-only"></textarea>
 						<div class="summary-actions">
 							<button type="button" class="survey-open" id="copy-survey">Copy</button>
 							<button type="button" class="survey-open" id="email-survey">Email</button>
@@ -472,6 +475,7 @@
 					<button type="button" id="prevStep" class="survey-open">Back</button>
 					<button type="button" id="nextStep" class="survey-open">Next</button>
 				</div>
+				<div class="wizard-error" id="wizard-error" aria-live="polite"></div>
 			</form>
 		</div>
 	</div>

@@ -105,6 +105,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const copyBtn = document.getElementById("copy-survey");
     const emailBtn = document.getElementById("email-survey");
     const whatsappBtn = document.getElementById("whatsapp-survey");
+    const wizardError = document.getElementById("wizard-error");
+    const wizardPreview = document.getElementById("wizard-preview-text");
+    const surveyForm = document.getElementById("surveyForm");
 
     function showWizardStep(step) {
         wizardSteps.forEach((el, idx) => {
@@ -123,20 +126,37 @@ document.addEventListener("DOMContentLoaded", function () {
     function validateWizardStep(step) {
         const current = document.querySelector(`.wizard-step[data-step="${step}"]`);
         if (!current) return true;
+
+        current.querySelectorAll(".field-error").forEach(el => el.classList.remove("field-error"));
+        if (wizardError) wizardError.classList.remove("show");
+
         const requiredFields = current.querySelectorAll("input[required], textarea[required]");
-        for (const field of requiredFields) {
-            if ((field.type === "radio" || field.type === "checkbox")) {
+        let valid = true;
+
+        requiredFields.forEach(field => {
+            if (field.type === "radio" || field.type === "checkbox") {
                 const groupChecked = current.querySelectorAll(`input[name="${field.name}"]:checked`).length > 0;
-                if (!groupChecked) return false;
+                if (!groupChecked) {
+                    valid = false;
+                    const container = field.closest(".options") || field.parentElement;
+                    if (container) container.classList.add("field-error");
+                }
             } else if (!field.value.trim()) {
-                return false;
+                valid = false;
+                field.classList.add("field-error");
             }
+        });
+
+        if (!valid && wizardError) {
+            wizardError.textContent = "Please complete required fields before continuing.";
+            wizardError.classList.add("show");
         }
-        return true;
+
+        return valid;
     }
 
     function generateSurveyMessage() {
-        const form = document.getElementById("surveyForm");
+        const form = surveyForm;
         if (!form || !summaryField) return;
         const data = new FormData(form);
         const name = data.get("name") || "";
@@ -157,39 +177,53 @@ document.addEventListener("DOMContentLoaded", function () {
         const oneQuestion = data.get("one-question") || "";
         const closingNotes = data.get("closing-notes") || "";
 
-        const message = `
-Context survey
-Name: ${name}
+        const paragraphs = [];
 
-Context:
-- Situation: ${situation}
-- Time learning/working with computing or software: ${experienceTime}
-- Currently studying/working in tech: ${currentTech}
+        const introParts = [];
+        if (name) introParts.push(`I'm ${name}`);
+        if (situation) introParts.push(`a ${situation}`);
+        if (experienceTime) introParts.push(`with about ${experienceTime} in computing`);
+        if (introParts.length) paragraphs.push(`Hi Rafa, ${introParts.join(", ")}.`);
 
-Self-perception:
-- Closest statement: ${perception}
-- Topics I "kind of know" but don't fully trust: ${partialTopics}
+        if (currentTech) {
+            paragraphs.push(`Right now I'm in ${currentTech}.`);
+        }
 
-Practical experience:
-- Built/worked on: ${built}
-- When something fails, I usually: ${troubleshoot}
+        const feelingSentences = [];
+        if (perception) feelingSentences.push(`I often feel I ${perception.toLowerCase()}.`);
+        if (partialTopics) feelingSentences.push(`Topics that feel shaky: ${partialTopics}.`);
+        if (feelingSentences.length) paragraphs.push(feelingSentences.join(" "));
 
-Blockers and expectations:
-- Most confusing/frustrating: ${confusing}
-- Felt learning a lot but not progressing: ${progressFeeling}
-- Missing right now: ${missing}
-- Good outcome in next months: ${outcome}
-- What matters more right now: ${priority}
+        const workSentences = [];
+        if (built) workSentences.push(`So far I've built or worked on ${built}.`);
+        if (troubleshoot) workSentences.push(`When something fails I usually ${troubleshoot.toLowerCase()}.`);
+        if (workSentences.length) paragraphs.push(workSentences.join(" "));
 
-Learning style:
-- Preferred ways to learn: ${learn}
-- Comfort admitting I don't understand: ${comfort}
+        const blockerSentences = [];
+        if (confusing) blockerSentences.push(`The most confusing part right now is ${confusing}.`);
+        if (progressFeeling) blockerSentences.push(`Lately progress has felt: ${progressFeeling}.`);
+        if (missing) blockerSentences.push(`I think I'm missing ${missing}.`);
+        if (blockerSentences.length) paragraphs.push(blockerSentences.join(" "));
 
-Open reflection:
-- One question I'd ask now: ${oneQuestion}
-- Other notes: ${closingNotes}
-`;
-        summaryField.value = message.trim();
+        const goalSentences = [];
+        if (outcome) goalSentences.push(`In the next months I hope for ${outcome}.`);
+        if (priority) goalSentences.push(`Right now I care more about ${priority.toLowerCase()}.`);
+        if (goalSentences.length) paragraphs.push(goalSentences.join(" "));
+
+        const styleSentences = [];
+        if (learn) styleSentences.push(`I learn best through ${learn}.`);
+        if (comfort) styleSentences.push(`I'm ${comfort.toLowerCase()} admitting when I don't understand.`);
+        if (styleSentences.length) paragraphs.push(styleSentences.join(" "));
+
+        const questionSentences = [];
+        if (oneQuestion) questionSentences.push(`A question on my mind: ${oneQuestion}.`);
+        if (closingNotes) questionSentences.push(`Other notes: ${closingNotes}.`);
+        if (questionSentences.length) paragraphs.push(questionSentences.join(" "));
+
+        const message = paragraphs.join("\n\n").trim();
+        summaryField.value = message;
+        const fallback = "Your answers will appear here as a short note.";
+        if (wizardPreview) wizardPreview.textContent = message || fallback;
     }
 
     function goToStep(direction) {
@@ -199,10 +233,14 @@ Open reflection:
         } else if (direction === -1) {
             wizardStep = Math.max(1, wizardStep - 1);
         }
-        if (wizardStep === totalWizardSteps) {
-            generateSurveyMessage();
-        }
+        generateSurveyMessage();
         showWizardStep(wizardStep);
+    }
+
+    if (surveyForm) {
+        surveyForm.addEventListener("input", () => {
+            generateSurveyMessage();
+        });
     }
 
     if (prevStep) prevStep.addEventListener("click", () => goToStep(-1));
