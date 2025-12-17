@@ -108,8 +108,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const wizardError = document.getElementById("wizard-error");
     const wizardPreview = document.getElementById("wizard-preview-text");
     const summaryPreview = document.getElementById("wizard-summary-text");
-    const wizardPreviewContainer = document.getElementById("wizard-preview-container");
     const surveyForm = document.getElementById("surveyForm");
+    const surveyIntro = document.querySelector(".survey-intro");
+    const wizardProgress = document.querySelector(".wizard-progress");
 
     function showWizardStep(step) {
         wizardSteps.forEach((el, idx) => {
@@ -129,7 +130,8 @@ document.addEventListener("DOMContentLoaded", function () {
             nextStep.disabled = step === totalWizardSteps;
         }
         if (summaryBlock) summaryBlock.style.display = step === totalWizardSteps ? "block" : "none";
-        if (wizardPreviewContainer) wizardPreviewContainer.style.display = step === totalWizardSteps ? "flex" : "none";
+        if (surveyIntro) surveyIntro.style.display = step === totalWizardSteps ? "none" : "block";
+        if (wizardProgress) wizardProgress.style.display = step === totalWizardSteps ? "none" : "grid";
     }
 
     function validateWizardStep(step) {
