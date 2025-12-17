@@ -981,8 +981,8 @@ a:hover {
 	background: transparent;
 	border: 0;
 	box-shadow: none;
-	text-align: center;
-	padding: 1rem 0 0.5rem;
+	text-align: left;
+	padding: 1.2rem 0 0.5rem;
 	margin-top: 2rem;
 }
 
@@ -992,14 +992,46 @@ a:hover {
 	font-size: 0.95rem;
 }
 
+.footer-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 1.2rem;
+	align-items: start;
+}
+
+.footer-card h3 {
+	margin: 0 0 0.35rem 0;
+	font-size: 1.05rem;
+	color: #2a241e;
+}
+
+.footer-card p {
+	margin: 0.15rem 0;
+	color: #4f4338;
+}
+
+.footer-card a {
+	color: #1f3040;
+}
+
+.footer-card a:hover {
+	color: var(--accent);
+}
+
+.footer-map iframe {
+	border: 1px solid #d7cabb;
+	border-radius: 6px;
+	box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
 .social-links {
 	list-style: none;
 	padding: 0;
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
-	gap: 1.2rem;
-	margin: 0.5rem 0 0 0;
+	gap: 0.8rem;
+	margin: 0.4rem 0 0 0;
 }
 
 .social-links li {
@@ -1008,7 +1040,7 @@ a:hover {
 
 .social-links a {
 	color: #1f3040;
-	font-size: 1.4rem;
+	font-size: 1.3rem;
 	transition: transform 0.2s ease, color 0.3s ease;
 }
 
