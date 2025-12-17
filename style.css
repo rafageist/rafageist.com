@@ -31,6 +31,53 @@ a:hover {
 	color: #4f3f2c;
 }
 
+.keyword-strip {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	overflow: hidden;
+	padding: 0.55rem 0;
+	margin-top: 88px;
+	border-bottom: 1px solid var(--border);
+	background: #5a4430;
+	backdrop-filter: blur(2px);
+}
+
+.keyword-strip-track {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	padding-left: 1rem;
+	flex-shrink: 0;
+	animation: keyword-marquee 28s linear infinite;
+}
+
+.keyword-strip:hover .keyword-strip-track {
+	animation-play-state: paused;
+}
+
+.keyword-strip span {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.1rem 0.4rem;
+	color: #f6f1e8;
+	background: transparent;
+	font-size: 0.95rem;
+	white-space: nowrap;
+	border: 0;
+	border-radius: 0;
+}
+
+@keyframes keyword-marquee {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
 .site-header {
 	position: fixed;
 	top: 0;
@@ -185,7 +232,7 @@ a:hover {
 	display: flex;
 	align-items: center;
 	min-height: 68vh;
-	margin-top: 88px;
+	margin-top: 0;
 	padding: 0;
 	background: transparent;
 	border: 1px solid rgba(255, 255, 255, 0.2);
@@ -937,6 +984,12 @@ a:hover {
 	text-align: center;
 	padding: 1rem 0 0.5rem;
 	margin-top: 2rem;
+}
+
+.location-note {
+	margin: 0.8rem 0 0.3rem;
+	color: #4f4338;
+	font-size: 0.95rem;
 }
 
 .social-links {
