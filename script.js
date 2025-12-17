@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const images = document.querySelectorAll("#slideshow img");
     let index = 0;
     const slideMessages = [
-        "Learning computing, but nothing makes sense yet?",
-        "You follow steps and still feel lost.",
-        "Too many concepts, no clear picture.",
-        "Things work, but you do not know why."
+        "Learning computing and it still feels blurry?",
+        "You follow steps and the picture is missing.",
+        "Too many concepts, no clear shape yet.",
+        "You want to understand, not just repeat moves."
     ];
     const heroSlideText = document.getElementById("hero-slide-text");
 
