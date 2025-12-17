@@ -14,7 +14,7 @@
 body {
 	font-family: 'Courier New', Courier, monospace;
 	margin: 0;
-	background: linear-gradient(180deg, #e9f2fb 0%, #d8e3ef 35%, #cdd9e6 100%);
+	/*background: linear-gradient(180deg, #e9f2fb 0%, #d8e3ef 35%, #cdd9e6 100%);*/
 	color: var(--text);
 	min-height: 100vh;
 	overflow-x: hidden;
@@ -36,9 +36,9 @@ a:hover {
 	z-index: 2;
 	display: flex;
 	overflow: hidden;
-	padding: 0.55rem 0;
-	margin-top: 88px;
-	border-bottom: 1px solid var(--border);
+	padding: 0.2rem 0;
+	margin-top: 100px;
+	
 	background: #5a4430;
 	backdrop-filter: blur(2px);
 }
@@ -225,6 +225,23 @@ a:hover {
 	padding: 1.6rem 1.5rem;
 	margin-top: 1.6rem;
 	scroll-margin-top: 110px;
+}
+
+.perspective-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 1rem 1.4rem;
+	align-items: center;
+}
+
+.perspective-illustration img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+.perspective-text p {
+	margin-top: 0;
 }
 
 .hero {
@@ -978,12 +995,16 @@ a:hover {
 }
 
 .footer {
-	background: transparent;
+	background: var(--text);
 	border: 0;
 	box-shadow: none;
 	text-align: left;
-	padding: 1.2rem 0 0.5rem;
-	margin-top: 2rem;
+	padding: 2rem;
+	
+}
+
+.footer * {
+color: white !important;
 }
 
 .location-note {
@@ -1007,7 +1028,7 @@ a:hover {
 
 .footer-card p {
 	margin: 0.15rem 0;
-	color: #4f4338;
+	color: white;
 }
 
 .footer-card a {
