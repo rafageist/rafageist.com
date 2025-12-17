@@ -120,10 +120,16 @@ document.addEventListener("DOMContentLoaded", function () {
             if (idx + 1 < step) el.classList.add("completed");
             if (idx + 1 === step) el.classList.add("active");
         });
-        if (prevStep) prevStep.style.display = step === 1 ? "none" : "inline-flex";
-        if (nextStep) nextStep.textContent = step === totalWizardSteps ? "Send" : "Next";
+        if (prevStep) {
+            prevStep.style.display = "inline-flex";
+            prevStep.disabled = step === 1;
+        }
+        if (nextStep) {
+            nextStep.textContent = "Next";
+            nextStep.disabled = step === totalWizardSteps;
+        }
         if (summaryBlock) summaryBlock.style.display = step === totalWizardSteps ? "block" : "none";
-        if (wizardPreviewContainer) wizardPreviewContainer.style.display = step === totalWizardSteps ? "none" : "flex";
+        if (wizardPreviewContainer) wizardPreviewContainer.style.display = step === totalWizardSteps ? "flex" : "none";
     }
 
     function validateWizardStep(step) {
@@ -188,11 +194,9 @@ document.addEventListener("DOMContentLoaded", function () {
     function goToStep(direction) {
         if (direction === 1) {
             if (!validateWizardStep(wizardStep)) return;
-            if (wizardStep === totalWizardSteps) {
-                sendSurvey();
-                return;
+            if (wizardStep < totalWizardSteps) {
+                wizardStep = Math.min(totalWizardSteps, wizardStep + 1);
             }
-            wizardStep = Math.min(totalWizardSteps, wizardStep + 1);
         } else if (direction === -1) {
             wizardStep = Math.max(1, wizardStep - 1);
         }

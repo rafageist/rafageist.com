@@ -710,14 +710,17 @@ a:hover {
 .survey-modal-content {
 	position: relative;
 	max-width: 900px;
-	width: calc(100% - 32px);
-	max-height: 90vh;
+	width: calc(100% - 24px);
+	height: auto;
+	max-height: 88vh;
 	margin: 4vh auto 0 auto;
 	background: var(--panel);
 	border: 1px solid #c7d6e5;
 	box-shadow: 0 18px 38px rgba(0, 0, 0, 0.35);
-	padding: 1.5rem;
-	overflow-y: auto;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
 }
 
 .survey-modal-header {
@@ -725,17 +728,28 @@ a:hover {
 	align-items: center;
 	justify-content: space-between;
 	gap: 1rem;
+	background: #7a5b3a;
+	border-bottom: 1px solid #5c4128;
+	padding: 0.3rem 0.6rem;
+	color: #fff;
 }
 
 .survey-modal-header h3 {
 	margin: 0;
 	font-size: 1.2rem;
+	color: #fff;
+}
+
+.survey-modal-body {
+	padding: 1.1rem 1.2rem 0.8rem 1.2rem;
+	flex: 1;
+	overflow-y: auto;
 }
 
 .survey-close {
 	background: transparent;
 	border: 1px solid #c7d6e5;
-	color: #0d1c2b;
+	color: #fff;
 	font-size: 1.2rem;
 	padding: 0.2rem 0.6rem;
 	cursor: pointer;
@@ -748,7 +762,7 @@ a:hover {
 
 .wizard-progress {
 	display: grid;
-	grid-template-columns: repeat(9, 1fr);
+	grid-template-columns: repeat(4, 1fr);
 	gap: 0.4rem;
 	margin: 0.6rem 0 1rem 0;
 }
@@ -756,20 +770,26 @@ a:hover {
 .wizard-progress .step {
 	text-align: center;
 	padding: 0.5rem;
-	border: 1px solid #c7d6e5;
-	color: #0d1c2b;
-	background: rgba(255, 255, 255, 0.92);
+	border: 1px solid #c7b08a;
+	color: #4f3f2c;
+	background: #f4e5cf;
+	border-radius: 50%;
+	height: 2.4rem;
+	width: 2.4rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .wizard-progress .step.active {
-	border-color: #225580;
-	background: #2f70a5;
-	color: #fff;
+	border-color: #9b7a52;
+	background: #b68d5f;
+	color: #fff7ee;
 }
 
 .wizard-progress .step.completed {
-	border-color: #4b89b8;
-	background: #d3e5f5;
+	border-color: #c7b08a;
+	background: #e7d2b8;
 }
 
 .wizard-step {
@@ -792,6 +812,18 @@ a:hover {
 	text-align: center;
 }
 
+.wizard-nav button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.survey-modal-footer {
+	margin-top: 0.8rem;
+	padding-top: 0.8rem;
+	border-top: 1px solid #c7d6e5;
+	background: #f1e2ce;
+}
+
 .wizard-preview {
 	margin: 0.4rem 0 0.8rem 0;
 	display: flex;
@@ -803,9 +835,9 @@ a:hover {
 	max-width: 100%;
 	padding: 0.75rem 0.9rem;
 	border-radius: 12px;
-	background: #f1f5fb;
-	border: 1px solid #c7d6e5;
-	color: #0d1c2b;
+	background: #f4e5cf;
+	border: 1px solid #c7b08a;
+	color: #2a241e;
 	font-size: 0.95rem;
 	line-height: 1.4;
 	word-break: break-word;
@@ -849,9 +881,9 @@ a:hover {
 
 .summary-block {
 	margin-top: 1rem;
-	border: 1px solid #c7d6e5;
+	/*border: 1px solid #c7d6e5;*/
 	padding: 0.8rem;
-	background: rgba(255, 255, 255, 0.9);
+	/*background: rgba(255, 255, 255, 0.9);*/
 }
 
 .summary-block h4 {
@@ -870,16 +902,32 @@ a:hover {
 	border-radius: 0;
 }
 
-.sr-only {
-	position: absolute;
-	left: -9999px;
-}
-
 .summary-actions {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 0.5rem;
 	margin-top: 0.6rem;
+}
+
+.sr-only {
+	position: absolute;
+	left: -9999px;
+}
+
+.question-block {
+	border: 1px solid #c7d6e5;
+	padding: 1rem;
+	background: rgba(255, 255, 255, 0.92);
+	margin-bottom: 0.8rem;
+}
+
+.question-block h4 {
+	margin: 0 0 0.4rem 0;
+	font-size: 1.05rem;
+}
+
+.question-block .question-text {
+	margin: 0 0 0.6rem 0;
 }
 
 .footer {
@@ -1015,3 +1063,13 @@ a:hover {
 		padding-top: 140px;
 	}
 }
+
+@media (max-width: 640px) {
+	.survey-modal-content {
+		width: calc(100% - 10px);
+		margin: 1.5vh auto 0 auto;
+		max-height: 96vh;
+		height: 96vh;
+	}
+}
+
