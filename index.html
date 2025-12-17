@@ -85,6 +85,13 @@
 	</section>
 
 	<main class="page-shell">
+		<section class="help-section" aria-label="Perspective">
+			<h2>Where my perspective comes from</h2>
+			<p>I started learning with very little around me. Books were scarce, tools were basic, and I often had to guess what I did not yet understand.</p>
+			<p>Those constraints taught me to slow down, name the confusion, and rebuild ideas from the simplest pieces I could see.</p>
+			<p>Over time I learned that good guidance matters more than abundant resources. A calm conversation can save weeks of wandering.</p>
+		</section>
+
 		<section class="help-section" aria-label="Welcome note">
 			<h2>Who this space welcomes</h2>
 			<p>This works for beginners, juniors, self taught learners, and curious teens. Age does not matter; willingness to think through confusion does.</p>
@@ -297,171 +304,68 @@
 				<h3 id="survey-modal-title">Context survey</h3>
 				<button type="button" class="survey-close" id="close-survey" aria-label="Close survey">x</button>
 			</div>
-			<p class="survey-intro">This short, reflective form helps me understand your context before any conversation. It is not a test or an application. It is a calm way to see where you are and what you need.</p>
+			<p class="survey-intro">Three quick steps to understand where you are and what you need.</p>
 			<div class="wizard-progress">
 				<div class="step active" data-step="1">1</div>
 				<div class="step" data-step="2">2</div>
 				<div class="step" data-step="3">3</div>
 				<div class="step" data-step="4">4</div>
-				<div class="step" data-step="5">5</div>
-				<div class="step" data-step="6">6</div>
-				<div class="step" data-step="7">7</div>
-				<div class="step" data-step="8">8</div>
-				<div class="step" data-step="9">9</div>
 			</div>
-			<div class="wizard-preview" aria-live="polite">
+			<div class="wizard-preview" id="wizard-preview-container" aria-live="polite">
 				<div class="wizard-preview-avatar"><i class="fas fa-user"></i></div>
 				<div class="wizard-preview-bubble" id="wizard-preview-text">Your answers will appear here as a short note.</div>
 			</div>
 			<form class="survey-form" id="surveyForm">
 				<div class="wizard-step active" data-step="1">
 					<fieldset>
-						<legend>Section 1: Context</legend>
-						<label for="name">Your name (so I can address you properly)</label>
-						<input id="name" name="name" type="text" required>
-
-						<label>How would you describe your current situation?</label>
+						<legend>Starting point</legend>
+						<label>Which best describes you right now?</label>
 						<div class="options single">
-							<label><input type="radio" name="situation" value="Student" required> Student</label>
-							<label><input type="radio" name="situation" value="Self taught learner"> Self taught learner</label>
-							<label><input type="radio" name="situation" value="Working professional"> Working professional</label>
-							<label><input type="radio" name="situation" value="Career switcher"> Career switcher</label>
-							<label><input type="radio" name="situation" value="Other"> Other</label>
+							<label><input type="radio" name="starting_point" value="I don't know anything yet, I want to start properly" required> I don't know anything yet, I want to start properly</label>
+							<label><input type="radio" name="starting_point" value="I just started and everything feels confusing"> I just started and everything feels confusing</label>
+							<label><input type="radio" name="starting_point" value="I've been learning for a while, but things don't click"> I've been learning for a while, but things don't click</label>
+							<label><input type="radio" name="starting_point" value="I can write some code, but I don't really understand it"> I can write some code, but I don't really understand it</label>
+							<label><input type="radio" name="starting_point" value="I study or work in tech, but my foundations feel weak"> I study or work in tech, but my foundations feel weak</label>
+							<label><input type="radio" name="starting_point" value="I'm just curious and exploring"> I'm just curious and exploring</label>
 						</div>
-
-						<label>How long have you been trying to learn or work with computing or software?</label>
-						<div class="options single">
-							<label><input type="radio" name="experience_time" value="Less than 6 months" required> Less than 6 months</label>
-							<label><input type="radio" name="experience_time" value="6-12 months"> 6-12 months</label>
-							<label><input type="radio" name="experience_time" value="1-3 years"> 1-3 years</label>
-							<label><input type="radio" name="experience_time" value="More than 3 years"> More than 3 years</label>
-						</div>
-
-						<label for="current-tech">Are you currently studying or working in something related to technology?</label>
-						<input id="current-tech" name="current-tech" type="text" placeholder="Optional">
 					</fieldset>
 				</div>
 
 				<div class="wizard-step" data-step="2">
 					<fieldset>
-						<legend>Section 2: Self perception of knowledge</legend>
-						<label>Which statement feels closest to you right now?</label>
+						<legend>Main difficulty</legend>
+						<label>What is your main difficulty right now?</label>
 						<div class="options single">
-							<label><input type="radio" name="perception" value="Follow tutorials without understanding" required> I often follow tutorials, but I do not really understand what is happening.</label>
-							<label><input type="radio" name="perception" value="Understand concepts but struggle to apply"> I understand concepts, but I struggle to apply them.</label>
-							<label><input type="radio" name="perception" value="Can build but foundations weak"> I can build things, but I feel my foundations are weak.</label>
-							<label><input type="radio" name="perception" value="Feel blocked, not sure what to ask"> I feel blocked and do not even know what I should ask.</label>
-							<label><input type="radio" name="perception" value="Other"> Other</label>
+							<label><input type="radio" name="difficulty" value="I don't know where or how to start" required> I don't know where or how to start</label>
+							<label><input type="radio" name="difficulty" value="I don't know what to learn first"> I don't know what to learn first</label>
+							<label><input type="radio" name="difficulty" value="I follow steps but don't know why they work"> I follow steps but don't know why they work</label>
+							<label><input type="radio" name="difficulty" value="Too many concepts, no clear picture"> Too many concepts, no clear picture</label>
+							<label><input type="radio" name="difficulty" value="My code breaks and I don't know how to think about it"> My code breaks and I don't know how to think about it</label>
+							<label><input type="radio" name="difficulty" value="Classes or courses move too fast"> Classes or courses move too fast</label>
 						</div>
-
-						<label for="partial-topics">What topics do you feel you kind of know but do not fully trust yourself on?</label>
-						<textarea id="partial-topics" name="partial-topics" rows="3" placeholder="Optional"></textarea>
 					</fieldset>
 				</div>
 
 				<div class="wizard-step" data-step="3">
 					<fieldset>
-						<legend>Section 3: Practical experience</legend>
-						<label>What have you actually built or worked on so far?</label>
-						<div class="options multi">
-							<label><input type="checkbox" name="built[]" value="Small scripts or exercises"> Small scripts or exercises</label>
-							<label><input type="checkbox" name="built[]" value="University assignments"> University assignments</label>
-							<label><input type="checkbox" name="built[]" value="Personal projects"> Personal projects</label>
-							<label><input type="checkbox" name="built[]" value="Production systems at work"> Production systems at work</label>
-							<label><input type="checkbox" name="built[]" value="Nothing yet"> Nothing yet</label>
-						</div>
-
-						<label>When something does not work, what do you usually do first?</label>
+						<legend>What would help most</legend>
+						<label>What would help you most right now?</label>
 						<div class="options single">
-							<label><input type="radio" name="troubleshoot" value="Look for similar example" required> Look for a similar example</label>
-							<label><input type="radio" name="troubleshoot" value="Copy and adapt code"> Copy and adapt code</label>
-							<label><input type="radio" name="troubleshoot" value="Reason step by step"> Try to reason step by step</label>
-							<label><input type="radio" name="troubleshoot" value="Ask someone"> Ask someone</label>
-							<label><input type="radio" name="troubleshoot" value="Get stuck"> I usually get stuck</label>
+							<label><input type="radio" name="help" value="Calm, step-by-step explanations" required> Calm, step-by-step explanations</label>
+							<label><input type="radio" name="help" value="Help organizing what to learn next"> Help organizing what to learn next</label>
+							<label><input type="radio" name="help" value="Understanding basics and fundamentals"> Understanding basics and fundamentals</label>
+							<label><input type="radio" name="help" value="Talking through confusion with someone"> Talking through confusion with someone</label>
+							<label><input type="radio" name="help" value="I'm not sure yet"> I'm not sure yet</label>
 						</div>
 					</fieldset>
 				</div>
 
 				<div class="wizard-step" data-step="4">
-					<fieldset>
-						<legend>Section 4: Blockers and frustrations</legend>
-						<label for="confusing">What is currently the most confusing or frustrating thing for you?</label>
-						<textarea id="confusing" name="confusing" rows="3" required></textarea>
-
-						<label>Have you ever felt that you were learning a lot but not really progressing?</label>
-						<div class="options single">
-							<label><input type="radio" name="progress_feeling" value="Yes" required> Yes</label>
-							<label><input type="radio" name="progress_feeling" value="No"> No</label>
-							<label><input type="radio" name="progress_feeling" value="Not sure"> Not sure</label>
-						</div>
-
-						<label>What do you think is missing right now?</label>
-						<div class="options multi">
-							<label><input type="checkbox" name="missing[]" value="Clear fundamentals"> Clear fundamentals</label>
-							<label><input type="checkbox" name="missing[]" value="Structure or learning order"> Structure or learning order</label>
-							<label><input type="checkbox" name="missing[]" value="Why not just how"> Someone to explain why, not just how</label>
-							<label><input type="checkbox" name="missing[]" value="Confidence"> Confidence</label>
-							<label><input type="checkbox" name="missing[]" value="Feedback on thinking"> Feedback on my thinking</label>
-							<label><input type="checkbox" name="missing[]" value="Other"> Other</label>
-						</div>
-					</fieldset>
-				</div>
-
-				<div class="wizard-step" data-step="5">
-					<fieldset>
-						<legend>Section 5: Expectations</legend>
-						<label for="outcome">What would a good outcome look like for you in the next few months?</label>
-						<textarea id="outcome" name="outcome" rows="3" placeholder="Optional"></textarea>
-
-						<label>Which of these matters more to you right now?</label>
-						<div class="options single">
-							<label><input type="radio" name="priority" value="Understanding deeply" required> Understanding deeply, even if it takes time</label>
-							<label><input type="radio" name="priority" value="Moving fast"> Moving fast and building things</label>
-							<label><input type="radio" name="priority" value="Fixing specific problems"> Fixing specific problems</label>
-							<label><input type="radio" name="priority" value="Clarifying concepts"> Clarifying concepts I already touched</label>
-						</div>
-					</fieldset>
-				</div>
-
-				<div class="wizard-step" data-step="6">
-					<fieldset>
-						<legend>Section 6: Learning style</legend>
-						<label>How do you usually prefer to learn?</label>
-						<div class="options multi">
-							<label><input type="checkbox" name="learn[]" value="Step by step explanations"> Step by step explanations</label>
-							<label><input type="checkbox" name="learn[]" value="Discussions and reasoning"> Discussions and reasoning</label>
-							<label><input type="checkbox" name="learn[]" value="Trial and error"> Trial and error</label>
-							<label><input type="checkbox" name="learn[]" value="Visual explanations"> Visual explanations</label>
-							<label><input type="checkbox" name="learn[]" value="Reading and thinking alone"> Reading and thinking alone</label>
-						</div>
-
-						<label>How comfortable are you admitting you do not understand something?</label>
-						<div class="options single">
-							<label><input type="radio" name="comfort" value="Very comfortable" required> Very comfortable</label>
-							<label><input type="radio" name="comfort" value="Somewhat comfortable"> Somewhat comfortable</label>
-							<label><input type="radio" name="comfort" value="Not comfortable"> Not comfortable</label>
-						</div>
-					</fieldset>
-				</div>
-
-				<div class="wizard-step" data-step="7">
-					<fieldset>
-						<legend>Section 7: Open reflection</legend>
-						<label for="one-question">If you could ask one question right now, without worrying if it sounds basic or wrong, what would it be?</label>
-						<textarea id="one-question" name="one-question" rows="3" placeholder="Optional"></textarea>
-					</fieldset>
-				</div>
-
-				<div class="wizard-step" data-step="8">
-					<fieldset>
-						<legend>Section 8: Closing</legend>
-						<label for="closing-notes">Is there anything else you think I should know before replying to you?</label>
-						<textarea id="closing-notes" name="closing-notes" rows="3" placeholder="Optional"></textarea>
-					</fieldset>
-				</div>
-
-				<div class="wizard-step" data-step="9">
 					<div class="summary-block" id="wizard-summary" aria-live="polite">
+						<div class="wizard-preview">
+							<div class="wizard-preview-avatar"><i class="fas fa-user"></i></div>
+							<div class="wizard-preview-bubble" id="wizard-summary-text">Your answers will appear here as a short note.</div>
+						</div>
 						<textarea id="generatedSurveyMessage" readonly class="sr-only"></textarea>
 						<div class="summary-actions">
 							<button type="button" class="survey-open" id="copy-survey">Copy</button>

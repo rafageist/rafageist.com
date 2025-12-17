@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const surveyBackdrop = document.getElementById("survey-backdrop");
     const openSurveyHero = document.getElementById("open-survey-hero");
     let wizardStep = 1;
-    const totalWizardSteps = 9;
+    const totalWizardSteps = 4;
 
     function toggleSurvey(show) {
         if (!surveyModal) return;
@@ -107,6 +107,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const whatsappBtn = document.getElementById("whatsapp-survey");
     const wizardError = document.getElementById("wizard-error");
     const wizardPreview = document.getElementById("wizard-preview-text");
+    const summaryPreview = document.getElementById("wizard-summary-text");
+    const wizardPreviewContainer = document.getElementById("wizard-preview-container");
     const surveyForm = document.getElementById("surveyForm");
 
     function showWizardStep(step) {
@@ -119,8 +121,9 @@ document.addEventListener("DOMContentLoaded", function () {
             if (idx + 1 === step) el.classList.add("active");
         });
         if (prevStep) prevStep.style.display = step === 1 ? "none" : "inline-flex";
-        if (nextStep) nextStep.textContent = step === totalWizardSteps ? "Finish" : "Next";
+        if (nextStep) nextStep.textContent = step === totalWizardSteps ? "Send" : "Next";
         if (summaryBlock) summaryBlock.style.display = step === totalWizardSteps ? "block" : "none";
+        if (wizardPreviewContainer) wizardPreviewContainer.style.display = step === totalWizardSteps ? "none" : "flex";
     }
 
     function validateWizardStep(step) {
@@ -130,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
         current.querySelectorAll(".field-error").forEach(el => el.classList.remove("field-error"));
         if (wizardError) wizardError.classList.remove("show");
 
-        const requiredFields = current.querySelectorAll("input[required], textarea[required]");
+        const requiredFields = current.querySelectorAll("input[required]");
         let valid = true;
 
         requiredFields.forEach(field => {
@@ -157,78 +160,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function generateSurveyMessage() {
         const form = surveyForm;
-        if (!form || !summaryField) return;
+        if (!form) return "";
         const data = new FormData(form);
-        const name = data.get("name") || "";
-        const situation = data.get("situation") || "";
-        const experienceTime = data.get("experience_time") || "";
-        const currentTech = data.get("current-tech") || "";
-        const perception = data.get("perception") || "";
-        const partialTopics = data.get("partial-topics") || "";
-        const built = data.getAll("built[]").join(", ");
-        const troubleshoot = data.get("troubleshoot") || "";
-        const confusing = data.get("confusing") || "";
-        const progressFeeling = data.get("progress_feeling") || "";
-        const missing = data.getAll("missing[]").join(", ");
-        const outcome = data.get("outcome") || "";
-        const priority = data.get("priority") || "";
-        const learn = data.getAll("learn[]").join(", ");
-        const comfort = data.get("comfort") || "";
-        const oneQuestion = data.get("one-question") || "";
-        const closingNotes = data.get("closing-notes") || "";
+        const starting = data.get("starting_point") || "";
+        const difficulty = data.get("difficulty") || "";
+        const help = data.get("help") || "";
 
-        const paragraphs = [];
+        const greetings = ["Hi Rafa,", "Hello Rafa,", "Hi there,"];
+        const closings = ["Thanks for reading.", "Thanks for taking a look.", "Regards."];
+        const bridge = ["I'm reaching out because", "I'm writing because", "Sharing where I am right now:"];
 
-        const introParts = [];
-        if (name) introParts.push(`I'm ${name}`);
-        if (situation) introParts.push(`a ${situation}`);
-        if (experienceTime) introParts.push(`with about ${experienceTime} in computing`);
-        if (introParts.length) paragraphs.push(`Hi Rafa, ${introParts.join(", ")}.`);
+        const parts = [];
+        if (starting) parts.push(`I'm coming from this starting point: ${starting}`);
+        if (difficulty) parts.push(`Right now my main difficulty is ${difficulty}`);
+        if (help) parts.push(`It would help me most to have ${help.toLowerCase()}`);
 
-        if (currentTech) {
-            paragraphs.push(`Right now I'm in ${currentTech}.`);
-        }
-
-        const feelingSentences = [];
-        if (perception) feelingSentences.push(`I often feel I ${perception.toLowerCase()}.`);
-        if (partialTopics) feelingSentences.push(`Topics that feel shaky: ${partialTopics}.`);
-        if (feelingSentences.length) paragraphs.push(feelingSentences.join(" "));
-
-        const workSentences = [];
-        if (built) workSentences.push(`So far I've built or worked on ${built}.`);
-        if (troubleshoot) workSentences.push(`When something fails I usually ${troubleshoot.toLowerCase()}.`);
-        if (workSentences.length) paragraphs.push(workSentences.join(" "));
-
-        const blockerSentences = [];
-        if (confusing) blockerSentences.push(`The most confusing part right now is ${confusing}.`);
-        if (progressFeeling) blockerSentences.push(`Lately progress has felt: ${progressFeeling}.`);
-        if (missing) blockerSentences.push(`I think I'm missing ${missing}.`);
-        if (blockerSentences.length) paragraphs.push(blockerSentences.join(" "));
-
-        const goalSentences = [];
-        if (outcome) goalSentences.push(`In the next months I hope for ${outcome}.`);
-        if (priority) goalSentences.push(`Right now I care more about ${priority.toLowerCase()}.`);
-        if (goalSentences.length) paragraphs.push(goalSentences.join(" "));
-
-        const styleSentences = [];
-        if (learn) styleSentences.push(`I learn best through ${learn}.`);
-        if (comfort) styleSentences.push(`I'm ${comfort.toLowerCase()} admitting when I don't understand.`);
-        if (styleSentences.length) paragraphs.push(styleSentences.join(" "));
-
-        const questionSentences = [];
-        if (oneQuestion) questionSentences.push(`A question on my mind: ${oneQuestion}.`);
-        if (closingNotes) questionSentences.push(`Other notes: ${closingNotes}.`);
-        if (questionSentences.length) paragraphs.push(questionSentences.join(" "));
-
-        const message = paragraphs.join("\n\n").trim();
-        summaryField.value = message;
+        const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+        const body = parts.join(". ") + (parts.length ? "." : "");
+        const message = `${pick(greetings)} ${pick(bridge)} ${body} ${pick(closings)}`.replace(/\s+/g, " ").trim();
         const fallback = "Your answers will appear here as a short note.";
+        if (summaryField) summaryField.value = message;
         if (wizardPreview) wizardPreview.textContent = message || fallback;
+        if (summaryPreview) summaryPreview.textContent = message || fallback;
+        return message;
     }
 
     function goToStep(direction) {
         if (direction === 1) {
             if (!validateWizardStep(wizardStep)) return;
+            if (wizardStep === totalWizardSteps) {
+                sendSurvey();
+                return;
+            }
             wizardStep = Math.min(totalWizardSteps, wizardStep + 1);
         } else if (direction === -1) {
             wizardStep = Math.max(1, wizardStep - 1);
@@ -282,4 +245,5 @@ document.addEventListener("DOMContentLoaded", function () {
     if (whatsappBtn) whatsappBtn.addEventListener("click", whatsappSurvey);
 
     showWizardStep(wizardStep);
+    generateSurveyMessage();
 });
