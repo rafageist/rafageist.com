@@ -750,6 +750,129 @@ a:hover {
 	border-color: #6b5336;
 }
 
+.glossary-term {
+	background: none;
+	border: 0;
+	padding: 0;
+	font: inherit;
+	font-weight: 700;
+	color: var(--accent);
+	text-decoration: underline dotted;
+	cursor: pointer;
+}
+
+.glossary-term:focus {
+	outline: 2px solid #b59d82;
+	outline-offset: 2px;
+}
+
+.glossary-modal {
+	position: fixed;
+	inset: 0;
+	z-index: 2100;
+	display: none;
+}
+
+.glossary-modal.show {
+	display: block;
+}
+
+.glossary-backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.55);
+}
+
+.glossary-content {
+	position: relative;
+	max-width: 720px;
+	width: calc(100% - 24px);
+	max-height: 85vh;
+	margin: 6vh auto 0 auto;
+	background: var(--panel);
+	border: 1px solid #c7d6e5;
+	box-shadow: 0 18px 38px rgba(0, 0, 0, 0.35);
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.glossary-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	background: #7a5b3a;
+	border-bottom: 1px solid #5c4128;
+	padding: 0.4rem 0.8rem;
+	color: #fff;
+}
+
+.glossary-header h3 {
+	margin: 0;
+	font-size: 1.1rem;
+	color: #fff;
+}
+
+.glossary-close {
+	background: transparent;
+	border: 1px solid #c7d6e5;
+	color: #fff;
+	font-size: 1.1rem;
+	padding: 0.2rem 0.6rem;
+	cursor: pointer;
+	border-radius: 0;
+}
+
+.glossary-body {
+	padding: 1rem 1.2rem;
+	overflow-y: auto;
+}
+
+.glossary-search {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin: 0.6rem 0 0.4rem;
+}
+
+.glossary-search-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	padding: 0.35rem 0.6rem;
+	border: 1px solid #c7b08a;
+	background: #f4e5cf;
+	color: #2a241e;
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 0.85rem;
+	border-radius: 0;
+}
+
+.glossary-search-link:hover {
+	border-color: #9b7a52;
+}
+
+.glossary-references h4 {
+	margin: 0.8rem 0 0.4rem;
+	font-size: 0.95rem;
+	color: #2a241e;
+}
+
+.glossary-references ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: grid;
+	gap: 0.35rem;
+}
+
+.glossary-references a {
+	color: var(--accent);
+	text-decoration: underline;
+}
+
 .survey-modal {
 	position: fixed;
 	inset: 0;

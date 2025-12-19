@@ -250,6 +250,84 @@
     if (emailBtn) emailBtn.addEventListener("click", emailSurvey);
     if (whatsappBtn) whatsappBtn.addEventListener("click", whatsappSurvey);
 
+    // Glossary modal controls
+    const glossaryModal = document.getElementById("glossary-modal");
+    const glossaryBackdrop = document.getElementById("glossary-backdrop");
+    const glossaryClose = document.getElementById("glossary-close");
+    const glossaryTitle = document.getElementById("glossary-title");
+    const glossaryDefinition = document.getElementById("glossary-definition");
+    const glossaryLinks = document.getElementById("glossary-links");
+    const glossarySearchGoogle = document.getElementById("glossary-search-google");
+    const glossarySearchWikipedia = document.getElementById("glossary-search-wikipedia");
+    const glossarySearchBing = document.getElementById("glossary-search-bing");
+    const glossarySearchAcm = document.getElementById("glossary-search-acm");
+    const glossaryTerms = document.querySelectorAll(".glossary-term");
+
+    function closeGlossary() {
+        if (!glossaryModal) return;
+        glossaryModal.classList.remove("show");
+        glossaryModal.setAttribute("aria-hidden", "true");
+    }
+
+    function openGlossary(termEl) {
+        if (!glossaryModal || !termEl) return;
+        const term = termEl.dataset.term || termEl.textContent.trim();
+        const definition = termEl.dataset.definition || "";
+        const linksData = termEl.dataset.links || "";
+
+        if (glossaryTitle) glossaryTitle.textContent = term;
+        if (glossaryDefinition) glossaryDefinition.textContent = definition;
+
+        const termQuery = encodeURIComponent(term);
+        if (glossarySearchGoogle) glossarySearchGoogle.href = `https://www.google.com/search?q=${termQuery}`;
+        if (glossarySearchWikipedia) glossarySearchWikipedia.href = `https://en.wikipedia.org/wiki/Special:Search?search=${termQuery}`;
+        if (glossarySearchBing) glossarySearchBing.href = `https://www.bing.com/search?q=${termQuery}`;
+        if (glossarySearchAcm) glossarySearchAcm.href = `https://dl.acm.org/action/doSearch?AllField=${termQuery}`;
+
+        if (glossaryLinks) {
+            glossaryLinks.innerHTML = "";
+            const items = linksData.split(";").map(item => item.trim()).filter(Boolean);
+            items.forEach(item => {
+                const parts = item.split("|");
+                const label = (parts[0] || "").trim();
+                const url = (parts[1] || "").trim();
+                if (!label || !url) return;
+                const li = document.createElement("li");
+                const a = document.createElement("a");
+                a.href = url;
+                a.target = "_blank";
+                a.rel = "noopener";
+                a.textContent = label;
+                li.appendChild(a);
+                glossaryLinks.appendChild(li);
+            });
+        }
+
+        glossaryModal.classList.add("show");
+        glossaryModal.setAttribute("aria-hidden", "false");
+    }
+
+    glossaryTerms.forEach(termEl => {
+        termEl.addEventListener("click", (event) => {
+            event.preventDefault();
+            openGlossary(termEl);
+        });
+        termEl.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                openGlossary(termEl);
+            }
+        });
+    });
+
+    if (glossaryBackdrop) glossaryBackdrop.addEventListener("click", closeGlossary);
+    if (glossaryClose) glossaryClose.addEventListener("click", closeGlossary);
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && glossaryModal && glossaryModal.classList.contains("show")) {
+            closeGlossary();
+        }
+    });
+
     showWizardStep(wizardStep);
     generateSurveyMessage();
 });
