@@ -1,226 +1,686 @@
-document.addEventListener("DOMContentLoaded", function () {
-    let images = document.querySelectorAll("#slideshow img");
+﻿document.addEventListener("DOMContentLoaded", function () {
+    // --- Slideshow ---
+    const images = document.querySelectorAll("#slideshow img");
     let index = 0;
-    let direction = -5; // Initial movement direction
+    const slideMessages = [
+        "You keep learning computing, but the picture still feels incomplete\?",
+        "You follow steps and the picture is missing.",
+        "Too many concepts, no clear shape yet.",
+        "You want to understand, not just repeat moves."
+    ];
+    const heroSlideText = document.getElementById("hero-slide-text");
 
     function changeImage() {
-        let current = document.querySelector("#slideshow img.active");
+        const current = images[index];
         if (current) {
             current.classList.remove("active");
-            current.classList.add("exit"); // Moves to the left
-            setTimeout(() => current.classList.remove("exit"), 1500); // Reset after fade
+            current.classList.add("exit");
+            // Reset position after exit transition ends
+            setTimeout(() => {
+                current.classList.remove("exit");
+            }, 1500);
         }
 
-        index = (index + 1) % images.length;
-        let next = images[index];
+        const nextIndex = (index + 1) % images.length;
+        const next = images[nextIndex];
 
         next.classList.add("active");
-        next.style.left = "-10%"; // Reset position
-        next.style.transform = `translateX(${direction}%)`; // Apply movement
+        // Ensure starting position fully covers viewport
+        if (heroSlideText) {
+            const msg = slideMessages[nextIndex % slideMessages.length];
+            heroSlideText.textContent = msg;
+        }
 
-        // Alternate movement direction
-        direction = direction === -5 ? 5 : -5;
+        index = nextIndex;
     }
 
-    // Start with the first image
-    changeImage();
-
-    // Change image every 5 seconds
-    setInterval(changeImage, 5000);
-
-    // --- Movie-style credits ---
-    // Each credit: { text, type: 'exp'|'tech'|'skill', value: number, year: number }
-    const currentYear = new Date().getFullYear();
-    const startYear = 1997;
-    const totalYears = currentYear - startYear + 1; // inclusive
-    let expSoFar = 0, techSoFar = 0, skillSoFar = 0;
-    const creditMessages = [
-        { text: "Logic and algorithms (1997...)", type: 'exp', value: 1, year: 1997 },
-        { text: "Police Academy Game [ASCII, BASIC/CP-M → MS-DOS] (1997...2000)", type: 'exp', value: 1, year: 1997 },
-        { text: "ASCII Paint & Custom Format for Sprites (1997...2000)", type: 'exp', value: 1, year: 1997 },
-        { text: "QBasic Inventory System (1998...2000)", type: 'exp', value: 1, year: 1998 },
-        { text: "Dot-Matrix Printer Reports (1999...2002)", type: 'exp', value: 1, year: 1999 },
-        { text: "High School: Exact Sciences (2001...2004)", type: 'exp', value: 3, year: 2001 },
-        { text: "Pascal, C (2000...2004)", type: 'tech', value: 1, year: 2002 },
-        { text: "JavaScript (2003...)", type: 'tech', value: 1, year: 2003 },
-        { text: "First Drupal Websites (2005...)", type: 'exp', value: 1, year: 2005 },
-        { text: "B.Sc. Software Engineering (2005...2010)", type: 'exp', value: 5, year: 2005 },
-        { text: "Calculus, Physics, Computer Architecture, Numerical Methods, Statistics, AI (2005...2010)", type: 'exp', value: 5, year: 2005 },
-        { text: "PHP + Drupal + WordPress (2005...)", type: 'tech', value: 1, year: 2005 },
-        { text: "PostgreSQL / SQL (2005...)", type: 'tech', value: 1, year: 2005 },
-        { text: "Operations Research, Office Tools [Excel, Access, VBA] (2000...)", type: 'skill', value: 1, year: 2006 },
-        { text: "Software Engineering [RUP, UML] (2006...)", type: 'skill', value: 1, year: 2006 },
-        { text: "Artificial Intelligence (2006...)", type: 'skill', value: 1, year: 2006 },
-        { text: "Business Process Management (2007...)", type: 'skill', value: 1, year: 2007 },
-        { text: "Linux SysAdmin (2007...)", type: 'skill', value: 1, year: 2007 },
-        { text: "GitHub (2011...)", type: 'skill', value: 1, year: 2011 },
-        { text: "Prolog (2011...)", type: 'tech', value: 1, year: 2011 },
-        { text: "Python (2011...)", type: 'tech', value: 1, year: 2011 },
-        { text: "Co-founder — Apretaste! (2011...)", type: 'skill', value: 1, year: 2011 },
-        { text: "Founder — Divengine (2011...)", type: 'skill', value: 1, year: 2011 },
-        { text: "Mentoring and growing developers (2010...)", type: 'skill', value: 1, year: 2012 },
-        { text: "Workflow automation & scalable solutions (2010...)", type: 'skill', value: 1, year: 2012 },
-        { text: "Node.js (2015...)", type: 'tech', value: 1, year: 2015 },
-        { text: "TypeScript (2016...)", type: 'tech', value: 1, year: 2016 },
-        { text: "Node-RED (2016...)", type: 'skill', value: 1, year: 2016 },
-        { text: "React / Vue / Vite (2016...)", type: 'tech', value: 1, year: 2016 },
-        { text: "Dart, .NET MAUI, Docker, DigitalOcean (2018...)", type: 'tech', value: 1, year: 2018 },
-        { text: "Software Engineer — Magaya (2020...2025)", type: 'skill', value: 1, year: 2020 },
-        { text: "R (2020...)", type: 'tech', value: 1, year: 2020 },
-        { text: "Odoo (2024...)", type: 'tech', value: 1, year: 2024 },
-        { text: "Entering Odoo Ecosystem (2024)", type: 'exp', value: 1, year: 2024 },
-        { text: "Exploring new tech, always learning", type: 'exp', value: 1, year: 2025 }
-    ];
-
-    // Sort credits by year for a chronological experience
-    creditMessages.sort((a, b) => a.year - b.year);
-
-    // Dynamically adjust values so exp reaches totalYears, and tech/skill never stay at 0
-    let expSum = 0, techSum = 0, skillSum = 0;
-    creditMessages.forEach(c => {
-        if (c.type === 'exp') expSum += c.value;
-        if (c.type === 'tech') techSum += c.value;
-        if (c.type === 'skill') skillSum += c.value;
+    // Swap slide sources for portrait (use *.vertical.png)
+    images.forEach(img => {
+        if (!img.dataset.originalSrc) {
+            img.dataset.originalSrc = img.getAttribute("src");
+            const original = img.dataset.originalSrc;
+            const vertical = original.replace(/\.png(\?.*)?$/, ".vertical.png$1");
+            img.dataset.verticalSrc = vertical;
+        }
     });
-    // Adjust exp values proportionally if needed
-    if (expSum !== totalYears) {
-        let diff = totalYears - expSum;
-        // Distribute the difference over exp credits
-        for (let i = 0; i < creditMessages.length && diff !== 0; i++) {
-            if (creditMessages[i].type === 'exp') {
-                creditMessages[i].value += 1;
-                diff--;
+
+    function updateSlideSources() {
+        const useVertical = window.innerHeight > window.innerWidth;
+        images.forEach(img => {
+            const target = useVertical ? img.dataset.verticalSrc : img.dataset.originalSrc;
+            if (target && img.getAttribute("src") !== target) {
+                img.setAttribute("src", target);
             }
-        }
-    }
-    // Ensure tech and skill start >0
-    if (techSum === 0) creditMessages.find(c => c.type === 'tech').value = 1;
-    if (skillSum === 0) creditMessages.find(c => c.type === 'skill').value = 1;
-
-    let scores = { exp: 0, tech: 0, skill: 0 };
-    const creditPositions = ["center", "left", "right"]; // Alternate positions
-    let creditIndex = 0;
-    let creditTimeout;
-
-    function updateScores(type, value) {
-        if (value > 0) {
-            scores[type] += value;
-            const el = document.querySelector(`#score-${type} .score-value`);
-            if (el) {
-                el.textContent = scores[type];
-                el.animate([
-                    { transform: 'scale(1)', color: '#ffe066' },
-                    { transform: 'scale(1.25)', color: '#fff' },
-                    { transform: 'scale(1)', color: '#ffe066' }
-                ], { duration: 400, fill: 'forwards' });
-            }
-        }
-    }
-
-    function resetScores() {
-        scores = { exp: 0, tech: 0, skill: 0 };
-        ["exp", "tech", "skill"].forEach(type => {
-            const el = document.querySelector(`#score-${type} .score-value`);
-            if (el) el.textContent = 0;
         });
     }
 
-    function showCreditMessage() {
-        const container = document.getElementById("movie-credits");
-        container.innerHTML = "";
-        const msg = document.createElement("div");
-        msg.className = "movie-credit-message";
-        // Alternate position
-        const pos = creditPositions[creditIndex % creditPositions.length];
-        if (pos !== "center") msg.classList.add(pos);
-        // Split text into main and time (if parenthesis at end)
-        const credit = creditMessages[creditIndex];
-        let mainText = credit.text;
-        let timeText = "";
-        const parenMatch = mainText.match(/^(.*)\s*\(([^()]*)\)\s*$/);
-        if (parenMatch) {
-            mainText = parenMatch[1].trim();
-            timeText = parenMatch[2].trim();
+    updateSlideSources();
+
+    if (heroSlideText) {
+        heroSlideText.textContent = slideMessages[0];
+    }
+
+    setInterval(changeImage, 5000);
+
+    // Loading overlay intentionally disabled for instant access.
+
+    window.addEventListener("resize", updateSlideSources);
+    window.addEventListener("orientationchange", updateSlideSources);
+
+    // Survey modal controls
+    const openSurvey = document.getElementById("open-survey");
+    const closeSurvey = document.getElementById("close-survey");
+    const surveyModal = document.getElementById("survey-modal");
+    const surveyBackdrop = document.getElementById("survey-backdrop");
+    const openSurveyHero = document.getElementById("open-survey-hero");
+    let wizardStep = 1;
+    const totalWizardSteps = 4;
+
+    function toggleSurvey(show) {
+        if (!surveyModal) return;
+        surveyModal.classList.toggle("show", show);
+        surveyModal.setAttribute("aria-hidden", show ? "false" : "true");
+        document.body.classList.toggle("nav-open", show);
+    }
+
+    if (openSurvey) {
+        openSurvey.addEventListener("click", () => toggleSurvey(true));
+    }
+    if (openSurveyHero) {
+        openSurveyHero.addEventListener("click", () => toggleSurvey(true));
+    }
+    if (closeSurvey) {
+        closeSurvey.addEventListener("click", () => toggleSurvey(false));
+    }
+    if (surveyBackdrop) {
+        surveyBackdrop.addEventListener("click", () => toggleSurvey(false));
+    }
+
+    const prevStep = document.getElementById("prevStep");
+    const nextStep = document.getElementById("nextStep");
+    const wizardSteps = document.querySelectorAll(".wizard-step");
+    const wizardIndicators = document.querySelectorAll(".wizard-progress .step");
+    const summaryBlock = document.getElementById("wizard-summary");
+    const summaryField = document.getElementById("generatedSurveyMessage");
+    const copyBtn = document.getElementById("copy-survey");
+    const emailBtn = document.getElementById("email-survey");
+    const whatsappBtn = document.getElementById("whatsapp-survey");
+    const wizardError = document.getElementById("wizard-error");
+    const wizardPreview = document.getElementById("wizard-preview-text");
+    const summaryPreview = document.getElementById("wizard-summary-text");
+    const surveyForm = document.getElementById("surveyForm");
+    const surveyIntro = document.querySelector(".survey-intro");
+    const wizardProgress = document.querySelector(".wizard-progress");
+
+    function showWizardStep(step) {
+        wizardSteps.forEach((el, idx) => {
+            el.classList.toggle("active", idx + 1 === step);
+        });
+        wizardIndicators.forEach((el, idx) => {
+            el.classList.remove("active", "completed");
+            if (idx + 1 < step) el.classList.add("completed");
+            if (idx + 1 === step) el.classList.add("active");
+        });
+        if (prevStep) {
+            prevStep.style.display = "inline-flex";
+            prevStep.disabled = step === 1;
         }
-        msg.innerHTML = `<span class="credit-main">${mainText}</span>` + (timeText ? `<br><em class="credit-time">${timeText}</em>` : "");
-        container.appendChild(msg);
-        // Update scores
-        updateScores(credit.type, credit.value);
-        // Entry effect
-        setTimeout(() => {
-            msg.classList.add("show", "slide-in");
-            // Randomly trigger TV glitch effect 1-2 times during show
-            let glitchCount = Math.random() > 0.5 ? 2 : 1;
-            for (let i = 0; i < glitchCount; i++) {
-                setTimeout(() => {
-                    msg.style.animation = (msg.style.animation ? msg.style.animation + ',' : '') + `tvGlitch 0.18s linear`;
-                    setTimeout(() => {
-                        msg.style.animation = msg.style.animation.replace(/tvGlitch 0.18s linear,?/g, '');
-                    }, 180);
-                }, 500 + Math.random() * 1800);
-            }
-        }, 50);
-        // Exit effect
-        creditTimeout = setTimeout(() => {
-            msg.classList.remove("slide-in");
-            msg.classList.add("slide-out");
-            setTimeout(() => {
-                creditIndex = (creditIndex + 1) % creditMessages.length;
-                if (creditIndex === 0) resetScores();
-                showCreditMessage();
-            }, 800);
-        }, 3200);
+        if (nextStep) {
+            nextStep.textContent = "Next";
+            nextStep.disabled = step === totalWizardSteps;
+        }
+        if (summaryBlock) summaryBlock.style.display = step === totalWizardSteps ? "block" : "none";
+        if (surveyIntro) surveyIntro.style.display = step === totalWizardSteps ? "none" : "block";
+        if (wizardProgress) wizardProgress.style.display = step === totalWizardSteps ? "none" : "grid";
     }
 
-    showCreditMessage();
+    function validateWizardStep(step) {
+        const current = document.querySelector(`.wizard-step[data-step="${step}"]`);
+        if (!current) return true;
 
-    // --- Preload only the first 2 slideshow images, then hide loading overlay ---
-    const loadingOverlay = document.getElementById("loading-overlay");
-    const slideshowImgs = Array.from(document.querySelectorAll("#slideshow img"));
-    let loadedCount = 0;
+        current.querySelectorAll(".field-error").forEach(el => el.classList.remove("field-error"));
+        if (wizardError) wizardError.classList.remove("show");
 
-    // ASCII progress bar logic
-    const progressBar = document.getElementById("loading-progressbar");
-    const PROGRESS_BAR_LENGTH = 18; // Number of ASCII blocks
-    function setProgressBar(percent) {
-        const filled = Math.round(PROGRESS_BAR_LENGTH * percent);
-        const empty = PROGRESS_BAR_LENGTH - filled;
-        // Use █ for filled, ░ for empty (classic 80s look)
-        progressBar.textContent = `[${'█'.repeat(filled)}${'░'.repeat(empty)}]`;
-    }
-    setProgressBar(0);
+        const requiredFields = current.querySelectorAll("input[required]");
+        let valid = true;
 
-    function hideLoading() {
-        loadingOverlay.style.opacity = 0;
-        setTimeout(() => loadingOverlay.style.display = "none", 700);
-    }
-    function checkFirstLoaded() {
-        loadedCount++;
-        setProgressBar(loadedCount / 2);
-        if (loadedCount === 2) {
-            setTimeout(hideLoading, 250); // Small delay for effect
-            // Start loading the rest in the background
-            for (let i = 2; i < slideshowImgs.length; i++) {
-                if (!slideshowImgs[i].complete || slideshowImgs[i].naturalWidth === 0) {
-                    slideshowImgs[i].src = slideshowImgs[i].src; // trigger load if not already
+        requiredFields.forEach(field => {
+            if (field.type === "radio" || field.type === "checkbox") {
+                const groupChecked = current.querySelectorAll(`input[name="${field.name}"]:checked`).length > 0;
+                if (!groupChecked) {
+                    valid = false;
+                    const container = field.closest(".options") || field.parentElement;
+                    if (container) container.classList.add("field-error");
                 }
+            } else if (!field.value.trim()) {
+                valid = false;
+                field.classList.add("field-error");
+            }
+        });
+
+        if (!valid && wizardError) {
+            wizardError.textContent = "Please complete required fields before continuing.";
+            wizardError.classList.add("show");
+        }
+
+        return valid;
+    }
+
+    function generateSurveyMessage() {
+        const form = surveyForm;
+        if (!form) return "";
+        const data = new FormData(form);
+        const starting = data.get("starting_point") || "";
+        const difficulty = data.get("difficulty") || "";
+        const help = data.get("help") || "";
+
+        const greetings = ["Hi Rafa,", "Hello Rafa,", "Hi there,"];
+        const closings = ["Thanks for reading.", "Thanks for taking a look.", "Regards."];
+        const bridge = ["I'm reaching out because", "I'm writing because", "Sharing where I am right now:"];
+
+        const parts = [];
+        if (starting) parts.push(`I'm coming from this starting point: ${starting}`);
+        if (difficulty) parts.push(`Right now my main difficulty is ${difficulty}`);
+        if (help) parts.push(`It would help me most to have ${help.toLowerCase()}`);
+
+        const pick = arr => arr[Math.floor(Math.random() * arr.length)];
+        const body = parts.join(". ") + (parts.length ? "." : "");
+        const message = `${pick(greetings)} ${pick(bridge)} ${body} ${pick(closings)}`.replace(/\s+/g, " ").trim();
+        const fallback = "Your answers will appear here as a short note.";
+        if (summaryField) summaryField.value = message;
+        if (wizardPreview) wizardPreview.textContent = message || fallback;
+        if (summaryPreview) summaryPreview.textContent = message || fallback;
+        return message;
+    }
+
+    function goToStep(direction) {
+        if (direction === 1) {
+            if (!validateWizardStep(wizardStep)) return;
+            if (wizardStep < totalWizardSteps) {
+                wizardStep = Math.min(totalWizardSteps, wizardStep + 1);
+            }
+        } else if (direction === -1) {
+            wizardStep = Math.max(1, wizardStep - 1);
+        }
+        generateSurveyMessage();
+        showWizardStep(wizardStep);
+    }
+
+    if (surveyForm) {
+        surveyForm.addEventListener("input", () => {
+            generateSurveyMessage();
+        });
+    }
+
+    if (prevStep) prevStep.addEventListener("click", () => goToStep(-1));
+    if (nextStep) nextStep.addEventListener("click", () => goToStep(1));
+    wizardIndicators.forEach((indicator, idx) => {
+        indicator.style.cursor = "pointer";
+        indicator.addEventListener("click", () => {
+            const target = idx + 1;
+            if (target <= wizardStep && target >= 1) {
+                wizardStep = target;
+                showWizardStep(wizardStep);
+            }
+        });
+    });
+
+    function copySurvey() {
+        if (!summaryField) return;
+        summaryField.select();
+        summaryField.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(summaryField.value);
+        alert("Copied to clipboard.");
+    }
+
+    function emailSurvey() {
+        if (!summaryField) return;
+        const subject = "Context survey";
+        const body = encodeURIComponent(summaryField.value);
+        window.location.href = `mailto:rafageist@divengine.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    }
+
+    function whatsappSurvey() {
+        if (!summaryField) return;
+        const msg = encodeURIComponent(summaryField.value);
+        window.open(`https://wa.me/5978401275?text=${msg}`, "_blank");
+    }
+
+    if (copyBtn) copyBtn.addEventListener("click", copySurvey);
+    if (emailBtn) emailBtn.addEventListener("click", emailSurvey);
+    if (whatsappBtn) whatsappBtn.addEventListener("click", whatsappSurvey);
+
+    // Glossary modal controls
+    const glossaryModal = document.getElementById("glossary-modal");
+    const glossaryBackdrop = document.getElementById("glossary-backdrop");
+    const glossaryClose = document.getElementById("glossary-close");
+    const glossaryTitle = document.getElementById("glossary-title");
+    const glossaryDefinition = document.getElementById("glossary-definition");
+    const glossaryLinks = document.getElementById("glossary-links");
+    const glossaryReferences = document.querySelector(".glossary-references");
+    const glossarySearchGoogle = document.getElementById("glossary-search-google");
+    const glossarySearchWikipedia = document.getElementById("glossary-search-wikipedia");
+    const glossarySearchBing = document.getElementById("glossary-search-bing");
+    const glossarySearchAcm = document.getElementById("glossary-search-acm");
+
+    const keywordGlossary = {
+        "programming": {
+            definition: "Writing instructions that tell a computer what to do.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Computer_programming",
+                "Britannica|https://www.britannica.com/technology/computer-programming-language"
+            ]
+        },
+        "software engineering": {
+            definition: "Applying engineering principles to design, build, and maintain software systems.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_engineering",
+                "IEEE|https://www.computer.org/education/bodies-of-knowledge/software-engineering"
+            ]
+        },
+        "algorithms": {
+            definition: "Step-by-step procedures for solving problems or performing computations.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Algorithm",
+                "Khan Academy|https://www.khanacademy.org/computing/computer-science/algorithms"
+            ]
+        },
+        "data structures": {
+            definition: "Ways of organizing data for efficient access and modification.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Data_structure",
+                "GeeksforGeeks|https://www.geeksforgeeks.org/data-structures/"
+            ]
+        },
+        "Python": {
+            definition: "High-level programming language known for readability.",
+            links: [
+                "Python.org|https://www.python.org/",
+                "Wikipedia|https://en.wikipedia.org/wiki/Python_(programming_language)"
+            ]
+        },
+        "C / C++": {
+            definition: "Systems programming languages used for low-level control and performance.",
+            links: [
+                "Wikipedia (C)|https://en.wikipedia.org/wiki/C_(programming_language)",
+                "Wikipedia (C++)|https://en.wikipedia.org/wiki/C%2B%2B"
+            ]
+        },
+        "JavaScript": {
+            definition: "Programming language of the web and browser.",
+            links: [
+                "MDN|https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+                "Wikipedia|https://en.wikipedia.org/wiki/JavaScript"
+            ]
+        },
+        "TypeScript": {
+            definition: "Typed superset of JavaScript that compiles to JS.",
+            links: [
+                "TypeScript|https://www.typescriptlang.org/",
+                "Wikipedia|https://en.wikipedia.org/wiki/TypeScript"
+            ]
+        },
+        "web development": {
+            definition: "Building and maintaining websites and web applications.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Web_development",
+                "MDN Learn|https://developer.mozilla.org/en-US/docs/Learn"
+            ]
+        },
+        "frontend": {
+            definition: "User-facing part of a web or app interface.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Front-end_web_development",
+                "MDN Front-end|https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer"
+            ]
+        },
+        "backend": {
+            definition: "Server-side logic, data access, and APIs.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Front-end_and_back-end",
+                "IBM|https://www.ibm.com/topics/backend"
+            ]
+        },
+        "APIs": {
+            definition: "Interfaces that let software systems communicate.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/API",
+                "IBM|https://www.ibm.com/topics/api"
+            ]
+        },
+        "REST": {
+            definition: "Architectural style for web APIs using HTTP.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Representational_state_transfer",
+                "RESTful API|https://restfulapi.net/"
+            ]
+        },
+        "GraphQL": {
+            definition: "Query language and runtime for APIs.",
+            links: [
+                "GraphQL|https://graphql.org/",
+                "Wikipedia|https://en.wikipedia.org/wiki/GraphQL"
+            ]
+        },
+        "DevOps": {
+            definition: "Practices that unify software development and operations.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/DevOps",
+                "AWS|https://aws.amazon.com/devops/"
+            ]
+        },
+        "CI / CD": {
+            definition: "Continuous integration and continuous delivery or deployment.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/CI/CD",
+                "Atlassian|https://www.atlassian.com/continuous-delivery/ci-vs-ci-vs-cd"
+            ]
+        },
+        "Docker": {
+            definition: "Platform for packaging and running apps in containers.",
+            links: [
+                "Docker|https://www.docker.com/resources/what-container/",
+                "Wikipedia|https://en.wikipedia.org/wiki/Docker_(software)"
+            ]
+        },
+        "Kubernetes": {
+            definition: "Container orchestration platform for deploying and scaling.",
+            links: [
+                "Kubernetes|https://kubernetes.io/",
+                "Wikipedia|https://en.wikipedia.org/wiki/Kubernetes"
+            ]
+        },
+        "cloud (AWS / Azure / GCP)": {
+            definition: "Cloud computing services from major providers.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Cloud_computing",
+                "IBM|https://www.ibm.com/topics/cloud-computing"
+            ]
+        },
+        "databases": {
+            definition: "Structured collections of data managed by a database system.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Database",
+                "IBM|https://www.ibm.com/topics/database"
+            ]
+        },
+        "SQL": {
+            definition: "Standard language for relational databases.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/SQL",
+                "PostgreSQL Docs|https://www.postgresql.org/docs/current/sql.html"
+            ]
+        },
+        "NoSQL": {
+            definition: "Non-relational databases designed for scale and flexibility.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/NoSQL",
+                "MongoDB|https://www.mongodb.com/nosql-explained"
+            ]
+        },
+        "caching": {
+            definition: "Storing data for faster access.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Cache_(computing)",
+                "Cloudflare|https://www.cloudflare.com/learning/cdn/what-is-caching/"
+            ]
+        },
+        "microservices": {
+            definition: "Architecture of small independent services.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Microservices",
+                "Martin Fowler|https://martinfowler.com/articles/microservices.html"
+            ]
+        },
+        "distributed systems": {
+            definition: "Systems with components on multiple networked computers.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Distributed_computing",
+                "Distributed Systems|https://www.distributed-systems.net/index.php/books/ds3/"
+            ]
+        },
+        "systems thinking": {
+            definition: "Understanding how parts interact within a whole.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Systems_thinking",
+                "iSee Systems|https://www.iseesystems.com/resources/what-is-systems-thinking"
+            ]
+        },
+        "testing": {
+            definition: "Checking software behavior and quality.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_testing",
+                "IBM|https://www.ibm.com/topics/software-testing"
+            ]
+        },
+        "TDD": {
+            definition: "Test-driven development: tests before code.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Test-driven_development",
+                "Martin Fowler|https://martinfowler.com/bliki/TestDrivenDevelopment.html"
+            ]
+        },
+        "refactoring": {
+            definition: "Improving code structure without changing behavior.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Code_refactoring",
+                "Refactoring.com|https://refactoring.com/"
+            ]
+        },
+        "performance": {
+            definition: "Speed and efficiency of software under load.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_performance_testing",
+                "MDN|https://developer.mozilla.org/en-US/docs/Web/Performance"
+            ]
+        },
+        "observability": {
+            definition: "Ability to infer system state from its outputs.",
+            links: [
+                "OpenTelemetry|https://opentelemetry.io/docs/concepts/observability-primer/",
+                "Wikipedia|https://en.wikipedia.org/wiki/Observability"
+            ]
+        },
+        "security basics": {
+            definition: "Core practices that reduce software risk.",
+            links: [
+                "OWASP|https://owasp.org/www-project-top-ten/",
+                "CISA|https://www.cisa.gov/cybersecurity"
+            ]
+        },
+        "architecture": {
+            definition: "High-level structure and organization of software systems.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_architecture",
+                "Martin Fowler|https://martinfowler.com/architecture/"
+            ]
+        },
+        "design patterns": {
+            definition: "Reusable solutions to common design problems.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_design_pattern",
+                "Refactoring Guru|https://refactoring.guru/design-patterns"
+            ]
+        },
+        "Git": {
+            definition: "Distributed version control system.",
+            links: [
+                "Git|https://git-scm.com/",
+                "Wikipedia|https://en.wikipedia.org/wiki/Git"
+            ]
+        },
+        "GitHub": {
+            definition: "Platform for hosting and collaborating on Git repositories.",
+            links: [
+                "GitHub|https://github.com/about",
+                "Wikipedia|https://en.wikipedia.org/wiki/GitHub"
+            ]
+        },
+        "Node.js": {
+            definition: "JavaScript runtime built on V8.",
+            links: [
+                "Node.js|https://nodejs.org/en",
+                "Wikipedia|https://en.wikipedia.org/wiki/Node.js"
+            ]
+        },
+        "React": {
+            definition: "UI library for building interfaces.",
+            links: [
+                "React|https://react.dev/",
+                "Wikipedia|https://en.wikipedia.org/wiki/React_(software)"
+            ]
+        },
+        "Vue": {
+            definition: "Progressive JavaScript framework for UIs.",
+            links: [
+                "Vue|https://vuejs.org/",
+                "Wikipedia|https://en.wikipedia.org/wiki/Vue.js"
+            ]
+        },
+        "AI / ML": {
+            definition: "Artificial intelligence and machine learning.",
+            links: [
+                "Wikipedia (AI)|https://en.wikipedia.org/wiki/Artificial_intelligence",
+                "Wikipedia (ML)|https://en.wikipedia.org/wiki/Machine_learning"
+            ]
+        },
+        "LLMs": {
+            definition: "Large language models trained on text data.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Large_language_model",
+                "IBM|https://www.ibm.com/topics/large-language-models"
+            ]
+        },
+        "prompting": {
+            definition: "Formulating inputs to guide model outputs.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Prompt_engineering",
+                "IBM|https://www.ibm.com/topics/prompt-engineering"
+            ]
+        },
+        "data pipelines": {
+            definition: "Systems that move and transform data between sources.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Data_pipeline",
+                "Google Cloud|https://cloud.google.com/learn/what-is-a-data-pipeline"
+            ]
+        },
+        "infrastructure as code": {
+            definition: "Managing infrastructure through code and automation.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Infrastructure_as_code",
+                "HashiCorp|https://www.hashicorp.com/resources/what-is-infrastructure-as-code"
+            ]
+        },
+        "command line": {
+            definition: "Text-based interface to run commands.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Command-line_interface",
+                "GNU Bash|https://www.gnu.org/software/bash/"
+            ]
+        },
+        "automation": {
+            definition: "Using tools to perform tasks with minimal manual effort.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Automation",
+                "IBM|https://www.ibm.com/topics/automation"
+            ]
+        },
+        "code reviews": {
+            definition: "Systematic peer review of code changes.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Code_review",
+                "Google|https://google.github.io/eng-practices/review/"
+            ]
+        }
+    };
+
+    // Make keyword strip terms clickable glossary entries.
+    const keywordTerms = document.querySelectorAll(".keyword-strip span");
+    keywordTerms.forEach(termEl => {
+        const term = termEl.textContent.trim();
+        const entry = keywordGlossary[term];
+        termEl.classList.add("glossary-term");
+        termEl.setAttribute("role", "button");
+        termEl.setAttribute("tabindex", "0");
+        termEl.dataset.term = term;
+        if (entry) {
+            termEl.dataset.definition = entry.definition;
+            termEl.dataset.links = entry.links.join(";");
+        }
+    });
+
+    const glossaryTerms = document.querySelectorAll(".glossary-term");
+
+    function closeGlossary() {
+        if (!glossaryModal) return;
+        glossaryModal.classList.remove("show");
+        glossaryModal.setAttribute("aria-hidden", "true");
+    }
+
+    function openGlossary(termEl) {
+        if (!glossaryModal || !termEl) return;
+        const term = termEl.dataset.term || termEl.textContent.trim();
+        const definition = termEl.dataset.definition || "";
+        const linksData = termEl.dataset.links || "";
+
+        if (glossaryTitle) glossaryTitle.textContent = term;
+        if (glossaryDefinition) glossaryDefinition.textContent = definition;
+
+        const termQuery = encodeURIComponent(term);
+        if (glossarySearchGoogle) glossarySearchGoogle.href = `https://www.google.com/search?q=${termQuery}`;
+        if (glossarySearchWikipedia) glossarySearchWikipedia.href = `https://en.wikipedia.org/wiki/Special:Search?search=${termQuery}`;
+        if (glossarySearchBing) glossarySearchBing.href = `https://www.bing.com/search?q=${termQuery}`;
+        if (glossarySearchAcm) glossarySearchAcm.href = `https://dl.acm.org/action/doSearch?AllField=${termQuery}`;
+
+        if (glossaryLinks) {
+            glossaryLinks.innerHTML = "";
+            const items = linksData.split(";").map(item => item.trim()).filter(Boolean);
+            items.forEach(item => {
+                const parts = item.split("|");
+                const label = (parts[0] || "").trim();
+                const url = (parts[1] || "").trim();
+                if (!label || !url) return;
+                const li = document.createElement("li");
+                const a = document.createElement("a");
+                a.href = url;
+                a.target = "_blank";
+                a.rel = "noopener";
+                a.textContent = label;
+                li.appendChild(a);
+                glossaryLinks.appendChild(li);
+            });
+            if (glossaryReferences) {
+                glossaryReferences.style.display = items.length ? "block" : "none";
             }
         }
+
+        glossaryModal.classList.add("show");
+        glossaryModal.setAttribute("aria-hidden", "false");
     }
-    // Preload only first 2 images
-    for (let i = 0; i < 2; i++) {
-        const img = slideshowImgs[i];
-        if (img.complete && img.naturalWidth > 0) {
-            checkFirstLoaded();
-        } else {
-            img.addEventListener('load', checkFirstLoaded);
-            img.addEventListener('error', checkFirstLoaded);
+
+    glossaryTerms.forEach(termEl => {
+        termEl.addEventListener("click", (event) => {
+            event.preventDefault();
+            openGlossary(termEl);
+        });
+        termEl.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                openGlossary(termEl);
+            }
+        });
+    });
+
+    if (glossaryBackdrop) glossaryBackdrop.addEventListener("click", closeGlossary);
+    if (glossaryClose) glossaryClose.addEventListener("click", closeGlossary);
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && glossaryModal && glossaryModal.classList.contains("show")) {
+            closeGlossary();
         }
-    }
-    // Prevent interaction until loaded
-    document.body.style.overflow = 'hidden';
-    function enableScrollAfterLoad() {
-        document.body.style.overflow = '';
-    }
-    loadingOverlay.addEventListener('transitionend', enableScrollAfterLoad);
+    });
+
+    showWizardStep(wizardStep);
+    generateSurveyMessage();
 });
+
