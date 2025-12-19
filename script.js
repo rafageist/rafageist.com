@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", function () {
+﻿document.addEventListener("DOMContentLoaded", function () {
     // --- Slideshow ---
     const images = document.querySelectorAll("#slideshow img");
     let index = 0;
     const slideMessages = [
-        "Learning computing and it still feels blurry?",
+        "You keep learning computing, but the picture still feels incomplete\?",
         "You follow steps and the picture is missing.",
         "Too many concepts, no clear shape yet.",
         "You want to understand, not just repeat moves."
@@ -253,3 +253,4 @@ document.addEventListener("DOMContentLoaded", function () {
     showWizardStep(wizardStep);
     generateSurveyMessage();
 });
+
