@@ -257,10 +257,359 @@
     const glossaryTitle = document.getElementById("glossary-title");
     const glossaryDefinition = document.getElementById("glossary-definition");
     const glossaryLinks = document.getElementById("glossary-links");
+    const glossaryReferences = document.querySelector(".glossary-references");
     const glossarySearchGoogle = document.getElementById("glossary-search-google");
     const glossarySearchWikipedia = document.getElementById("glossary-search-wikipedia");
     const glossarySearchBing = document.getElementById("glossary-search-bing");
     const glossarySearchAcm = document.getElementById("glossary-search-acm");
+
+    const keywordGlossary = {
+        "programming": {
+            definition: "Writing instructions that tell a computer what to do.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Computer_programming",
+                "Britannica|https://www.britannica.com/technology/computer-programming-language"
+            ]
+        },
+        "software engineering": {
+            definition: "Applying engineering principles to design, build, and maintain software systems.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_engineering",
+                "IEEE|https://www.computer.org/education/bodies-of-knowledge/software-engineering"
+            ]
+        },
+        "algorithms": {
+            definition: "Step-by-step procedures for solving problems or performing computations.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Algorithm",
+                "Khan Academy|https://www.khanacademy.org/computing/computer-science/algorithms"
+            ]
+        },
+        "data structures": {
+            definition: "Ways of organizing data for efficient access and modification.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Data_structure",
+                "GeeksforGeeks|https://www.geeksforgeeks.org/data-structures/"
+            ]
+        },
+        "Python": {
+            definition: "High-level programming language known for readability.",
+            links: [
+                "Python.org|https://www.python.org/",
+                "Wikipedia|https://en.wikipedia.org/wiki/Python_(programming_language)"
+            ]
+        },
+        "C / C++": {
+            definition: "Systems programming languages used for low-level control and performance.",
+            links: [
+                "Wikipedia (C)|https://en.wikipedia.org/wiki/C_(programming_language)",
+                "Wikipedia (C++)|https://en.wikipedia.org/wiki/C%2B%2B"
+            ]
+        },
+        "JavaScript": {
+            definition: "Programming language of the web and browser.",
+            links: [
+                "MDN|https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+                "Wikipedia|https://en.wikipedia.org/wiki/JavaScript"
+            ]
+        },
+        "TypeScript": {
+            definition: "Typed superset of JavaScript that compiles to JS.",
+            links: [
+                "TypeScript|https://www.typescriptlang.org/",
+                "Wikipedia|https://en.wikipedia.org/wiki/TypeScript"
+            ]
+        },
+        "web development": {
+            definition: "Building and maintaining websites and web applications.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Web_development",
+                "MDN Learn|https://developer.mozilla.org/en-US/docs/Learn"
+            ]
+        },
+        "frontend": {
+            definition: "User-facing part of a web or app interface.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Front-end_web_development",
+                "MDN Front-end|https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer"
+            ]
+        },
+        "backend": {
+            definition: "Server-side logic, data access, and APIs.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Front-end_and_back-end",
+                "IBM|https://www.ibm.com/topics/backend"
+            ]
+        },
+        "APIs": {
+            definition: "Interfaces that let software systems communicate.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/API",
+                "IBM|https://www.ibm.com/topics/api"
+            ]
+        },
+        "REST": {
+            definition: "Architectural style for web APIs using HTTP.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Representational_state_transfer",
+                "RESTful API|https://restfulapi.net/"
+            ]
+        },
+        "GraphQL": {
+            definition: "Query language and runtime for APIs.",
+            links: [
+                "GraphQL|https://graphql.org/",
+                "Wikipedia|https://en.wikipedia.org/wiki/GraphQL"
+            ]
+        },
+        "DevOps": {
+            definition: "Practices that unify software development and operations.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/DevOps",
+                "AWS|https://aws.amazon.com/devops/"
+            ]
+        },
+        "CI / CD": {
+            definition: "Continuous integration and continuous delivery or deployment.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/CI/CD",
+                "Atlassian|https://www.atlassian.com/continuous-delivery/ci-vs-ci-vs-cd"
+            ]
+        },
+        "Docker": {
+            definition: "Platform for packaging and running apps in containers.",
+            links: [
+                "Docker|https://www.docker.com/resources/what-container/",
+                "Wikipedia|https://en.wikipedia.org/wiki/Docker_(software)"
+            ]
+        },
+        "Kubernetes": {
+            definition: "Container orchestration platform for deploying and scaling.",
+            links: [
+                "Kubernetes|https://kubernetes.io/",
+                "Wikipedia|https://en.wikipedia.org/wiki/Kubernetes"
+            ]
+        },
+        "cloud (AWS / Azure / GCP)": {
+            definition: "Cloud computing services from major providers.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Cloud_computing",
+                "IBM|https://www.ibm.com/topics/cloud-computing"
+            ]
+        },
+        "databases": {
+            definition: "Structured collections of data managed by a database system.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Database",
+                "IBM|https://www.ibm.com/topics/database"
+            ]
+        },
+        "SQL": {
+            definition: "Standard language for relational databases.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/SQL",
+                "PostgreSQL Docs|https://www.postgresql.org/docs/current/sql.html"
+            ]
+        },
+        "NoSQL": {
+            definition: "Non-relational databases designed for scale and flexibility.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/NoSQL",
+                "MongoDB|https://www.mongodb.com/nosql-explained"
+            ]
+        },
+        "caching": {
+            definition: "Storing data for faster access.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Cache_(computing)",
+                "Cloudflare|https://www.cloudflare.com/learning/cdn/what-is-caching/"
+            ]
+        },
+        "microservices": {
+            definition: "Architecture of small independent services.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Microservices",
+                "Martin Fowler|https://martinfowler.com/articles/microservices.html"
+            ]
+        },
+        "distributed systems": {
+            definition: "Systems with components on multiple networked computers.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Distributed_computing",
+                "Distributed Systems|https://www.distributed-systems.net/index.php/books/ds3/"
+            ]
+        },
+        "systems thinking": {
+            definition: "Understanding how parts interact within a whole.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Systems_thinking",
+                "iSee Systems|https://www.iseesystems.com/resources/what-is-systems-thinking"
+            ]
+        },
+        "testing": {
+            definition: "Checking software behavior and quality.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_testing",
+                "IBM|https://www.ibm.com/topics/software-testing"
+            ]
+        },
+        "TDD": {
+            definition: "Test-driven development: tests before code.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Test-driven_development",
+                "Martin Fowler|https://martinfowler.com/bliki/TestDrivenDevelopment.html"
+            ]
+        },
+        "refactoring": {
+            definition: "Improving code structure without changing behavior.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Code_refactoring",
+                "Refactoring.com|https://refactoring.com/"
+            ]
+        },
+        "performance": {
+            definition: "Speed and efficiency of software under load.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_performance_testing",
+                "MDN|https://developer.mozilla.org/en-US/docs/Web/Performance"
+            ]
+        },
+        "observability": {
+            definition: "Ability to infer system state from its outputs.",
+            links: [
+                "OpenTelemetry|https://opentelemetry.io/docs/concepts/observability-primer/",
+                "Wikipedia|https://en.wikipedia.org/wiki/Observability"
+            ]
+        },
+        "security basics": {
+            definition: "Core practices that reduce software risk.",
+            links: [
+                "OWASP|https://owasp.org/www-project-top-ten/",
+                "CISA|https://www.cisa.gov/cybersecurity"
+            ]
+        },
+        "architecture": {
+            definition: "High-level structure and organization of software systems.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_architecture",
+                "Martin Fowler|https://martinfowler.com/architecture/"
+            ]
+        },
+        "design patterns": {
+            definition: "Reusable solutions to common design problems.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_design_pattern",
+                "Refactoring Guru|https://refactoring.guru/design-patterns"
+            ]
+        },
+        "Git": {
+            definition: "Distributed version control system.",
+            links: [
+                "Git|https://git-scm.com/",
+                "Wikipedia|https://en.wikipedia.org/wiki/Git"
+            ]
+        },
+        "GitHub": {
+            definition: "Platform for hosting and collaborating on Git repositories.",
+            links: [
+                "GitHub|https://github.com/about",
+                "Wikipedia|https://en.wikipedia.org/wiki/GitHub"
+            ]
+        },
+        "Node.js": {
+            definition: "JavaScript runtime built on V8.",
+            links: [
+                "Node.js|https://nodejs.org/en",
+                "Wikipedia|https://en.wikipedia.org/wiki/Node.js"
+            ]
+        },
+        "React": {
+            definition: "UI library for building interfaces.",
+            links: [
+                "React|https://react.dev/",
+                "Wikipedia|https://en.wikipedia.org/wiki/React_(software)"
+            ]
+        },
+        "Vue": {
+            definition: "Progressive JavaScript framework for UIs.",
+            links: [
+                "Vue|https://vuejs.org/",
+                "Wikipedia|https://en.wikipedia.org/wiki/Vue.js"
+            ]
+        },
+        "AI / ML": {
+            definition: "Artificial intelligence and machine learning.",
+            links: [
+                "Wikipedia (AI)|https://en.wikipedia.org/wiki/Artificial_intelligence",
+                "Wikipedia (ML)|https://en.wikipedia.org/wiki/Machine_learning"
+            ]
+        },
+        "LLMs": {
+            definition: "Large language models trained on text data.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Large_language_model",
+                "IBM|https://www.ibm.com/topics/large-language-models"
+            ]
+        },
+        "prompting": {
+            definition: "Formulating inputs to guide model outputs.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Prompt_engineering",
+                "IBM|https://www.ibm.com/topics/prompt-engineering"
+            ]
+        },
+        "data pipelines": {
+            definition: "Systems that move and transform data between sources.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Data_pipeline",
+                "Google Cloud|https://cloud.google.com/learn/what-is-a-data-pipeline"
+            ]
+        },
+        "infrastructure as code": {
+            definition: "Managing infrastructure through code and automation.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Infrastructure_as_code",
+                "HashiCorp|https://www.hashicorp.com/resources/what-is-infrastructure-as-code"
+            ]
+        },
+        "command line": {
+            definition: "Text-based interface to run commands.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Command-line_interface",
+                "GNU Bash|https://www.gnu.org/software/bash/"
+            ]
+        },
+        "automation": {
+            definition: "Using tools to perform tasks with minimal manual effort.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Automation",
+                "IBM|https://www.ibm.com/topics/automation"
+            ]
+        },
+        "code reviews": {
+            definition: "Systematic peer review of code changes.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Code_review",
+                "Google|https://google.github.io/eng-practices/review/"
+            ]
+        }
+    };
+
+    // Make keyword strip terms clickable glossary entries.
+    const keywordTerms = document.querySelectorAll(".keyword-strip span");
+    keywordTerms.forEach(termEl => {
+        const term = termEl.textContent.trim();
+        const entry = keywordGlossary[term];
+        termEl.classList.add("glossary-term");
+        termEl.setAttribute("role", "button");
+        termEl.setAttribute("tabindex", "0");
+        termEl.dataset.term = term;
+        if (entry) {
+            termEl.dataset.definition = entry.definition;
+            termEl.dataset.links = entry.links.join(";");
+        }
+    });
+
     const glossaryTerms = document.querySelectorAll(".glossary-term");
 
     function closeGlossary() {
@@ -301,6 +650,9 @@
                 li.appendChild(a);
                 glossaryLinks.appendChild(li);
             });
+            if (glossaryReferences) {
+                glossaryReferences.style.display = items.length ? "block" : "none";
+            }
         }
 
         glossaryModal.classList.add("show");

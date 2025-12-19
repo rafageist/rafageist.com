@@ -98,6 +98,11 @@ a:hover {
 	flex: 1;
 }
 
+.header-left > i {
+	font-size: 2rem;
+	color: #5a4430;
+}
+
 .header-avatar {
 	width: 76px;
 	height: 76px;
@@ -764,6 +769,16 @@ a:hover {
 .glossary-term:focus {
 	outline: 2px solid #b59d82;
 	outline-offset: 2px;
+}
+
+.keyword-strip .glossary-term {
+	text-decoration: none;
+	font-weight: inherit;
+	color: #f6f1e8;
+}
+
+.keyword-strip .glossary-term:hover {
+	text-decoration: underline;
 }
 
 .glossary-modal {
