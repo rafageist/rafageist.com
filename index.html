@@ -69,13 +69,13 @@
 	<!-- Hero -->
 	<section class="hero" id="home" aria-label="Introduction">
 		<div id="slideshow" aria-hidden="true">
-			<img src="/slides/amstrad.png" class="active" loading="lazy" alt="">
-			<img src="/slides/acmicpc.png" loading="lazy" alt="">
-			<img src="/slides/rafageist-tehnopol-estonia.png" loading="lazy" alt="">
-			<img src="/slides/rafageist-2025a.png" loading="lazy" alt="">
-			<img src="/slides/rafageist-2025b.png" loading="lazy" alt="">
-			<img src="/slides/rafageist-2025c.png" loading="lazy" alt="">
-			<img src="/slides/rafageist-2025g.png" loading="lazy" alt="">
+			<img src="/slides/amstrad.webp" class="active" loading="lazy" alt="">
+			<img src="/slides/acmicpc.webp" loading="lazy" alt="">
+			<img src="/slides/rafageist-tehnopol-estonia.webp" loading="lazy" alt="">
+			<img src="/slides/rafageist-2025a.webp" loading="lazy" alt="">
+			<img src="/slides/rafageist-2025b.webp" loading="lazy" alt="">
+			<img src="/slides/rafageist-2025c.webp" loading="lazy" alt="">
+			<img src="/slides/rafageist-2025g.webp" loading="lazy" alt="">
 		</div>
 		<div class="hero-overlay">
 			<h1 class="hero-title" id="hero-slide-text">You keep learning computing, but the picture still feels
@@ -83,11 +83,7 @@
 			<div class="hero-actions">
 				<button type="button" class="survey-open inline" id="open-survey-hero">Start here</button>
 				<br />
-				<div class="hero-links">
-					<a class="secondary-contact" href="#help">How I Help</a>
-					<a class="secondary-contact" href="#services">Learning situations</a>
-					<a class="secondary-contact" href="#fit">When This Helps</a>
-				</div>
+
 			</div>
 		</div>
 	</section>
@@ -193,8 +189,53 @@
 			<span>code reviews</span>
 		</div>
 	</div>
+
 	<!-- Main content -->
 	<main class="page-shell">
+	<section class="card-section" aria-label="Page index">
+		<div class="help-grid index-grid">
+			<div class="help-card">
+				<div class="help-icon"><i class="fas fa-list-ol"></i></div>
+				<p><strong>1.</strong> <a href="#help">Who this space welcomes</a></p>
+			</div>
+			<div class="help-card">
+				<div class="help-icon"><i class="fas fa-compass"></i></div>
+				<p><strong>2.</strong> <a href="#approach-title">How I approach learning</a></p>
+			</div>
+			<div class="help-card">
+				<div class="help-icon"><i class="fas fa-comments"></i></div>
+				<p><strong>3.</strong> <a href="#situations-title">Common situations</a></p>
+			</div>
+			<div class="help-card">
+				<div class="help-icon"><i class="fas fa-seedling"></i></div>
+				<p><strong>4.</strong> <a href="#background-title">Background and grounding</a></p>
+			</div>
+			<div class="help-card">
+				<div class="help-icon"><i class="fas fa-th-list"></i></div>
+				<p><strong>5.</strong> <a href="#catalog-title">Learning situations catalog</a></p>
+			</div>
+			<div class="help-card">
+				<div class="help-icon"><i class="fas fa-brain"></i></div>
+				<p><strong>6.</strong> <a href="#mental-model-title">How I think about learning software</a></p>
+			</div>
+			<div class="help-card">
+				<div class="help-icon"><i class="fas fa-tasks"></i></div>
+				<p><strong>7.</strong> <a href="#process-title">How I usually work</a></p>
+			</div>
+			<div class="help-card">
+				<div class="help-icon"><i class="fas fa-route"></i></div>
+				<p><strong>8.</strong> <a href="#alignment-title">How this work moves forward</a></p>
+			</div>
+			<div class="help-card">
+				<div class="help-icon"><i class="fas fa-balance-scale"></i></div>
+				<p><strong>9.</strong> <a href="#what-title">What this is (and what it is not)</a></p>
+			</div>
+			<div class="help-card">
+				<div class="help-icon"><i class="fas fa-check-circle"></i></div>
+				<p><strong>10.</strong> <a href="#fit-title">When this kind of guidance tends to help</a></p>
+			</div>
+		</div>
+	</section>
 		<!-- How I can help -->
 		<section class="card-section" id="help" aria-label="Welcome note">
 			<h2>Who this space welcomes</h2>
@@ -225,7 +266,7 @@
 					<img src="images/undraw_professor_d7zn.svg" alt="Mentorship illustration" loading="lazy">
 				</div>
 				<div class="perspective-text">
-					<h2>How I approach learning computing</h2>
+					<h2 id="approach-title">How I approach learning computing</h2>
 					<p>I tend to stay with what feels unclear before moving on. The work focuses on identifying
 						<strong>missing pieces</strong> and rebuilding understanding from <strong>simple building
 							blocks</strong>.
@@ -267,7 +308,8 @@
 						<button type="button" class="glossary-term" data-term="Systems"
 							data-definition="In computing, a system is a set of connected parts that work together to perform tasks."
 							data-links="Wikipedia|https://en.wikipedia.org/wiki/Computer_system;IBM|https://www.ibm.com/topics/systems">systems</button>
-						fit together."</p>
+						fit together."
+					</p>
 				</div>
 				<div class="help-card">
 					<div class="help-icon"><i class="fas fa-map-signs"></i></div>
@@ -280,7 +322,7 @@
 		<section class="help-section" aria-label="Background">
 			<div class="perspective-grid">
 				<div class="perspective-text">
-					<h2>Background and grounding</h2>
+					<h2 id="background-title">Background and grounding</h2>
 					<p>I began learning to program in <strong>1997</strong>, at a <strong>very young age</strong>, in an
 						environment with <strong>limited resources</strong>. That early start exposed me not just to
 						different <button type="button" class="glossary-term"
@@ -290,7 +332,8 @@
 								data-definition="Computing is the study and practice of processing information using computers and related systems."
 								data-links="Wikipedia|https://en.wikipedia.org/wiki/Computing;Britannica|https://www.britannica.com/technology/computer">computing</button></strong>
 						from the 1980s onward, shaping how I see change, continuity, and fundamentals in <button
-							type="button" class="glossary-term" data-term="Software">software</button>.</p>
+							type="button" class="glossary-term" data-term="Software">software</button>.
+					</p>
 					<p>At that time, I was exposed early on to guidance shaped by decades of experience, rooted in a
 						rigorous <button type="button" class="glossary-term" data-term="Scientific">scientific</button>
 						tradition and early <button type="button" class="glossary-term"
@@ -424,7 +467,7 @@
 			<!-- Alignment and pacing -->
 			<div class="perspective-grid">
 				<div class="perspective-text">
-					<h2>How this work moves forward</h2>
+			<h2 id="alignment-title">How this work moves forward</h2>
 					<p><strong>Clarity rarely arrives all at once.</strong> It tends to emerge gradually, as we spend
 						time with the questions instead of rushing past them.</p>
 					<p>This kind of work stays <strong>calm and deliberate</strong>. It does not remove the need for

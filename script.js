@@ -34,12 +34,12 @@
         index = nextIndex;
     }
 
-    // Swap slide sources for portrait (use *.vertical.png)
+    // Swap slide sources for portrait (use *.vertical.webp)
     images.forEach(img => {
         if (!img.dataset.originalSrc) {
             img.dataset.originalSrc = img.getAttribute("src");
             const original = img.dataset.originalSrc;
-            const vertical = original.replace(/\.png(\?.*)?$/, ".vertical.png$1");
+            const vertical = original.replace(/\.webp(\?.*)?$/, ".vertical.webp$1");
             img.dataset.verticalSrc = vertical;
         }
     });
