@@ -271,6 +271,139 @@
                 "Britannica|https://www.britannica.com/technology/computer-programming-language"
             ]
         },
+        "programming languages": {
+            definition: "Formal languages used to write software instructions.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Programming_language",
+                "Britannica|https://www.britannica.com/technology/programming-language"
+            ]
+        },
+        "code": {
+            definition: "Written instructions in a programming language.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Source_code",
+                "Oxford Languages|https://languages.oup.com/google-dictionary-en/"
+            ]
+        },
+        "software": {
+            definition: "Programs and data that tell a computer how to operate.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Software",
+                "Britannica|https://www.britannica.com/technology/software"
+            ]
+        },
+        "technologies": {
+            definition: "Tools and methods used to build and operate systems.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Technology",
+                "Britannica|https://www.britannica.com/technology/technology"
+            ]
+        },
+        "computing generations": {
+            definition: "Historical eras of computing defined by dominant hardware and software ideas.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/History_of_computing_hardware",
+                "Britannica|https://www.britannica.com/technology/computer"
+            ]
+        },
+        "computing systems": {
+            definition: "Integrated hardware and software working together to perform computation.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Computer_system",
+                "IBM|https://www.ibm.com/topics/systems"
+            ]
+        },
+        "scientific": {
+            definition: "Based on systematic study and rigorous methods.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Science",
+                "Britannica|https://www.britannica.com/science/science"
+            ]
+        },
+        "data": {
+            definition: "Information represented for processing and analysis.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Data",
+                "IBM|https://www.ibm.com/topics/data"
+            ]
+        },
+        "structure": {
+            definition: "The organized arrangement of parts in a system or document.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Structure",
+                "Britannica|https://www.britannica.com/science/structure"
+            ]
+        },
+        "components": {
+            definition: "Individual parts that form a larger system.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Component-based_software_engineering",
+                "IBM|https://www.ibm.com/topics/component-based-development"
+            ]
+        },
+        "editors": {
+            definition: "Software used to write and edit code or text.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Source-code_editor",
+                "Visual Studio Code|https://code.visualstudio.com/"
+            ]
+        },
+        "repos": {
+            definition: "Repositories that store and track code changes.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Repository_(version_control)",
+                "Git|https://git-scm.com/docs/git-init"
+            ]
+        },
+        "environments": {
+            definition: "Configured setups where software is built and run.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Development_environment",
+                "AWS|https://aws.amazon.com/what-is/devops/"
+            ]
+        },
+        "mental model": {
+            definition: "An internal explanation of how something works.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Mental_model",
+                "Interaction Design Foundation|https://www.interaction-design.org/literature/topics/mental-models"
+            ]
+        },
+        "model": {
+            definition: "A simplified representation of a system or concept.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Model",
+                "Britannica|https://www.britannica.com/science/model"
+            ]
+        },
+        "intelligence": {
+            definition: "The ability to learn, reason, and solve problems.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Intelligence",
+                "Britannica|https://www.britannica.com/science/intelligence"
+            ]
+        },
+        "cause and effect": {
+            definition: "The relationship between events where one produces another.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Causality",
+                "Britannica|https://www.britannica.com/topic/causation"
+            ]
+        },
+        "juniors": {
+            definition: "Early-career practitioners who are still building experience.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_engineering",
+                "Stack Overflow|https://stackoverflow.com/jobs"
+            ]
+        },
+        "mentorship": {
+            definition: "Guidance from a more experienced person to support learning and growth.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Mentorship",
+                "Harvard Business Review|https://hbr.org/2021/02/how-to-get-the-mentoring-you-need"
+            ]
+        },
         "software engineering": {
             definition: "Applying engineering principles to design, build, and maintain software systems.",
             links: [
@@ -621,8 +754,15 @@
     function openGlossary(termEl) {
         if (!glossaryModal || !termEl) return;
         const term = termEl.dataset.term || termEl.textContent.trim();
-        const definition = termEl.dataset.definition || "";
-        const linksData = termEl.dataset.links || "";
+        let definition = termEl.dataset.definition || "";
+        let linksData = termEl.dataset.links || "";
+        const lookup = keywordGlossary[term] || keywordGlossary[term.toLowerCase()];
+        if ((!definition || !definition.trim()) && lookup) {
+            definition = lookup.definition || "";
+        }
+        if ((!linksData || !linksData.trim()) && lookup && Array.isArray(lookup.links)) {
+            linksData = lookup.links.join(";");
+        }
 
         if (glossaryTitle) glossaryTitle.textContent = term;
         if (glossaryDefinition) glossaryDefinition.textContent = definition;
