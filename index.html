@@ -58,13 +58,34 @@
 			</div>
 		</div>
 		<div class="header-social">
-			<a href="https://www.linkedin.com/in/rafageist" target="_blank" aria-label="LinkedIn"><i
-					class="fab fa-linkedin"></i></a>
-			<a href="https://github.com/rafageist" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-			<a href="https://facebook.com/rafageist" target="_blank" aria-label="Facebook"><i
-					class="fab fa-facebook"></i></a>
+			<button type="button" class="map-toggle" id="map-toggle" aria-label="Map" aria-controls="site-map"
+				aria-expanded="false" title="Map">&#9776;</button>
 		</div>
 	</header>
+
+	<div class="map-backdrop" id="map-backdrop" aria-hidden="true"></div>
+	<aside class="map-sidebar" id="site-map" aria-hidden="true" aria-label="Map">
+		<div class="map-sidebar-header">
+			<h3>Map</h3>
+			<button type="button" class="map-close" id="map-close" aria-label="Close map">x</button>
+		</div>
+		<nav class="map-sidebar-nav" aria-label="Site map">
+			<div class="map-group">
+				<div class="map-group-title">Primary</div>
+				<a href="#home">Start here</a>
+				<a href="#mental-model-title">How I think</a>
+				<a href="#fit-title">When this helps</a>
+			</div>
+			<div class="map-group">
+				<div class="map-group-title">Secondary</div>
+				<a href="#situations-title">Learning situations</a>
+				<a href="#help">Mentoring scope</a>
+				<a href="#background-title">Technical foundations</a>
+				<a href="#alignment-title">Reflection paths</a>
+				<a href="#contact">Survey / Contact</a>
+			</div>
+		</nav>
+	</aside>
 
 	<!-- Hero -->
 	<section class="hero" id="home" aria-label="Introduction">
@@ -192,50 +213,6 @@
 
 	<!-- Main content -->
 	<main class="page-shell">
-	<section class="card-section" aria-label="Page index">
-		<div class="help-grid index-grid">
-			<div class="help-card">
-				<div class="help-icon"><i class="fas fa-list-ol"></i></div>
-				<p><strong>1.</strong> <a href="#help">Who this space welcomes</a></p>
-			</div>
-			<div class="help-card">
-				<div class="help-icon"><i class="fas fa-compass"></i></div>
-				<p><strong>2.</strong> <a href="#approach-title">How I approach learning</a></p>
-			</div>
-			<div class="help-card">
-				<div class="help-icon"><i class="fas fa-comments"></i></div>
-				<p><strong>3.</strong> <a href="#situations-title">Common situations</a></p>
-			</div>
-			<div class="help-card">
-				<div class="help-icon"><i class="fas fa-seedling"></i></div>
-				<p><strong>4.</strong> <a href="#background-title">Background and grounding</a></p>
-			</div>
-			<div class="help-card">
-				<div class="help-icon"><i class="fas fa-th-list"></i></div>
-				<p><strong>5.</strong> <a href="#catalog-title">Learning situations catalog</a></p>
-			</div>
-			<div class="help-card">
-				<div class="help-icon"><i class="fas fa-brain"></i></div>
-				<p><strong>6.</strong> <a href="#mental-model-title">How I think about learning software</a></p>
-			</div>
-			<div class="help-card">
-				<div class="help-icon"><i class="fas fa-tasks"></i></div>
-				<p><strong>7.</strong> <a href="#process-title">How I usually work</a></p>
-			</div>
-			<div class="help-card">
-				<div class="help-icon"><i class="fas fa-route"></i></div>
-				<p><strong>8.</strong> <a href="#alignment-title">How this work moves forward</a></p>
-			</div>
-			<div class="help-card">
-				<div class="help-icon"><i class="fas fa-balance-scale"></i></div>
-				<p><strong>9.</strong> <a href="#what-title">What this is (and what it is not)</a></p>
-			</div>
-			<div class="help-card">
-				<div class="help-icon"><i class="fas fa-check-circle"></i></div>
-				<p><strong>10.</strong> <a href="#fit-title">When this kind of guidance tends to help</a></p>
-			</div>
-		</div>
-	</section>
 		<!-- How I can help -->
 		<section class="card-section" id="help" aria-label="Welcome note">
 			<h2>Who this space welcomes</h2>
@@ -546,7 +523,7 @@
 
 	</main>
 	<!-- Footer -->
-	<footer class="footer">
+	<footer class="footer" id="contact">
 		<div class="footer-grid">
 			<div class="footer-card">
 				<h3>Contact</h3>
@@ -637,7 +614,7 @@
 				<button type="button" class="survey-close" id="close-survey" aria-label="Close survey">x</button>
 			</div>
 			<div class="survey-modal-body">
-				<p class="survey-intro">Three quick steps to understand where you are and what you need.</p>
+				<p class="survey-intro">A short reflection to understand where you are.</p>
 				<div class="wizard-progress">
 					<div class="step active" data-step="1">1</div>
 					<div class="step" data-step="2">2</div>

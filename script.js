@@ -67,6 +67,74 @@
     window.addEventListener("resize", updateSlideSources);
     window.addEventListener("orientationchange", updateSlideSources);
 
+    // Map sidebar controls
+    const mapToggle = document.getElementById("map-toggle");
+    const mapSidebar = document.getElementById("site-map");
+    const mapBackdrop = document.getElementById("map-backdrop");
+    const mapClose = document.getElementById("map-close");
+    let mapLastFocus = null;
+
+    function toggleMap(show) {
+        if (!mapSidebar) return;
+        mapSidebar.classList.toggle("open", show);
+        if (mapBackdrop) mapBackdrop.classList.toggle("show", show);
+        mapSidebar.setAttribute("aria-hidden", show ? "false" : "true");
+        if (mapToggle) mapToggle.setAttribute("aria-expanded", show ? "true" : "false");
+        document.body.classList.toggle("map-open", show);
+
+        if (show) {
+            mapLastFocus = document.activeElement;
+            const firstFocus = mapSidebar.querySelector("button, a, [tabindex]:not([tabindex=\"-1\"])");
+            if (firstFocus) firstFocus.focus();
+        } else if (mapLastFocus) {
+            mapLastFocus.focus();
+        }
+    }
+
+    if (mapToggle) {
+        mapToggle.addEventListener("click", () => toggleMap(true));
+    }
+    if (mapClose) {
+        mapClose.addEventListener("click", () => toggleMap(false));
+    }
+    if (mapBackdrop) {
+        mapBackdrop.addEventListener("click", () => toggleMap(false));
+    }
+
+    if (mapSidebar) {
+        mapSidebar.querySelectorAll("a[href^=\"#\"]").forEach(link => {
+            link.addEventListener("click", event => {
+                const target = link.getAttribute("href");
+                const el = target ? document.querySelector(target) : null;
+                if (el) {
+                    event.preventDefault();
+                    el.scrollIntoView({ behavior: "smooth", block: "start" });
+                    toggleMap(false);
+                }
+            });
+        });
+    }
+
+    document.addEventListener("keydown", event => {
+        if (!mapSidebar || !mapSidebar.classList.contains("open")) return;
+        if (event.key === "Escape") {
+            toggleMap(false);
+            return;
+        }
+        if (event.key !== "Tab") return;
+        const focusable = mapSidebar.querySelectorAll("button, a, [tabindex]:not([tabindex=\"-1\"])");
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+        }
+    });
+
     // Survey modal controls
     const openSurvey = document.getElementById("open-survey");
     const closeSurvey = document.getElementById("close-survey");
