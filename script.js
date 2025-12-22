@@ -34,28 +34,6 @@
         index = nextIndex;
     }
 
-    // Swap slide sources for portrait (use *.vertical.webp)
-    images.forEach(img => {
-        if (!img.dataset.originalSrc) {
-            img.dataset.originalSrc = img.getAttribute("src");
-            const original = img.dataset.originalSrc;
-            const vertical = original.replace(/\.webp(\?.*)?$/, ".vertical.webp$1");
-            img.dataset.verticalSrc = vertical;
-        }
-    });
-
-    function updateSlideSources() {
-        const useVertical = window.innerHeight > window.innerWidth;
-        images.forEach(img => {
-            const target = useVertical ? img.dataset.verticalSrc : img.dataset.originalSrc;
-            if (target && img.getAttribute("src") !== target) {
-                img.setAttribute("src", target);
-            }
-        });
-    }
-
-    updateSlideSources();
-
     if (heroSlideText) {
         heroSlideText.textContent = slideMessages[0];
     }
@@ -63,9 +41,6 @@
     setInterval(changeImage, 5000);
 
     // Loading overlay intentionally disabled for instant access.
-
-    window.addEventListener("resize", updateSlideSources);
-    window.addEventListener("orientationchange", updateSlideSources);
 
     // Map sidebar controls
     const mapToggle = document.getElementById("map-toggle");
@@ -140,7 +115,7 @@
     const closeSurvey = document.getElementById("close-survey");
     const surveyModal = document.getElementById("survey-modal");
     const surveyBackdrop = document.getElementById("survey-backdrop");
-    const openSurveyHero = document.getElementById("open-survey-hero");
+    const openSurveyTriggers = document.querySelectorAll(".open-survey-trigger");
     let wizardStep = 1;
     const totalWizardSteps = 4;
 
@@ -154,8 +129,10 @@
     if (openSurvey) {
         openSurvey.addEventListener("click", () => toggleSurvey(true));
     }
-    if (openSurveyHero) {
-        openSurveyHero.addEventListener("click", () => toggleSurvey(true));
+    if (openSurveyTriggers.length) {
+        openSurveyTriggers.forEach(btn => {
+            btn.addEventListener("click", () => toggleSurvey(true));
+        });
     }
     if (closeSurvey) {
         closeSurvey.addEventListener("click", () => toggleSurvey(false));

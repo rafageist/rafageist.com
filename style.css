@@ -321,6 +321,7 @@ body.map-open {
 	transition: opacity 1.5s ease-in-out;
 }
 
+
 #slideshow img.active {
 	opacity: 1;
 }
@@ -372,11 +373,12 @@ body.map-open {
     position: relative;
     display: flex;
     align-items: center;
-    min-height: 68vh;
+	width: 100%;
+	height: calc(100vw * 600 / 1920);
     margin-top: 0;
     padding: 0;
     background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 0;
     box-shadow: 0 18px 40px rgba(13, 28, 43, 0.18);
     overflow: hidden;
@@ -396,10 +398,12 @@ body.map-open {
 	max-width: 1100px;
 	width: 100%;
 	margin: 0 auto;
-	padding: 5rem 1.8rem 2.8rem;
+	height: 100%;
+	padding: clamp(0.8rem, 4vw, 4rem) 1.5rem;
 	display: flex;
 	flex-direction: column;
 	gap: 0.7rem;
+	justify-content: center;
 	color: #f6f9fc;
     text-align: center;
 }
@@ -414,11 +418,13 @@ body.map-open {
 }
 
 .hero-title {
-    margin: 0;
-    font-size: 2.2rem;
+    /* margin: 0; */
+    font-size: clamp(1.1rem, 5.2vw, 2.2rem);
     line-height: 1.25;
     color: #f6f9fc;
     text-shadow: 4px 4px 1px rgba(0, 0, 0, 0.25);
+    margin-top: 100px;
+    /* float: left; */
 }
 
 .hero-subline {
@@ -435,6 +441,12 @@ body.map-open {
 	gap: 0.55rem;
 	align-items: center;
 
+}
+
+.hero-cta-mobile {
+	display: none;
+	justify-content: center;
+	padding: 0.8rem 1rem 0;
 }
 
 .hero-links {
@@ -627,12 +639,8 @@ body.map-open {
 		width: 100%;
 	}
 
-	.hero {
-		min-height: 60vh;
-	}
-
 	.hero-title {
-		font-size: 1.7rem;
+		/*font-size: 1.7rem;*/
 	}
 
 	.hero-subline {
@@ -1409,7 +1417,6 @@ i.fa-solid.fa-phone {
 @media (max-width: 900px) {
 	.hero {
 		flex-direction: column;
-		min-height: 60vh;
 	}
 
 	.page-shell {
@@ -1429,13 +1436,6 @@ i.fa-solid.fa-phone {
 		object-position: center center;
 	}
 
-	.hero {
-		min-height: 70vh;
-	}
-
-	.hero-overlay {
-		padding-top: 140px;
-	}
 }
 
 @media (max-width: 640px) {
@@ -1446,6 +1446,14 @@ i.fa-solid.fa-phone {
 
 	.index-grid {
 		grid-template-columns: 1fr !important;
+	}
+
+	.hero-actions {
+		display: none;
+	}
+
+	.hero-cta-mobile {
+		display: flex;
 	}
 
 	.survey-modal-content {
