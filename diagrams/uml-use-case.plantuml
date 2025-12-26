@@ -1,0 +1,35 @@
+@startuml
+skinparam backgroundColor #ffffff
+skinparam ArrowColor #6b5336
+skinparam ActorBorderColor #6b5336
+skinparam ActorBackgroundColor #efe4d6
+skinparam UsecaseBorderColor #6b5336
+skinparam UsecaseBackgroundColor #f5eadc
+
+    left to right direction
+
+    actor Mentor
+    actor Mentee
+    actor "Junior mentee" as JuniorMentee
+    actor "Student mentee" as StudentMentee
+
+    Mentee <|-right- JuniorMentee
+    Mentee <|-left- StudentMentee
+
+    usecase "Clarify goals" as UC1
+    usecase "Map confusion" as UC2
+    usecase "Build mental model" as UC3
+    usecase "Review reasoning" as UC4
+    usecase "Agree next steps" as UC5
+
+    Mentor -- UC1
+    Mentee -up- UC1
+    Mentor -- UC2
+    Mentee -up- UC2
+    Mentor -- UC3
+    Mentee -up- UC3
+    Mentor -- UC4
+    Mentee -up- UC4
+    Mentor -- UC5
+    Mentee -up- UC5
+@enduml

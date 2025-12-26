@@ -3,10 +3,10 @@
     const images = document.querySelectorAll("#slideshow img");
     let index = 0;
     const slideMessages = [
-        "You keep learning computing, but the picture still feels incomplete\?",
-        "You follow steps and the picture is missing.",
-        "Too many concepts, no clear shape yet.",
-        "You want to understand, not just repeat moves."
+        "Learning software engineering, but the structure still feels missing?",
+        "Tools are familiar, but the system is not.",
+        "Thinking matters more than tutorials.",
+        "Mentorship for engineering thinking, not courses."
     ];
     const heroSlideText = document.getElementById("hero-slide-text");
 
@@ -309,18 +309,32 @@
     const glossarySearchAcm = document.getElementById("glossary-search-acm");
 
     const keywordGlossary = {
-        "programming": {
-            definition: "Writing instructions that tell a computer what to do.",
+        "algorithms": {
+            definition: "Step-by-step procedures for solving problems or performing computations.",
             links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Computer_programming",
-                "Britannica|https://www.britannica.com/technology/computer-programming-language"
+                "Wikipedia|https://en.wikipedia.org/wiki/Algorithm",
+                "Britannica|https://www.britannica.com/science/algorithm"
             ]
         },
-        "programming languages": {
-            definition: "Formal languages used to write software instructions.",
+        "apis": {
+            definition: "Interfaces that let software systems communicate and share data.",
             links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Programming_language",
-                "Britannica|https://www.britannica.com/technology/programming-language"
+                "Wikipedia|https://en.wikipedia.org/wiki/API",
+                "IBM|https://www.ibm.com/topics/api"
+            ]
+        },
+        "architecture": {
+            definition: "High-level structure and key decisions in a software system.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_architecture",
+                "SEI|https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=33853"
+            ]
+        },
+        "cause and effect": {
+            definition: "The relationship where one event produces another.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Causality",
+                "Britannica|https://www.britannica.com/topic/causation"
             ]
         },
         "code": {
@@ -330,25 +344,25 @@
                 "Oxford Languages|https://languages.oup.com/google-dictionary-en/"
             ]
         },
-        "software": {
-            definition: "Programs and data that tell a computer how to operate.",
+        "components": {
+            definition: "Individual parts that make up a larger system.",
             links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Software",
-                "Britannica|https://www.britannica.com/technology/software"
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_component",
+                "IBM|https://www.ibm.com/topics/component-based-development"
             ]
         },
-        "technologies": {
-            definition: "Tools and methods used to build and operate systems.",
+        "computing": {
+            definition: "Processing information using computers and related systems.",
             links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Technology",
-                "Britannica|https://www.britannica.com/technology/technology"
+                "Wikipedia|https://en.wikipedia.org/wiki/Computing",
+                "Britannica|https://www.britannica.com/technology/computer"
             ]
         },
         "computing generations": {
-            definition: "Historical eras of computing defined by dominant hardware and software ideas.",
+            definition: "Historical eras of computing defined by dominant hardware and ideas.",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/History_of_computing_hardware",
-                "Britannica|https://www.britannica.com/technology/computer"
+                "Wikipedia|https://en.wikipedia.org/wiki/History_of_computing"
             ]
         },
         "computing systems": {
@@ -358,109 +372,11 @@
                 "IBM|https://www.ibm.com/topics/systems"
             ]
         },
-        "scientific": {
-            definition: "Based on systematic study and rigorous methods.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Science",
-                "Britannica|https://www.britannica.com/science/science"
-            ]
-        },
         "data": {
             definition: "Information represented for processing and analysis.",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Data",
                 "IBM|https://www.ibm.com/topics/data"
-            ]
-        },
-        "structure": {
-            definition: "The organized arrangement of parts in a system or document.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Structure",
-                "Britannica|https://www.britannica.com/science/structure"
-            ]
-        },
-        "components": {
-            definition: "Individual parts that form a larger system.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Component-based_software_engineering",
-                "IBM|https://www.ibm.com/topics/component-based-development"
-            ]
-        },
-        "editors": {
-            definition: "Software used to write and edit code or text.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Source-code_editor",
-                "Visual Studio Code|https://code.visualstudio.com/"
-            ]
-        },
-        "repos": {
-            definition: "Repositories that store and track code changes.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Repository_(version_control)",
-                "Git|https://git-scm.com/docs/git-init"
-            ]
-        },
-        "environments": {
-            definition: "Configured setups where software is built and run.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Development_environment",
-                "AWS|https://aws.amazon.com/what-is/devops/"
-            ]
-        },
-        "mental model": {
-            definition: "An internal explanation of how something works.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Mental_model",
-                "Interaction Design Foundation|https://www.interaction-design.org/literature/topics/mental-models"
-            ]
-        },
-        "model": {
-            definition: "A simplified representation of a system or concept.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Model",
-                "Britannica|https://www.britannica.com/science/model"
-            ]
-        },
-        "intelligence": {
-            definition: "The ability to learn, reason, and solve problems.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Intelligence",
-                "Britannica|https://www.britannica.com/science/intelligence"
-            ]
-        },
-        "cause and effect": {
-            definition: "The relationship between events where one produces another.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Causality",
-                "Britannica|https://www.britannica.com/topic/causation"
-            ]
-        },
-        "juniors": {
-            definition: "Early-career practitioners who are still building experience.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Software_engineering",
-                "Stack Overflow|https://stackoverflow.com/jobs"
-            ]
-        },
-        "mentorship": {
-            definition: "Guidance from a more experienced person to support learning and growth.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Mentorship",
-                "Harvard Business Review|https://hbr.org/2021/02/how-to-get-the-mentoring-you-need"
-            ]
-        },
-        "software engineering": {
-            definition: "Applying engineering principles to design, build, and maintain software systems.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Software_engineering",
-                "IEEE|https://www.computer.org/education/bodies-of-knowledge/software-engineering"
-            ]
-        },
-        "algorithms": {
-            definition: "Step-by-step procedures for solving problems or performing computations.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Algorithm",
-                "Khan Academy|https://www.khanacademy.org/computing/computer-science/algorithms"
             ]
         },
         "data structures": {
@@ -470,305 +386,277 @@
                 "GeeksforGeeks|https://www.geeksforgeeks.org/data-structures/"
             ]
         },
-        "Python": {
-            definition: "High-level programming language known for readability.",
+        "editors": {
+            definition: "Tools used to write and edit code or text.",
             links: [
-                "Python.org|https://www.python.org/",
-                "Wikipedia|https://en.wikipedia.org/wiki/Python_(programming_language)"
+                "Wikipedia|https://en.wikipedia.org/wiki/Text_editor",
+                "Wikipedia|https://en.wikipedia.org/wiki/Source-code_editor"
             ]
         },
-        "C / C++": {
-            definition: "Systems programming languages used for low-level control and performance.",
+        "environments": {
+            definition: "Configured setups where software is built, run, or tested.",
             links: [
-                "Wikipedia (C)|https://en.wikipedia.org/wiki/C_(programming_language)",
-                "Wikipedia (C++)|https://en.wikipedia.org/wiki/C%2B%2B"
+                "Wikipedia|https://en.wikipedia.org/wiki/Development_environment",
+                "Wikipedia|https://en.wikipedia.org/wiki/Execution_environment"
             ]
         },
-        "JavaScript": {
-            definition: "Programming language of the web and browser.",
+        "intelligence": {
+            definition: "The ability to learn, reason, and solve problems.",
             links: [
-                "MDN|https://developer.mozilla.org/en-US/docs/Web/JavaScript",
-                "Wikipedia|https://en.wikipedia.org/wiki/JavaScript"
+                "Wikipedia|https://en.wikipedia.org/wiki/Intelligence",
+                "Britannica|https://www.britannica.com/science/intelligence"
             ]
         },
-        "TypeScript": {
-            definition: "Typed superset of JavaScript that compiles to JS.",
+        "mental model": {
+            definition: "An internal explanation of how something works.",
             links: [
-                "TypeScript|https://www.typescriptlang.org/",
-                "Wikipedia|https://en.wikipedia.org/wiki/TypeScript"
+                "Wikipedia|https://en.wikipedia.org/wiki/Mental_model",
+                "Interaction Design Foundation|https://www.interaction-design.org/literature/topics/mental-models"
             ]
         },
-        "web development": {
-            definition: "Building and maintaining websites and web applications.",
+        "mentorship": {
+            definition: "Guidance from a more experienced person to support learning and growth.",
             links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Web_development",
-                "MDN Learn|https://developer.mozilla.org/en-US/docs/Learn"
+                "Wikipedia|https://en.wikipedia.org/wiki/Mentorship",
+                "Harvard Business Review|https://hbr.org/2021/02/how-to-get-the-mentoring-you-need"
             ]
         },
-        "frontend": {
-            definition: "User-facing part of a web or app interface.",
+        "model": {
+            definition: "A simplified representation of a system or concept.",
             links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Front-end_web_development",
-                "MDN Front-end|https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer"
+                "Wikipedia|https://en.wikipedia.org/wiki/Model",
+                "Britannica|https://www.britannica.com/science/model"
             ]
         },
-        "backend": {
-            definition: "Server-side logic, data access, and APIs.",
+        "programming languages": {
+            definition: "Formal languages used to write software instructions.",
             links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Front-end_and_back-end",
-                "IBM|https://www.ibm.com/topics/backend"
+                "Wikipedia|https://en.wikipedia.org/wiki/Programming_language",
+                "Britannica|https://www.britannica.com/technology/programming-language"
             ]
         },
-        "APIs": {
-            definition: "Interfaces that let software systems communicate.",
+        "repos": {
+            definition: "Repositories that store and track code changes.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Repository_(version_control)",
+                "Git|https://git-scm.com/docs/git-init"
+            ]
+        },
+        "scientific": {
+            definition: "Based on systematic study and rigorous methods.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Science",
+                "Britannica|https://www.britannica.com/science/science"
+            ]
+        },
+        "software": {
+            definition: "Programs and data that tell a computer how to operate.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Software",
+                "Britannica|https://www.britannica.com/technology/software"
+            ]
+        },
+        "software engineering": {
+            definition: "Applying engineering principles to design, build, and maintain software systems.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_engineering",
+                "IEEE|https://www.computer.org/education/bodies-of-knowledge/software-engineering"
+            ]
+        },
+        "structure": {
+            definition: "The organized arrangement of parts in a system or document.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Structure",
+                "Britannica|https://www.britannica.com/science/structure"
+            ]
+        },
+        "systems": {
+            definition: "Sets of interacting parts that work together.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/System",
+                "Britannica|https://www.britannica.com/science/system"
+            ]
+        },
+        "technologies": {
+            definition: "Tools and methods used to build and operate systems.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Technology",
+                "Britannica|https://www.britannica.com/technology/technology"
+            ]
+        },
+        "ai tools -> assumptions": {
+            definition: "AI tools rely on assumptions about data, prompts, and context.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Artificial_intelligence",
+                "Wikipedia|https://en.wikipedia.org/wiki/Assumption"
+            ]
+        },
+        "apis -> boundaries": {
+            definition: "APIs define the boundary where systems agree on how to interact.",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/API",
-                "IBM|https://www.ibm.com/topics/api"
+                "Wikipedia|https://en.wikipedia.org/wiki/Interface_(computing)"
             ]
         },
-        "REST": {
-            definition: "Architectural style for web APIs using HTTP.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Representational_state_transfer",
-                "RESTful API|https://restfulapi.net/"
-            ]
-        },
-        "GraphQL": {
-            definition: "Query language and runtime for APIs.",
-            links: [
-                "GraphQL|https://graphql.org/",
-                "Wikipedia|https://en.wikipedia.org/wiki/GraphQL"
-            ]
-        },
-        "DevOps": {
-            definition: "Practices that unify software development and operations.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/DevOps",
-                "AWS|https://aws.amazon.com/devops/"
-            ]
-        },
-        "CI / CD": {
-            definition: "Continuous integration and continuous delivery or deployment.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/CI/CD",
-                "Atlassian|https://www.atlassian.com/continuous-delivery/ci-vs-ci-vs-cd"
-            ]
-        },
-        "Docker": {
-            definition: "Platform for packaging and running apps in containers.",
-            links: [
-                "Docker|https://www.docker.com/resources/what-container/",
-                "Wikipedia|https://en.wikipedia.org/wiki/Docker_(software)"
-            ]
-        },
-        "Kubernetes": {
-            definition: "Container orchestration platform for deploying and scaling.",
-            links: [
-                "Kubernetes|https://kubernetes.io/",
-                "Wikipedia|https://en.wikipedia.org/wiki/Kubernetes"
-            ]
-        },
-        "cloud (AWS / Azure / GCP)": {
-            definition: "Cloud computing services from major providers.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Cloud_computing",
-                "IBM|https://www.ibm.com/topics/cloud-computing"
-            ]
-        },
-        "databases": {
-            definition: "Structured collections of data managed by a database system.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Database",
-                "IBM|https://www.ibm.com/topics/database"
-            ]
-        },
-        "SQL": {
-            definition: "Standard language for relational databases.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/SQL",
-                "PostgreSQL Docs|https://www.postgresql.org/docs/current/sql.html"
-            ]
-        },
-        "NoSQL": {
-            definition: "Non-relational databases designed for scale and flexibility.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/NoSQL",
-                "MongoDB|https://www.mongodb.com/nosql-explained"
-            ]
-        },
-        "caching": {
-            definition: "Storing data for faster access.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Cache_(computing)",
-                "Cloudflare|https://www.cloudflare.com/learning/cdn/what-is-caching/"
-            ]
-        },
-        "microservices": {
-            definition: "Architecture of small independent services.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Microservices",
-                "Martin Fowler|https://martinfowler.com/articles/microservices.html"
-            ]
-        },
-        "distributed systems": {
-            definition: "Systems with components on multiple networked computers.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Distributed_computing",
-                "Distributed Systems|https://www.distributed-systems.net/index.php/books/ds3/"
-            ]
-        },
-        "systems thinking": {
-            definition: "Understanding how parts interact within a whole.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Systems_thinking",
-                "iSee Systems|https://www.iseesystems.com/resources/what-is-systems-thinking"
-            ]
-        },
-        "testing": {
-            definition: "Checking software behavior and quality.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Software_testing",
-                "IBM|https://www.ibm.com/topics/software-testing"
-            ]
-        },
-        "TDD": {
-            definition: "Test-driven development: tests before code.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Test-driven_development",
-                "Martin Fowler|https://martinfowler.com/bliki/TestDrivenDevelopment.html"
-            ]
-        },
-        "refactoring": {
-            definition: "Improving code structure without changing behavior.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Code_refactoring",
-                "Refactoring.com|https://refactoring.com/"
-            ]
-        },
-        "performance": {
-            definition: "Speed and efficiency of software under load.",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Software_performance_testing",
-                "MDN|https://developer.mozilla.org/en-US/docs/Web/Performance"
-            ]
-        },
-        "observability": {
-            definition: "Ability to infer system state from its outputs.",
-            links: [
-                "OpenTelemetry|https://opentelemetry.io/docs/concepts/observability-primer/",
-                "Wikipedia|https://en.wikipedia.org/wiki/Observability"
-            ]
-        },
-        "security basics": {
-            definition: "Core practices that reduce software risk.",
-            links: [
-                "OWASP|https://owasp.org/www-project-top-ten/",
-                "CISA|https://www.cisa.gov/cybersecurity"
-            ]
-        },
-        "architecture": {
-            definition: "High-level structure and organization of software systems.",
+        "architecture -> structure": {
+            definition: "Architecture describes the structure that holds system decisions together.",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_architecture",
-                "Martin Fowler|https://martinfowler.com/architecture/"
+                "Wikipedia|https://en.wikipedia.org/wiki/Structure"
             ]
         },
-        "design patterns": {
-            definition: "Reusable solutions to common design problems.",
+        "backend -> tradeoffs": {
+            definition: "Backend decisions involve tradeoffs in performance, reliability, and complexity.",
             links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Software_design_pattern",
-                "Refactoring Guru|https://refactoring.guru/design-patterns"
+                "Wikipedia|https://en.wikipedia.org/wiki/Front-end_and_back-end",
+                "Wikipedia|https://en.wikipedia.org/wiki/Trade-off"
             ]
         },
-        "Git": {
-            definition: "Distributed version control system.",
+        "code -> choices": {
+            definition: "Code reflects choices about behavior, readability, and tradeoffs.",
             links: [
-                "Git|https://git-scm.com/",
-                "Wikipedia|https://en.wikipedia.org/wiki/Git"
+                "Wikipedia|https://en.wikipedia.org/wiki/Source_code",
+                "Wikipedia|https://en.wikipedia.org/wiki/Decision-making"
             ]
         },
-        "GitHub": {
-            definition: "Platform for hosting and collaborating on Git repositories.",
+        "collaboration -> alignment": {
+            definition: "Collaboration works when goals and responsibilities stay aligned.",
             links: [
-                "GitHub|https://github.com/about",
-                "Wikipedia|https://en.wikipedia.org/wiki/GitHub"
+                "Wikipedia|https://en.wikipedia.org/wiki/Collaboration",
+                "Wikipedia|https://en.wikipedia.org/wiki/Strategic_alignment"
             ]
         },
-        "Node.js": {
-            definition: "JavaScript runtime built on V8.",
+        "data -> meaning": {
+            definition: "Data becomes useful when interpreted with context and meaning.",
             links: [
-                "Node.js|https://nodejs.org/en",
-                "Wikipedia|https://en.wikipedia.org/wiki/Node.js"
+                "Wikipedia|https://en.wikipedia.org/wiki/Data",
+                "Wikipedia|https://en.wikipedia.org/wiki/Information"
             ]
         },
-        "React": {
-            definition: "UI library for building interfaces.",
+        "databases -> invariants": {
+            definition: "Databases depend on invariants like keys and constraints to stay consistent.",
             links: [
-                "React|https://react.dev/",
-                "Wikipedia|https://en.wikipedia.org/wiki/React_(software)"
+                "Wikipedia|https://en.wikipedia.org/wiki/Database",
+                "Wikipedia|https://en.wikipedia.org/wiki/Invariant_(mathematics)"
             ]
         },
-        "Vue": {
-            definition: "Progressive JavaScript framework for UIs.",
+        "debugging -> reasoning": {
+            definition: "Debugging is a reasoning process to find causes of incorrect behavior.",
             links: [
-                "Vue|https://vuejs.org/",
-                "Wikipedia|https://en.wikipedia.org/wiki/Vue.js"
+                "Wikipedia|https://en.wikipedia.org/wiki/Debugging",
+                "Wikipedia|https://en.wikipedia.org/wiki/Reasoning"
             ]
         },
-        "AI / ML": {
-            definition: "Artificial intelligence and machine learning.",
+        "deployments -> risk": {
+            definition: "Deployments carry operational risk and require careful planning.",
             links: [
-                "Wikipedia (AI)|https://en.wikipedia.org/wiki/Artificial_intelligence",
-                "Wikipedia (ML)|https://en.wikipedia.org/wiki/Machine_learning"
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_deployment",
+                "Wikipedia|https://en.wikipedia.org/wiki/Risk"
             ]
         },
-        "LLMs": {
-            definition: "Large language models trained on text data.",
+        "design -> intent": {
+            definition: "Design expresses intent about how something should work.",
             links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Large_language_model",
-                "IBM|https://www.ibm.com/topics/large-language-models"
+                "Wikipedia|https://en.wikipedia.org/wiki/Design",
+                "Wikipedia|https://en.wikipedia.org/wiki/Intention"
             ]
         },
-        "prompting": {
-            definition: "Formulating inputs to guide model outputs.",
+        "distributed systems -> failure modes": {
+            definition: "Distributed systems face distinct failure modes like partial failure.",
             links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Prompt_engineering",
-                "IBM|https://www.ibm.com/topics/prompt-engineering"
+                "Wikipedia|https://en.wikipedia.org/wiki/Distributed_computing",
+                "Wikipedia|https://en.wikipedia.org/wiki/Failure_mode"
             ]
         },
-        "data pipelines": {
-            definition: "Systems that move and transform data between sources.",
+        "documentation -> shared memory": {
+            definition: "Documentation acts as shared memory for teams and future work.",
             links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Data_pipeline",
-                "Google Cloud|https://cloud.google.com/learn/what-is-a-data-pipeline"
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_documentation",
+                "Wikipedia|https://en.wikipedia.org/wiki/Organizational_memory"
             ]
         },
-        "infrastructure as code": {
-            definition: "Managing infrastructure through code and automation.",
+        "frontend -> clarity": {
+            definition: "Frontend work depends on clarity in interfaces and interactions.",
             links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Infrastructure_as_code",
-                "HashiCorp|https://www.hashicorp.com/resources/what-is-infrastructure-as-code"
+                "Wikipedia|https://en.wikipedia.org/wiki/Front-end_and_back-end",
+                "Wikipedia|https://en.wikipedia.org/wiki/User_interface_design"
             ]
         },
-        "command line": {
-            definition: "Text-based interface to run commands.",
+        "interfaces -> contracts": {
+            definition: "Interfaces act as contracts between components.",
             links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Command-line_interface",
-                "GNU Bash|https://www.gnu.org/software/bash/"
+                "Wikipedia|https://en.wikipedia.org/wiki/Interface_(computing)",
+                "Wikipedia|https://en.wikipedia.org/wiki/Design_by_contract"
             ]
         },
-        "automation": {
-            definition: "Using tools to perform tasks with minimal manual effort.",
+        "monitoring -> feedback": {
+            definition: "Monitoring provides feedback about system behavior over time.",
             links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Automation",
-                "IBM|https://www.ibm.com/topics/automation"
+                "Wikipedia|https://en.wikipedia.org/wiki/System_monitor",
+                "Wikipedia|https://en.wikipedia.org/wiki/Feedback"
             ]
         },
-        "code reviews": {
-            definition: "Systematic peer review of code changes.",
+        "performance -> limits": {
+            definition: "Performance reveals limits under load and stress.",
             links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Code_review",
-                "Google|https://google.github.io/eng-practices/review/"
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_performance_testing",
+                "Wikipedia|https://en.wikipedia.org/wiki/Capacity_planning"
+            ]
+        },
+        "production -> responsibility": {
+            definition: "Production systems demand responsibility for reliability and users.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Deployment_environment",
+                "Wikipedia|https://en.wikipedia.org/wiki/Responsibility"
+            ]
+        },
+        "refactoring -> discipline": {
+            definition: "Refactoring requires discipline to improve structure without changing behavior.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Refactoring",
+                "Wikipedia|https://en.wikipedia.org/wiki/Discipline"
+            ]
+        },
+        "requirements -> decisions": {
+            definition: "Requirements guide decisions about scope and behavior.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Requirements_engineering",
+                "Wikipedia|https://en.wikipedia.org/wiki/Decision-making"
+            ]
+        },
+        "scalability -> constraints": {
+            definition: "Scalability is shaped by constraints in time, resources, and cost.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Scalability",
+                "Wikipedia|https://en.wikipedia.org/wiki/Constraint"
+            ]
+        },
+        "security -> trust": {
+            definition: "Security underpins trust in systems and data.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Computer_security",
+                "Wikipedia|https://en.wikipedia.org/wiki/Trust_(social_science)"
+            ]
+        },
+        "systems -> interactions": {
+            definition: "Systems are defined by interactions between their parts.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/System",
+                "Wikipedia|https://en.wikipedia.org/wiki/Interaction"
+            ]
+        },
+        "tests -> evidence": {
+            definition: "Tests provide evidence that behavior matches intent.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_testing",
+                "Wikipedia|https://en.wikipedia.org/wiki/Evidence"
+            ]
+        },
+        "version control -> accountability": {
+            definition: "Version control supports accountability through history and review.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Version_control",
+                "Wikipedia|https://en.wikipedia.org/wiki/Accountability"
             ]
         }
     };
@@ -867,5 +755,185 @@
 
     showWizardStep(wizardStep);
     generateSurveyMessage();
+
+    // Chat simulation
+    const chatPhone = document.querySelector(".chat-phone[data-chat-loop=\"true\"]");
+    if (chatPhone) {
+        const chatMessages = chatPhone.querySelector(".chat-messages");
+        if (!chatMessages) return;
+        const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const chatScript = [
+            {
+                id: "reasoning-trace",
+                messages: [
+                    { role: "mentor", text: "What do you think this system is deciding here?" },
+                    { role: "mentee", text: "I think it validates input and saves it." },
+                    { role: "mentor", text: "Where could a valid request still fail?" },
+                    { role: "mentee", text: "If the state is wrong or the request arrives late." },
+                    { role: "mentor", text: "Good. Let us trace where that state is set." }
+                ]
+            },
+            {
+                id: "requirements-clarity",
+                messages: [
+                    { role: "mentee", text: "The feature works, but I am not sure why it is correct." },
+                    { role: "mentor", text: "What is the exact question this feature answers?" },
+                    { role: "mentee", text: "It decides who should see the report." },
+                    { role: "mentor", text: "Then we need the rules in plain language first." },
+                    { role: "mentee", text: "So we can test the rules before the code." }
+                ]
+            },
+            {
+                id: "debugging-path",
+                messages: [
+                    { role: "mentee", text: "I fixed the bug, but I could not explain it." },
+                    { role: "mentor", text: "Where did the first wrong output appear?" },
+                    { role: "mentee", text: "Right after a cache refresh." },
+                    { role: "mentor", text: "Let us map the data path around that moment." },
+                    { role: "mentee", text: "So we isolate cause and effect." }
+                ]
+            },
+            {
+                id: "system-parts",
+                messages: [
+                    { role: "mentee", text: "I know the tools, but the system feels scattered." },
+                    { role: "mentor", text: "Pick three core parts. What does each one own?" },
+                    { role: "mentee", text: "One owns data, one owns logic, one owns the UI." },
+                    { role: "mentor", text: "Good. Now list the contracts between them." },
+                    { role: "mentee", text: "That makes the structure visible." }
+                ]
+            },
+            {
+                id: "learning-focus",
+                messages: [
+                    { role: "mentee", text: "I keep switching topics and feel lost." },
+                    { role: "mentor", text: "What decision are you trying to make right now?" },
+                    { role: "mentee", text: "Which data model to use." },
+                    { role: "mentor", text: "Then we focus on models, not new tools." },
+                    { role: "mentee", text: "That narrows the learning." }
+                ]
+            },
+            {
+                id: "ai-check",
+                messages: [
+                    { role: "mentee", text: "AI gave me code, but I cannot trust it." },
+                    { role: "mentor", text: "What would make it trustworthy?" },
+                    { role: "mentee", text: "Understanding each step and the tradeoffs." },
+                    { role: "mentor", text: "Then we walk the logic, not the output." },
+                    { role: "mentee", text: "So I can explain it without the tool." }
+                ]
+            }
+        ];
+
+        const typingRows = {
+            mentor: chatMessages.querySelector(".chat-row.typing.mentor"),
+            mentee: chatMessages.querySelector(".chat-row.typing.mentee")
+        };
+
+        const scrollToBottom = () => {
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        };
+
+        const renderConversation = conversation => {
+            const existing = chatMessages.querySelectorAll(".chat-row[data-chat-step]");
+            existing.forEach(row => row.remove());
+
+            conversation.messages.forEach((message, idx) => {
+                const row = document.createElement("div");
+                row.className = `chat-row ${message.role}`;
+                row.dataset.chatStep = String(idx + 1);
+
+                const avatar = document.createElement("div");
+                avatar.className = `chat-avatar${message.role === "mentee" ? " chat-avatar-mentee" : ""}`;
+                if (message.role === "mentor") {
+                    const img = document.createElement("img");
+                    img.src = "https://avatars.githubusercontent.com/u/25892480?v=4";
+                    img.alt = "rafageist";
+                    avatar.appendChild(img);
+                } else {
+                    const icon = document.createElement("i");
+                    icon.className = "fas fa-user";
+                    avatar.appendChild(icon);
+                }
+
+                const bubble = document.createElement("div");
+                bubble.className = "chat-bubble";
+
+                const username = document.createElement("div");
+                username.className = "chat-username";
+                username.textContent = message.role === "mentor" ? "rafageist" : "mentee";
+
+                const text = document.createElement("div");
+                text.className = "chat-text";
+                text.textContent = message.text;
+
+                bubble.appendChild(username);
+                bubble.appendChild(text);
+                row.appendChild(avatar);
+                row.appendChild(bubble);
+                chatMessages.insertBefore(row, typingRows.mentor || null);
+            });
+            scrollToBottom();
+        };
+
+        const pickConversation = list => list[Math.floor(Math.random() * list.length)];
+        renderConversation(pickConversation(chatScript));
+
+        const chatRows = () => Array.from(chatMessages.querySelectorAll(".chat-row[data-chat-step]"))
+            .sort((a, b) => Number(a.dataset.chatStep) - Number(b.dataset.chatStep));
+
+        if (prefersReducedMotion) {
+            chatRows().forEach(row => row.classList.add("is-visible"));
+            scrollToBottom();
+        } else {
+            chatPhone.classList.add("is-animated");
+            let index = 0;
+
+            const hideTyping = () => {
+                Object.values(typingRows).forEach(row => {
+                    if (row) row.classList.remove("is-visible");
+                });
+            };
+
+            const showTyping = role => {
+                hideTyping();
+                const row = typingRows[role];
+                if (row) row.classList.add("is-visible");
+                scrollToBottom();
+            };
+
+            const resetChat = () => {
+                hideTyping();
+                chatRows().forEach(row => row.classList.remove("is-visible"));
+                scrollToBottom();
+            };
+
+            const playNext = () => {
+                const rows = chatRows();
+                if (index >= rows.length) {
+                    setTimeout(() => {
+                        resetChat();
+                        index = 0;
+                        renderConversation(pickConversation(chatScript));
+                        playNext();
+                    }, 1600);
+                    return;
+                }
+                const row = rows[index];
+                const role = row.classList.contains("mentor") ? "mentor" : "mentee";
+                showTyping(role);
+                setTimeout(() => {
+                    hideTyping();
+                    row.classList.add("is-visible");
+                    index += 1;
+                    scrollToBottom();
+                    setTimeout(playNext, 1300);
+                }, 1400);
+            };
+
+            resetChat();
+            playNext();
+        }
+    }
 });
 
