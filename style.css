@@ -573,32 +573,39 @@ body.map-open {
 }
 
 .chat-section .chat-phone {
-	border: 1px solid #d7cabb;
-	background: #fdfaf6;
-	padding: 1.1rem 0.95rem 0.9rem;
-	box-shadow: 0 16px 28px rgba(42, 36, 30, 0.16);
-	max-width: 520px;
-	width: 100%;
-	justify-self: center;
-	display: flex;
-	flex-direction: column;
-	gap: 0.45rem;
-	height: 380px;
-	overflow: hidden;
-	border-radius: 22px;
-	position: relative;
+    border: 1px solid #d7cabb;
+    background: var(--accent);
+    padding: 1.5rem 0rem 0.9rem;
+    box-shadow: 0px 1px 28px 7px rgb(67 55 44 / 48%);
+    max-width: 320px;
+    width: 100%;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 22px;
+    position: relative;
+    border-color: var(--accent);
+    border-width: 8px;
 }
 
 .chat-messages {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	gap: 0.55rem;
-	justify-content: flex-end;
-	overflow-y: auto;
-	min-height: 0;
-	padding: 1rem 0.1rem 0.4rem;
-	scroll-behavior: smooth;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    justify-content: flex-end;
+    overflow-y: auto;
+    min-height: 0;
+    padding: 1rem 0.1rem 0.4rem;
+    scroll-behavior: smooth;
+    /* border-radius: 22px; */
+    /* margin-left: 0.95rem; */
+    /* margin-right: 0.95rem; */
+    background: var(--border);
+    padding: 20px;
 }
 
 .chat-section .chat-phone::before {
