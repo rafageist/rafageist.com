@@ -917,7 +917,7 @@
                         index = 0;
                         renderConversation(pickConversation(chatScript));
                         playNext();
-                    }, 1600);
+                    }, 2200);
                     return;
                 }
                 const row = rows[index];
@@ -928,8 +928,8 @@
                     row.classList.add("is-visible");
                     index += 1;
                     scrollToBottom();
-                    setTimeout(playNext, 1300);
-                }, 1400);
+                    setTimeout(playNext, 1700);
+                }, 2000);
             };
 
             resetChat();
