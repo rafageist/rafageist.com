@@ -433,10 +433,35 @@ body.map-open {
     /* margin: 0; */
     font-size: clamp(1rem, 4.6vw, 2rem);
     line-height: 1.25;
-    color: #f6f9fc;
-    text-shadow: 4px 4px 1px rgba(0, 0, 0, 0.25);
+    color: white;
+    text-shadow: 0px 0px 20px rgb(255 160 0);
     margin-top: 100px;
     /* float: left; */
+}
+
+.hero-chalk {
+    position: absolute;
+    /*right: clamp(1rem, 6vw, 4rem);*/
+    top: 30%;
+    /*transform: translateY(-50%);*/
+    /*max-width: min(460px, 60%);*/
+	width: 100%;
+    text-align: center;
+    font-size: clamp(1.1rem, 3.6vw, 2.2rem);
+    font-family: "Segoe Script", "Bradley Hand", "Lucida Handwriting", "Comic Sans MS", cursive;
+    color: #f6f9fc;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.15), 2px 2px 6px rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hero.hero-slide-00 .hero-title {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.hero.hero-slide-00 .hero-chalk {
+    opacity: 1;
 }
 
 .hero-subline {
@@ -898,6 +923,11 @@ body.map-open {
     .page-shell {
         padding: 1.8rem 1rem 3rem;
     }
+
+	#chat-title {
+		margin-top: 0px !important;
+	}
+
 }
 
 .catalog-section h2 {
@@ -1114,8 +1144,8 @@ body.map-open {
 
 .survey-open {
     padding: 0.7rem 1.1rem;
-    border: 1px solid #4f3f2c;
-    background: var(--accent);
+    border: 1px solid #378152;
+    background: #378152;
     color: #fff7ee;
     font-weight: 700;
     cursor: pointer;
@@ -1124,7 +1154,7 @@ body.map-open {
 }
 
 .survey-open.inline {
-    border: 1px solid #4f3f2c;
+    border: 1px solid #378152;
 }
 
 .wizard-step textarea {
@@ -1787,6 +1817,7 @@ section.chat-section {
 div.chat-phone {
 	margin-top: -120px;
 }
+
 #chat-title {
 	margin-top: 120px;
 }

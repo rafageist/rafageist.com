@@ -9,6 +9,26 @@
         "Mentorship for engineering thinking, not courses."
     ];
     const heroSlideText = document.getElementById("hero-slide-text");
+    const heroChalkText = document.getElementById("hero-chalk-text");
+    const heroSection = document.querySelector(".hero");
+
+    function applyHeroSlide(slideIndex) {
+        const isIntro = slideIndex === 0;
+        if (heroSection) heroSection.classList.toggle("hero-slide-00", isIntro);
+        if (heroSlideText) {
+            if (isIntro) {
+                heroSlideText.textContent = "";
+                heroSlideText.setAttribute("aria-hidden", "true");
+            } else {
+                const msgIndex = (slideIndex - 1 + slideMessages.length) % slideMessages.length;
+                heroSlideText.textContent = slideMessages[msgIndex];
+                heroSlideText.setAttribute("aria-hidden", "false");
+            }
+        }
+        if (heroChalkText) {
+            heroChalkText.setAttribute("aria-hidden", isIntro ? "false" : "true");
+        }
+    }
 
     function changeImage() {
         const current = images[index];
@@ -26,17 +46,12 @@
 
         next.classList.add("active");
         // Ensure starting position fully covers viewport
-        if (heroSlideText) {
-            const msg = slideMessages[nextIndex % slideMessages.length];
-            heroSlideText.textContent = msg;
-        }
+        applyHeroSlide(nextIndex);
 
         index = nextIndex;
     }
 
-    if (heroSlideText) {
-        heroSlideText.textContent = slideMessages[0];
-    }
+    applyHeroSlide(0);
 
     setInterval(changeImage, 5000);
 
