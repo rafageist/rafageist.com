@@ -764,43 +764,43 @@
         const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         const chatScript = [
             {
+                id: "first-contact",
+                messages: [
+                    { role: "mentor", text: "Before we look at code, tell me where things start to feel unclear." },
+                    { role: "mentee", text: "I can follow steps, but I don't really understand what I'm building." },
+                    { role: "mentor", text: "That's a good place to start. Let's slow it down." },
+                    { role: "mentee", text: "So it's okay if I don't have clear questions yet?" },
+                    { role: "mentor", text: "That's normal. We'll find the questions together." }
+                ]
+            },
+            {
+                id: "requirements-clarity",
+                messages: [
+                    { role: "mentee", text: "The feature works, but I'm not sure why it's correct." },
+                    { role: "mentor", text: "What exact question is it answering?" },
+                    { role: "mentee", text: "Who should see the report." },
+                    { role: "mentor", text: "What rule decides that?" },
+                    { role: "mentee", text: "We haven't written it clearly yet." }
+                ]
+            },
+            {
                 id: "reasoning-trace",
                 messages: [
                     { role: "mentor", text: "What do you think this system is deciding here?" },
                     { role: "mentee", text: "I think it validates input and saves it." },
                     { role: "mentor", text: "Where could a valid request still fail?" },
                     { role: "mentee", text: "If the state is wrong or the request arrives late." },
-                    { role: "mentor", text: "Good. Let us trace where that state is set." }
-                ]
-            },
-            {
-                id: "requirements-clarity",
-                messages: [
-                    { role: "mentee", text: "The feature works, but I am not sure why it is correct." },
-                    { role: "mentor", text: "What is the exact question this feature answers?" },
-                    { role: "mentee", text: "It decides who should see the report." },
-                    { role: "mentor", text: "Then we need the rules in plain language first." },
-                    { role: "mentee", text: "So we can test the rules before the code." }
+                    { role: "mentor", text: "Good. Let's trace where that state is set." }
                 ]
             },
             {
                 id: "debugging-path",
                 messages: [
-                    { role: "mentee", text: "I fixed the bug, but I could not explain it." },
+                    { role: "mentee", text: "I fixed it, but I can't explain why." },
                     { role: "mentor", text: "Where did the first wrong output appear?" },
                     { role: "mentee", text: "Right after a cache refresh." },
-                    { role: "mentor", text: "Let us map the data path around that moment." },
-                    { role: "mentee", text: "So we isolate cause and effect." }
-                ]
-            },
-            {
-                id: "system-parts",
-                messages: [
-                    { role: "mentee", text: "I know the tools, but the system feels scattered." },
-                    { role: "mentor", text: "Pick three core parts. What does each one own?" },
-                    { role: "mentee", text: "One owns data, one owns logic, one owns the UI." },
-                    { role: "mentor", text: "Good. Now list the contracts between them." },
-                    { role: "mentee", text: "That makes the structure visible." }
+                    { role: "mentor", text: "What changed at that point?" },
+                    { role: "mentee", text: "The data source and timing." }
                 ]
             },
             {
@@ -809,18 +809,18 @@
                     { role: "mentee", text: "I keep switching topics and feel lost." },
                     { role: "mentor", text: "What decision are you trying to make right now?" },
                     { role: "mentee", text: "Which data model to use." },
-                    { role: "mentor", text: "Then we focus on models, not new tools." },
-                    { role: "mentee", text: "That narrows the learning." }
+                    { role: "mentor", text: "What would you need to decide that?" },
+                    { role: "mentee", text: "Examples and constraints." }
                 ]
             },
             {
                 id: "ai-check",
                 messages: [
-                    { role: "mentee", text: "AI gave me code, but I cannot trust it." },
+                    { role: "mentee", text: "AI gave me code, but I can't trust it." },
                     { role: "mentor", text: "What would make it trustworthy?" },
-                    { role: "mentee", text: "Understanding each step and the tradeoffs." },
-                    { role: "mentor", text: "Then we walk the logic, not the output." },
-                    { role: "mentee", text: "So I can explain it without the tool." }
+                    { role: "mentee", text: "Understanding the logic and tradeoffs." },
+                    { role: "mentor", text: "Which part is still unclear?" },
+                    { role: "mentee", text: "Why it handles errors the way it does." }
                 ]
             }
         ];
@@ -877,7 +877,8 @@
         };
 
         const pickConversation = list => list[Math.floor(Math.random() * list.length)];
-        renderConversation(pickConversation(chatScript));
+        const introConversation = chatScript.find(entry => entry.id === "first-contact") || chatScript[0];
+        renderConversation(introConversation);
 
         const chatRows = () => Array.from(chatMessages.querySelectorAll(".chat-row[data-chat-step]"))
             .sort((a, b) => Number(a.dataset.chatStep) - Number(b.dataset.chatStep));
