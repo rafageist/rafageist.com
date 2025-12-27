@@ -327,7 +327,7 @@
             definition: "High-level structure and key decisions in a software system.",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_architecture",
-                "SEI|https://resources.sei.cmu.edu/library/asset-view.cfm?assetid=33853"
+                "SEI|https://www.sei.cmu.edu/our-work/software-architecture/"
             ]
         },
         "cause and effect": {
@@ -397,14 +397,14 @@
             definition: "Configured setups where software is built, run, or tested.",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Development_environment",
-                "Wikipedia|https://en.wikipedia.org/wiki/Execution_environment"
+                "Wikipedia|https://en.wikipedia.org/wiki/Runtime_environment"
             ]
         },
         "intelligence": {
             definition: "The ability to learn, reason, and solve problems.",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Intelligence",
-                "Britannica|https://www.britannica.com/science/intelligence"
+                "APA|https://www.apa.org/topics/intelligence"
             ]
         },
         "mental model": {
@@ -418,21 +418,21 @@
             definition: "Guidance from a more experienced person to support learning and growth.",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Mentorship",
-                "Harvard Business Review|https://hbr.org/2021/02/how-to-get-the-mentoring-you-need"
+                "APA|https://www.apa.org/education-career/grad/mentoring"
             ]
         },
         "model": {
             definition: "A simplified representation of a system or concept.",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Model",
-                "Britannica|https://www.britannica.com/science/model"
+                "Stanford Encyclopedia of Philosophy|https://plato.stanford.edu/entries/models-science/"
             ]
         },
         "programming languages": {
             definition: "Formal languages used to write software instructions.",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Programming_language",
-                "Britannica|https://www.britannica.com/technology/programming-language"
+                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/programming-language"
             ]
         },
         "repos": {
@@ -467,14 +467,14 @@
             definition: "The organized arrangement of parts in a system or document.",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Structure",
-                "Britannica|https://www.britannica.com/science/structure"
+                "Merriam-Webster|https://www.merriam-webster.com/dictionary/structure"
             ]
         },
         "systems": {
             definition: "Sets of interacting parts that work together.",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/System",
-                "Britannica|https://www.britannica.com/science/system"
+                "Merriam-Webster|https://www.merriam-webster.com/dictionary/system"
             ]
         },
         "technologies": {

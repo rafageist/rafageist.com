@@ -22,6 +22,10 @@ body {
     padding-top: 0;
 }
 
+main {
+	    border-left: 1px dashed #cdcdcdba;
+    border-right: 1px dashed #cdcdcdba;
+}
 a {
     color: var(--accent);
     text-decoration: none;
@@ -1148,7 +1152,8 @@ body.map-open {
 }
 
 .keyword-strip .glossary-term {
-    text-decoration: none;
+    text-decoration: underline;
+    text-underline-offset: 3px;
     font-weight: inherit;
     color: #f6f1e8;
 }
@@ -1752,6 +1757,7 @@ section.help-section {
     padding-right: calc(((100vw - 100%)/2));
     background: #00000005;
     height: 25%;
+	border-bottom: 1px dashed #cdcdcdba;
 }
 
 .diagram-section.help-section {
