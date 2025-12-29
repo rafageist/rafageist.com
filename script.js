@@ -874,6 +874,35 @@
 
     const glossaryTerms = document.querySelectorAll(".glossary-term");
 
+    function titleFromUrl(url) {
+        if (!url) return "";
+        try {
+            const parsed = new URL(url);
+            const parts = parsed.pathname.split("/").filter(Boolean);
+            let raw = parts[parts.length - 1] || "";
+            if (!raw) {
+                raw = parsed.searchParams.get("search")
+                    || parsed.searchParams.get("q")
+                    || parsed.searchParams.get("AllField")
+                    || "";
+            }
+            if (!raw) return "";
+            const decoded = decodeURIComponent(raw);
+            return decoded.replace(/[_-]+/g, " ").replace(/\s+/g, " ").trim();
+        } catch (error) {
+            return "";
+        }
+    }
+
+    function buildReferenceLabel(sourceLabel, url) {
+        const title = titleFromUrl(url);
+        const label = (sourceLabel || "").trim();
+        if (!title) return label || url;
+        if (!label) return title;
+        if (title.toLowerCase() === label.toLowerCase()) return title;
+        return `${title} (${label})`;
+    }
+
     function closeGlossary() {
         if (!glossaryModal) return;
         glossaryModal.classList.remove("show");
@@ -910,13 +939,13 @@
                 const parts = item.split("|");
                 const label = (parts[0] || "").trim();
                 const url = (parts[1] || "").trim();
-                if (!label || !url) return;
+                if (!url) return;
                 const li = document.createElement("li");
                 const a = document.createElement("a");
                 a.href = url;
                 a.target = "_blank";
                 a.rel = "noopener";
-                a.textContent = label;
+                a.textContent = buildReferenceLabel(label, url);
                 li.appendChild(a);
                 glossaryLinks.appendChild(li);
             });
