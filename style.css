@@ -14,12 +14,13 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
-    /*background: linear-gradient(180deg, #e9f2fb 0%, #d8e3ef 35%, #cdd9e6 100%);*/
+    /* background: linear-gradient(180deg, #e9f2fb 0%, #d8e3ef 35%, #cdd9e6 100%); */
     color: var(--text);
     min-height: 100vh;
     overflow-x: hidden;
     line-height: 1.6;
     padding-top: 0;
+    background: linear-gradient(180deg, white 93%, #5a4430 98%, #3a2f24 99%, #2a241e 100%);
 }
 
 main {
@@ -1068,6 +1069,10 @@ body.map-open {
     font-size: 0.98rem;
 }
 
+.why-section {
+    background: transparent !important;
+}
+
 .why-section h2 {
     margin: 0 0 0.7rem 0;
     font-size: 1.4rem;
@@ -1631,7 +1636,7 @@ body.map-open {
 }
 
 .footer {
-    background: linear-gradient(180deg, white 0%, #5a4430 50%, #3a2f24 75%, #2a241e 100%);
+    /* background: linear-gradient(180deg, #5a4430 50%, #3a2f24 75%, #2a241e 100%); */
     border: 0;
     box-shadow: none;
     text-align: left;
