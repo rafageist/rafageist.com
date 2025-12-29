@@ -3,11 +3,12 @@
     const images = document.querySelectorAll("#slideshow img");
     let index = 0;
     const slideMessages = [
-        "Learning software engineering, but the structure still feels missing?",
-        "Tools are familiar, but the system is not.",
-        "Thinking matters more than tutorials.",
-        "Mentorship for engineering thinking, not courses."
+        "If you don’t understand it, you can’t trust it.",
+        "Producing results is not the same as making decisions.",
+        "Engineering starts before you write code.",
+        "If you want answers, this may not help. If you want clarity, it will."
     ];
+
     const heroSlideText = document.getElementById("hero-slide-text");
     const heroChalkText = document.getElementById("hero-chalk-text");
     const heroSection = document.querySelector(".hero");

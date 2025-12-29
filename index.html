@@ -204,19 +204,16 @@
 			<div class="perspective-grid">
 				<div class="perspective-text">
 					<h2 id="chat-title">What guidance looks like in practice</h2>
-					<p>A short exchange focused on clarifying assumptions and reasoning through decisions.</p>
-
-					<ol>
-						<li>Mentee brings a concrete problem.</li>
-						<li>Mentor diagnoses gaps and confusion.</li>
-						<li>Learning path is defined together.</li>
-						<li>Mentee executes and experiments.</li>
-						<li>One to one review and guidance.</li>
-						<li>Results are evaluated and explained.</li>
-						<li>Process iterates and deepens.</li>
-					</ol>
-
-					<p>This is a continuous, iterative process based on practical work, not theory alone.</p>
+					<p>A simple loop to turn confusion into informed decisions.</p>
+					<div class="guidance-diagram" role="list" aria-label="Guidance process loop">
+						<div class="guidance-step" role="listitem">Clarify the problem</div>
+						<div class="guidance-step" role="listitem">Diagnose gaps</div>
+						<div class="guidance-step" role="listitem">Decide next steps</div>
+						<div class="guidance-step" role="listitem">Build and test</div>
+						<div class="guidance-step" role="listitem">Review decisions</div>
+						<div class="guidance-step guidance-step-loop" role="listitem">Iterate</div>
+					</div>
+					<p class="guidance-note">The loop repeats as new questions surface.</p>
 				</div>
 				<div class="chat-phone" aria-label="Mentor and mentee chat sample" data-chat-loop="true">
 					<div class="chat-messages" aria-live="polite">
@@ -332,8 +329,7 @@
 						alt="Sequence diagram showing a mentoring interaction over time" loading="lazy">
 				</div>
 				<div class="perspective-text">
-					<h2 id="sequence-title">How the interaction unfolds</h2>
-					<p>Understanding grows through questions, feedback, and revision over time.</p>
+					<h2 id="sequence-title">A closer look at how mentor and mentee interact during a session</h2>
 				</div>
 			</div>
 		</section>

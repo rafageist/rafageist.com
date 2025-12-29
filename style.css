@@ -607,6 +607,66 @@ body.map-open {
 	font-size: 0.95rem;
 }
 
+.guidance-diagram {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem 1.4rem;
+    margin: 0.9rem 0 0.6rem;
+    padding: 0.6rem;
+    border: 1px dashed #d7cabb;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.guidance-step {
+    position: relative;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid #d7cabb;
+    background: #fffaf3;
+    font-weight: 700;
+    color: var(--text);
+    border-radius: 999px;
+}
+
+.guidance-step::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -1.2rem;
+    width: 1rem;
+    height: 2px;
+    background: var(--accent);
+    transform: translateY(-50%);
+}
+
+.guidance-step::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -0.2rem;
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid var(--accent);
+    border-right: 2px solid var(--accent);
+    transform: translate(0.6rem, -50%) rotate(45deg);
+}
+
+.guidance-step:last-of-type::after,
+.guidance-step:last-of-type::before {
+    display: none;
+}
+
+.guidance-step-loop {
+    border-style: dashed;
+    background: #f6f1e8;
+}
+
+.guidance-note {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
 .chat-section .chat-phone {
     border: 1px solid #d7cabb;
     background: #2f2e2e;
@@ -1775,6 +1835,41 @@ body.map-open {
 
     section.chat-section {
         margin-top: 1.4rem;
+    }
+}
+
+@media (max-width: 700px) {
+    .guidance-diagram {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+    }
+
+    .guidance-step {
+        margin-bottom: 10px;
+    }
+
+    .guidance-step::after {
+        top: auto;
+        bottom: -0.9rem;
+        left: 50%;
+        right: auto;
+        width: 2px;
+        height: 0.8rem;
+        transform: translateX(-50%);
+    }
+
+    .guidance-step::before {
+        top: auto;
+        bottom: -0.6rem;
+        left: 50%;
+        right: auto;
+        width: 7px;
+        height: 7px;
+        border-top: 0;
+        border-right: 2px solid var(--accent);
+        border-bottom: 2px solid var(--accent);
+        transform: translateX(-50%) rotate(45deg);
     }
 }
 

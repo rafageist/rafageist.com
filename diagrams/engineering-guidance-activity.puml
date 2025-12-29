@@ -6,7 +6,7 @@ skinparam ActivityBackgroundColor #f5eadc
 skinparam DiamondBorderColor #6b5336
 skinparam DiamondBackgroundColor #efe4d6
 
-|Mentee (Team)|
+|Mentee|
 start
 :Understand goal;
 :Analyze context;
@@ -14,7 +14,7 @@ start
 :Ask questions;
 :Validate direction;
 repeat
-|Mentee (Team)|
+|Mentee|
 :Implement;
 :Review result;
 |Mentor|
