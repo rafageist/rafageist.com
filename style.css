@@ -304,6 +304,7 @@ a:hover {
     color: #6b5336;
     opacity: 0.75;
     flex-shrink: 0;
+    margin: 0.5rem;
 }
 
 .map-sidebar-nav a:hover {
