@@ -1951,10 +1951,6 @@ body.map-open {
         transition: none;
     }
 
-    .keyword-strip-track {
-        animation: none;
-    }
-
     section.help-section {
         animation: none;
     }
