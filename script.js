@@ -780,66 +780,77 @@
         const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         const chatScript = [
             {
-                id: "first-contact",
+                id: "initial-confusion",
                 messages: [
-                    { role: "mentor", text: "Before we look at code, tell me where things start to feel unclear." },
-                    { role: "mentee", text: "I can follow steps, but I don't really understand what I'm building." },
-                    { role: "mentor", text: "That's a good place to start. Let's slow it down." },
-                    { role: "mentee", text: "So it's okay if I don't have clear questions yet?" },
-                    { role: "mentor", text: "That's normal. We'll find the questions together." }
+                    { role: "mentee", text: "i can write code but still feel lost" },
+                    { role: "mentor", text: "what feels unclear" },
+                    { role: "mentee", text: "i dont really know what im building" },
+                    { role: "mentor", text: "what do you think the system is supposed to do" },
+                    { role: "mentee", text: "thats the problem im not sure" }
                 ]
             },
             {
-                id: "requirements-clarity",
+                id: "requirements-gap",
                 messages: [
-                    { role: "mentee", text: "The feature works, but I'm not sure why it's correct." },
-                    { role: "mentor", text: "What exact question is it answering?" },
-                    { role: "mentee", text: "Who should see the report." },
-                    { role: "mentor", text: "What rule decides that?" },
-                    { role: "mentee", text: "We haven't written it clearly yet." }
+                    { role: "mentee", text: "the feature works but something feels off" },
+                    { role: "mentor", text: "what requirement does it satisfy" },
+                    { role: "mentee", text: "i followed the task not the reason behind it" },
+                    { role: "mentor", text: "so where do decisions come from in your code" },
+                    { role: "mentee", text: "never thought about that" }
                 ]
             },
             {
-                id: "reasoning-trace",
+                id: "ai-trust",
                 messages: [
-                    { role: "mentor", text: "What do you think this system is deciding here?" },
-                    { role: "mentee", text: "I think it validates input and saves it." },
-                    { role: "mentor", text: "Where could a valid request still fail?" },
-                    { role: "mentee", text: "If the state is wrong or the request arrives late." },
-                    { role: "mentor", text: "Good. Let's trace where that state is set." }
+                    { role: "mentee", text: "ai gave me the code but i cant really trust it" },
+                    { role: "mentor", text: "what would make it trustworthy" },
+                    { role: "mentee", text: "if i understood why it works" },
+                    { role: "mentor", text: "what part doesnt make sense yet" },
+                    { role: "mentee", text: "the logic behind the decisions" }
                 ]
             },
             {
-                id: "debugging-path",
+                id: "debugging-thinking",
                 messages: [
-                    { role: "mentee", text: "I fixed it, but I can't explain why." },
-                    { role: "mentor", text: "Where did the first wrong output appear?" },
-                    { role: "mentee", text: "Right after a cache refresh." },
-                    { role: "mentor", text: "What changed at that point?" },
-                    { role: "mentee", text: "The data source and timing." }
+                    { role: "mentee", text: "i keep fixing bugs and new ones appear" },
+                    { role: "mentor", text: "what do you think is causing that" },
+                    { role: "mentee", text: "maybe im just patching symptoms" },
+                    { role: "mentor", text: "what would be underneath that" },
+                    { role: "mentee", text: "i dont have a clear model of the system" }
                 ]
             },
             {
-                id: "learning-focus",
+                id: "structure-missing",
                 messages: [
-                    { role: "mentee", text: "I keep switching topics and feel lost." },
-                    { role: "mentor", text: "What decision are you trying to make right now?" },
-                    { role: "mentee", text: "Which data model to use." },
-                    { role: "mentor", text: "What would you need to decide that?" },
-                    { role: "mentee", text: "Examples and constraints." }
+                    { role: "mentee", text: "i know the tools but everything feels messy" },
+                    { role: "mentor", text: "what is organizing your decisions right now" },
+                    { role: "mentee", text: "honestly nothing" },
+                    { role: "mentor", text: "what could act as a structure" },
+                    { role: "mentee", text: "probably a design i never made" }
                 ]
             },
             {
-                id: "ai-check",
+                id: "tutorial-frustration",
                 messages: [
-                    { role: "mentee", text: "AI gave me code, but I can't trust it." },
-                    { role: "mentor", text: "What would make it trustworthy?" },
-                    { role: "mentee", text: "Understanding the logic and tradeoffs." },
-                    { role: "mentor", text: "Which part is still unclear?" },
-                    { role: "mentee", text: "Why it handles errors the way it does." }
+                    { role: "mentee", text: "i followed the tutorial exactly and now im stuck" },
+                    { role: "mentor", text: "what decision did the tutorial help you make" },
+                    { role: "mentee", text: "none i just copied it" },
+                    { role: "mentor", text: "that explains a lot" },
+                    { role: "mentee", text: "yeah it does" }
+                ]
+            },
+            {
+                id: "focus-and-scope",
+                messages: [
+                    { role: "mentee", text: "i keep adding things but progress is slow" },
+                    { role: "mentor", text: "what problem are you solving right now" },
+                    { role: "mentee", text: "too many at once" },
+                    { role: "mentor", text: "which one matters most" },
+                    { role: "mentee", text: "i need to decide that first" }
                 ]
             }
         ];
+
 
         const typingRows = {
             mentor: chatMessages.querySelector(".chat-row.typing.mentor"),
