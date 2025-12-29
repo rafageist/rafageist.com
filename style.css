@@ -686,6 +686,18 @@ body.map-open {
     border-width: 8px;
 }
 
+@keyframes chatGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .chat-messages {
     flex: 1;
     display: flex;
@@ -699,8 +711,16 @@ body.map-open {
     /* border-radius: 22px; */
     /* margin-left: 0.95rem; */
     /* margin-right: 0.95rem; */
-    background: var(--border);
+    background: linear-gradient(135deg, #378152, #ebcda2eb, var(--accent));
+    background-size: 220% 220%;
+    animation: chatGradient 14s ease infinite;
     padding: 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .chat-messages {
+        animation: none;
+    }
 }
 
 .chat-section .chat-phone::before {
@@ -748,6 +768,7 @@ body.map-open {
     background: #f6f1e8;
     color: var(--text);
     border-radius: 14px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.514);
 }
 
 .chat-row.mentee .chat-bubble {
