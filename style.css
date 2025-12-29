@@ -48,7 +48,7 @@ a:hover {
     /* box-shadow: 0px -9px 20px 1px rgb(0 0 0); */
     height: 100px;
     margin-left: -1.9rem;
-    width: calc(100vw + 2.8rem);
+    width: calc(100vw - 0.2rem);
 }
 
 .keyword-strip-track {
@@ -485,10 +485,25 @@ body.map-open {
 
 }
 
+.primary-cta {
+    font-size: 1rem;
+    padding: 0.85rem 1.35rem;
+}
+
+.hero-cta-note {
+    margin: 0;
+    font-size: 0.95rem;
+    color: rgba(246, 249, 252, 0.85);
+    text-align: center;
+}
+
 .hero-cta-mobile {
     display: none;
     justify-content: center;
     padding: 0.8rem 1rem 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.45rem;
 }
 
 .hero-links {
@@ -548,6 +563,13 @@ body.map-open {
     margin: 1rem 0 0;
     color: var(--muted);
     font-size: 0.95rem;
+}
+
+.cta-note {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+    text-align: center;
 }
 
 .profile-pic {
@@ -1078,6 +1100,19 @@ body.map-open {
     font-size: 1.4rem;
 }
 
+.cta-block {
+    margin-top: 1.4rem;
+    padding: 1rem;
+    border: 1px dashed var(--border);
+    background: rgba(255, 255, 255, 0.92);
+    text-align: center;
+}
+
+.cta-block h3 {
+    margin: 0 0 0.4rem 0;
+    font-size: 1.2rem;
+}
+
 .why-list {
     list-style: none;
     padding: 0;
@@ -1210,8 +1245,6 @@ body.map-open {
 
 .options.single label,
 .options.multi label {
-    display: flex;
-    align-items: center;
     gap: 0.5rem;
     font-weight: 500;
     margin: 0.2rem 0;
@@ -1414,7 +1447,7 @@ body.map-open {
 
 .survey-modal-content {
     position: relative;
-    max-width: 900px;
+    max-width: 350px;
     width: calc(100% - 24px);
     height: auto;
     max-height: 88vh;
@@ -1484,6 +1517,7 @@ body.map-open {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: calc(50% - 1.2rem);
 }
 
 .wizard-progress .step.active {
@@ -1589,6 +1623,18 @@ body.map-open {
     /*border: 1px solid #c7d6e5;*/
     padding: 0.8rem;
     /*background: rgba(255, 255, 255, 0.9);*/
+}
+
+.summary-note {
+    margin: 0.2rem 0 0.6rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.summary-actions-note {
+    margin: 0 0 0.6rem;
+    color: var(--muted);
+    font-size: 0.95rem;
 }
 
 .summary-block h4 {
@@ -1886,7 +1932,7 @@ body.map-open {
         width: calc(100% - 10px);
         margin: 1.5vh auto 0 auto;
         max-height: 96vh;
-        height: 96vh;
+        height: auto;
     }
 
     .chat-section .chat-phone {

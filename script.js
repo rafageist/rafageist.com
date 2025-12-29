@@ -183,11 +183,9 @@
             if (idx + 1 === step) el.classList.add("active");
         });
         if (prevStep) {
-            prevStep.style.display = "inline-flex";
             prevStep.disabled = step === 1;
         }
         if (nextStep) {
-            nextStep.textContent = "Next";
             nextStep.disabled = step === totalWizardSteps;
         }
         if (summaryBlock) summaryBlock.style.display = step === totalWizardSteps ? "block" : "none";
@@ -247,7 +245,7 @@
         const pick = arr => arr[Math.floor(Math.random() * arr.length)];
         const body = parts.join(". ") + (parts.length ? "." : "");
         const message = `${pick(greetings)} ${pick(bridge)} ${body} ${pick(closings)}`.replace(/\s+/g, " ").trim();
-        const fallback = "Your answers will appear here as a short note.";
+        const fallback = "A draft note will appear here. You can edit it or send it as is.";
         if (summaryField) summaryField.value = message;
         if (wizardPreview) wizardPreview.textContent = message || fallback;
         if (summaryPreview) summaryPreview.textContent = message || fallback;
