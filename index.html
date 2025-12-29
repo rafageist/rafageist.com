@@ -5,8 +5,183 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Rafa Rodr&iacute;guez | Software Engineering Mentor</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-	<link rel="stylesheet" href="/style.css">
+	<style>
+		:root {
+			--accent: #6b5336;
+			--text: #2a241e;
+			--border: #d7cabb;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Courier New', Courier, monospace;
+			margin: 0;
+			color: var(--text);
+			line-height: 1.6;
+			min-height: 100vh;
+		}
+
+		a {
+			color: var(--accent);
+			text-decoration: none;
+		}
+
+		.site-header {
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 1500;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 14px 20px;
+			background: #f6f9fc;
+			box-shadow: 1px 7px 20px 1px rgb(0 0 0);
+			position: relative;
+		}
+
+		.header-left {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+			min-width: 0;
+			flex: 1;
+		}
+
+		.header-avatar {
+			width: 56px;
+			height: 56px;
+			border-radius: 50%;
+			object-fit: cover;
+			border: 2px solid #f6f9fc;
+			box-shadow: 0 6px 16px rgba(9, 19, 30, 0.35);
+		}
+
+		.header-text {
+			display: flex;
+			flex-direction: column;
+			gap: 2px;
+			min-width: 0;
+		}
+
+		.header-name {
+			font-weight: 700;
+			letter-spacing: 0.02em;
+			color: #2a241e;
+		}
+
+		.header-role {
+			font-size: 0.95rem;
+			color: #4f4338;
+		}
+
+		.hero {
+			position: relative;
+			display: flex;
+			align-items: center;
+			width: 100%;
+			height: calc(100vw * 600 / 1920);
+			margin-top: 0;
+			padding: 0;
+			border: 1px solid rgba(0, 0, 0, 0.2);
+			overflow: hidden;
+		}
+
+		#slideshow {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+			z-index: 0;
+		}
+
+		#slideshow::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28));
+			z-index: 1;
+		}
+
+		#slideshow img {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center center;
+			z-index: 0;
+		}
+
+		.hero::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(120deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.22));
+			z-index: 0;
+		}
+
+		.hero-overlay {
+			position: relative;
+			z-index: 1;
+			max-width: 1100px;
+			width: 100%;
+			margin: 0 auto;
+			height: 100%;
+			padding: clamp(0.8rem, 4vw, 4rem) 1.5rem;
+			display: flex;
+			flex-direction: column;
+			gap: 0.7rem;
+			justify-content: center;
+			color: #f6f9fc;
+			text-align: center;
+		}
+
+		.hero-title {
+			font-size: clamp(1rem, 4.6vw, 2rem);
+			line-height: 1.25;
+			color: white;
+			text-shadow: 0px 0px 20px rgb(255 160 0);
+			margin: 0;
+			margin-top: 100px;
+		}
+
+		.hero-actions {
+			margin-top: 1.2rem;
+			display: flex;
+			flex-direction: column;
+			gap: 0.55rem;
+			align-items: center;
+		}
+
+		.hero-cta-mobile {
+			display: none;
+		}
+
+		.survey-open {
+			padding: 0.7rem 1.1rem;
+			border: 1px solid #378152;
+			background: #378152;
+			color: #fff7ee;
+			font-weight: 700;
+			cursor: pointer;
+			box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.25);
+			border-radius: 0;
+		}
+	</style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+		media="print" onload="this.media='all'">
+	<noscript>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	</noscript>
+	<link rel="stylesheet" href="/style.css" media="print" onload="this.media='all'">
+	<noscript>
+		<link rel="stylesheet" href="/style.css">
+	</noscript>
 	<link rel="icon" href="https://avatars.githubusercontent.com/u/25892480?v=4" type="image/x-icon">
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-T7XEVFZK6N"></script>
@@ -115,8 +290,8 @@
 
 	<header class="site-header" itemscope itemtype="https://schema.org/Person" itemprop="author">
 		<div class="header-left">
-			<img src="https://avatars.githubusercontent.com/u/25892480?v=4" alt="Rafa Rodr&iacute;guez" itemprop="image"
-				class="header-avatar">
+			<img src="https://avatars.githubusercontent.com/u/25892480?v=4&s=96" alt="Rafa Rodr&iacute;guez"
+				itemprop="image" class="header-avatar" loading="lazy" width="56" height="56">
 			<div class="header-text">
 				<div class="header-name" itemprop="name">Rafa Rodr&iacute;guez</div>
 				<div class="header-role" itemprop="jobTitle">Senior Software Engineering Mentor</div>
@@ -130,7 +305,7 @@
 	</header>
 
 	<div class="map-backdrop" id="map-backdrop" aria-hidden="true"></div>
-	<aside class="map-sidebar" id="site-map" aria-hidden="true" aria-label="Map">
+	<aside class="map-sidebar" id="site-map" aria-hidden="true" aria-label="Map" inert>
 		<div class="map-sidebar-header">
 			<h3>Map</h3>
 			<button type="button" class="map-close" id="map-close" aria-label="Close map">x</button>
@@ -164,18 +339,12 @@
 
 	<!-- Hero -->
 	<section class="hero" id="home" aria-label="Introduction">
-		<div id="slideshow" aria-hidden="true">
-			<img src="/slides/slide-00.webp" class="active" loading="lazy" alt="">
-			<img src="/slides/slide-01.webp" loading="lazy" alt="">
-			<img src="/slides/slide-02.webp" loading="lazy" alt="">
-			<img src="/slides/slide-03.webp" loading="lazy" alt="">
-			<img src="/slides/slide-04.webp" loading="lazy" alt="">
-			<img src="/slides/slide-05.webp" loading="lazy" alt="">
-			<img src="/slides/slide-06.webp" loading="lazy" alt="">
-			<img src="/slides/slide-07.webp" loading="lazy" alt="">
-			<img src="/slides/slide-08.webp" loading="lazy" alt="">
-			<img src="/slides/slide-09.webp" loading="lazy" alt="">
-			<img src="/slides/slide-10.webp" loading="lazy" alt="">
+		<div id="slideshow" aria-hidden="true"
+			data-slides="/slides/slide-01.webp,/slides/slide-02.webp,/slides/slide-03.webp,/slides/slide-04.webp,/slides/slide-05.webp,/slides/slide-06.webp,/slides/slide-07.webp,/slides/slide-08.webp,/slides/slide-09.webp,/slides/slide-10.webp">
+			<img src="/slides/slide-00-1200.webp"
+				srcset="/slides/slide-00-480.webp 480w, /slides/slide-00-768.webp 768w, /slides/slide-00-1200.webp 1200w, /slides/slide-00.webp 1920w"
+				sizes="100vw" width="1920" height="600" decoding="async" fetchpriority="high" class="active"
+				alt="">
 		</div>
 		<div class="hero-overlay">
 			<h1 class="hero-title" id="hero-slide-text">Learning software engineering, but the structure still feels
@@ -221,7 +390,8 @@
 					<div class="chat-messages" aria-live="polite">
 						<div class="chat-row typing mentor" data-chat-typing="mentor">
 							<div class="chat-avatar">
-								<img src="https://avatars.githubusercontent.com/u/25892480?v=4" alt="rafageist">
+								<img src="https://avatars.githubusercontent.com/u/25892480?v=4&s=96" alt="rafageist"
+									loading="lazy" width="36" height="36">
 							</div>
 							<div class="chat-bubble chat-typing">
 								<div class="chat-username">rafageist</div>
@@ -255,7 +425,8 @@
 
 				<div class="help-card">
 					<div class="help-icon">
-						<img src="images/undraw_chat-interface_vofq.svg" alt="Chat channels" loading="lazy">
+						<img src="images/undraw_chat-interface_vofq.svg" alt="Chat channels" loading="lazy" width="800"
+							height="619">
 					</div>
 					<p><strong>Chat channels</strong><br>
 						short questions and quick updates</p>
@@ -263,7 +434,8 @@
 
 				<div class="help-card">
 					<div class="help-icon">
-						<img src="images/undraw_online-meeting_qe61.svg" alt="Video sessions" loading="lazy">
+						<img src="images/undraw_online-meeting_qe61.svg" alt="Video sessions" loading="lazy" width="800"
+							height="727">
 					</div>
 					<p><strong>Video sessions</strong><br>
 						live calls with shared screens</p>
@@ -271,7 +443,8 @@
 
 				<div class="help-card">
 					<div class="help-icon">
-						<img src="images/undraw_working-together_r43a.svg" alt="Shared whiteboard" loading="lazy">
+						<img src="images/undraw_working-together_r43a.svg" alt="Shared whiteboard" loading="lazy"
+							width="1159" height="591">
 					</div>
 					<p><strong>Shared whiteboard</strong><br>
 						sketch ideas and flows together</p>
@@ -279,7 +452,8 @@
 
 				<div class="help-card">
 					<div class="help-icon">
-						<img src="images/undraw_dev-environment_n5by.svg" alt="IDEs" loading="lazy">
+						<img src="images/undraw_dev-environment_n5by.svg" alt="IDEs" loading="lazy" width="799"
+							height="618">
 					</div>
 					<p><strong>IDEs</strong><br>
 						work inside tools that fit the problem</p>
@@ -287,7 +461,8 @@
 
 				<div class="help-card">
 					<div class="help-icon">
-						<img src="images/undraw_github-profile_abde.svg" alt="Version control" loading="lazy">
+						<img src="images/undraw_github-profile_abde.svg" alt="Version control" loading="lazy"
+							width="799" height="552">
 					</div>
 					<p><strong>Version control</strong><br>
 						track changes decisions and context</p>
@@ -295,7 +470,8 @@
 
 				<div class="help-card">
 					<div class="help-icon">
-						<img src="images/undraw_server-cluster_7ugi.svg" alt="Production environments" loading="lazy">
+						<img src="images/undraw_server-cluster_7ugi.svg" alt="Production environments" loading="lazy"
+							width="888" height="711">
 					</div>
 					<p><strong>Production environments</strong><br>
 						practice where systems actually run</p>
@@ -303,7 +479,8 @@
 
 				<div class="help-card">
 					<div class="help-icon">
-						<img src="images/undraw_book-lover_m9n3.svg" alt="Learning resources" loading="lazy">
+						<img src="images/undraw_book-lover_m9n3.svg" alt="Learning resources" loading="lazy"
+							width="800" height="622">
 					</div>
 					<p><strong>Learning resources</strong><br>
 						curated notes literature and formats</p>
@@ -311,7 +488,8 @@
 
 				<div class="help-card">
 					<div class="help-icon">
-						<img src="images/undraw_sorting-thoughts_b0kt.svg" alt="Asynchronous thinking" loading="lazy">
+						<img src="images/undraw_sorting-thoughts_b0kt.svg" alt="Asynchronous thinking" loading="lazy"
+							width="800" height="383">
 					</div>
 					<p><strong>Asynchronous thinking</strong><br>
 						work continues between sessions</p>
@@ -319,7 +497,8 @@
 
 				<div class="help-card">
 					<div class="help-icon">
-						<img src="images/undraw_add-notes_9xls.svg" alt="Written reasoning" loading="lazy">
+						<img src="images/undraw_add-notes_9xls.svg" alt="Written reasoning" loading="lazy" width="486"
+							height="484">
 					</div>
 					<p><strong>Written reasoning</strong><br>
 						decisions captured not lost in calls</p>
@@ -332,7 +511,8 @@
 		<section class="help-section" aria-label="Why guidance matters today">
 			<div class="perspective-grid">
 				<div class="perspective-illustration">
-					<img src="images/undraw_ai-answers_uxgx.svg" alt="AI guidance illustration" loading="lazy">
+					<img src="images/undraw_ai-answers_uxgx.svg" alt="AI guidance illustration" loading="lazy"
+						width="732" height="763">
 				</div>
 
 				<div class="perspective-text">
@@ -373,7 +553,8 @@
 				</div>
 				<div class="perspective-illustration">
 					<img class="uml-diagram" src="images/uml-use-case.svg"
-						alt="Use case diagram showing mentor and mentee roles in a mentoring process" loading="lazy">
+						alt="Use case diagram showing mentor and mentee roles in a mentoring process" loading="lazy"
+						width="442" height="385">
 				</div>
 			</div>
 		</section>
@@ -382,7 +563,8 @@
 			<div class="perspective-grid">
 				<div class="perspective-illustration">
 					<img class="uml-diagram" src="images/uml-sequence.svg"
-						alt="Sequence diagram showing a mentoring interaction over time" loading="lazy">
+						alt="Sequence diagram showing a mentoring interaction over time" loading="lazy" width="364"
+						height="332">
 				</div>
 				<div class="perspective-text">
 					<h2 id="sequence-title">What happens during a mentoring session</h2>
@@ -403,7 +585,7 @@
 			</p>
 
 			<img class="uml-diagram" src="images/engineering-guidance-activity.svg"
-				alt="Engineering guidance activity diagram" loading="lazy">
+				alt="Engineering guidance activity diagram" loading="lazy" width="394" height="563">
 
 			<ul class="help-list">
 				<li>Work starts from real constraints: people, time, systems, and trade-offs.</li>
@@ -441,7 +623,8 @@
 		<section class="help-section" aria-label="Approach">
 			<div class="perspective-grid">
 				<div class="perspective-illustration">
-					<img src="images/undraw_professor_d7zn.svg" alt="Mentorship illustration" loading="lazy">
+					<img src="images/undraw_professor_d7zn.svg" alt="Mentorship illustration" loading="lazy"
+						width="829" height="592">
 				</div>
 				<div class="perspective-text">
 					<h2 id="approach-title">How I approach learning software engineering</h2>
@@ -575,7 +758,8 @@
 
 				<div class="perspective-illustration">
 					<img src="images/undraw_version-control_e4yu.svg"
-						alt="Illustration representing foundations and experience over time" loading="lazy">
+						alt="Illustration representing foundations and experience over time" loading="lazy" width="813"
+						height="490">
 				</div>
 			</div>
 		</section>
@@ -661,7 +845,8 @@
 			<div class="perspective-grid">
 
 				<div class="perspective-illustration">
-					<img src="images/undraw_code-inspection_z688.svg" alt="Code inspection illustration" loading="lazy">
+					<img src="images/undraw_code-inspection_z688.svg" alt="Code inspection illustration" loading="lazy"
+						width="846" height="704">
 				</div>
 
 				<div class="perspective-text">
@@ -751,7 +936,8 @@
 				</div>
 
 				<div class="perspective-illustration">
-					<img src="images/undraw_online-learning_tgmv.svg" alt="Online learning illustration" loading="lazy">
+					<img src="images/undraw_online-learning_tgmv.svg" alt="Online learning illustration" loading="lazy"
+						width="692" height="500">
 				</div>
 			</div>
 		</section>
@@ -839,24 +1025,24 @@
 			<div class="footer-card">
 				<h3>Social</h3>
 				<ul class="social-links">
-					<li><a href="https://x.com/rafageist" target="_blank" rel="noopener"><i
+					<li><a href="https://x.com/rafageist" target="_blank" rel="noopener" aria-label="X"><i
 								class="fab fa-twitter"></i></a></li>
-					<li><a href="https://facebook.com/rafageist" target="_blank" rel="noopener"><i
+					<li><a href="https://facebook.com/rafageist" target="_blank" rel="noopener" aria-label="Facebook"><i
 								class="fab fa-facebook"></i></a></li>
-					<li><a href="https://wa.me/5978401275" target="_blank" rel="noopener"><i
+					<li><a href="https://wa.me/5978401275" target="_blank" rel="noopener" aria-label="WhatsApp"><i
 								class="fab fa-whatsapp"></i></a></li>
-					<li><a href="https://github.com/rafageist" target="_blank" rel="noopener"><i
+					<li><a href="https://github.com/rafageist" target="_blank" rel="noopener" aria-label="GitHub"><i
 								class="fab fa-github"></i></a></li>
 				</ul>
 				<ul class="social-links">
-					<li><a href="https://linkedin.com/in/rafageist" target="_blank" rel="noopener"><i
-								class="fab fa-linkedin"></i></a></li>
-					<li><a href="https://t.me/rafageist" target="_blank" rel="noopener"><i
+					<li><a href="https://linkedin.com/in/rafageist" target="_blank" rel="noopener"
+							aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+					<li><a href="https://t.me/rafageist" target="_blank" rel="noopener" aria-label="Telegram"><i
 								class="fab fa-telegram"></i></a></li>
-					<li><a href="https://www.chess.com/member/rafageist" target="_blank" rel="noopener"><i
-								class="fas fa-chess"></i></a></li>
-					<li><a href="https://instagram.com/rafageist" target="_blank" rel="noopener"><i
-								class="fab fa-instagram"></i></a></li>
+					<li><a href="https://www.chess.com/member/rafageist" target="_blank" rel="noopener"
+							aria-label="Chess.com"><i class="fas fa-chess"></i></a></li>
+					<li><a href="https://instagram.com/rafageist" target="_blank" rel="noopener"
+							aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
 				</ul>
 			</div>
 
@@ -879,7 +1065,7 @@
 	</a>
 
 	<!-- Glossary modal -->
-	<div class="glossary-modal" id="glossary-modal" aria-hidden="true">
+	<div class="glossary-modal" id="glossary-modal" aria-hidden="true" inert>
 		<div class="glossary-backdrop" id="glossary-backdrop"></div>
 		<div class="glossary-content" role="dialog" aria-labelledby="glossary-title">
 			<div class="glossary-header">
@@ -911,128 +1097,7 @@
 		</div>
 	</div>
 
-	<!-- Survey modal -->
-	<div class="survey-modal" id="survey-modal" aria-hidden="true">
-		<div class="survey-modal-backdrop" id="survey-backdrop"></div>
-		<div class="survey-modal-content" role="dialog" aria-labelledby="survey-modal-title">
-			<div class="survey-modal-header">
-				<h3 id="survey-modal-title">Send me a message</h3>
-				<button type="button" class="survey-close" id="close-survey" aria-label="Close survey">x</button>
-			</div>
-			<div class="survey-modal-body">
-				<p class="survey-intro">A few questions to make your current situation explicit. For clarity, not
-					evaluation.</p>
-				<div class="wizard-progress">
-					<div class="step active" data-step="1">1</div>
-					<div class="step" data-step="2">2</div>
-					<div class="step" data-step="3">3</div>
-				</div>
-				<form class="survey-form" id="surveyForm">
-					<div class="wizard-step active" data-step="1">
-						<div class="question-block">
-							<h4>Which sounds most like where you are right now?</h4>
-							<div class="options single">
-								<label><input type="radio" name="starting_point"
-										value="I don't know anything yet and want to start properly" required> I don't
-									know anything yet and want to start properly</label>
-								<label><input type="radio" name="starting_point"
-										value="I just started and it feels confusing"> I just started and it feels
-									confusing</label>
-								<label><input type="radio" name="starting_point"
-										value="I've been learning for a while but things still don't click"> I've been
-									learning for a while but things still don't click</label>
-								<label><input type="radio" name="starting_point"
-										value="I can write some code but I don't really understand it"> I can write
-									some <button type="button" class="glossary-term" data-term="Code">code</button> but
-									I don't really understand it</label>
-								<label><input type="radio" name="starting_point"
-										value="I study or work in tech but my foundations feel weak"> I study or work in
-									tech but my foundations feel weak</label>
-								<label><input type="radio" name="starting_point" value="I'm just curious and exploring">
-									I'm just curious and exploring</label>
-							</div>
-						</div>
-					</div>
-
-					<div class="wizard-step" data-step="2">
-						<div class="question-block">
-							<h4>What feels hardest right now?</h4>
-							<div class="options single">
-								<label><input type="radio" name="difficulty" value="I don't know where or how to start"
-										required> I don't know where or how to start</label>
-								<label><input type="radio" name="difficulty" value="I don't know what to learn first"> I
-									don't know what to learn first</label>
-								<label><input type="radio" name="difficulty"
-										value="I follow steps but don't know why they work"> I follow steps but don't
-									know why they work</label>
-								<label><input type="radio" name="difficulty"
-										value="Too many concepts, no clear picture"> Too many concepts, no clear
-									picture</label>
-								<label><input type="radio" name="difficulty"
-										value="My code breaks and I don't know how to reason about it"> My <button
-										type="button" class="glossary-term" data-term="Code">code</button> breaks
-									and I don't know how to reason about it</label>
-								<label><input type="radio" name="difficulty" value="Classes or courses move too fast">
-									Classes or courses move too fast for me</label>
-							</div>
-						</div>
-					</div>
-
-					<div class="wizard-step" data-step="3">
-						<div class="question-block">
-							<h4>What would help you most right now?</h4>
-							<div class="options single">
-								<label><input type="radio" name="help" value="Calm step by step explanations" required>
-									Calm step by step explanations</label>
-								<label><input type="radio" name="help" value="Help organizing what to learn next"> Help
-									organizing what to learn next</label>
-								<label><input type="radio" name="help"
-										value="Understanding the basics and fundamentals"> Understanding the basics and
-									fundamentals</label>
-								<label><input type="radio" name="help" value="Talking through confusion with someone">
-									Talking through confusion with someone</label>
-								<label><input type="radio" name="help" value="I'm not sure yet"> I'm not sure
-									yet</label>
-							</div>
-						</div>
-					</div>
-
-					<div class="wizard-step" data-step="4">
-						<div class="summary-block" id="wizard-summary" aria-live="polite">
-							<div class="wizard-preview">
-								<div class="wizard-preview-avatar"><i class="fas fa-user"></i></div>
-								<div class="wizard-preview-bubble" id="wizard-summary-text">A draft note will appear
-									here. You can edit it or send it as is.</div>
-							</div>
-							<p class="summary-note">This is a draft conversation starter. Adjust it or send it as is.</p>
-							<textarea id="generatedSurveyMessage" readonly class="sr-only"></textarea>
-							<p class="summary-actions-note">Choose how you want to continue the conversation.</p>
-							<div class="summary-actions">
-								<button type="button" class="survey-open" id="copy-survey"><i class="fas fa-copy"></i>
-									Copy</button>
-								<button type="button" class="survey-open" id="email-survey"><i
-										class="fas fa-envelope"></i> Email</button>
-								<button type="button" class="survey-open" id="whatsapp-survey"><i
-										class="fab fa-whatsapp"></i> WhatsApp</button>
-							</div>
-						</div>
-					</div>
-
-					<div class="wizard-error" id="wizard-error" aria-live="polite"></div>
-				</form>
-			</div>
-			<div class="survey-modal-footer">
-				<div class="wizard-nav">
-					<button type="button" id="prevStep" class="survey-open">
-						<i class="fas fa-arrow-left"></i>&nbsp;Back
-					</button>
-					<button type="button" id="nextStep" class="survey-open">
-						Next&nbsp;<i class="fas fa-arrow-right"></i>
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
+	<div id="survey-modal-root"></div>
 
 	<script src="script.js"></script>
 </body>

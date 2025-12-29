@@ -1,7 +1,9 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
     // --- Slideshow ---
-    const images = document.querySelectorAll("#slideshow img");
+    const slideshow = document.getElementById("slideshow");
+    let images = slideshow ? Array.from(slideshow.querySelectorAll("img")) : [];
     let index = 0;
+    let slideshowTimer = null;
     const slideMessages = [
         "If you don’t understand it, you can’t trust it.",
         "Producing results is not the same as making decisions.",
@@ -31,7 +33,12 @@
         }
     }
 
+    function refreshSlides() {
+        images = slideshow ? Array.from(slideshow.querySelectorAll("img")) : [];
+    }
+
     function changeImage() {
+        if (images.length < 2) return;
         const current = images[index];
         if (current) {
             current.classList.remove("active");
@@ -45,16 +52,53 @@
         const nextIndex = (index + 1) % images.length;
         const next = images[nextIndex];
 
-        next.classList.add("active");
-        // Ensure starting position fully covers viewport
-        applyHeroSlide(nextIndex);
+        if (next) {
+            next.classList.add("active");
+            // Ensure starting position fully covers viewport
+            applyHeroSlide(nextIndex);
+        }
 
         index = nextIndex;
     }
 
     applyHeroSlide(0);
 
-    setInterval(changeImage, 5000);
+    function startSlideshow() {
+        if (slideshowTimer || images.length < 2) return;
+        slideshowTimer = setInterval(changeImage, 5000);
+    }
+
+    startSlideshow();
+
+    function injectSlides() {
+        if (!slideshow) return;
+        const data = slideshow.dataset.slides;
+        if (!data) return;
+        const sources = data.split(",").map(src => src.trim()).filter(Boolean);
+        if (!sources.length) return;
+        sources.forEach(src => {
+            const img = document.createElement("img");
+            img.src = src;
+            img.alt = "";
+            img.loading = "lazy";
+            img.decoding = "async";
+            img.width = 1920;
+            img.height = 600;
+            slideshow.appendChild(img);
+        });
+        refreshSlides();
+        startSlideshow();
+    }
+
+    if (slideshow && slideshow.dataset.slides) {
+        window.addEventListener("load", () => {
+            if ("requestIdleCallback" in window) {
+                window.requestIdleCallback(injectSlides, { timeout: 2000 });
+            } else {
+                window.setTimeout(injectSlides, 1200);
+            }
+        });
+    }
 
     // Loading overlay intentionally disabled for instant access.
 
@@ -70,6 +114,11 @@
         mapSidebar.classList.toggle("open", show);
         if (mapBackdrop) mapBackdrop.classList.toggle("show", show);
         mapSidebar.setAttribute("aria-hidden", show ? "false" : "true");
+        if (show) {
+            mapSidebar.removeAttribute("inert");
+        } else {
+            mapSidebar.setAttribute("inert", "");
+        }
         if (mapToggle) mapToggle.setAttribute("aria-expanded", show ? "true" : "false");
         document.body.classList.toggle("map-open", show);
 
@@ -126,52 +175,208 @@
         }
     });
 
-    // Survey modal controls
-    const openSurvey = document.getElementById("open-survey");
-    const closeSurvey = document.getElementById("close-survey");
-    const surveyModal = document.getElementById("survey-modal");
-    const surveyBackdrop = document.getElementById("survey-backdrop");
+    // Survey modal controls (lazy-loaded)
     const openSurveyTriggers = document.querySelectorAll(".open-survey-trigger");
-    let wizardStep = 1;
     const totalWizardSteps = 4;
+    let wizardStep = 1;
+    let surveyModalReady = false;
+    let surveyModal = null;
+    let surveyBackdrop = null;
+    let closeSurvey = null;
+    let prevStep = null;
+    let nextStep = null;
+    let wizardSteps = [];
+    let wizardIndicators = [];
+    let summaryBlock = null;
+    let summaryField = null;
+    let copyBtn = null;
+    let emailBtn = null;
+    let whatsappBtn = null;
+    let wizardError = null;
+    let wizardPreview = null;
+    let summaryPreview = null;
+    let surveyForm = null;
+    let surveyIntro = null;
+    let wizardProgress = null;
+
+    const surveyModalMarkup = `
+        <div class="survey-modal" id="survey-modal" aria-hidden="true" inert>
+            <div class="survey-modal-backdrop" id="survey-backdrop"></div>
+            <div class="survey-modal-content" role="dialog" aria-labelledby="survey-modal-title">
+                <div class="survey-modal-header">
+                    <h3 id="survey-modal-title">Send me a message</h3>
+                    <button type="button" class="survey-close" id="close-survey" aria-label="Close survey">x</button>
+                </div>
+                <div class="survey-modal-body">
+                    <p class="survey-intro">A short reflection to understand where you are.</p>
+                    <div class="wizard-progress">
+                        <div class="step active" data-step="1">1</div>
+                        <div class="step" data-step="2">2</div>
+                        <div class="step" data-step="3">3</div>
+                    </div>
+                    <form class="survey-form" id="surveyForm">
+                        <div class="wizard-step active" data-step="1">
+                            <div class="question-block">
+                                <h4>Starting point</h4>
+                                <p class="question-text">Which best describes you right now?</p>
+                                <div class="options single">
+                                    <label><input type="radio" name="starting_point" value="I don't know anything yet, I want to start properly" required> I don't know anything yet, I want to start properly</label>
+                                    <label><input type="radio" name="starting_point" value="I just started and everything feels confusing"> I just started and everything feels confusing</label>
+                                    <label><input type="radio" name="starting_point" value="I've been learning for a while, but things don't click"> I've been learning for a while, but things don't click</label>
+                                    <label><input type="radio" name="starting_point" value="I can write some code, but I don't really understand it"> I can write some <button type="button" class="glossary-term" data-term="Code">code</button>, but I don't really understand it</label>
+                                    <label><input type="radio" name="starting_point" value="I study or work in tech, but my foundations feel weak"> I study or work in tech, but my foundations feel weak</label>
+                                    <label><input type="radio" name="starting_point" value="I'm just curious and exploring"> I'm just curious and exploring</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wizard-step" data-step="2">
+                            <div class="question-block">
+                                <h4>Main difficulty</h4>
+                                <p class="question-text">What is your main difficulty right now?</p>
+                                <div class="options single">
+                                    <label><input type="radio" name="difficulty" value="I don't know where or how to start" required> I don't know where or how to start</label>
+                                    <label><input type="radio" name="difficulty" value="I don't know what to learn first"> I don't know what to learn first</label>
+                                    <label><input type="radio" name="difficulty" value="I follow steps but don't know why they work"> I follow steps but don't know why they work</label>
+                                    <label><input type="radio" name="difficulty" value="Too many concepts, no clear picture"> Too many concepts, no clear picture</label>
+                                    <label><input type="radio" name="difficulty" value="My code breaks and I don't know how to think about it"> My <button type="button" class="glossary-term" data-term="Code">code</button> breaks and I don't know how to think about it</label>
+                                    <label><input type="radio" name="difficulty" value="Classes or courses move too fast"> Classes or courses move too fast</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wizard-step" data-step="3">
+                            <div class="question-block">
+                                <h4>What would help most</h4>
+                                <p class="question-text">What would help you most right now?</p>
+                                <div class="options single">
+                                    <label><input type="radio" name="help" value="Calm, step by step explanations" required> Calm, step by step explanations</label>
+                                    <label><input type="radio" name="help" value="Help organizing what to learn next"> Help organizing what to learn next</label>
+                                    <label><input type="radio" name="help" value="Understanding basics and fundamentals"> Understanding basics and fundamentals</label>
+                                    <label><input type="radio" name="help" value="Talking through confusion with someone"> Talking through confusion with someone</label>
+                                    <label><input type="radio" name="help" value="I'm not sure yet"> I'm not sure yet</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wizard-step" data-step="4">
+                            <div class="summary-block" id="wizard-summary" aria-live="polite">
+                                <div class="wizard-preview">
+                                    <div class="wizard-preview-avatar"><i class="fas fa-user"></i></div>
+                                    <div class="wizard-preview-bubble" id="wizard-summary-text">Your answers will appear here as a short note.</div>
+                                </div>
+                                <textarea id="generatedSurveyMessage" readonly class="sr-only"></textarea>
+                                <div class="summary-actions">
+                                    <button type="button" class="survey-open" id="copy-survey"><i class="fas fa-copy"></i> Copy</button>
+                                    <button type="button" class="survey-open" id="email-survey"><i class="fas fa-envelope"></i> Email</button>
+                                    <button type="button" class="survey-open" id="whatsapp-survey"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wizard-error" id="wizard-error" aria-live="polite"></div>
+                    </form>
+                </div>
+                <div class="survey-modal-footer">
+                    <div class="wizard-nav">
+                        <button type="button" id="prevStep" class="survey-open"><i class="fas fa-arrow-left"></i> Back</button>
+                        <button type="button" id="nextStep" class="survey-open">Next <i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
 
     function toggleSurvey(show) {
         if (!surveyModal) return;
         surveyModal.classList.toggle("show", show);
         surveyModal.setAttribute("aria-hidden", show ? "false" : "true");
+        if (show) {
+            surveyModal.removeAttribute("inert");
+        } else {
+            surveyModal.setAttribute("inert", "");
+        }
         document.body.classList.toggle("nav-open", show);
     }
 
-    if (openSurvey) {
-        openSurvey.addEventListener("click", () => toggleSurvey(true));
-    }
-    if (openSurveyTriggers.length) {
-        openSurveyTriggers.forEach(btn => {
-            btn.addEventListener("click", () => toggleSurvey(true));
+    function ensureSurveyModal() {
+        if (surveyModalReady) return;
+        const root = document.getElementById("survey-modal-root") || document.body;
+        root.insertAdjacentHTML("beforeend", surveyModalMarkup);
+        surveyModal = document.getElementById("survey-modal");
+        surveyBackdrop = document.getElementById("survey-backdrop");
+        closeSurvey = document.getElementById("close-survey");
+        prevStep = document.getElementById("prevStep");
+        nextStep = document.getElementById("nextStep");
+        wizardSteps = Array.from(document.querySelectorAll(".wizard-step"));
+        wizardIndicators = Array.from(document.querySelectorAll(".wizard-progress .step"));
+        summaryBlock = document.getElementById("wizard-summary");
+        summaryField = document.getElementById("generatedSurveyMessage");
+        copyBtn = document.getElementById("copy-survey");
+        emailBtn = document.getElementById("email-survey");
+        whatsappBtn = document.getElementById("whatsapp-survey");
+        wizardError = document.getElementById("wizard-error");
+        wizardPreview = document.getElementById("wizard-preview-text");
+        summaryPreview = document.getElementById("wizard-summary-text");
+        surveyForm = document.getElementById("surveyForm");
+        surveyIntro = document.querySelector(".survey-intro");
+        wizardProgress = document.querySelector(".wizard-progress");
+        const modalGlossaryTerms = surveyModal ? surveyModal.querySelectorAll(".glossary-term") : [];
+        modalGlossaryTerms.forEach(termEl => {
+            termEl.addEventListener("click", (event) => {
+                event.preventDefault();
+                openGlossary(termEl);
+            });
+            termEl.addEventListener("keydown", (event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    openGlossary(termEl);
+                }
+            });
         });
-    }
-    if (closeSurvey) {
-        closeSurvey.addEventListener("click", () => toggleSurvey(false));
-    }
-    if (surveyBackdrop) {
-        surveyBackdrop.addEventListener("click", () => toggleSurvey(false));
+
+        if (closeSurvey) {
+            closeSurvey.addEventListener("click", () => toggleSurvey(false));
+        }
+        if (surveyBackdrop) {
+            surveyBackdrop.addEventListener("click", () => toggleSurvey(false));
+        }
+        if (prevStep) prevStep.addEventListener("click", () => goToStep(-1));
+        if (nextStep) nextStep.addEventListener("click", () => goToStep(1));
+        if (surveyForm) {
+            surveyForm.addEventListener("input", () => {
+                generateSurveyMessage();
+            });
+        }
+        if (copyBtn) copyBtn.addEventListener("click", copySurvey);
+        if (emailBtn) emailBtn.addEventListener("click", emailSurvey);
+        if (whatsappBtn) whatsappBtn.addEventListener("click", whatsappSurvey);
+        wizardIndicators.forEach((indicator, idx) => {
+            indicator.style.cursor = "pointer";
+            indicator.addEventListener("click", () => {
+                const target = idx + 1;
+                if (target <= wizardStep && target >= 1) {
+                    wizardStep = target;
+                    showWizardStep(wizardStep);
+                }
+            });
+        });
+
+        surveyModalReady = true;
+        showWizardStep(wizardStep);
+        generateSurveyMessage();
     }
 
-    const prevStep = document.getElementById("prevStep");
-    const nextStep = document.getElementById("nextStep");
-    const wizardSteps = document.querySelectorAll(".wizard-step");
-    const wizardIndicators = document.querySelectorAll(".wizard-progress .step");
-    const summaryBlock = document.getElementById("wizard-summary");
-    const summaryField = document.getElementById("generatedSurveyMessage");
-    const copyBtn = document.getElementById("copy-survey");
-    const emailBtn = document.getElementById("email-survey");
-    const whatsappBtn = document.getElementById("whatsapp-survey");
-    const wizardError = document.getElementById("wizard-error");
-    const wizardPreview = document.getElementById("wizard-preview-text");
-    const summaryPreview = document.getElementById("wizard-summary-text");
-    const surveyForm = document.getElementById("surveyForm");
-    const surveyIntro = document.querySelector(".survey-intro");
-    const wizardProgress = document.querySelector(".wizard-progress");
+    function openSurveyModal() {
+        ensureSurveyModal();
+        toggleSurvey(true);
+    }
+
+    if (openSurveyTriggers.length) {
+        openSurveyTriggers.forEach(btn => {
+            btn.addEventListener("click", openSurveyModal);
+        });
+    }
 
     function showWizardStep(step) {
         wizardSteps.forEach((el, idx) => {
@@ -245,7 +450,7 @@
         const pick = arr => arr[Math.floor(Math.random() * arr.length)];
         const body = parts.join(". ") + (parts.length ? "." : "");
         const message = `${pick(greetings)} ${pick(bridge)} ${body} ${pick(closings)}`.replace(/\s+/g, " ").trim();
-        const fallback = "A draft note will appear here. You can edit it or send it as is.";
+        const fallback = "Your answers will appear here as a short note.";
         if (summaryField) summaryField.value = message;
         if (wizardPreview) wizardPreview.textContent = message || fallback;
         if (summaryPreview) summaryPreview.textContent = message || fallback;
@@ -264,25 +469,6 @@
         generateSurveyMessage();
         showWizardStep(wizardStep);
     }
-
-    if (surveyForm) {
-        surveyForm.addEventListener("input", () => {
-            generateSurveyMessage();
-        });
-    }
-
-    if (prevStep) prevStep.addEventListener("click", () => goToStep(-1));
-    if (nextStep) nextStep.addEventListener("click", () => goToStep(1));
-    wizardIndicators.forEach((indicator, idx) => {
-        indicator.style.cursor = "pointer";
-        indicator.addEventListener("click", () => {
-            const target = idx + 1;
-            if (target <= wizardStep && target >= 1) {
-                wizardStep = target;
-                showWizardStep(wizardStep);
-            }
-        });
-    });
 
     function copySurvey() {
         if (!summaryField) return;
@@ -304,10 +490,6 @@
         const msg = encodeURIComponent(summaryField.value);
         window.open(`https://wa.me/5978401275?text=${msg}`, "_blank");
     }
-
-    if (copyBtn) copyBtn.addEventListener("click", copySurvey);
-    if (emailBtn) emailBtn.addEventListener("click", emailSurvey);
-    if (whatsappBtn) whatsappBtn.addEventListener("click", whatsappSurvey);
 
     // Glossary modal controls
     const glossaryModal = document.getElementById("glossary-modal");
@@ -696,6 +878,7 @@
         if (!glossaryModal) return;
         glossaryModal.classList.remove("show");
         glossaryModal.setAttribute("aria-hidden", "true");
+        glossaryModal.setAttribute("inert", "");
     }
 
     function openGlossary(termEl) {
@@ -744,6 +927,7 @@
 
         glossaryModal.classList.add("show");
         glossaryModal.setAttribute("aria-hidden", "false");
+        glossaryModal.removeAttribute("inert");
     }
 
     glossaryTerms.forEach(termEl => {
@@ -766,9 +950,6 @@
             closeGlossary();
         }
     });
-
-    showWizardStep(wizardStep);
-    generateSurveyMessage();
 
     // Chat simulation
     const chatPhone = document.querySelector(".chat-phone[data-chat-loop=\"true\"]");
@@ -872,8 +1053,12 @@
                 avatar.className = `chat-avatar${message.role === "mentee" ? " chat-avatar-mentee" : ""}`;
                 if (message.role === "mentor") {
                     const img = document.createElement("img");
-                    img.src = "https://avatars.githubusercontent.com/u/25892480?v=4";
+                    img.src = "https://avatars.githubusercontent.com/u/25892480?v=4&s=96";
                     img.alt = "rafageist";
+                    img.loading = "lazy";
+                    img.decoding = "async";
+                    img.width = 36;
+                    img.height = 36;
                     avatar.appendChild(img);
                 } else {
                     const icon = document.createElement("i");

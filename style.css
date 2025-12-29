@@ -1705,6 +1705,8 @@ body.map-open {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.2rem;
     align-items: start;
+    margin: auto;
+    max-width: 1100px;
 }
 
 .footer-card h3 {
@@ -1941,6 +1943,28 @@ body.map-open {
 
     section.chat-section {
         margin-top: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #slideshow img {
+        transition: none;
+    }
+
+    .keyword-strip-track {
+        animation: none;
+    }
+
+    section.help-section {
+        animation: none;
+    }
+
+    .chat-messages {
+        animation: none;
+    }
+
+    .typing-dots span {
+        animation: none;
     }
 }
 
