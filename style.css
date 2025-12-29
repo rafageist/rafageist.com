@@ -42,9 +42,12 @@ a:hover {
     display: flex;
     overflow: hidden;
     padding: 0.2rem 0;
-    background: #5a4430;
+    background: transparent;
     backdrop-filter: blur(2px);
-    box-shadow: 0px -9px 20px 1px rgb(0 0 0);
+    /* box-shadow: 0px -9px 20px 1px rgb(0 0 0); */
+    height: 100px;
+    margin-left: -1.9rem;
+    width: calc(100vw + 2.8rem);
 }
 
 .keyword-strip-track {
@@ -1273,7 +1276,7 @@ body.map-open {
     text-decoration: underline;
     text-underline-offset: 3px;
     font-weight: inherit;
-    color: #f6f1e8;
+    color: #5a4430;
 }
 
 .keyword-strip .glossary-term:hover {
@@ -1628,12 +1631,12 @@ body.map-open {
 }
 
 .footer {
-    background: var(--text);
+    background: linear-gradient(180deg, white 0%, #5a4430 50%, #3a2f24 75%, #2a241e 100%);
     border: 0;
     box-shadow: none;
     text-align: left;
     padding: 2rem;
-
+    padding-top: 0px;
 }
 
 .footer * {
@@ -1664,6 +1667,18 @@ body.map-open {
     color: white;
 }
 
+.footer-contact {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.footer-contact i {
+    width: 18px;
+    text-align: center;
+    font-size: 1rem;
+}
+
 .footer-card a {
     color: #1f3040;
 }
@@ -1672,10 +1687,22 @@ body.map-open {
     color: var(--accent);
 }
 
-.footer-map iframe {
-    border: 1px solid #d7cabb;
-    border-radius: 6px;
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+.footer-map {
+    margin-top: 0.3rem;
+}
+
+.footer-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.18);
+}
+
+.footer-location i {
+    font-size: 1.1rem;
 }
 
 .social-links {
