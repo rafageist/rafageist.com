@@ -8,20 +8,23 @@ skinparam DiamondBackgroundColor #efe4d6
 
 |Mentee|
 start
-:Understand goal;
-:Analyze context;
-|Mentor|
-:Ask questions;
-:Validate direction;
-repeat
-|Mentee|
-:Implement;
-:Review result;
-|Mentor|
-:Provide feedback;
-:Validate outcome;
+:understand goal;
+:analyze context;
 
-repeat while (Acceptable?) is (no)
-  :Approve or redirect focus;
+|Mentor|
+:ask questions;
+:validate direction;
+
+|Mentee|
+:implement;
+:review result;
+
+|Mentor|
+if (acceptable?) then (yes)
+  :approve next step;
+else (no)
+  :redirect focus;
+endif
+
 stop
 @enduml

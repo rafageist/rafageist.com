@@ -1,20 +1,22 @@
 @startuml
-skinparam backgroundColor #ffffff
-skinparam ArrowColor #6b5336
-skinparam ActorBorderColor #6b5336
-skinparam ActorBackgroundColor #efe4d6
-skinparam ParticipantBorderColor #6b5336
-skinparam ParticipantBackgroundColor #efe4d6
-skinparam SequenceLifeLineBorderColor #b59d82
-skinparam SequenceLifeLineBackgroundColor #f5eadc
+    skinparam backgroundColor #ffffff
+    skinparam ArrowColor #6b5336
+    skinparam ActorBorderColor #6b5336
+    skinparam ActorBackgroundColor #efe4d6
+    skinparam ParticipantBorderColor #6b5336
+    skinparam ParticipantBackgroundColor #efe4d6
+    skinparam SequenceLifeLineBorderColor #b59d82
+    skinparam SequenceLifeLineBackgroundColor #f5eadc
 
-actor Mentee
-actor Mentor
+    participant Mentee
+    participant Mentor
 
-Mentee -> Mentor: Describe confusion
-Mentor -> Mentee: Ask clarifying questions
-Mentee -> Mentor: Share context and attempts
-Mentor -> Mentee: Map missing pieces
-Mentor -> Mentee: Suggest next experiment
-Mentee -> Mentor: Reflect on what changed
+    Mentee -> Mentor : describe confusion
+    Mentor -> Mentee : ask clarifying questions
+    Mentee -> Mentor : share context and attempts
+    Mentor -> Mentor : identify missing pieces
+    Mentor -> Mentee : suggest next experiment
+    Mentee -> Mentee : try and reflect
+    Mentee -> Mentor : report what changed
+
 @enduml
