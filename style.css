@@ -293,10 +293,26 @@ a:hover {
     color: #2a241e;
     padding: 0.35rem 0;
     border-bottom: 1px solid rgba(215, 202, 187, 0.6);
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.map-sidebar-nav a .map-icon {
+    width: 0.95rem;
+    text-align: center;
+    color: #6b5336;
+    opacity: 0.75;
+    flex-shrink: 0;
 }
 
 .map-sidebar-nav a:hover {
     color: #4f3f2c;
+}
+
+.map-sidebar-nav a:hover .map-icon {
+    color: #4f3f2c;
+    opacity: 1;
 }
 
 body.map-open {
