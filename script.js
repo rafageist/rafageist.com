@@ -175,7 +175,7 @@
         }
     });
 
-    // Survey modal controls (lazy-loaded)
+    // Survey modal controls
     const openSurveyTriggers = document.querySelectorAll(".open-survey-trigger");
     const totalWizardSteps = 4;
     let wizardStep = 1;
@@ -199,94 +199,6 @@
     let surveyIntro = null;
     let wizardProgress = null;
 
-    const surveyModalMarkup = `
-        <div class="survey-modal" id="survey-modal" aria-hidden="true" inert>
-            <div class="survey-modal-backdrop" id="survey-backdrop"></div>
-            <div class="survey-modal-content" role="dialog" aria-labelledby="survey-modal-title">
-                <div class="survey-modal-header">
-                    <h3 id="survey-modal-title">Send me a message</h3>
-                    <button type="button" class="survey-close" id="close-survey" aria-label="Close survey">x</button>
-                </div>
-                <div class="survey-modal-body">
-                    <p class="survey-intro">A short reflection to understand where you are.</p>
-                    <div class="wizard-progress">
-                        <div class="step active" data-step="1">1</div>
-                        <div class="step" data-step="2">2</div>
-                        <div class="step" data-step="3">3</div>
-                    </div>
-                    <form class="survey-form" id="surveyForm">
-                        <div class="wizard-step active" data-step="1">
-                            <div class="question-block">
-                                <h4>Starting point</h4>
-                                <p class="question-text">Which best describes you right now?</p>
-                                <div class="options single">
-                                    <label><input type="radio" name="starting_point" value="I don't know anything yet, I want to start properly" required> I don't know anything yet, I want to start properly</label>
-                                    <label><input type="radio" name="starting_point" value="I just started and everything feels confusing"> I just started and everything feels confusing</label>
-                                    <label><input type="radio" name="starting_point" value="I've been learning for a while, but things don't click"> I've been learning for a while, but things don't click</label>
-                                    <label><input type="radio" name="starting_point" value="I can write some code, but I don't really understand it"> I can write some <button type="button" class="glossary-term" data-term="Code">code</button>, but I don't really understand it</label>
-                                    <label><input type="radio" name="starting_point" value="I study or work in tech, but my foundations feel weak"> I study or work in tech, but my foundations feel weak</label>
-                                    <label><input type="radio" name="starting_point" value="I'm just curious and exploring"> I'm just curious and exploring</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="wizard-step" data-step="2">
-                            <div class="question-block">
-                                <h4>Main difficulty</h4>
-                                <p class="question-text">What is your main difficulty right now?</p>
-                                <div class="options single">
-                                    <label><input type="radio" name="difficulty" value="I don't know where or how to start" required> I don't know where or how to start</label>
-                                    <label><input type="radio" name="difficulty" value="I don't know what to learn first"> I don't know what to learn first</label>
-                                    <label><input type="radio" name="difficulty" value="I follow steps but don't know why they work"> I follow steps but don't know why they work</label>
-                                    <label><input type="radio" name="difficulty" value="Too many concepts, no clear picture"> Too many concepts, no clear picture</label>
-                                    <label><input type="radio" name="difficulty" value="My code breaks and I don't know how to think about it"> My <button type="button" class="glossary-term" data-term="Code">code</button> breaks and I don't know how to think about it</label>
-                                    <label><input type="radio" name="difficulty" value="Classes or courses move too fast"> Classes or courses move too fast</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="wizard-step" data-step="3">
-                            <div class="question-block">
-                                <h4>What would help most</h4>
-                                <p class="question-text">What would help you most right now?</p>
-                                <div class="options single">
-                                    <label><input type="radio" name="help" value="Calm, step by step explanations" required> Calm, step by step explanations</label>
-                                    <label><input type="radio" name="help" value="Help organizing what to learn next"> Help organizing what to learn next</label>
-                                    <label><input type="radio" name="help" value="Understanding basics and fundamentals"> Understanding basics and fundamentals</label>
-                                    <label><input type="radio" name="help" value="Talking through confusion with someone"> Talking through confusion with someone</label>
-                                    <label><input type="radio" name="help" value="I'm not sure yet"> I'm not sure yet</label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="wizard-step" data-step="4">
-                            <div class="summary-block" id="wizard-summary" aria-live="polite">
-                                <div class="wizard-preview">
-                                    <div class="wizard-preview-avatar"><i class="fas fa-user"></i></div>
-                                    <div class="wizard-preview-bubble" id="wizard-summary-text">Your answers will appear here as a short note.</div>
-                                </div>
-                                <textarea id="generatedSurveyMessage" readonly class="sr-only"></textarea>
-                                <div class="summary-actions">
-                                    <button type="button" class="survey-open" id="copy-survey"><i class="fas fa-copy"></i> Copy</button>
-                                    <button type="button" class="survey-open" id="email-survey"><i class="fas fa-envelope"></i> Email</button>
-                                    <button type="button" class="survey-open" id="whatsapp-survey"><i class="fab fa-whatsapp"></i> WhatsApp</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="wizard-error" id="wizard-error" aria-live="polite"></div>
-                    </form>
-                </div>
-                <div class="survey-modal-footer">
-                    <div class="wizard-nav">
-                        <button type="button" id="prevStep" class="survey-open"><i class="fas fa-arrow-left"></i> Back</button>
-                        <button type="button" id="nextStep" class="survey-open">Next <i class="fas fa-arrow-right"></i></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `;
-
     function toggleSurvey(show) {
         if (!surveyModal) return;
         surveyModal.classList.toggle("show", show);
@@ -301,9 +213,8 @@
 
     function ensureSurveyModal() {
         if (surveyModalReady) return;
-        const root = document.getElementById("survey-modal-root") || document.body;
-        root.insertAdjacentHTML("beforeend", surveyModalMarkup);
         surveyModal = document.getElementById("survey-modal");
+        if (!surveyModal) return;
         surveyBackdrop = document.getElementById("survey-backdrop");
         closeSurvey = document.getElementById("close-survey");
         prevStep = document.getElementById("prevStep");
