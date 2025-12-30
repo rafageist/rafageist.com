@@ -356,8 +356,7 @@
 			data-slides="/slides/slide-01.webp,/slides/slide-02.webp,/slides/slide-03.webp,/slides/slide-04.webp,/slides/slide-05.webp,/slides/slide-06.webp,/slides/slide-07.webp,/slides/slide-08.webp,/slides/slide-09.webp,/slides/slide-10.webp">
 			<img src="/slides/slide-00-1200.webp"
 				srcset="/slides/slide-00-480.webp 480w, /slides/slide-00-768.webp 768w, /slides/slide-00-1200.webp 1200w, /slides/slide-00.webp 1920w"
-				sizes="100vw" width="1920" height="600" decoding="async" fetchpriority="high" class="active"
-				alt="">
+				sizes="100vw" width="1920" height="600" decoding="async" fetchpriority="high" class="active" alt="">
 		</div>
 		<div class="hero-overlay">
 			<h1 class="hero-title" id="hero-slide-text">Learning software engineering, but the structure still feels
@@ -492,8 +491,8 @@
 
 				<div class="help-card">
 					<div class="help-icon">
-						<img src="images/undraw_book-lover_m9n3.svg" alt="Learning resources" loading="lazy"
-							width="800" height="622">
+						<img src="images/undraw_book-lover_m9n3.svg" alt="Learning resources" loading="lazy" width="800"
+							height="622">
 					</div>
 					<p><strong>Learning resources</strong><br>
 						curated notes literature and formats</p>
@@ -612,8 +611,17 @@
 			<h2>Who this space welcomes</h2>
 			<div class="help-grid">
 				<div class="help-card">
+					<div class="help-icon"><i class="fas fa-seedling"></i></div>
+					<p>
+						<strong>Early talent (by assessment):</strong>
+						younger learners (≈11–15) with strong curiosity, basic digital familiarity,
+						and the maturity to reason about problems, not just follow steps.
+					</p>
+				</div>
+
+				<div class="help-card">
 					<div class="help-icon"><i class="fas fa-child"></i></div>
-					<p><strong>Pre university mentees (16+):</strong> preparing for <button type="button"
+					<p><strong>Pre-university mentees (typically 16+):</strong> preparing for <button type="button"
 							class="glossary-term" data-term="Software engineering">software engineering</button>
 						studies and building foundations before coursework begins.</p>
 				</div>
@@ -636,8 +644,8 @@
 		<section class="help-section" aria-label="Approach">
 			<div class="perspective-grid">
 				<div class="perspective-illustration">
-					<img src="images/undraw_professor_d7zn.svg" alt="Mentorship illustration" loading="lazy"
-						width="829" height="592">
+					<img src="images/undraw_professor_d7zn.svg" alt="Mentorship illustration" loading="lazy" width="829"
+						height="592">
 				</div>
 				<div class="perspective-text">
 					<h2 id="approach-title">How I approach learning software engineering</h2>
@@ -799,7 +807,8 @@
 					<div class="catalog-icon"><i class="fas fa-bug"></i></div>
 					<h3>When <button type="button" class="glossary-term" data-term="Code">code</button> will not behave
 					</h3>
-					<p>Walk through broken <button type="button" class="glossary-term" data-term="Code">code</button> step by step to see where reasoning breaks down.</p>
+					<p>Walk through broken <button type="button" class="glossary-term" data-term="Code">code</button>
+						step by step to see where reasoning breaks down.</p>
 				</div>
 
 				<div class="catalog-card">
@@ -928,6 +937,12 @@
 					<div class="help-icon"><i class="fas fa-store-slash"></i></div>
 					<p>Not a course platform or marketplace.</p>
 				</div>
+
+				<div class="help-card">
+					<div class="help-icon"><i class="fas fa-desktop"></i></div>
+					<p>Not digital literacy or basic computer use.</p>
+				</div>
+
 			</div>
 		</section>
 
@@ -998,33 +1013,33 @@
 
 	</main>
 
-	
+
 
 	<!-- Footer -->
 	<footer class="footer" id="contact">
 		<!-- keyword strip-->
-	<div class="keyword-strip" aria-label="Software topics and focus areas">
-		<div class="keyword-strip-track">
-			<span>backend -> tradeoffs</span>
-			<span>APIs -> boundaries</span>
-			<span>debugging -> reasoning</span>
-			<span>databases -> invariants</span>
-			<span>distributed systems -> failure modes</span>
-			<span>AI tools -> assumptions</span>
-			<span>production -> responsibility</span>
-			<span>documentation -> shared memory</span>
+		<div class="keyword-strip" aria-label="Software topics and focus areas">
+			<div class="keyword-strip-track">
+				<span>backend -> tradeoffs</span>
+				<span>APIs -> boundaries</span>
+				<span>debugging -> reasoning</span>
+				<span>databases -> invariants</span>
+				<span>distributed systems -> failure modes</span>
+				<span>AI tools -> assumptions</span>
+				<span>production -> responsibility</span>
+				<span>documentation -> shared memory</span>
+			</div>
+			<div class="keyword-strip-track" aria-hidden="true">
+				<span>backend -> tradeoffs</span>
+				<span>APIs -> boundaries</span>
+				<span>debugging -> reasoning</span>
+				<span>databases -> invariants</span>
+				<span>distributed systems -> failure modes</span>
+				<span>AI tools -> assumptions</span>
+				<span>production -> responsibility</span>
+				<span>documentation -> shared memory</span>
+			</div>
 		</div>
-		<div class="keyword-strip-track" aria-hidden="true">
-			<span>backend -> tradeoffs</span>
-			<span>APIs -> boundaries</span>
-			<span>debugging -> reasoning</span>
-			<span>databases -> invariants</span>
-			<span>distributed systems -> failure modes</span>
-			<span>AI tools -> assumptions</span>
-			<span>production -> responsibility</span>
-			<span>documentation -> shared memory</span>
-		</div>
-	</div>
 		<div class="footer-grid">
 
 			<div class="footer-card">
@@ -1054,9 +1069,10 @@
 								class="fab fa-telegram"></i></a></li>
 					<li><a href="https://stackoverflow.com/users/11029180/rafa-rodr%c3%adguez" target="_blank"
 							rel="noopener" aria-label="Stack Overflow"><i class="fab fa-stack-overflow"></i></a></li>
-					<li><a href="https://substack.com/@rafageist" target="_blank" rel="noopener" aria-label="Substack"><img
-								class="social-icon" src="https://substackcdn.com/icons/substack/icon.svg" alt=""
-								aria-hidden="true"></a></li>
+					<li><a href="https://substack.com/@rafageist" target="_blank" rel="noopener"
+							aria-label="Substack"><img class="social-icon"
+								src="https://substackcdn.com/icons/substack/icon.svg" alt="" aria-hidden="true"></a>
+					</li>
 					<li><a href="https://www.chess.com/member/rafageist" target="_blank" rel="noopener"
 							aria-label="Chess.com"><i class="fas fa-chess"></i></a></li>
 					<li><a href="https://instagram.com/rafageist" target="_blank" rel="noopener"
@@ -1136,24 +1152,39 @@
 								<h4>Starting point</h4>
 								<p class="question-text">Which best describes you right now?</p>
 								<div class="options single">
+									<label>
+										<input type="radio" name="starting_point"
+											value="I am comfortable using a computer, but I want to learn how to think properly about programming and systems"
+											required>
+										I am comfortable using a computer, but I want to learn how to think properly
+										about programming and systems
+									</label>
+
 									<label><input type="radio" name="starting_point"
-											value="I don't know anything yet, I want to start properly" required> I don't know
-										anything yet, I want to start properly</label>
-									<label><input type="radio" name="starting_point"
-											value="I just started and everything feels confusing"> I just started and everything
+											value="I just started and everything feels confusing"> I just started and
+										everything
 										feels confusing</label>
 									<label><input type="radio" name="starting_point"
-											value="I've been learning for a while, but things don't click"> I've been learning
+											value="I've been learning for a while, but things don't click"> I've been
+										learning
 										for a while, but things don't click</label>
 									<label><input type="radio" name="starting_point"
-											value="I can write some code, but I don't really understand it"> I can write some
-										<button type="button" class="glossary-term" data-term="Code">code</button>, but I don't
+											value="I can write some code, but I don't really understand it"> I can write
+										some
+										<button type="button" class="glossary-term" data-term="Code">code</button>, but
+										I don't
 										really understand it</label>
 									<label><input type="radio" name="starting_point"
-											value="I study or work in tech, but my foundations feel weak"> I study or work in
+											value="I study or work in tech, but my foundations feel weak"> I study or
+										work in
 										tech, but my foundations feel weak</label>
-									<label><input type="radio" name="starting_point" value="I'm just curious and exploring"> I'm
-										just curious and exploring</label>
+									<label>
+										<input type="radio" name="starting_point"
+											value="I want to seriously explore software engineering and I'm ready to commit time and effort to see if I have the aptitude">
+										I want to seriously explore software engineering and I'm ready to commit time
+										and effort to see if I have the aptitude
+									</label>
+
 								</div>
 							</div>
 						</div>
@@ -1163,20 +1194,26 @@
 								<h4>Main difficulty</h4>
 								<p class="question-text">What is your main difficulty right now?</p>
 								<div class="options single">
-									<label><input type="radio" name="difficulty" value="I don't know where or how to start"
-											required> I don't know where or how to start</label>
-									<label><input type="radio" name="difficulty" value="I don't know what to learn first"> I
+									<label><input type="radio" name="difficulty"
+											value="I don't know where or how to start" required> I don't know where or
+										how to start</label>
+									<label><input type="radio" name="difficulty"
+											value="I don't know what to learn first"> I
 										don't know what to learn first</label>
 									<label><input type="radio" name="difficulty"
-											value="I follow steps but don't know why they work"> I follow steps but don't know why
+											value="I follow steps but don't know why they work"> I follow steps but
+										don't know why
 										they work</label>
-									<label><input type="radio" name="difficulty" value="Too many concepts, no clear picture"> Too
+									<label><input type="radio" name="difficulty"
+											value="Too many concepts, no clear picture"> Too
 										many concepts, no clear picture</label>
 									<label><input type="radio" name="difficulty"
-											value="My code breaks and I don't know how to think about it"> My <button type="button"
-											class="glossary-term" data-term="Code">code</button> breaks and I don't know how to
+											value="My code breaks and I don't know how to think about it"> My <button
+											type="button" class="glossary-term" data-term="Code">code</button> breaks
+										and I don't know how to
 										think about it</label>
-									<label><input type="radio" name="difficulty" value="Classes or courses move too fast"> Classes
+									<label><input type="radio" name="difficulty"
+											value="Classes or courses move too fast"> Classes
 										or courses move too fast</label>
 								</div>
 							</div>
@@ -1187,15 +1224,20 @@
 								<h4>What would help most</h4>
 								<p class="question-text">What would help you most right now?</p>
 								<div class="options single">
-									<label><input type="radio" name="help" value="Calm, step by step explanations" required>
+									<label><input type="radio" name="help" value="Calm, step by step explanations"
+											required>
 										Calm, step by step explanations</label>
-									<label><input type="radio" name="help" value="Help organizing what to learn next"> Help
+									<label><input type="radio" name="help" value="Help organizing what to learn next">
+										Help
 										organizing what to learn next</label>
-									<label><input type="radio" name="help" value="Understanding basics and fundamentals">
+									<label><input type="radio" name="help"
+											value="Understanding basics and fundamentals">
 										Understanding basics and fundamentals</label>
-									<label><input type="radio" name="help" value="Talking through confusion with someone">
+									<label><input type="radio" name="help"
+											value="Talking through confusion with someone">
 										Talking through confusion with someone</label>
-									<label><input type="radio" name="help" value="I'm not sure yet"> I'm not sure yet</label>
+									<label><input type="radio" name="help" value="I'm not sure yet"> I'm not sure
+										yet</label>
 								</div>
 							</div>
 						</div>
@@ -1204,14 +1246,17 @@
 							<div class="summary-block" id="wizard-summary" aria-live="polite">
 								<div class="wizard-preview">
 									<div class="wizard-preview-avatar"><i class="fas fa-user"></i></div>
-									<div class="wizard-preview-bubble" id="wizard-summary-text">Your answers will appear here as
+									<div class="wizard-preview-bubble" id="wizard-summary-text">Your answers will appear
+										here as
 										a short note.</div>
 								</div>
 								<textarea id="generatedSurveyMessage" readonly class="sr-only"></textarea>
 								<div class="summary-actions">
-									<button type="button" class="survey-open" id="copy-survey"><i class="fas fa-copy"></i>
+									<button type="button" class="survey-open" id="copy-survey"><i
+											class="fas fa-copy"></i>
 										Copy</button>
-									<button type="button" class="survey-open" id="email-survey"><i class="fas fa-envelope"></i>
+									<button type="button" class="survey-open" id="email-survey"><i
+											class="fas fa-envelope"></i>
 										Email</button>
 									<button type="button" class="survey-open" id="whatsapp-survey"><i
 											class="fab fa-whatsapp"></i> WhatsApp</button>

@@ -3,6 +3,7 @@
 The primary entry point on the site is "Start here".
 It opens a short guided reflection that helps you compose an initial message.
 There is no commitment required.
+The reflection assumes basic digital familiarity and comfort using a computer.
 
 ## What the reflection does
 - Makes your current situation explicit.

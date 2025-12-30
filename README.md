@@ -7,7 +7,14 @@ This repository describes a 1-to-1 software engineering mentorship focused on re
 This is not a substitute for a diploma. It is a serious, structured engineering formation. No degrees, certificates, or formal credentials are issued.
 
 ## Who this is for
-This is for mentees who want to deepen their engineering judgment, strengthen fundamentals, and learn how to make sound decisions under practical constraints. It can serve as a formative path for mentees without formal engineering training, even without degrees.
+This is for mentees who want to deepen their engineering judgment, strengthen fundamentals, and learn how to make sound decisions under practical constraints. It can serve as a formative path for mentees without formal engineering training, even without degrees. You do not need to be a programmer yet, but you should be comfortable using a computer and willing to commit time and effort to develop real software engineering judgment. This is not digital literacy or basic computer use.
+
+Typical fit includes:
+- Early talent (approx 11-15) with basic digital familiarity and the maturity to reason about problems.
+- Pre-university mentees (16+) preparing for software engineering studies.
+- University mentees filling gaps in algorithms, data structures, and systems reasoning.
+- Early career mentees strengthening design and architecture as systems start to matter.
+- Explorers with vocation who are comfortable using a computer and ready to commit time and effort, even if they are not programming yet.
 
 ## How we work
 Mentoring is one-to-one and iterative. A mentee brings a goal or a problem, the mentor helps diagnose gaps, and both work through a focused path of learning, practice, and review. Progress is driven by clarity and evidence, not by speed.

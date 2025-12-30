@@ -25,3 +25,4 @@ The mentee still needs a clear model of cause and effect before trusting results
 | Iterative work on real problems | A fixed syllabus or standardized track |
 | Calm, steady pace and critical feedback | Hype-driven, sales-oriented content |
 | Shared responsibility for decisions | Outsourced problem solving |
+| Engineering guidance for people who can use a computer | Digital literacy or basic computer use |
