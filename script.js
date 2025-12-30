@@ -416,6 +416,13 @@
     const glossarySearchAcm = document.getElementById("glossary-search-acm");
 
     const keywordGlossary = {
+        "ai": {
+            definition: "Systems that perform tasks typically associated with human intelligence.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Artificial_intelligence",
+                "Britannica|https://www.britannica.com/technology/artificial-intelligence"
+            ]
+        },
         "algorithms": {
             definition: "Step-by-step procedures for solving problems or performing computations.",
             links: [
@@ -456,6 +463,20 @@
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_component",
                 "IBM|https://www.ibm.com/topics/component-based-development"
+            ]
+        },
+        "computer": {
+            definition: "A programmable machine that processes data and executes instructions.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Computer",
+                "Britannica|https://www.britannica.com/technology/computer"
+            ]
+        },
+        "constraints": {
+            definition: "Limits or requirements that shape possible solutions.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Design_constraint",
+                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/constraint"
             ]
         },
         "computing": {
@@ -507,6 +528,13 @@
                 "Wikipedia|https://en.wikipedia.org/wiki/Runtime_environment"
             ]
         },
+        "ides": {
+            definition: "Integrated development environments combine editing, build, and debugging tools.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Integrated_development_environment",
+                "IBM|https://www.ibm.com/topics/ide"
+            ]
+        },
         "intelligence": {
             definition: "The ability to learn, reason, and solve problems.",
             links: [
@@ -535,6 +563,13 @@
                 "Stanford Encyclopedia of Philosophy|https://plato.stanford.edu/entries/models-science/"
             ]
         },
+        "programming": {
+            definition: "Writing instructions that tell a computer what to do.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Computer_programming",
+                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/programming"
+            ]
+        },
         "programming languages": {
             definition: "Formal languages used to write software instructions.",
             links: [
@@ -547,6 +582,13 @@
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Repository_(version_control)",
                 "Git|https://git-scm.com/docs/git-init"
+            ]
+        },
+        "version control": {
+            definition: "Systems that track changes to files over time.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Version_control",
+                "Git|https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control"
             ]
         },
         "scientific": {
@@ -589,6 +631,20 @@
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Technology",
                 "Britannica|https://www.britannica.com/technology/technology"
+            ]
+        },
+        "tools": {
+            definition: "Software utilities used to build, test, or analyze systems.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_tool",
+                "IBM|https://www.ibm.com/topics/devops-tools"
+            ]
+        },
+        "trade-offs": {
+            definition: "Choices where improving one aspect reduces another.",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Trade-off",
+                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/trade-off"
             ]
         },
         "ai tools -> assumptions": {
