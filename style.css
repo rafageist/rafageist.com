@@ -1260,11 +1260,46 @@ body.map-open {
     resize: vertical;
 }
 
-.options.single label,
-.options.multi label {
-    gap: 0.5rem;
+.options-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.5rem 0;
+}
+
+.options-table tbody tr {
+    border-bottom: 1px solid rgba(199, 214, 229, 0.3);
+}
+
+.options-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.options-table .radio-cell {
+    width: 30px;
+    padding: 0.6rem 0.5rem;
+    vertical-align: top;
+}
+
+.options-table .label-cell {
+    /*padding: 0.6rem 0.5rem 0.6rem 0;*/
+    vertical-align: top;
+}
+
+.options-table .label-cell label {
+    display: block;
     font-weight: 500;
-    margin: 0.2rem 0;
+    color: #0d1c2b;
+    cursor: pointer;
+    line-height: 1.4;
+}
+
+.options-table .label-cell label:hover {
+    color: var(--accent);
+}
+
+.options-table input[type="radio"] {
+    cursor: pointer;
+    margin: 0.2rem 0 0 0;
 }
 
 .options.multi {
@@ -1464,8 +1499,8 @@ body.map-open {
 
 .survey-modal-content {
     position: relative;
-    max-width: 350px;
     width: calc(100% - 24px);
+    max-width: calc(100% - 24px);
     height: auto;
     max-height: 88vh;
     margin: 4vh auto 0 auto;
@@ -1476,6 +1511,31 @@ body.map-open {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+}
+
+/* Responsive max-width para survey modal */
+@media (min-width: 600px) {
+    .survey-modal-content {
+        max-width: 90%;
+    }
+}
+
+@media (min-width: 768px) {
+    .survey-modal-content {
+        max-width: 75%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .survey-modal-content {
+        max-width: 60%;
+    }
+}
+
+@media (min-width: 1280px) {
+    .survey-modal-content {
+        max-width: 50%;
+    }
 }
 
 .survey-modal-header {
@@ -1616,10 +1676,12 @@ body.map-open {
 }
 
 .wizard-error {
-    margin-top: 0.4rem;
-    color: #b00020;
+    margin: 1.4rem;
+    color: white;
     font-weight: 700;
     display: none;
+    background: #b00020;
+    padding: 0.5rem;
 }
 
 .wizard-error.show {
