@@ -414,6 +414,9 @@
     const glossarySearchWikipedia = document.getElementById("glossary-search-wikipedia");
     const glossarySearchBing = document.getElementById("glossary-search-bing");
     const glossarySearchAcm = document.getElementById("glossary-search-acm");
+    const glossaryImage = document.getElementById("glossary-image");
+    const glossaryImageFallback = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Books-aj.svg_aj_ashton_01.svg/800px-Books-aj.svg_aj_ashton_01.svg.png";
+    const glossaryImageCache = new Map();
 
     const keywordGlossary = {
         "ai": {
@@ -870,6 +873,112 @@
         return `${title} (${label})`;
     }
 
+    function normalizeGlossaryImageTerm(term) {
+        if (!term) return "learning";
+        const trimmed = term.split("->")[0].trim();
+        return trimmed || term;
+    }
+
+    function extractWikipediaTitleFromUrl(url) {
+        if (!url) return "";
+        try {
+            const parsed = new URL(url);
+            if (!parsed.hostname.includes("wikipedia.org")) return "";
+            if (parsed.pathname.startsWith("/wiki/")) {
+                return decodeURIComponent(parsed.pathname.replace("/wiki/", "")).replace(/_/g, " ").trim();
+            }
+            const search = parsed.searchParams.get("search") || parsed.searchParams.get("q") || "";
+            return search.trim();
+        } catch (error) {
+            return "";
+        }
+    }
+
+    function extractWikipediaTitleFromLinks(linksData) {
+        if (!linksData) return "";
+        const items = linksData.split(";").map(item => item.trim()).filter(Boolean);
+        for (const item of items) {
+            const parts = item.split("|");
+            const url = (parts[1] || "").trim();
+            const title = extractWikipediaTitleFromUrl(url);
+            if (title) return title;
+        }
+        return "";
+    }
+
+    async function fetchWikipediaThumbnail(title) {
+        if (!title) return "";
+        const encoded = encodeURIComponent(title);
+        const url = `https://en.wikipedia.org/w/api.php?action=query&titles=${encoded}&prop=pageimages&piprop=thumbnail|original&pithumbsize=900&format=json&origin=*`;
+        try {
+            const response = await fetch(url);
+            if (!response.ok) return "";
+            const data = await response.json();
+            const pages = data && data.query && data.query.pages ? data.query.pages : {};
+            const page = Object.values(pages)[0] || {};
+            if (page.missing) return "";
+            return (page.thumbnail && page.thumbnail.source)
+                || (page.original && page.original.source)
+                || "";
+        } catch (error) {
+            return "";
+        }
+    }
+
+    async function fetchWikipediaImage(title) {
+        const direct = await fetchWikipediaThumbnail(title);
+        if (direct) return direct;
+        const searchTerm = normalizeGlossaryImageTerm(title);
+        const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(searchTerm)}&srlimit=1&format=json&origin=*`;
+        try {
+            const response = await fetch(searchUrl);
+            if (!response.ok) return "";
+            const data = await response.json();
+            const result = data && data.query && data.query.search ? data.query.search[0] : null;
+            if (!result || !result.title) return "";
+            return await fetchWikipediaThumbnail(result.title);
+        } catch (error) {
+            return "";
+        }
+    }
+
+    async function setGlossaryImage(term, termEl, lookup, linksData) {
+        if (!glossaryImage) return;
+        const explicitImage = (termEl && termEl.dataset.image)
+            || (lookup && lookup.image)
+            || "";
+        const cacheKey = (term || "").toLowerCase();
+
+        glossaryImage.alt = term ? `Illustration for ${term}` : "Glossary illustration";
+        glossaryImage.dataset.fallback = glossaryImageFallback;
+
+        if (explicitImage) {
+            glossaryImage.src = explicitImage;
+            return;
+        }
+
+        if (cacheKey && glossaryImageCache.has(cacheKey)) {
+            glossaryImage.src = glossaryImageCache.get(cacheKey);
+            return;
+        }
+
+        const requestId = `${Date.now()}-${Math.random().toString(16).slice(2)}`;
+        glossaryImage.dataset.requestId = requestId;
+        glossaryImage.removeAttribute("src");
+
+        const wikiTitle = extractWikipediaTitleFromLinks(linksData)
+            || normalizeGlossaryImageTerm(term);
+        const imageUrl = await fetchWikipediaImage(wikiTitle);
+        if (glossaryImage.dataset.requestId !== requestId) return;
+        if (imageUrl) {
+            glossaryImageCache.set(cacheKey, imageUrl);
+            glossaryImage.src = imageUrl;
+            return;
+        }
+
+        glossaryImage.src = glossaryImageFallback;
+    }
+
     function closeGlossary() {
         if (!glossaryModal) return;
         glossaryModal.classList.remove("show");
@@ -889,6 +998,8 @@
         if ((!linksData || !linksData.trim()) && lookup && Array.isArray(lookup.links)) {
             linksData = lookup.links.join(";");
         }
+
+        void setGlossaryImage(term, termEl, lookup, linksData);
 
         if (glossaryTitle) glossaryTitle.textContent = term;
         if (glossaryDefinition) glossaryDefinition.textContent = definition;
@@ -938,6 +1049,15 @@
             }
         });
     });
+
+    if (glossaryImage) {
+        glossaryImage.addEventListener("error", () => {
+            const fallback = glossaryImage.dataset.fallback;
+            if (fallback && glossaryImage.src !== fallback) {
+                glossaryImage.src = fallback;
+            }
+        });
+    }
 
     if (glossaryBackdrop) glossaryBackdrop.addEventListener("click", closeGlossary);
     if (glossaryClose) glossaryClose.addEventListener("click", closeGlossary);
