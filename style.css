@@ -1392,7 +1392,7 @@ body.map-open {
 
 .glossary-content {
     position: relative;
-    max-width: 720px;
+    max-width: /*720px*/ 75%;
     width: calc(100% - 24px);
     max-height: 85vh;
     margin: 6vh auto 0 auto;
