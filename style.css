@@ -954,6 +954,35 @@ body.map-open {
     margin: 0;
 }
 
+.foundations-grid .help-card {
+    display: flex;
+    grid-template-columns: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.8rem;
+}
+
+.foundations-grid .help-icon {
+    width: calc(100% + 1.5rem);
+    height: 120px;
+    border-radius: 0;
+    font-size: 2rem;
+    background: rgba(107, 83, 54, 0.08);
+    margin-top: -10px;
+}
+
+.foundations-grid .help-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 0.5rem;
+}
+
+.foundations-grid .help-card p {
+    margin: 0;
+}
+
 .help-list,
 .trajectory-list,
 .evidence-list {
