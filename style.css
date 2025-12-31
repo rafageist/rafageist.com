@@ -1410,11 +1410,14 @@ body.map-open {
     min-height: 0;
 }
 
+.glossary-panel.glossary-panel--no-image .glossary-media {
+    display: none;
+}
+
 .glossary-media {
     flex: 0 0 38%;
     background: #f4e5cf;
     border-right: 1px solid #c7d6e5;
-    display: none;
 }
 
 .glossary-media img {

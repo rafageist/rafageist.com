@@ -415,12 +415,12 @@
     const glossarySearchBing = document.getElementById("glossary-search-bing");
     const glossarySearchAcm = document.getElementById("glossary-search-acm");
     const glossaryImage = document.getElementById("glossary-image");
-    const glossaryImageFallback = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Books-aj.svg_aj_ashton_01.svg/800px-Books-aj.svg_aj_ashton_01.svg.png";
-    const glossaryImageCache = new Map();
+    const glossaryPanel = document.querySelector(".glossary-panel");
 
     const keywordGlossary = {
         "ai": {
             definition: "Systems that perform tasks typically associated with human intelligence.",
+            image: "/images/glossary/ai.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Artificial_intelligence",
                 "Britannica|https://www.britannica.com/technology/artificial-intelligence"
@@ -428,6 +428,7 @@
         },
         "algorithms": {
             definition: "Step-by-step procedures for solving problems or performing computations.",
+            image: "/images/glossary/algorithms.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Algorithm",
                 "Britannica|https://www.britannica.com/science/algorithm"
@@ -435,6 +436,7 @@
         },
         "apis": {
             definition: "Interfaces that let software systems communicate and share data.",
+            image: "/images/glossary/apis.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/API",
                 "IBM|https://www.ibm.com/topics/api"
@@ -442,6 +444,7 @@
         },
         "architecture": {
             definition: "High-level structure and key decisions in a software system.",
+            image: "/images/glossary/architecture.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_architecture",
                 "SEI|https://www.sei.cmu.edu/our-work/software-architecture/"
@@ -449,6 +452,7 @@
         },
         "cause and effect": {
             definition: "The relationship where one event produces another.",
+            image: "/images/glossary/cause-and-effect.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Causality",
                 "Britannica|https://www.britannica.com/topic/causation"
@@ -456,6 +460,7 @@
         },
         "code": {
             definition: "Written instructions in a programming language.",
+            image: "/images/glossary/code.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Source_code",
                 "Oxford Languages|https://languages.oup.com/google-dictionary-en/"
@@ -463,6 +468,7 @@
         },
         "components": {
             definition: "Individual parts that make up a larger system.",
+            image: "/images/glossary/components.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_component",
                 "IBM|https://www.ibm.com/topics/component-based-development"
@@ -470,6 +476,7 @@
         },
         "computer": {
             definition: "A programmable machine that processes data and executes instructions.",
+            image: "/images/glossary/computer.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Computer",
                 "Britannica|https://www.britannica.com/technology/computer"
@@ -477,6 +484,7 @@
         },
         "constraints": {
             definition: "Limits or requirements that shape possible solutions.",
+            image: "/images/glossary/constraints.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Design_constraint",
                 "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/constraint"
@@ -484,6 +492,7 @@
         },
         "computing": {
             definition: "Processing information using computers and related systems.",
+            image: "/images/glossary/computing.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Computing",
                 "Britannica|https://www.britannica.com/technology/computer"
@@ -491,6 +500,7 @@
         },
         "computing generations": {
             definition: "Historical eras of computing defined by dominant hardware and ideas.",
+            image: "/images/glossary/computing-generations.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/History_of_computing_hardware",
                 "Wikipedia|https://en.wikipedia.org/wiki/History_of_computing"
@@ -498,6 +508,7 @@
         },
         "computing systems": {
             definition: "Integrated hardware and software working together to perform computation.",
+            image: "/images/glossary/computing-systems.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Computer_system",
                 "IBM|https://www.ibm.com/topics/systems"
@@ -505,6 +516,7 @@
         },
         "data": {
             definition: "Information represented for processing and analysis.",
+            image: "/images/glossary/data.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Data",
                 "IBM|https://www.ibm.com/topics/data"
@@ -512,6 +524,7 @@
         },
         "data structures": {
             definition: "Ways of organizing data for efficient access and modification.",
+            image: "/images/glossary/data-structures.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Data_structure",
                 "GeeksforGeeks|https://www.geeksforgeeks.org/data-structures/"
@@ -519,6 +532,7 @@
         },
         "editors": {
             definition: "Tools used to write and edit code or text.",
+            image: "/images/glossary/editors.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Text_editor",
                 "Wikipedia|https://en.wikipedia.org/wiki/Source-code_editor"
@@ -526,6 +540,7 @@
         },
         "environments": {
             definition: "Configured setups where software is built, run, or tested.",
+            image: "/images/glossary/environments.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Development_environment",
                 "Wikipedia|https://en.wikipedia.org/wiki/Runtime_environment"
@@ -533,6 +548,7 @@
         },
         "ides": {
             definition: "Integrated development environments combine editing, build, and debugging tools.",
+            image: "/images/glossary/ides.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Integrated_development_environment",
                 "IBM|https://www.ibm.com/topics/ide"
@@ -540,6 +556,7 @@
         },
         "intelligence": {
             definition: "The ability to learn, reason, and solve problems.",
+            image: "/images/glossary/intelligence.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Intelligence",
                 "APA|https://www.apa.org/topics/intelligence"
@@ -547,6 +564,7 @@
         },
         "mental model": {
             definition: "An internal explanation of how something works.",
+            image: "/images/glossary/mental-model.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Mental_model",
                 "Interaction Design Foundation|https://www.interaction-design.org/literature/topics/mental-models"
@@ -554,6 +572,7 @@
         },
         "mentorship": {
             definition: "Guidance from a more experienced person to support learning and growth.",
+            image: "/images/glossary/mentorship.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Mentorship",
                 "APA|https://www.apa.org/education-career/grad/mentoring"
@@ -561,6 +580,7 @@
         },
         "model": {
             definition: "A simplified representation of a system or concept.",
+            image: "/images/glossary/model.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Model",
                 "Stanford Encyclopedia of Philosophy|https://plato.stanford.edu/entries/models-science/"
@@ -568,6 +588,7 @@
         },
         "programming": {
             definition: "Writing instructions that tell a computer what to do.",
+            image: "/images/glossary/programming.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Computer_programming",
                 "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/programming"
@@ -575,6 +596,7 @@
         },
         "programming languages": {
             definition: "Formal languages used to write software instructions.",
+            image: "/images/glossary/programming-languages.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Programming_language",
                 "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/programming-language"
@@ -582,6 +604,7 @@
         },
         "repos": {
             definition: "Repositories that store and track code changes.",
+            image: "/images/glossary/repos.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Repository_(version_control)",
                 "Git|https://git-scm.com/docs/git-init"
@@ -589,6 +612,7 @@
         },
         "version control": {
             definition: "Systems that track changes to files over time.",
+            image: "/images/glossary/version-control.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Version_control",
                 "Git|https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control"
@@ -596,6 +620,7 @@
         },
         "scientific": {
             definition: "Based on systematic study and rigorous methods.",
+            image: "/images/glossary/scientific.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Science",
                 "Britannica|https://www.britannica.com/science/science"
@@ -603,6 +628,7 @@
         },
         "software": {
             definition: "Programs and data that tell a computer how to operate.",
+            image: "/images/glossary/software.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Software",
                 "Britannica|https://www.britannica.com/technology/software"
@@ -610,6 +636,7 @@
         },
         "software engineering": {
             definition: "Applying engineering principles to design, build, and maintain software systems.",
+            image: "/images/glossary/software-engineering.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_engineering",
                 "IEEE|https://www.computer.org/education/bodies-of-knowledge/software-engineering"
@@ -617,6 +644,7 @@
         },
         "structure": {
             definition: "The organized arrangement of parts in a system or document.",
+            image: "/images/glossary/structure.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Structure",
                 "Merriam-Webster|https://www.merriam-webster.com/dictionary/structure"
@@ -624,6 +652,7 @@
         },
         "systems": {
             definition: "Sets of interacting parts that work together.",
+            image: "/images/glossary/systems.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/System",
                 "Merriam-Webster|https://www.merriam-webster.com/dictionary/system"
@@ -631,6 +660,7 @@
         },
         "technologies": {
             definition: "Tools and methods used to build and operate systems.",
+            image: "/images/glossary/technologies.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Technology",
                 "Britannica|https://www.britannica.com/technology/technology"
@@ -638,6 +668,7 @@
         },
         "tools": {
             definition: "Software utilities used to build, test, or analyze systems.",
+            image: "/images/glossary/tools.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_tool",
                 "IBM|https://www.ibm.com/topics/devops-tools"
@@ -645,13 +676,303 @@
         },
         "trade-offs": {
             definition: "Choices where improving one aspect reduces another.",
+            image: "/images/glossary/trade-offs.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Trade-off",
                 "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/trade-off"
             ]
         },
+        "abstractions": {
+            definition: "Abstractions are simplified representations that hide details to manage complexity.",
+            image: "/images/glossary/abstractions.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Abstraction",
+                "Wikipedia|https://en.wikipedia.org/wiki/Abstraction_(computer_science)"
+            ]
+        },
+        "aptitude": {
+            definition: "Aptitude is the natural capacity to learn and reason within a domain when effort is applied.",
+            image: "/images/glossary/aptitude.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Aptitude",
+                "APA|https://dictionary.apa.org/aptitude"
+            ]
+        },
+        "assumptions": {
+            definition: "Assumptions are beliefs taken as true without explicit verification.",
+            image: "/images/glossary/assumptions.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Assumption",
+                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/assumption"
+            ]
+        },
+        "automated tools": {
+            definition: "Tools that run tasks automatically with minimal manual input.",
+            image: "/images/glossary/automated-tools.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Automation",
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_tool"
+            ]
+        },
+        "blind spots": {
+            definition: "Blind spots are areas where understanding is missing but not immediately noticed.",
+            image: "/images/glossary/blind-spots.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Blind_spot_(cognitive)",
+                "Wikipedia|https://en.wikipedia.org/wiki/Metacognition"
+            ]
+        },
+        "boundaries": {
+            definition: "Boundaries define where one responsibility or system ends and another begins.",
+            image: "/images/glossary/boundaries.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Boundary_(systems_theory)",
+                "Wikipedia|https://en.wikipedia.org/wiki/Interface_(computing)"
+            ]
+        },
+        "building blocks": {
+            definition: "Building blocks are simple concepts that combine to form more complex ideas.",
+            image: "/images/glossary/building-blocks.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Modular_design",
+                "Wikipedia|https://en.wikipedia.org/wiki/Component-based_software_engineering"
+            ]
+        },
+        "context": {
+            definition: "Context is the surrounding information, constraints, and conditions that give meaning to a problem.",
+            image: "/images/glossary/context.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Context",
+                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/context"
+            ]
+        },
+        "decision-making": {
+            definition: "Decision-making is the act of choosing between alternatives based on reasoning, constraints, and expected consequences.",
+            image: "/images/glossary/decision-making.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Decision-making",
+                "Britannica|https://www.britannica.com/topic/decision-making"
+            ]
+        },
+        "defensible": {
+            definition: "Defensible means that decisions can be justified when questioned or challenged.",
+            image: "/images/glossary/defensible.webp",
+            links: [
+                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/defensible",
+                "Merriam-Webster|https://www.merriam-webster.com/dictionary/defensible"
+            ]
+        },
+        "debugging": {
+            definition: "Debugging is the process of locating and understanding the causes of incorrect behavior.",
+            image: "/images/glossary/debugging.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Debugging",
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_bug"
+            ]
+        },
+        "design decisions": {
+            definition: "Design decisions are choices that shape how a system is structured and behaves.",
+            image: "/images/glossary/design-decisions.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Design_rationale",
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_design"
+            ]
+        },
+        "documentation": {
+            definition: "Documentation is written knowledge that preserves reasoning, decisions, and shared understanding.",
+            image: "/images/glossary/documentation.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Software_documentation",
+                "Wikipedia|https://en.wikipedia.org/wiki/Knowledge_management"
+            ]
+        },
+        "execution": {
+            definition: "Execution is the act of carrying out decisions through concrete actions or implementations.",
+            image: "/images/glossary/execution.webp",
+            links: [
+                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/execution",
+                "Wikipedia|https://en.wikipedia.org/wiki/Implementation"
+            ]
+        },
+        "explainable": {
+            definition: "Explainable means that decisions or results can be clearly justified and described.",
+            image: "/images/glossary/explainable.webp",
+            links: [
+                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/explainable",
+                "Wikipedia|https://en.wikipedia.org/wiki/Explanation"
+            ]
+        },
+        "failure modes": {
+            definition: "Failure modes describe the ways in which a system can break or behave incorrectly.",
+            image: "/images/glossary/failure-modes.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Failure_mode",
+                "Wikipedia|https://en.wikipedia.org/wiki/Fault_(technology)"
+            ]
+        },
+        "foundations": {
+            definition: "Foundations are the basic concepts and principles that support further understanding and learning.",
+            image: "/images/glossary/foundations.webp",
+            links: [
+                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/foundation",
+                "Merriam-Webster|https://www.merriam-webster.com/dictionary/foundation"
+            ]
+        },
+        "fragmented learning": {
+            definition: "Fragmented learning occurs when knowledge is acquired in isolated pieces without a coherent structure or mental model.",
+            image: "/images/glossary/fragmented-learning.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Learning",
+                "Wikipedia|https://en.wikipedia.org/wiki/Mental_model"
+            ]
+        },
+        "fundamentals": {
+            definition: "Fundamentals are core principles that remain valid regardless of tools or technologies.",
+            image: "/images/glossary/fundamentals.webp",
+            links: [
+                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/fundamental",
+                "Wikipedia|https://en.wikipedia.org/wiki/Fundamental"
+            ]
+        },
+        "guidance": {
+            definition: "Guidance is structured support that helps a learner reason, decide, and progress without removing responsibility for thinking or execution.",
+            image: "/images/glossary/guidance.webp",
+            links: [
+                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/guidance",
+                "Wikipedia|https://en.wikipedia.org/wiki/Mentoring"
+            ]
+        },
+        "invariants": {
+            definition: "Invariants are conditions that must always remain true within a system.",
+            image: "/images/glossary/invariants.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Invariant_(computer_science)",
+                "Wikipedia|https://en.wikipedia.org/wiki/Invariant_(mathematics)"
+            ]
+        },
+        "iterate": {
+            definition: "Repeat a process to improve or refine results.",
+            image: "/images/glossary/iterate.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Iteration",
+                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/iterate"
+            ]
+        },
+        "iteration": {
+            definition: "Iteration is the repeated process of refining understanding or solutions based on feedback.",
+            image: "/images/glossary/iteration.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Iteration",
+                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/iteration"
+            ]
+        },
+        "judgment": {
+            definition: "Judgment is the ability to make sound decisions based on experience and reasoning.",
+            image: "/images/glossary/judgment.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Judgement",
+                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/judgement"
+            ]
+        },
+        "knowledge gaps": {
+            definition: "Knowledge gaps are missing pieces of understanding that prevent concepts from fully making sense.",
+            image: "/images/glossary/knowledge-gaps.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Knowledge",
+                "Wikipedia|https://en.wikipedia.org/wiki/Skill_gap"
+            ]
+        },
+        "learning path": {
+            definition: "A learning path is an ordered sequence of topics designed to build understanding progressively.",
+            image: "/images/glossary/learning-path.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Curriculum",
+                "Wikipedia|https://en.wikipedia.org/wiki/Learning"
+            ]
+        },
+        "learning situations": {
+            definition: "Contexts or scenarios where learning takes place.",
+            image: "/images/glossary/learning-situations.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Learning",
+                "Wikipedia|https://en.wikipedia.org/wiki/Educational_psychology"
+            ]
+        },
+        "mental effort": {
+            definition: "Cognitive effort required to process information and solve problems.",
+            image: "/images/glossary/mental-effort.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Cognitive_load",
+                "Wikipedia|https://en.wikipedia.org/wiki/Effort"
+            ]
+        },
+        "output": {
+            definition: "Output refers to visible results such as code, features, or answers, regardless of whether understanding exists.",
+            image: "/images/glossary/output.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Input/output",
+                "Wikipedia|https://en.wikipedia.org/wiki/Output"
+            ]
+        },
+        "production": {
+            definition: "Production refers to real-world usage where systems affect users, data, and responsibility.",
+            image: "/images/glossary/production.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Production_environment",
+                "Wikipedia|https://en.wikipedia.org/wiki/Responsibility"
+            ]
+        },
+        "real-world systems": {
+            definition: "Real-world systems are systems that operate under real constraints such as users, failures, and time.",
+            image: "/images/glossary/real-world-systems.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/System",
+                "Wikipedia|https://en.wikipedia.org/wiki/Real_world"
+            ]
+        },
+        "reasoning": {
+            definition: "Reasoning is the process of connecting facts, assumptions, and rules to reach justified conclusions.",
+            image: "/images/glossary/reasoning.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Reasoning",
+                "Wikipedia|https://en.wikipedia.org/wiki/Logic"
+            ]
+        },
+        "reflection": {
+            definition: "Reflection is the deliberate examination of one's own thinking and decisions.",
+            image: "/images/glossary/reflection.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Reflective_practice",
+                "Wikipedia|https://en.wikipedia.org/wiki/Reflection_(philosophy)"
+            ]
+        },
+        "reusable ideas": {
+            definition: "Concepts that can be applied across different problems or contexts.",
+            image: "/images/glossary/reusable-ideas.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Abstraction",
+                "Wikipedia|https://en.wikipedia.org/wiki/Reuse"
+            ]
+        },
+        "shared expectations": {
+            definition: "Shared expectations are mutual agreements about roles, responsibilities, and effort.",
+            image: "/images/glossary/shared-expectations.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Expectation_(psychology)",
+                "Wikipedia|https://en.wikipedia.org/wiki/Psychological_contract"
+            ]
+        },
+        "understanding": {
+            definition: "Understanding means grasping why something works, not just knowing how to use it.",
+            image: "/images/glossary/understanding.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Understanding",
+                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/understanding"
+            ]
+        },
         "ai tools -> assumptions": {
             definition: "AI tools rely on assumptions about data, prompts, and context.",
+            image: "/images/glossary/ai-tools-assumptions.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Artificial_intelligence",
                 "Wikipedia|https://en.wikipedia.org/wiki/Assumption"
@@ -659,6 +980,7 @@
         },
         "apis -> boundaries": {
             definition: "APIs define the boundary where systems agree on how to interact.",
+            image: "/images/glossary/apis-boundaries.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/API",
                 "Wikipedia|https://en.wikipedia.org/wiki/Interface_(computing)"
@@ -666,6 +988,7 @@
         },
         "architecture -> structure": {
             definition: "Architecture describes the structure that holds system decisions together.",
+            image: "/images/glossary/architecture-structure.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_architecture",
                 "Wikipedia|https://en.wikipedia.org/wiki/Structure"
@@ -673,6 +996,7 @@
         },
         "backend -> tradeoffs": {
             definition: "Backend decisions involve tradeoffs in performance, reliability, and complexity.",
+            image: "/images/glossary/backend-tradeoffs.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Front-end_and_back-end",
                 "Wikipedia|https://en.wikipedia.org/wiki/Trade-off"
@@ -680,6 +1004,7 @@
         },
         "code -> choices": {
             definition: "Code reflects choices about behavior, readability, and tradeoffs.",
+            image: "/images/glossary/code-choices.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Source_code",
                 "Wikipedia|https://en.wikipedia.org/wiki/Decision-making"
@@ -687,6 +1012,7 @@
         },
         "collaboration -> alignment": {
             definition: "Collaboration works when goals and responsibilities stay aligned.",
+            image: "/images/glossary/collaboration-alignment.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Collaboration",
                 "Wikipedia|https://en.wikipedia.org/wiki/Strategic_alignment"
@@ -694,6 +1020,7 @@
         },
         "data -> meaning": {
             definition: "Data becomes useful when interpreted with context and meaning.",
+            image: "/images/glossary/data-meaning.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Data",
                 "Wikipedia|https://en.wikipedia.org/wiki/Information"
@@ -701,6 +1028,7 @@
         },
         "databases -> invariants": {
             definition: "Databases depend on invariants like keys and constraints to stay consistent.",
+            image: "/images/glossary/databases-invariants.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Database",
                 "Wikipedia|https://en.wikipedia.org/wiki/Invariant_(mathematics)"
@@ -708,6 +1036,7 @@
         },
         "debugging -> reasoning": {
             definition: "Debugging is a reasoning process to find causes of incorrect behavior.",
+            image: "/images/glossary/debugging-reasoning.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Debugging",
                 "Wikipedia|https://en.wikipedia.org/wiki/Reasoning"
@@ -715,6 +1044,7 @@
         },
         "deployments -> risk": {
             definition: "Deployments carry operational risk and require careful planning.",
+            image: "/images/glossary/deployments-risk.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_deployment",
                 "Wikipedia|https://en.wikipedia.org/wiki/Risk"
@@ -722,6 +1052,7 @@
         },
         "design -> intent": {
             definition: "Design expresses intent about how something should work.",
+            image: "/images/glossary/design-intent.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Design",
                 "Wikipedia|https://en.wikipedia.org/wiki/Intention"
@@ -729,6 +1060,7 @@
         },
         "distributed systems -> failure modes": {
             definition: "Distributed systems face distinct failure modes like partial failure.",
+            image: "/images/glossary/distributed-systems-failure-modes.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Distributed_computing",
                 "Wikipedia|https://en.wikipedia.org/wiki/Failure_mode"
@@ -736,6 +1068,7 @@
         },
         "documentation -> shared memory": {
             definition: "Documentation acts as shared memory for teams and future work.",
+            image: "/images/glossary/documentation-shared-memory.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_documentation",
                 "Wikipedia|https://en.wikipedia.org/wiki/Organizational_memory"
@@ -743,6 +1076,7 @@
         },
         "frontend -> clarity": {
             definition: "Frontend work depends on clarity in interfaces and interactions.",
+            image: "/images/glossary/frontend-clarity.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Front-end_and_back-end",
                 "Wikipedia|https://en.wikipedia.org/wiki/User_interface_design"
@@ -750,6 +1084,7 @@
         },
         "interfaces -> contracts": {
             definition: "Interfaces act as contracts between components.",
+            image: "/images/glossary/interfaces-contracts.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Interface_(computing)",
                 "Wikipedia|https://en.wikipedia.org/wiki/Design_by_contract"
@@ -757,6 +1092,7 @@
         },
         "monitoring -> feedback": {
             definition: "Monitoring provides feedback about system behavior over time.",
+            image: "/images/glossary/monitoring-feedback.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/System_monitor",
                 "Wikipedia|https://en.wikipedia.org/wiki/Feedback"
@@ -764,6 +1100,7 @@
         },
         "performance -> limits": {
             definition: "Performance reveals limits under load and stress.",
+            image: "/images/glossary/performance-limits.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_performance_testing",
                 "Wikipedia|https://en.wikipedia.org/wiki/Capacity_planning"
@@ -771,6 +1108,7 @@
         },
         "production -> responsibility": {
             definition: "Production systems demand responsibility for reliability and users.",
+            image: "/images/glossary/production-responsibility.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Deployment_environment",
                 "Wikipedia|https://en.wikipedia.org/wiki/Responsibility"
@@ -778,6 +1116,7 @@
         },
         "refactoring -> discipline": {
             definition: "Refactoring requires discipline to improve structure without changing behavior.",
+            image: "/images/glossary/refactoring-discipline.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Refactoring",
                 "Wikipedia|https://en.wikipedia.org/wiki/Discipline"
@@ -785,6 +1124,7 @@
         },
         "requirements -> decisions": {
             definition: "Requirements guide decisions about scope and behavior.",
+            image: "/images/glossary/requirements-decisions.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Requirements_engineering",
                 "Wikipedia|https://en.wikipedia.org/wiki/Decision-making"
@@ -792,6 +1132,7 @@
         },
         "scalability -> constraints": {
             definition: "Scalability is shaped by constraints in time, resources, and cost.",
+            image: "/images/glossary/scalability-constraints.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Scalability",
                 "Wikipedia|https://en.wikipedia.org/wiki/Constraint"
@@ -799,6 +1140,7 @@
         },
         "security -> trust": {
             definition: "Security underpins trust in systems and data.",
+            image: "/images/glossary/security-trust.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Computer_security",
                 "Wikipedia|https://en.wikipedia.org/wiki/Trust_(social_science)"
@@ -806,6 +1148,7 @@
         },
         "systems -> interactions": {
             definition: "Systems are defined by interactions between their parts.",
+            image: "/images/glossary/systems-interactions.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/System",
                 "Wikipedia|https://en.wikipedia.org/wiki/Interaction"
@@ -813,6 +1156,7 @@
         },
         "tests -> evidence": {
             definition: "Tests provide evidence that behavior matches intent.",
+            image: "/images/glossary/tests-evidence.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_testing",
                 "Wikipedia|https://en.wikipedia.org/wiki/Evidence"
@@ -820,6 +1164,7 @@
         },
         "version control -> accountability": {
             definition: "Version control supports accountability through history and review.",
+            image: "/images/glossary/version-control-accountability.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Version_control",
                 "Wikipedia|https://en.wikipedia.org/wiki/Accountability"
@@ -873,110 +1218,24 @@
         return `${title} (${label})`;
     }
 
-    function normalizeGlossaryImageTerm(term) {
-        if (!term) return "learning";
-        const trimmed = term.split("->")[0].trim();
-        return trimmed || term;
-    }
-
-    function extractWikipediaTitleFromUrl(url) {
-        if (!url) return "";
-        try {
-            const parsed = new URL(url);
-            if (!parsed.hostname.includes("wikipedia.org")) return "";
-            if (parsed.pathname.startsWith("/wiki/")) {
-                return decodeURIComponent(parsed.pathname.replace("/wiki/", "")).replace(/_/g, " ").trim();
-            }
-            const search = parsed.searchParams.get("search") || parsed.searchParams.get("q") || "";
-            return search.trim();
-        } catch (error) {
-            return "";
-        }
-    }
-
-    function extractWikipediaTitleFromLinks(linksData) {
-        if (!linksData) return "";
-        const items = linksData.split(";").map(item => item.trim()).filter(Boolean);
-        for (const item of items) {
-            const parts = item.split("|");
-            const url = (parts[1] || "").trim();
-            const title = extractWikipediaTitleFromUrl(url);
-            if (title) return title;
-        }
-        return "";
-    }
-
-    async function fetchWikipediaThumbnail(title) {
-        if (!title) return "";
-        const encoded = encodeURIComponent(title);
-        const url = `https://en.wikipedia.org/w/api.php?action=query&titles=${encoded}&prop=pageimages&piprop=thumbnail|original&pithumbsize=900&format=json&origin=*`;
-        try {
-            const response = await fetch(url);
-            if (!response.ok) return "";
-            const data = await response.json();
-            const pages = data && data.query && data.query.pages ? data.query.pages : {};
-            const page = Object.values(pages)[0] || {};
-            if (page.missing) return "";
-            return (page.thumbnail && page.thumbnail.source)
-                || (page.original && page.original.source)
-                || "";
-        } catch (error) {
-            return "";
-        }
-    }
-
-    async function fetchWikipediaImage(title) {
-        const direct = await fetchWikipediaThumbnail(title);
-        if (direct) return direct;
-        const searchTerm = normalizeGlossaryImageTerm(title);
-        const searchUrl = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(searchTerm)}&srlimit=1&format=json&origin=*`;
-        try {
-            const response = await fetch(searchUrl);
-            if (!response.ok) return "";
-            const data = await response.json();
-            const result = data && data.query && data.query.search ? data.query.search[0] : null;
-            if (!result || !result.title) return "";
-            return await fetchWikipediaThumbnail(result.title);
-        } catch (error) {
-            return "";
-        }
-    }
-
-    async function setGlossaryImage(term, termEl, lookup, linksData) {
+    function setGlossaryImage(term, termEl, lookup) {
         if (!glossaryImage) return;
         const explicitImage = (termEl && termEl.dataset.image)
             || (lookup && lookup.image)
             || "";
-        const cacheKey = (term || "").toLowerCase();
+
+        if (glossaryPanel) {
+            glossaryPanel.classList.toggle("glossary-panel--no-image", !explicitImage);
+        }
+
+        if (!explicitImage) {
+            glossaryImage.removeAttribute("src");
+            glossaryImage.alt = "";
+            return;
+        }
 
         glossaryImage.alt = term ? `Illustration for ${term}` : "Glossary illustration";
-        glossaryImage.dataset.fallback = glossaryImageFallback;
-
-        if (explicitImage) {
-            glossaryImage.src = explicitImage;
-            return;
-        }
-
-        if (cacheKey && glossaryImageCache.has(cacheKey)) {
-            glossaryImage.src = glossaryImageCache.get(cacheKey);
-            return;
-        }
-
-        const requestId = `${Date.now()}-${Math.random().toString(16).slice(2)}`;
-        glossaryImage.dataset.requestId = requestId;
-        glossaryImage.removeAttribute("src");
-
-        const wikiTitle = extractWikipediaTitleFromLinks(linksData)
-            || normalizeGlossaryImageTerm(term);
-        const imageUrl = await fetchWikipediaImage(wikiTitle);
-        if (glossaryImage.dataset.requestId !== requestId) return;
-        if (imageUrl) {
-            glossaryImageCache.set(cacheKey, imageUrl);
-            glossaryImage.src = imageUrl;
-            return;
-        }
-
-        glossaryImage.src = glossaryImageFallback;
+        glossaryImage.src = explicitImage;
     }
 
     function closeGlossary() {
@@ -999,7 +1258,7 @@
             linksData = lookup.links.join(";");
         }
 
-        void setGlossaryImage(term, termEl, lookup, linksData);
+        setGlossaryImage(term, termEl, lookup);
 
         if (glossaryTitle) glossaryTitle.textContent = term;
         if (glossaryDefinition) glossaryDefinition.textContent = definition;
@@ -1052,10 +1311,11 @@
 
     if (glossaryImage) {
         glossaryImage.addEventListener("error", () => {
-            const fallback = glossaryImage.dataset.fallback;
-            if (fallback && glossaryImage.src !== fallback) {
-                glossaryImage.src = fallback;
+            if (glossaryPanel) {
+                glossaryPanel.classList.add("glossary-panel--no-image");
             }
+            glossaryImage.removeAttribute("src");
+            glossaryImage.alt = "";
         });
     }
 
