@@ -297,7 +297,8 @@ a:hover {
     color: #6b5336;
 }
 
-.map-sidebar-nav a {
+.map-sidebar-nav a,
+.map-sidebar-nav .map-link {
     color: #2a241e;
     padding: 0.35rem 0;
     border-bottom: 1px solid rgba(215, 202, 187, 0.6);
@@ -306,7 +307,18 @@ a:hover {
     gap: 0.45rem;
 }
 
-.map-sidebar-nav a .map-icon {
+.map-sidebar-nav .map-link {
+    background: none;
+    border: 0;
+    border-bottom: 1px solid rgba(215, 202, 187, 0.6);
+    font: inherit;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.map-sidebar-nav a .map-icon,
+.map-sidebar-nav .map-link .map-icon {
     width: 0.95rem;
     text-align: center;
     color: #6b5336;
@@ -315,11 +327,13 @@ a:hover {
     margin: 0.5rem;
 }
 
-.map-sidebar-nav a:hover {
+.map-sidebar-nav a:hover,
+.map-sidebar-nav .map-link:hover {
     color: #4f3f2c;
 }
 
-.map-sidebar-nav a:hover .map-icon {
+.map-sidebar-nav a:hover .map-icon,
+.map-sidebar-nav .map-link:hover .map-icon {
     color: #4f3f2c;
     opacity: 1;
 }

@@ -466,6 +466,9 @@
 
     function openSurveyModal() {
         ensureSurveyModal();
+        if (mapSidebar && mapSidebar.classList.contains("open")) {
+            toggleMap(false);
+        }
         toggleSurvey(true);
     }
 
