@@ -4,13 +4,6 @@
     let images = slideshow ? Array.from(slideshow.querySelectorAll("img")) : [];
     let index = 0;
     let slideshowTimer = null;
-    const slideMessages = [
-        "If you don’t understand it, you can’t trust it.",
-        "Producing results is not the same as making decisions.",
-        "Engineering starts before you write code.",
-        "If you want answers, this may not help. If you want clarity, it will."
-    ];
-
     const heroSlideText = document.getElementById("hero-slide-text");
     const heroChalkText = document.getElementById("hero-chalk-text");
     const heroSection = document.querySelector(".hero");
@@ -18,26 +11,83 @@
     const audioToggle = document.getElementById("audio-toggle");
     const audioLabel = audioToggle ? audioToggle.querySelector(".audio-label") : null;
 
-    function applyHeroSlide(slideIndex) {
-        const isIntro = slideIndex === 0;
-        if (heroSection) heroSection.classList.toggle("hero-slide-00", isIntro);
-        if (heroSlideText) {
-            if (isIntro) {
-                heroSlideText.textContent = "";
-                heroSlideText.setAttribute("aria-hidden", "true");
-            } else {
-                const msgIndex = (slideIndex - 1 + slideMessages.length) % slideMessages.length;
-                heroSlideText.textContent = slideMessages[msgIndex];
-                heroSlideText.setAttribute("aria-hidden", "false");
-            }
-        }
-        if (heroChalkText) {
-            heroChalkText.setAttribute("aria-hidden", isIntro ? "false" : "true");
-        }
+    function applyHeroSlide() {
+        if (heroSection) heroSection.classList.remove("hero-slide-00");
+        if (heroSlideText) heroSlideText.setAttribute("aria-hidden", "false");
+        if (heroChalkText) heroChalkText.setAttribute("aria-hidden", "false");
     }
 
     function refreshSlides() {
         images = slideshow ? Array.from(slideshow.querySelectorAll("img")) : [];
+    }
+
+    const slideMediaQuery = window.matchMedia("(max-width: 900px)");
+    const slidePreloadCache = new Map();
+
+    function withVerticalSuffix(src) {
+        if (!src || src.includes(".vertical.")) return src || "";
+        const queryIndex = src.indexOf("?");
+        const hashIndex = src.indexOf("#");
+        let endIndex = src.length;
+        if (queryIndex !== -1) endIndex = Math.min(endIndex, queryIndex);
+        if (hashIndex !== -1) endIndex = Math.min(endIndex, hashIndex);
+        const path = src.slice(0, endIndex);
+        const suffix = src.slice(endIndex);
+        const dotIndex = path.lastIndexOf(".");
+        if (dotIndex === -1) return src;
+        return `${path.slice(0, dotIndex)}.vertical${path.slice(dotIndex)}${suffix}`;
+    }
+
+    function resolveSlideSrc(baseSrc) {
+        return slideMediaQuery.matches ? withVerticalSuffix(baseSrc) : baseSrc;
+    }
+
+    function preloadSlideSource(src) {
+        if (!src) return Promise.reject(new Error("Missing src"));
+        if (slidePreloadCache.has(src)) return slidePreloadCache.get(src);
+        const preloadPromise = new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = () => resolve(src);
+            img.onerror = () => {
+                slidePreloadCache.delete(src);
+                reject(new Error(`Failed to load ${src}`));
+            };
+            img.src = src;
+        });
+        slidePreloadCache.set(src, preloadPromise);
+        return preloadPromise;
+    }
+
+    function applyResponsiveSlideSources() {
+        refreshSlides();
+        images.forEach(img => {
+            const baseSrc = img.dataset.baseSrc || img.getAttribute("src") || "";
+            if (!baseSrc) return;
+            if (!img.dataset.baseSrc) img.dataset.baseSrc = baseSrc;
+            const target = resolveSlideSrc(baseSrc);
+            const currentSrc = img.dataset.currentSrc || img.getAttribute("src") || "";
+            if (!target) return;
+            if (target === baseSrc) {
+                if (currentSrc !== baseSrc) {
+                    img.src = baseSrc;
+                    img.dataset.currentSrc = baseSrc;
+                }
+                img.classList.remove("slide-missing");
+                return;
+            }
+            const isUsingTarget = currentSrc === target && !img.classList.contains("slide-missing");
+            if (isUsingTarget) return;
+            img.classList.add("slide-missing");
+            preloadSlideSource(target).then(() => {
+                if (resolveSlideSrc(baseSrc) !== target) return;
+                img.src = target;
+                img.dataset.currentSrc = target;
+                img.classList.remove("slide-missing");
+            }).catch(() => {
+                img.dataset.currentSrc = target;
+                img.classList.add("slide-missing");
+            });
+        });
     }
 
     function changeImage() {
@@ -57,14 +107,13 @@
 
         if (next) {
             next.classList.add("active");
-            // Ensure starting position fully covers viewport
-            applyHeroSlide(nextIndex);
         }
 
         index = nextIndex;
     }
 
-    applyHeroSlide(0);
+    applyHeroSlide();
+    applyResponsiveSlideSources();
 
     function startSlideshow() {
         if (slideshowTimer || images.length < 2) return;
@@ -72,6 +121,12 @@
     }
 
     startSlideshow();
+
+    if (slideMediaQuery.addEventListener) {
+        slideMediaQuery.addEventListener("change", applyResponsiveSlideSources);
+    } else if (slideMediaQuery.addListener) {
+        slideMediaQuery.addListener(applyResponsiveSlideSources);
+    }
 
     let hasAttemptedWelcomePlayback = false;
     let userStoppedWelcomeAudio = false;
@@ -186,17 +241,38 @@
         if (!data) return;
         const sources = data.split(",").map(src => src.trim()).filter(Boolean);
         if (!sources.length) return;
-        sources.forEach(src => {
+        const normalizeSlideSrc = (src) => {
+            if (!src) return "";
+            try {
+                return new URL(src, window.location.href).href;
+            } catch (error) {
+                return src;
+            }
+        };
+        refreshSlides();
+        const existingSources = new Set(
+            images
+                .map(img => normalizeSlideSrc(img.dataset.baseSrc || img.currentSrc || img.getAttribute("src")))
+                .filter(Boolean)
+        );
+        sources.forEach(baseSrc => {
+            const normalized = normalizeSlideSrc(baseSrc);
+            if (existingSources.has(normalized)) return;
             const img = document.createElement("img");
-            img.src = src;
+            img.dataset.baseSrc = baseSrc;
+            img.src = baseSrc;
             img.alt = "";
             img.loading = "lazy";
             img.decoding = "async";
             img.width = 1920;
             img.height = 600;
+            if (slideMediaQuery.matches) {
+                img.classList.add("slide-missing");
+            }
             slideshow.appendChild(img);
+            existingSources.add(normalized);
         });
-        refreshSlides();
+        applyResponsiveSlideSources();
         startSlideshow();
     }
 
@@ -774,6 +850,13 @@
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Technology",
                 "Britannica|https://www.britannica.com/technology/technology"
+            ]
+        },
+        "technological university of havana": {
+            definition: "A public technical university in Havana, Cuba, known as CUJAE, focused on engineering and applied sciences.",
+            image: "/images/glossary/technological-university-of-havana.webp",
+            links: [
+                "CUJAE|https://cujae.edu.cu/"
             ]
         },
         "tools": {

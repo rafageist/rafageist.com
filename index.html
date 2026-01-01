@@ -5,174 +5,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Rafa Rodr&iacute;guez | Software Engineering Mentor</title>
-	<style>
-		:root {
-			--accent: #6b5336;
-			--text: #2a241e;
-			--border: #d7cabb;
-		}
-
-		* {
-			box-sizing: border-box;
-		}
-
-		body {
-			font-family: 'Courier New', Courier, monospace;
-			margin: 0;
-			color: var(--text);
-			line-height: 1.6;
-			min-height: 100vh;
-		}
-
-		a {
-			color: var(--accent);
-			text-decoration: none;
-		}
-
-		.site-header {
-			top: 0;
-			left: 0;
-			width: 100%;
-			z-index: 1500;
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			padding: 14px 20px;
-			background: #f6f9fc;
-			box-shadow: 1px 7px 20px 1px rgb(0 0 0);
-			position: relative;
-		}
-
-		.header-left {
-			display: flex;
-			align-items: center;
-			gap: 12px;
-			min-width: 0;
-			flex: 1;
-		}
-
-		.header-avatar {
-			width: 56px;
-			height: 56px;
-			border-radius: 50%;
-			object-fit: cover;
-			border: 2px solid #f6f9fc;
-			box-shadow: 0 6px 16px rgba(9, 19, 30, 0.35);
-		}
-
-		.header-text {
-			display: flex;
-			flex-direction: column;
-			gap: 2px;
-			min-width: 0;
-		}
-
-		.header-name {
-			font-weight: 700;
-			letter-spacing: 0.02em;
-			color: #2a241e;
-		}
-
-		.header-role {
-			font-size: 0.95rem;
-			color: #4f4338;
-		}
-
-		.hero {
-			position: relative;
-			display: flex;
-			align-items: center;
-			width: 100%;
-			height: calc(100vw * 600 / 1920);
-			margin-top: 0;
-			padding: 0;
-			border: 1px solid rgba(0, 0, 0, 0.2);
-			overflow: hidden;
-		}
-
-		#slideshow {
-			position: absolute;
-			inset: 0;
-			width: 100%;
-			height: 100%;
-			overflow: hidden;
-			z-index: 0;
-		}
-
-		#slideshow::after {
-			content: '';
-			position: absolute;
-			inset: 0;
-			background: linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28));
-			z-index: 1;
-		}
-
-		#slideshow img {
-			position: absolute;
-			inset: 0;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			object-position: center center;
-			z-index: 0;
-		}
-
-		.hero::before {
-			content: '';
-			position: absolute;
-			inset: 0;
-			background: linear-gradient(120deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.22));
-			z-index: 0;
-		}
-
-		.hero-overlay {
-			position: relative;
-			z-index: 1;
-			max-width: 1100px;
-			width: 100%;
-			margin: 0 auto;
-			height: 100%;
-			padding: clamp(0.8rem, 4vw, 4rem) 1.5rem;
-			display: flex;
-			flex-direction: column;
-			gap: 0.7rem;
-			justify-content: center;
-			color: #f6f9fc;
-			text-align: center;
-		}
-
-		.hero-title {
-			font-size: clamp(1rem, 4.6vw, 2rem);
-			line-height: 1.25;
-			color: white;
-			text-shadow: 0px 0px 20px rgb(255 160 0);
-			margin: 0;
-			margin-top: 100px;
-		}
-
-		.hero-actions {
-			margin-top: 1.2rem;
-			display: flex;
-			flex-direction: column;
-			gap: 0.55rem;
-			align-items: center;
-		}
-
-		.hero-cta-mobile {
-			display: none;
-		}
-
-		.survey-open {
-			padding: 0.7rem 1.1rem;
-			border: 1px solid #378152;
-			background: #378152;
-			color: #fff7ee;
-			font-weight: 700;
-			cursor: pointer;
-			box-shadow: 4px 4px 1px rgba(0, 0, 0, 0.25);
-			border-radius: 0;
-		}
-	</style>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
 		media="print" onload="this.media='all'">
 	<noscript>
@@ -218,7 +50,7 @@
 	<meta name="twitter:site" content="@rafageist">
 	<meta name="twitter:creator" content="@rafageist">
 
-	<meta name="title" content="Rafa Rodr&iacute;guez | Senior Software Engineering Mentor">
+	<meta name="title" content="Rafa Rodr&iacute;guez | Software Engineering Mentorship">
 	<link rel="canonical" href="https://rafageist.com">
 	<script type="application/ld+json">
 		{
@@ -294,20 +126,24 @@
 				itemprop="image" class="header-avatar" loading="lazy" width="56" height="56">
 			<div class="header-text">
 				<div class="header-name" itemprop="name">Rafa Rodr&iacute;guez</div>
-				<div class="header-role" itemprop="jobTitle">Senior Software Engineering Mentor</div>
+				<div class="header-role" itemprop="jobTitle">Software Engineering Mentorship</div>
 			</div>
 		</div>
 		<div class="header-social">
-
-			<button type="button" class="map-toggle" id="map-toggle" aria-label="Map" aria-controls="site-map"
-				aria-expanded="false" title="Map">&#9776;</button>
+			<nav class="header-nav header-links" aria-label="Primary">
+				<a href="#home">Home</a>
+				<a href="#background-title">About</a>
+				<a href="#contact">Contact</a>
+			</nav>
+			<button type="button" class="map-toggle" id="map-toggle" aria-label="Menu" aria-controls="site-map"
+				aria-expanded="false" title="Menu">&#9776;</button>
 		</div>
 	</header>
 
 	<div class="map-backdrop" id="map-backdrop" aria-hidden="true"></div>
 	<aside class="map-sidebar" id="site-map" aria-hidden="true" aria-label="Map" inert>
 		<div class="map-sidebar-header">
-			<h3>Map</h3>
+			<h3>Menu</h3>
 			<button type="button" class="map-close" id="map-close" aria-label="Close map">x</button>
 		</div>
 		<nav class="map-sidebar-nav" aria-label="Site map">
@@ -319,8 +155,8 @@
 				<a href="#practice-title"><i class="map-icon fas fa-calendar" aria-hidden="true"></i> Day after day</a>
 				<a href="#ai-context-title"><i class="map-icon fas fa-lightbulb" aria-hidden="true"></i> Why guidance
 					matters today</a>
-				<a href="#engineering-foundations-title"><i class="map-icon fas fa-layer-group"
-						aria-hidden="true"></i> What engineering really stands on</a>
+				<a href="#engineering-foundations-title"><i class="map-icon fas fa-layer-group" aria-hidden="true"></i>
+					What engineering really stands on</a>
 				<a href="#structure-title"><i class="map-icon fas fa-sitemap" aria-hidden="true"></i> Structure is not
 					the
 					same as information</a>
@@ -358,30 +194,19 @@
 	<!-- Hero -->
 	<section class="hero" id="home" aria-label="Introduction">
 		<div id="slideshow" aria-hidden="true"
-			data-slides="/slides/slide-01.webp,/slides/slide-02.webp,/slides/slide-03.webp,/slides/slide-04.webp,/slides/slide-05.webp,/slides/slide-06.webp,/slides/slide-07.webp,/slides/slide-08.webp,/slides/slide-09.webp,/slides/slide-10.webp">
-			<img src="/slides/slide-00-1200.webp"
-				srcset="/slides/slide-00-480.webp 480w, /slides/slide-00-768.webp 768w, /slides/slide-00-1200.webp 1200w, /slides/slide-00.webp 1920w"
-				sizes="100vw" width="1920" height="600" decoding="async" fetchpriority="high" class="active" alt="">
+			data-slides="/slides/slide-01.webp,/slides/slide-02.webp,/slides/slide-03.webp">
+			<img src="/slides/slide-01.webp" decoding="async" fetchpriority="high" class="active" alt="">
 		</div>
 		<div class="hero-overlay">
-			<h1 class="hero-title" id="hero-slide-text">Learning <button type="button" class="glossary-term"
-					data-term="Software engineering">software engineering</button>, but the <button type="button"
-					class="glossary-term" data-term="Structure">structure</button> still feels missing?</h1>
-
+			<div class="hero-chalk" id="hero-chalk-text" aria-hidden="false">Forming future software engineers</div>
 			<div class="hero-actions">
 				<button type="button" class="survey-open inline open-survey-trigger survey-open-hero"
 					id="open-survey-hero">Start
 					here</button>
 				<br />
 			</div>
-
-			<div class="hero-chalk" id="hero-chalk-text" aria-hidden="true">Working code is not the same <br />as
-				understanding.</div>
 		</div>
 	</section>
-
-
-
 
 	<!-- Main content -->
 	<main class="page-shell" itemprop="mainContentOfPage">
@@ -940,8 +765,11 @@
 					<h2 id="background-title">Background and grounding</h2>
 
 					<p>
-						I began learning <button type="button" class="glossary-term"
-							data-term="Programming">programming</button> in <strong>1997</strong>, at a <strong>very
+						I formally graduated in computer engineering from the <button type="button"
+							class="glossary-term" data-term="Technological University of Havana">Technological
+							University of Havana</button>, Cuba, in 2010. I began learning <button type="button"
+							class="glossary-term" data-term="Programming">programming</button> in <strong>1997</strong>,
+						at a <strong>very
 							young
 							age</strong>,
 						in an environment with <strong>limited resources</strong>.
