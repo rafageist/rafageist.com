@@ -5,6 +5,10 @@
     --text: #2a241e;
     --muted: #5c5147;
     --border: #d7cabb;
+    --glossary-link: #2f6fc0;
+    --glossary-link-hover: #245a98;
+    --glossary-link-underline: rgba(47, 111, 192, 0.6);
+    --glossary-link-underline-hover: rgba(36, 90, 152, 0.7);
 }
 
 * {
@@ -1390,9 +1394,17 @@ body.map-open {
     padding: 0;
     font: inherit;
     font-weight: 700;
-    color: var(--accent);
-    text-decoration: underline dotted;
+    color: var(--glossary-link);
+    text-decoration: underline;
+    text-decoration-color: var(--glossary-link-underline);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
     cursor: pointer;
+}
+
+.glossary-term:hover {
+    color: var(--glossary-link-hover);
+    text-decoration-color: var(--glossary-link-underline-hover);
 }
 
 .glossary-term:focus {
@@ -1404,7 +1416,8 @@ body.map-open {
     text-decoration: underline;
     text-underline-offset: 3px;
     font-weight: inherit;
-    color: #5a4430;
+    color: #cfe0ff;
+    text-decoration-color: rgba(207, 224, 255, 0.9);
 }
 
 .keyword-strip .glossary-term:hover {
