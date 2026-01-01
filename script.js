@@ -21,7 +21,7 @@
         images = slideshow ? Array.from(slideshow.querySelectorAll("img")) : [];
     }
 
-    const slideMediaQuery = window.matchMedia("(max-width: 900px)");
+    const slideMediaQuery = window.matchMedia("(max-width: 500px)");
     const slidePreloadCache = new Map();
 
     function withVerticalSuffix(src) {
@@ -264,8 +264,6 @@
             img.alt = "";
             img.loading = "lazy";
             img.decoding = "async";
-            img.width = 1920;
-            img.height = 600;
             if (slideMediaQuery.matches) {
                 img.classList.add("slide-missing");
             }

@@ -362,10 +362,9 @@ body.map-open {
 #slideshow img {
     position: absolute;
     inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center center;
+    width: 100vw;
+    /*object-fit: cover;
+    object-position: center center;*/
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
     z-index: 0;
@@ -1050,7 +1049,7 @@ body.map-open {
     gap: 16px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
     .site-header {
         flex-wrap: nowrap;
         gap: 10px;
@@ -2091,11 +2090,15 @@ body.map-open {
     user-select: none;
 }
 
-@media (max-width: 900px) {
-    .hero {
+@media (max-width: 500px) {
+.hero {
         flex-direction: column;
-        height: 60vh;
+        height: 40vh;
     }
+}
+
+@media (max-width: 700px) {
+   
 
     .page-shell {
         padding: 1.8rem 1rem 3rem;
@@ -2107,7 +2110,6 @@ body.map-open {
     }
 
     #slideshow img {
-        width: 100%;
         left: 0;
     }
 
@@ -2136,7 +2138,7 @@ body.map-open {
 
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 700px) {
 
     .help-grid,
     .catalog-grid {
@@ -2176,32 +2178,6 @@ body.map-open {
 
     section.chat-section {
         margin-top: 1.4rem;
-    }
-}
-
-@media (max-width: 768px) {
-    #slideshow img {
-        transition: none;
-        object-fit: cover;
-        object-position: center center;
-        position: absolute;
-        inset: 0;
-        width: 100vw;
-        max-height: 60vh;
-    }
-
-
-
-    section.help-section {
-        animation: none;
-    }
-
-    .chat-messages {
-        animation: none;
-    }
-
-    .typing-dots span {
-        animation: none;
     }
 }
 
@@ -2357,7 +2333,7 @@ div.chat-phone {
     grid-template-columns: repeat(2, minmax(0px, 1fr));
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 700px) {
     .header-links {
         display: flex;
     }
