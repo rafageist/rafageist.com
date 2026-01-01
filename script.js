@@ -14,6 +14,9 @@
     const heroSlideText = document.getElementById("hero-slide-text");
     const heroChalkText = document.getElementById("hero-chalk-text");
     const heroSection = document.querySelector(".hero");
+    const welcomeAudio = document.getElementById("welcome-audio");
+    const audioToggle = document.getElementById("audio-toggle");
+    const audioLabel = audioToggle ? audioToggle.querySelector(".audio-label") : null;
 
     function applyHeroSlide(slideIndex) {
         const isIntro = slideIndex === 0;
@@ -69,6 +72,113 @@
     }
 
     startSlideshow();
+
+    let hasAttemptedWelcomePlayback = false;
+    let userStoppedWelcomeAudio = false;
+    let autoPlayUnlockBound = false;
+    let autoPlayUnlockHandler = null;
+
+    function updateWelcomeAudioUI() {
+        if (!audioToggle || !welcomeAudio) return;
+        const isPlaying = !welcomeAudio.paused && !welcomeAudio.ended;
+        audioToggle.classList.toggle("is-playing", isPlaying);
+        audioToggle.setAttribute("aria-pressed", isPlaying ? "true" : "false");
+        audioToggle.setAttribute("aria-label", isPlaying ? "Stop welcome audio" : "Play welcome audio");
+        if (audioLabel) {
+            audioLabel.innerHTML = isPlaying ? "<i class=\"fas fa-stop\"></i>" : "<i class=\"fas fa-play\"></i>";
+        }
+    }
+
+    function toggleWelcomeAudio() {
+        if (!welcomeAudio) return;
+        if (welcomeAudio.paused || welcomeAudio.ended) {
+            if (welcomeAudio.ended) {
+                welcomeAudio.currentTime = 0;
+            }
+            userStoppedWelcomeAudio = false;
+            const playPromise = welcomeAudio.play();
+            if (playPromise && typeof playPromise.catch === "function") {
+                playPromise.catch(() => { });
+            }
+        } else {
+            welcomeAudio.pause();
+            welcomeAudio.currentTime = 0;
+            userStoppedWelcomeAudio = true;
+            updateWelcomeAudioUI();
+        }
+    }
+
+    function bindAutoPlayUnlock() {
+        if (autoPlayUnlockBound) return;
+        autoPlayUnlockBound = true;
+        autoPlayUnlockHandler = (event) => {
+            if (audioToggle && event && audioToggle.contains(event.target)) {
+                return;
+            }
+            if (autoPlayUnlockHandler) {
+                window.removeEventListener("pointerdown", autoPlayUnlockHandler);
+                window.removeEventListener("keydown", autoPlayUnlockHandler);
+                window.removeEventListener("touchstart", autoPlayUnlockHandler);
+            }
+            autoPlayUnlockBound = false;
+            if (userStoppedWelcomeAudio || !welcomeAudio) return;
+            welcomeAudio.play().catch(() => { });
+        };
+        window.addEventListener("pointerdown", autoPlayUnlockHandler);
+        window.addEventListener("keydown", autoPlayUnlockHandler);
+        window.addEventListener("touchstart", autoPlayUnlockHandler);
+    }
+
+    function attemptWelcomePlayback(force = false) {
+        if (!welcomeAudio || userStoppedWelcomeAudio) return;
+        if (hasAttemptedWelcomePlayback && !force) return;
+        hasAttemptedWelcomePlayback = true;
+        let playResult = null;
+        try {
+            playResult = welcomeAudio.play();
+        } catch (error) {
+            bindAutoPlayUnlock();
+            return;
+        }
+        if (playResult && typeof playResult.catch === "function") {
+            playResult.catch(() => {
+                bindAutoPlayUnlock();
+            });
+        } else {
+            bindAutoPlayUnlock();
+        }
+    }
+
+    attemptWelcomePlayback();
+
+    if (audioToggle) {
+        audioToggle.addEventListener("click", (event) => {
+            event.preventDefault();
+            toggleWelcomeAudio();
+        });
+    }
+
+    if (welcomeAudio) {
+        welcomeAudio.addEventListener("play", updateWelcomeAudioUI);
+        welcomeAudio.addEventListener("pause", updateWelcomeAudioUI);
+        welcomeAudio.addEventListener("ended", updateWelcomeAudioUI);
+        welcomeAudio.addEventListener("canplaythrough", () => {
+            if (welcomeAudio.paused && !userStoppedWelcomeAudio) {
+                attemptWelcomePlayback(true);
+            }
+        });
+        if (welcomeAudio.readyState >= 1) {
+            updateWelcomeAudioUI();
+        } else {
+            welcomeAudio.addEventListener("loadedmetadata", updateWelcomeAudioUI, { once: true });
+        }
+    }
+
+    window.addEventListener("pageshow", () => {
+        if (welcomeAudio && welcomeAudio.paused && !userStoppedWelcomeAudio) {
+            attemptWelcomePlayback(true);
+        }
+    });
 
     function injectSlides() {
         if (!slideshow) return;

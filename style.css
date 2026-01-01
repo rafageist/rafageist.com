@@ -905,6 +905,20 @@ body.map-open {
     }
 }
 
+@keyframes audioBlink {
+
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: scale(0.85);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .help-icon {
     width: 42px;
     height: 42px;
@@ -1802,8 +1816,50 @@ body.map-open {
 .summary-actions {
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
     gap: 0.5rem;
     margin-top: 0.6rem;
+}
+
+.summary-action-stack {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+}
+
+.audio-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.78rem;
+    position: fixed;
+    right: 18px;
+    bottom: 86px;
+    z-index: 1601;
+    border-radius: 999px;
+    box-shadow: 0 8px 14px rgba(42, 36, 30, 0.2);
+    cursor: pointer;
+}
+
+.audio-toggle .audio-label {
+    letter-spacing: 0.01em;
+}
+
+.audio-indicator {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    display: inline-block;
+    background: rgba(255, 247, 238, 0.7);
+    box-shadow: 0 0 0 2px rgba(255, 247, 238, 0.35);
+}
+
+.audio-toggle.is-playing .audio-indicator {
+    background: #c6f2d3;
+    box-shadow: 0 0 0 2px rgba(55, 129, 82, 0.45);
+    animation: audioBlink 1.1s ease-in-out infinite;
 }
 
 .sr-only {

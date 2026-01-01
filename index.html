@@ -319,6 +319,8 @@
 				<a href="#practice-title"><i class="map-icon fas fa-calendar" aria-hidden="true"></i> Day after day</a>
 				<a href="#ai-context-title"><i class="map-icon fas fa-lightbulb" aria-hidden="true"></i> Why guidance
 					matters today</a>
+				<a href="#engineering-foundations-title"><i class="map-icon fas fa-layer-group"
+						aria-hidden="true"></i> What engineering really stands on</a>
 				<a href="#structure-title"><i class="map-icon fas fa-sitemap" aria-hidden="true"></i> Structure is not
 					the
 					same as information</a>
@@ -580,8 +582,8 @@
 					<p>
 						Engineering is not defined by
 						<button type="button" class="glossary-term" data-term="Tools">tools</button>,
-						<button type="button" class="glossary-term"
-							data-term="Programming languages">programming languages</button>, or frameworks.
+						<button type="button" class="glossary-term" data-term="Programming languages">programming
+							languages</button>, or frameworks.
 					</p>
 
 					<p>
@@ -615,7 +617,8 @@
 						<p><strong>Mathematics</strong><br>
 							<button type="button" class="glossary-term" data-term="Structure">structure</button>,
 							<button type="button" class="glossary-term" data-term="Abstractions">abstraction</button>,
-							precision</p>
+							precision
+						</p>
 					</div>
 
 					<div class="help-card">
@@ -659,8 +662,8 @@
 						<div class="help-icon">
 							<img src="images/undraw_database-tables_yft5.svg" alt="Systems thinking" loading="lazy">
 						</div>
-						<p><strong><button type="button" class="glossary-term"
-									data-term="Systems">Systems</button> thinking</strong><br>
+						<p><strong><button type="button" class="glossary-term" data-term="Systems">Systems</button>
+								thinking</strong><br>
 							interaction, <button type="button" class="glossary-term"
 								data-term="Boundaries">boundaries</button>, <button type="button" class="glossary-term"
 								data-term="Trade-offs">trade-offs</button></p>
@@ -676,8 +679,7 @@
 
 					<div class="help-card">
 						<div class="help-icon">
-							<img src="images/undraw_road-sign_2g9d.svg" alt="Constraints and trade-offs"
-								loading="lazy">
+							<img src="images/undraw_road-sign_2g9d.svg" alt="Constraints and trade-offs" loading="lazy">
 						</div>
 						<p><strong><button type="button" class="glossary-term"
 									data-term="Constraints">Constraints</button> & <button type="button"
@@ -1314,6 +1316,12 @@
 		</div>
 	</footer>
 
+	<button type="button" class="survey-open audio-toggle" id="audio-toggle" aria-pressed="false"
+		aria-label="Play welcome audio">
+		<span class="audio-indicator" aria-hidden="true"></span>
+		<span class="audio-label"></span>
+	</button>
+
 	<a id="whatsapp-button" href="https://wa.me/5978401275" target="_blank" aria-label="WhatsApp chat">
 		<i class="fab fa-whatsapp" aria-hidden="true"></i>
 	</a>
@@ -1600,8 +1608,11 @@
 								Copy</button>
 							<button type="button" class="survey-open" id="email-survey"><i class="fas fa-envelope"></i>
 								Email</button>
-							<button type="button" class="survey-open" id="whatsapp-survey"><i
-									class="fab fa-whatsapp"></i> WhatsApp</button>
+							<div class="summary-action-stack">
+
+								<button type="button" class="survey-open" id="whatsapp-survey"><i
+										class="fab fa-whatsapp"></i> WhatsApp</button>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -1623,6 +1634,8 @@
 	</div>
 	</div>
 
+	<audio id="welcome-audio" preload="auto" autoplay playsinline aria-hidden="true"
+		src="sounds/rafageist-mentor-welcome-message.ogg"></audio>
 	<script src="script.js"></script>
 </body>
 
