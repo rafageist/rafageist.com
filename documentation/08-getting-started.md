@@ -18,4 +18,4 @@ The reflection assumes basic digital familiarity and comfort using a computer.
 ## What happens next
 - We review the message and clarify the problem together.
 - We decide the first small, concrete step.
-- The mentorship proceeds through the iterative loop described in 02-mentoring-process.md.
+- The mentorship proceeds through the iterative loop described in document 02 (Mentoring process).

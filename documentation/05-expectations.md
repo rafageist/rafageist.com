@@ -4,7 +4,7 @@ Mentoring works when both sides are explicit and consistent.
 This is a professional relationship focused on clarity and responsibility.
 
 ## From the mentee
-- Consistent effort, preparation, and follow-through.
+- Consistent effort, preparation, and follow through.
 - Honesty about what is unclear and what was assumed.
 - Willingness to revise and refine thinking.
 - Incomplete reasoning will be challenged.
@@ -14,7 +14,7 @@ This is a professional relationship focused on clarity and responsibility.
 - Critical evaluation of reasoning and decisions.
 - Questioning assumptions and testing explanations.
 - Clear guidance and structured challenge.
-- Refusal to accept unclear or hand-wavy explanations.
+- Refusal to accept unclear or hand wavy explanations.
 - The mentor is not responsible for the mentee's motivation or pace.
 
 ## Shared expectations

@@ -1,5 +1,6 @@
 # Background and grounding
 
+I formally graduated in computer engineering from the Technological University of Havana (CUJAE), Cuba, in 2010.
 I began learning to program in 1997, very early, in an environment with limited resources.
 That early start meant working close to fundamentals before modern abstractions and automated tools became common.
 

@@ -12,7 +12,7 @@ Clarify -> Diagnose -> Decide -> Build -> Review
 
 Each step is lightweight. We move forward, then loop back when new gaps appear.
 Mentoring is not instruction and not problem solving on behalf of the mentee.
-It is a shared process where both roles actively participate in understanding, reasoning, and decision-making.
+It is a shared process where both roles actively participate in understanding, reasoning, and decision making.
 The mentor guides reasoning and challenges assumptions. The mentee owns execution and the artifacts.
 
 ## Step details

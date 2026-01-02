@@ -614,7 +614,7 @@
             ]
         },
         "algorithms": {
-            definition: "Step-by-step procedures for solving problems or performing computations.",
+            definition: "Step by step procedures for solving problems or performing computations.",
             image: "/images/glossary/algorithms.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Algorithm",
@@ -630,7 +630,7 @@
             ]
         },
         "architecture": {
-            definition: "High-level structure and key decisions in a software system.",
+            definition: "High level structure and key decisions in a software system.",
             image: "/images/glossary/architecture.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_architecture",
@@ -868,7 +868,7 @@
                 "IBM|https://www.ibm.com/topics/devops-tools"
             ]
         },
-        "trade-offs": {
+        "trade offs": {
             definition: "Design decisions in which improving one property or objective requires compromising another, due to inherent constraints.",
             image: "/images/glossary/trade-offs.webp",
             links: [
@@ -892,7 +892,6 @@
                 "APA|https://dictionary.apa.org/aptitude"
             ]
         },
-
         "automated tools": {
             definition: "Software tools that execute predefined tasks automatically based on configured rules, workflows, or triggers, requiring limited human intervention.",
             image: "/images/glossary/automated-tools.webp",
@@ -901,9 +900,8 @@
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_tool"
             ]
         },
-
         "boundaries": {
-            definition: "Boundaries define where one responsibility or system ends and another begins.",
+            definition: "Defined limits that separate systems, components, or responsibilities, specifying what is inside, what is outside, and how interaction occurs.",
             image: "/images/glossary/boundaries.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Boundary_(systems_theory)",
@@ -911,7 +909,7 @@
             ]
         },
         "building blocks": {
-            definition: "Building blocks are simple concepts that combine to form more complex ideas.",
+            definition: "Fundamental components or concepts that can be combined and reused to construct more complex systems, structures, or solutions.",
             image: "/images/glossary/building-blocks.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Modular_design",
@@ -919,15 +917,15 @@
             ]
         },
         "context": {
-            definition: "Context is the surrounding information, constraints, and conditions that give meaning to a problem.",
+            definition: "The set of surrounding information, constraints, assumptions, and conditions that influence how a problem, system, or situation is interpreted and addressed.",
             image: "/images/glossary/context.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Context",
                 "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/context"
             ]
         },
-        "decision-making": {
-            definition: "Decision-making is the act of choosing between alternatives based on reasoning, constraints, and expected consequences.",
+        "decision making": {
+            definition: "The process of selecting among alternatives based on reasoning, available information, constraints, and anticipated outcomes.",
             image: "/images/glossary/decision-making.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Decision-making",
@@ -1095,15 +1093,15 @@
             ]
         },
         "production": {
-            definition: "Production refers to real-world usage where systems affect users, data, and responsibility.",
+            definition: "Production refers to real world usage where systems affect users, data, and responsibility.",
             image: "/images/glossary/production.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Production_environment",
                 "Wikipedia|https://en.wikipedia.org/wiki/Responsibility"
             ]
         },
-        "real-world systems": {
-            definition: "Real-world systems are systems that operate under real constraints such as users, failures, and time.",
+        "real world systems": {
+            definition: "Real world systems are systems that operate under real constraints such as users, failures, and time.",
             image: "/images/glossary/real-world-systems.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/System",

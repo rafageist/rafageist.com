@@ -2,7 +2,7 @@
 
 ## Who this space welcomes
 - Early talent (approx 11-15): strong curiosity, basic digital familiarity, and the maturity to reason about problems, not just follow steps.
-- Pre-university mentees (16+): preparing for software engineering studies and building foundations before coursework begins.
+- Pre university mentees (16+): preparing for software engineering studies and building foundations before coursework begins.
 - University mentees: filling gaps in algorithms, data structures, and systems reasoning.
 - Early career mentees: strengthening design and architecture when systems start to matter.
 - Explorers with vocation: not yet programming, but comfortable using a computer and ready to commit time and effort to see if software engineering is a fit.
