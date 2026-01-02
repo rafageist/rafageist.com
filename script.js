@@ -830,7 +830,7 @@
             ]
         },
         "structure": {
-            definition: "The organized arrangement of parts in a system or document.",
+            definition: "The arrangement and organization of components and their relationships within a system, artifact, or document.",
             image: "/images/glossary/structure.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Structure",
@@ -838,7 +838,7 @@
             ]
         },
         "systems": {
-            definition: "Sets of interacting parts that work together.",
+            definition: "A set of interconnected components that interact according to defined relationships to achieve a common purpose or function.",
             image: "/images/glossary/systems.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/System",
@@ -846,7 +846,7 @@
             ]
         },
         "technologies": {
-            definition: "Tools and methods used to build and operate systems.",
+            definition: "The practical application of knowledge through tools, techniques, and methods used to design, build, operate, and maintain systems.",
             image: "/images/glossary/technologies.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Technology",
@@ -861,7 +861,7 @@
             ]
         },
         "tools": {
-            definition: "Software utilities used to build, test, or analyze systems.",
+            definition: "Software utilities that support specific tasks in the development, operation, analysis, or maintenance of systems.",
             image: "/images/glossary/tools.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_tool",
@@ -869,7 +869,7 @@
             ]
         },
         "trade-offs": {
-            definition: "Choices where improving one aspect reduces another.",
+            definition: "Design decisions in which improving one property or objective requires compromising another, due to inherent constraints.",
             image: "/images/glossary/trade-offs.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Trade-off",
@@ -877,7 +877,7 @@
             ]
         },
         "abstractions": {
-            definition: "Abstractions are simplified representations that hide details to manage complexity.",
+            definition: "Representations that expose essential properties while hiding unnecessary details, enabling reasoning and management of complexity.",
             image: "/images/glossary/abstractions.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Abstraction",
@@ -885,37 +885,23 @@
             ]
         },
         "aptitude": {
-            definition: "Aptitude is the natural capacity to learn and reason within a domain when effort is applied.",
+            definition: "An individual's inherent potential to acquire skills or knowledge in a specific domain through learning and practice.",
             image: "/images/glossary/aptitude.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Aptitude",
                 "APA|https://dictionary.apa.org/aptitude"
             ]
         },
-        "assumptions": {
-            definition: "Assumptions are beliefs taken as true without explicit verification.",
-            image: "/images/glossary/assumptions.webp",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Assumption",
-                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/assumption"
-            ]
-        },
+
         "automated tools": {
-            definition: "Tools that run tasks automatically with minimal manual input.",
+            definition: "Software tools that execute predefined tasks automatically based on configured rules, workflows, or triggers, requiring limited human intervention.",
             image: "/images/glossary/automated-tools.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Automation",
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_tool"
             ]
         },
-        "blind spots": {
-            definition: "Blind spots are areas where understanding is missing but not immediately noticed.",
-            image: "/images/glossary/blind-spots.webp",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Blind_spot_(cognitive)",
-                "Wikipedia|https://en.wikipedia.org/wiki/Metacognition"
-            ]
-        },
+
         "boundaries": {
             definition: "Boundaries define where one responsibility or system ends and another begins.",
             image: "/images/glossary/boundaries.webp",
