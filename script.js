@@ -814,7 +814,7 @@
             ]
         },
         "software": {
-            definition: "Programs and data that tell a computer how to operate.",
+            definition: "Programs, data, and associated documentation that specify and control the behavior of a computer system.",
             image: "/images/glossary/software.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Software",
@@ -822,7 +822,7 @@
             ]
         },
         "software engineering": {
-            definition: "Applying engineering principles to design, build, and maintain software systems.",
+            definition: "The systematic application of engineering principles, methods, and practices to specify, design, develop, test, deploy, and maintain software systems.",
             image: "/images/glossary/software-engineering.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_engineering",
