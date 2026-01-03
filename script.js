@@ -984,7 +984,6 @@
                 "Wikipedia|https://en.wikipedia.org/wiki/Fault_(technology)"
             ]
         },
-
         "foundations": {
             definition: "The fundamental concepts and principles upon which deeper understanding, skills, and systems are built.",
             image: "/images/glossary/foundations.webp",
@@ -1002,7 +1001,7 @@
             ]
         },
         "fundamentals": {
-            definition: "Fundamentals are core principles that remain valid regardless of tools or technologies.",
+            definition: "Core principles and concepts that remain valid across different tools, technologies, and implementations, forming the basis for understanding and problem-solving.",
             image: "/images/glossary/fundamentals.webp",
             links: [
                 "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/fundamental",
@@ -1010,7 +1009,7 @@
             ]
         },
         "guidance": {
-            definition: "Guidance is structured support that helps a learner reason, decide, and progress without removing responsibility for thinking or execution.",
+            definition: "Structured support that assists a learner in reasoning, decision-making, and progress, while preserving responsibility for thinking and execution.",
             image: "/images/glossary/guidance.webp",
             links: [
                 "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/guidance",
@@ -1018,45 +1017,22 @@
             ]
         },
         "invariants": {
-            definition: "Invariants are conditions that must always remain true within a system.",
+            definition: "Properties or conditions of a system that remain true throughout its execution or transformations, regardless of state changes.",
             image: "/images/glossary/invariants.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Invariant_(computer_science)",
                 "Wikipedia|https://en.wikipedia.org/wiki/Invariant_(mathematics)"
             ]
         },
-        "iterate": {
-            definition: "Repeat a process to improve or refine results.",
-            image: "/images/glossary/iterate.webp",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Iteration",
-                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/iterate"
-            ]
-        },
         "iteration": {
-            definition: "Iteration is the repeated process of refining understanding or solutions based on feedback.",
+            definition: "A repeated, controlled process in which understanding or solutions are incrementally refined through evaluation and feedback.",
             image: "/images/glossary/iteration.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Iteration",
                 "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/iteration"
             ]
         },
-        "judgment": {
-            definition: "Judgment is the ability to make sound decisions based on experience and reasoning.",
-            image: "/images/glossary/judgment.webp",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Judgement",
-                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/judgement"
-            ]
-        },
-        "knowledge gaps": {
-            definition: "Knowledge gaps are missing pieces of understanding that prevent concepts from fully making sense.",
-            image: "/images/glossary/knowledge-gaps.webp",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Knowledge",
-                "Wikipedia|https://en.wikipedia.org/wiki/Skill_gap"
-            ]
-        },
+
         "learning path": {
             definition: "A learning path is an ordered sequence of topics designed to build understanding progressively.",
             image: "/images/glossary/learning-path.webp",
