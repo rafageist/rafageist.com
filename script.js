@@ -933,7 +933,7 @@
             ]
         },
         "defensible": {
-            definition: "Defensible means that decisions can be justified when questioned or challenged.",
+            definition: "Capable of being justified through clear reasoning, evidence, and explicit criteria when questioned or challenged.",
             image: "/images/glossary/defensible.webp",
             links: [
                 "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/defensible",
@@ -941,45 +941,41 @@
             ]
         },
         "debugging": {
-            definition: "Debugging is the process of locating and understanding the causes of incorrect behavior.",
+            definition: "The systematic process of identifying, isolating, and understanding the causes of incorrect or unexpected behavior in software.",
             image: "/images/glossary/debugging.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Debugging",
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_bug"
             ]
         },
+
         "design decisions": {
-            definition: "Design decisions are choices that shape how a system is structured and behaves.",
+            definition: "Decisions made during design that determine a system’s structure, behavior, and trade-offs, based on requirements, constraints, and intended use.",
             image: "/images/glossary/design-decisions.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Design_rationale",
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_design"
             ]
         },
+
         "documentation": {
-            definition: "Documentation is written knowledge that preserves reasoning, decisions, and shared understanding.",
+            definition: "Written artifacts that capture knowledge, reasoning, decisions, and instructions to support understanding, use, maintenance, and evolution of a system.",
             image: "/images/glossary/documentation.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_documentation",
                 "Wikipedia|https://en.wikipedia.org/wiki/Knowledge_management"
             ]
         },
+
         "execution": {
-            definition: "Execution is the act of carrying out decisions through concrete actions or implementations.",
+            definition: "The process of putting decisions, plans, or designs into effect through concrete actions or implementations.",
             image: "/images/glossary/execution.webp",
             links: [
                 "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/execution",
                 "Wikipedia|https://en.wikipedia.org/wiki/Implementation"
             ]
         },
-        "explainable": {
-            definition: "Explainable means that decisions or results can be clearly justified and described.",
-            image: "/images/glossary/explainable.webp",
-            links: [
-                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/explainable",
-                "Wikipedia|https://en.wikipedia.org/wiki/Explanation"
-            ]
-        },
+
         "failure modes": {
             definition: "Failure modes describe the ways in which a system can break or behave incorrectly.",
             image: "/images/glossary/failure-modes.webp",
