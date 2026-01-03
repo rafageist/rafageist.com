@@ -1092,21 +1092,23 @@
         },
 
         "code -> choices": {
-            definition: "Code reflects choices about behavior, readability, and tradeoffs.",
+            definition: "Code embodies decisions about system behavior, readability, constraints, and trade-offs, making those choices explicit and observable.",
             image: "/images/glossary/code-choices.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Source_code",
                 "Wikipedia|https://en.wikipedia.org/wiki/Decision-making"
             ]
         },
+
         "collaboration -> alignment": {
-            definition: "Collaboration works when goals and responsibilities stay aligned.",
+            definition: "Effective collaboration depends on the alignment of goals, roles, and responsibilities toward a shared direction.",
             image: "/images/glossary/collaboration-alignment.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Collaboration",
                 "Wikipedia|https://en.wikipedia.org/wiki/Strategic_alignment"
             ]
         },
+
         "data -> meaning": {
             definition: "Data becomes useful when interpreted with context and meaning.",
             image: "/images/glossary/data-meaning.webp",
