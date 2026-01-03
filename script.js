@@ -1032,33 +1032,16 @@
                 "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/iteration"
             ]
         },
-
         "learning path": {
-            definition: "A learning path is an ordered sequence of topics designed to build understanding progressively.",
+            definition: "A structured sequence of topics or skills organized to build understanding progressively, with each step depending on previously acquired knowledge.",
             image: "/images/glossary/learning-path.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Curriculum",
                 "Wikipedia|https://en.wikipedia.org/wiki/Learning"
             ]
         },
-        "learning situations": {
-            definition: "Contexts or scenarios where learning takes place.",
-            image: "/images/glossary/learning-situations.webp",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Learning",
-                "Wikipedia|https://en.wikipedia.org/wiki/Educational_psychology"
-            ]
-        },
-        "mental effort": {
-            definition: "Cognitive effort required to process information and solve problems.",
-            image: "/images/glossary/mental-effort.webp",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Cognitive_load",
-                "Wikipedia|https://en.wikipedia.org/wiki/Effort"
-            ]
-        },
         "output": {
-            definition: "Output refers to visible results such as code, features, or answers, regardless of whether understanding exists.",
+            definition: "Observable results produced by a process or system, such as code, features, or answers, independent of the level of underlying understanding.",
             image: "/images/glossary/output.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Input/output",
@@ -1073,56 +1056,8 @@
                 "Wikipedia|https://en.wikipedia.org/wiki/Responsibility"
             ]
         },
-        "real world systems": {
-            definition: "Real world systems are systems that operate under real constraints such as users, failures, and time.",
-            image: "/images/glossary/real-world-systems.webp",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/System",
-                "Wikipedia|https://en.wikipedia.org/wiki/Real_world"
-            ]
-        },
-        "reasoning": {
-            definition: "Reasoning is the process of connecting facts, assumptions, and rules to reach justified conclusions.",
-            image: "/images/glossary/reasoning.webp",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Reasoning",
-                "Wikipedia|https://en.wikipedia.org/wiki/Logic"
-            ]
-        },
-        "reflection": {
-            definition: "Reflection is the deliberate examination of one's own thinking and decisions.",
-            image: "/images/glossary/reflection.webp",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Reflective_practice",
-                "Wikipedia|https://en.wikipedia.org/wiki/Reflection_(philosophy)"
-            ]
-        },
-        "reusable ideas": {
-            definition: "Concepts that can be applied across different problems or contexts.",
-            image: "/images/glossary/reusable-ideas.webp",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Abstraction",
-                "Wikipedia|https://en.wikipedia.org/wiki/Reuse"
-            ]
-        },
-        "shared expectations": {
-            definition: "Shared expectations are mutual agreements about roles, responsibilities, and effort.",
-            image: "/images/glossary/shared-expectations.webp",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Expectation_(psychology)",
-                "Wikipedia|https://en.wikipedia.org/wiki/Psychological_contract"
-            ]
-        },
-        "understanding": {
-            definition: "Understanding means grasping why something works, not just knowing how to use it.",
-            image: "/images/glossary/understanding.webp",
-            links: [
-                "Wikipedia|https://en.wikipedia.org/wiki/Understanding",
-                "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/understanding"
-            ]
-        },
         "ai tools -> assumptions": {
-            definition: "AI tools rely on assumptions about data, prompts, and context.",
+            definition: "AI tools operate based on implicit assumptions about data, prompts, and context, which directly influence their outputs and limitations.",
             image: "/images/glossary/ai-tools-assumptions.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Artificial_intelligence",
