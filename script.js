@@ -977,15 +977,16 @@
         },
 
         "failure modes": {
-            definition: "Failure modes describe the ways in which a system can break or behave incorrectly.",
+            definition: "The specific ways in which a system, component, or process can fail to perform as intended, including the conditions and causes that lead to incorrect or degraded behavior.",
             image: "/images/glossary/failure-modes.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Failure_mode",
                 "Wikipedia|https://en.wikipedia.org/wiki/Fault_(technology)"
             ]
         },
+
         "foundations": {
-            definition: "Foundations are the basic concepts and principles that support further understanding and learning.",
+            definition: "The fundamental concepts and principles upon which deeper understanding, skills, and systems are built.",
             image: "/images/glossary/foundations.webp",
             links: [
                 "Cambridge Dictionary|https://dictionary.cambridge.org/dictionary/english/foundation",
@@ -993,7 +994,7 @@
             ]
         },
         "fragmented learning": {
-            definition: "Fragmented learning occurs when knowledge is acquired in isolated pieces without a coherent structure or mental model.",
+            definition: "A learning pattern in which knowledge is acquired as disconnected pieces, lacking a coherent structure or underlying mental model to integrate them.",
             image: "/images/glossary/fragmented-learning.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Learning",
