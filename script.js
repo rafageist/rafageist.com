@@ -1065,29 +1065,32 @@
             ]
         },
         "apis -> boundaries": {
-            definition: "APIs define the boundary where systems agree on how to interact.",
+            definition: "APIs define explicit boundaries between systems by specifying how they can interact, exchange data, and assume responsibilities without exposing internal implementation.",
             image: "/images/glossary/apis-boundaries.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/API",
                 "Wikipedia|https://en.wikipedia.org/wiki/Interface_(computing)"
             ]
         },
+
         "architecture -> structure": {
-            definition: "Architecture describes the structure that holds system decisions together.",
+            definition: "Architecture defines the structural organization of a system, capturing the key components, their relationships, and the decisions that constrain and shape them.",
             image: "/images/glossary/architecture-structure.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Software_architecture",
                 "Wikipedia|https://en.wikipedia.org/wiki/Structure"
             ]
         },
+
         "backend -> tradeoffs": {
-            definition: "Backend decisions involve tradeoffs in performance, reliability, and complexity.",
+            definition: "Backend design decisions require balancing trade-offs among performance, reliability, scalability, and system complexity.",
             image: "/images/glossary/backend-tradeoffs.webp",
             links: [
                 "Wikipedia|https://en.wikipedia.org/wiki/Front-end_and_back-end",
                 "Wikipedia|https://en.wikipedia.org/wiki/Trade-off"
             ]
         },
+
         "code -> choices": {
             definition: "Code reflects choices about behavior, readability, and tradeoffs.",
             image: "/images/glossary/code-choices.webp",
