@@ -126,15 +126,73 @@
 			<img src="https://avatars.githubusercontent.com/u/25892480?v=4&s=96" alt="Rafa Rodr&iacute;guez"
 				itemprop="image" class="header-avatar" loading="lazy" width="56" height="56">
 			<div class="header-text">
-				<div class="header-name" itemprop="name">Rafa Rodr&iacute;guez</div>
-				<div class="header-role" itemprop="jobTitle">Software Engineering Mentorship</div>
+				<div class="header-name" itemprop="name">Software Engineering Mentorship</div>
+				<div class="header-role" itemprop="jobTitle">by Rafa Rodr&iacute;guez</div>
 			</div>
 		</div>
 		<div class="header-social">
-			<nav class="header-nav header-links" aria-label="Primary">
-				<a href="#home">Home</a>
-				<a href="#background-title">About</a>
-				<a href="#contact">Contact</a>
+			<nav class="header-nav header-menu" aria-label="Primary">
+				<a class="nav-link" href="#home"><i class="nav-icon fas fa-home" aria-hidden="true"></i>Home</a>
+				<details class="nav-group">
+					<summary class="nav-link">Guidance</summary>
+					<div class="nav-dropdown" role="list">
+						<a href="#chat-title"><i class="nav-icon fas fa-comments" aria-hidden="true"></i>What guidance
+							looks like in practice</a>
+						<a href="#practice-title"><i class="nav-icon fas fa-calendar" aria-hidden="true"></i>Day after
+							day</a>
+						<a href="#ai-context-title"><i class="nav-icon fas fa-lightbulb"
+								aria-hidden="true"></i>Why guidance matters today</a>
+						<a href="#structure-title"><i class="nav-icon fas fa-sitemap" aria-hidden="true"></i>Structure is
+							not the same as information</a>
+					</div>
+				</details>
+				<details class="nav-group">
+					<summary class="nav-link">Foundations</summary>
+					<div class="nav-dropdown" role="list">
+						<a href="#engineering-foundations-title"><i class="nav-icon fas fa-layer-group"
+								aria-hidden="true"></i>What engineering really stands on</a>
+						<a href="#mental-model-title"><i class="nav-icon fas fa-cubes" aria-hidden="true"></i>How I think
+							about learning software</a>
+					</div>
+				</details>
+				<details class="nav-group">
+					<summary class="nav-link">Mentoring</summary>
+					<div class="nav-dropdown" role="list">
+						<a href="#use-case-title"><i class="nav-icon fas fa-project-diagram"
+								aria-hidden="true"></i>Mentoring as a shared process</a>
+						<a href="#sequence-title"><i class="nav-icon fas fa-route" aria-hidden="true"></i>What happens
+							during a mentoring session</a>
+						<a href="#process-title"><i class="nav-icon fas fa-handshake" aria-hidden="true"></i>How mentor
+							and mentee work together</a>
+					</div>
+				</details>
+				<details class="nav-group">
+					<summary class="nav-link">Who this is for</summary>
+					<div class="nav-dropdown" role="list">
+						<a href="#help"><i class="nav-icon fas fa-users" aria-hidden="true"></i>Who this space
+							welcomes</a>
+						<a href="#situations-title"><i class="nav-icon fas fa-list-ul" aria-hidden="true"></i>Common
+							situations I help with</a>
+						<a href="#catalog-title"><i class="nav-icon fas fa-book-open" aria-hidden="true"></i>Learning
+							situations people bring to me</a>
+						<a href="#fit-title"><i class="nav-icon fas fa-check-circle" aria-hidden="true"></i>When this
+							kind of guidance tends to help</a>
+					</div>
+				</details>
+				<details class="nav-group">
+					<summary class="nav-link">About</summary>
+					<div class="nav-dropdown" role="list">
+						<a href="#approach-title"><i class="nav-icon fas fa-compass" aria-hidden="true"></i>How I
+							approach learning software engineering</a>
+						<a href="#background-title"><i class="nav-icon fas fa-landmark"
+								aria-hidden="true"></i>Background and grounding</a>
+						<a href="#what-title"><i class="nav-icon fas fa-info-circle" aria-hidden="true"></i>What this is
+							(and what it is not)</a>
+						<a href="#alignment-title"><i class="nav-icon fas fa-arrow-right"
+								aria-hidden="true"></i>How this work moves forward</a>
+						<a href="#contact"><i class="nav-icon fas fa-envelope" aria-hidden="true"></i>Contact</a>
+					</div>
+				</details>
 			</nav>
 			<button type="button" class="map-toggle" id="map-toggle" aria-label="Menu" aria-controls="site-map"
 				aria-expanded="false" title="Menu">&#9776;</button>
@@ -142,12 +200,12 @@
 	</header>
 
 	<div class="map-backdrop" id="map-backdrop" aria-hidden="true"></div>
-	<aside class="map-sidebar" id="site-map" aria-hidden="true" aria-label="Map" inert>
+	<aside class="map-sidebar" id="site-map" aria-hidden="true" aria-label="Menu" inert>
 		<div class="map-sidebar-header">
 			<h3>Menu</h3>
-			<button type="button" class="map-close" id="map-close" aria-label="Close map">x</button>
+			<button type="button" class="map-close" id="map-close" aria-label="Close menu">x</button>
 		</div>
-		<nav class="map-sidebar-nav" aria-label="Site map">
+		<nav class="map-sidebar-nav" aria-label="Site menu">
 			<div class="map-group">
 				<div class="map-group-title">Primary</div>
 				<button type="button" class="map-link open-survey-trigger"><i class="map-icon fas fa-play"
@@ -198,20 +256,22 @@
 		<div id="slideshow" aria-hidden="true"
 			data-slides="/slides/slide-01.webp,/slides/slide-02.webp,/slides/slide-03.webp">
 			<img src="/slides/slide-01.webp" decoding="async" fetchpriority="high" class="active" alt="">
+			<div class="header-tagline">&gt; Forming future software engineers _</div>
 		</div>
 		<div class="hero-overlay">
-			<div class="hero-chalk" id="hero-chalk-text" aria-hidden="false">Forming future software engineers</div>
 			<div class="hero-actions">
 				<button type="button" class="survey-open inline open-survey-trigger survey-open-hero"
-					id="open-survey-hero">Start
+					id="open-survey-hero"><i class="fas fa-play" aria-hidden="true"></i>Start
 					here</button>
 				<br />
 			</div>
 		</div>
+		
 	</section>
 
 	<!-- Main content -->
 	<main class="page-shell" itemprop="mainContentOfPage">
+		
 		<div class="hero-cta-mobile">
 			<button type="button" class="survey-open inline open-survey-trigger" id="open-survey-hero-mobile">Start
 				here</button>

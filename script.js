@@ -4,18 +4,9 @@
     let images = slideshow ? Array.from(slideshow.querySelectorAll("img")) : [];
     let index = 0;
     let slideshowTimer = null;
-    const heroSlideText = document.getElementById("hero-slide-text");
-    const heroChalkText = document.getElementById("hero-chalk-text");
-    const heroSection = document.querySelector(".hero");
     const welcomeAudio = document.getElementById("welcome-audio");
     const audioToggle = document.getElementById("audio-toggle");
     const audioLabel = audioToggle ? audioToggle.querySelector(".audio-label") : null;
-
-    function applyHeroSlide() {
-        if (heroSection) heroSection.classList.remove("hero-slide-00");
-        if (heroSlideText) heroSlideText.setAttribute("aria-hidden", "false");
-        if (heroChalkText) heroChalkText.setAttribute("aria-hidden", "false");
-    }
 
     function refreshSlides() {
         images = slideshow ? Array.from(slideshow.querySelectorAll("img")) : [];
@@ -112,7 +103,6 @@
         index = nextIndex;
     }
 
-    applyHeroSlide();
     applyResponsiveSlideSources();
 
     function startSlideshow() {
@@ -291,6 +281,7 @@
     const mapSidebar = document.getElementById("site-map");
     const mapBackdrop = document.getElementById("map-backdrop");
     const mapClose = document.getElementById("map-close");
+    const mapMediaQuery = window.matchMedia("(max-width: 1100px) and (orientation: portrait)");
     let mapLastFocus = null;
 
     function toggleMap(show) {
@@ -316,13 +307,22 @@
     }
 
     if (mapToggle) {
-        mapToggle.addEventListener("click", () => toggleMap(true));
+        mapToggle.addEventListener("click", () => {
+            if (mapMediaQuery && !mapMediaQuery.matches) return;
+            toggleMap(true);
+        });
     }
     if (mapClose) {
         mapClose.addEventListener("click", () => toggleMap(false));
     }
     if (mapBackdrop) {
         mapBackdrop.addEventListener("click", () => toggleMap(false));
+    }
+
+    if (mapMediaQuery) {
+        mapMediaQuery.addEventListener("change", event => {
+            if (!event.matches) toggleMap(false);
+        });
     }
 
     if (mapSidebar) {
@@ -358,6 +358,38 @@
             first.focus();
         }
     });
+
+    // Desktop nav dropdowns: keep only one open at a time.
+    const navGroups = document.querySelectorAll(".nav-group");
+    if (navGroups.length) {
+        const closeOtherNavGroups = (current) => {
+            navGroups.forEach(group => {
+                if (group !== current && group.hasAttribute("open")) {
+                    group.removeAttribute("open");
+                }
+            });
+        };
+
+        navGroups.forEach(group => {
+            group.addEventListener("toggle", () => {
+                if (group.open) {
+                    closeOtherNavGroups(group);
+                }
+            });
+            group.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", () => {
+                    group.removeAttribute("open");
+                });
+            });
+        });
+
+        document.addEventListener("click", event => {
+            const target = event.target;
+            if (!(target instanceof Element)) return;
+            if (target.closest(".nav-group")) return;
+            closeOtherNavGroups(null);
+        });
+    }
 
     // Survey modal controls
     const openSurveyTriggers = document.querySelectorAll(".open-survey-trigger");
