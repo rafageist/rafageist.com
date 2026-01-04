@@ -391,6 +391,49 @@
         });
     }
 
+    // About modal controls
+    const aboutTrigger = document.getElementById("about-trigger");
+    const aboutModal = document.getElementById("about-modal");
+    const aboutBackdrop = document.getElementById("about-backdrop");
+    const aboutClose = document.getElementById("about-close");
+    let aboutLastFocus = null;
+
+    function toggleAbout(show) {
+        if (!aboutModal) return;
+        aboutModal.classList.toggle("show", show);
+        aboutModal.setAttribute("aria-hidden", show ? "false" : "true");
+        if (show) {
+            aboutModal.removeAttribute("inert");
+        } else {
+            aboutModal.setAttribute("inert", "");
+        }
+
+        if (show) {
+            aboutLastFocus = document.activeElement;
+            const firstFocus = aboutModal.querySelector("button, a, [tabindex]:not([tabindex=\"-1\"])");
+            if (firstFocus) firstFocus.focus();
+        } else if (aboutLastFocus) {
+            aboutLastFocus.focus();
+        }
+    }
+
+    if (aboutTrigger) {
+        aboutTrigger.addEventListener("click", event => {
+            event.preventDefault();
+            if (mapSidebar && mapSidebar.classList.contains("open")) {
+                toggleMap(false);
+            }
+            toggleAbout(true);
+        });
+    }
+    if (aboutBackdrop) aboutBackdrop.addEventListener("click", () => toggleAbout(false));
+    if (aboutClose) aboutClose.addEventListener("click", () => toggleAbout(false));
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && aboutModal && aboutModal.classList.contains("show")) {
+            toggleAbout(false);
+        }
+    });
+
     // Survey modal controls
     const openSurveyTriggers = document.querySelectorAll(".open-survey-trigger");
     const totalWizardSteps = 4;
@@ -1296,13 +1339,15 @@
     };
 
     // Make keyword strip terms clickable glossary entries.
-    const keywordTerms = document.querySelectorAll(".keyword-strip span");
+    const keywordTerms = document.querySelectorAll(".keyword-strip a");
     keywordTerms.forEach(termEl => {
         const term = termEl.textContent.trim();
         const entry = keywordGlossary[term];
         termEl.classList.add("glossary-term");
-        termEl.setAttribute("role", "button");
-        termEl.setAttribute("tabindex", "0");
+        if (termEl.tagName !== "A") {
+            termEl.setAttribute("role", "button");
+            termEl.setAttribute("tabindex", "0");
+        }
         termEl.dataset.term = term;
         if (entry) {
             termEl.dataset.definition = entry.definition;
