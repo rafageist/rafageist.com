@@ -391,11 +391,79 @@
         });
     }
 
+    function resetModalPosition(modal) {
+        if (!modal) return;
+        modal.style.removeProperty("left");
+        modal.style.removeProperty("top");
+        modal.style.removeProperty("margin");
+        modal.style.removeProperty("position");
+        modal.style.removeProperty("transform");
+    }
+
+    function setupDraggableModal(header, modal) {
+        if (!header || !modal) return;
+        let isDragging = false;
+        let startX = 0;
+        let startY = 0;
+        let startLeft = 0;
+        let startTop = 0;
+        let modalRect = null;
+
+        const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+        const onPointerMove = (event) => {
+            if (!isDragging || !modalRect) return;
+            const nextLeft = startLeft + (event.clientX - startX);
+            const nextTop = startTop + (event.clientY - startY);
+            const maxLeft = Math.max(0, window.innerWidth - modalRect.width);
+            const maxTop = Math.max(0, window.innerHeight - modalRect.height);
+            modal.style.left = `${clamp(nextLeft, 0, maxLeft)}px`;
+            modal.style.top = `${clamp(nextTop, 0, maxTop)}px`;
+        };
+
+        const endDrag = (event) => {
+            if (!isDragging) return;
+            isDragging = false;
+            header.classList.remove("modal-drag-handle--dragging");
+            if (event && typeof event.pointerId === "number" && header.hasPointerCapture(event.pointerId)) {
+                header.releasePointerCapture(event.pointerId);
+            }
+        };
+
+        header.addEventListener("pointerdown", (event) => {
+            if (event.pointerType === "mouse" && event.button !== 0) return;
+            if (event.target && event.target.closest("button, a, input, textarea, select, label")) return;
+            event.preventDefault();
+            modalRect = modal.getBoundingClientRect();
+            modal.style.position = "absolute";
+            modal.style.left = `${modalRect.left}px`;
+            modal.style.top = `${modalRect.top}px`;
+            modal.style.margin = "0";
+            modal.style.transform = "none";
+            startX = event.clientX;
+            startY = event.clientY;
+            startLeft = modalRect.left;
+            startTop = modalRect.top;
+            isDragging = true;
+            header.classList.add("modal-drag-handle--dragging");
+            header.setPointerCapture(event.pointerId);
+        });
+
+        header.addEventListener("pointermove", onPointerMove);
+        header.addEventListener("pointerup", endDrag);
+        header.addEventListener("pointercancel", endDrag);
+    }
+
+    setupDraggableModal(document.querySelector(".glossary-header"), document.querySelector(".glossary-content"));
+    setupDraggableModal(document.querySelector(".about-header"), document.querySelector(".about-content"));
+    setupDraggableModal(document.querySelector(".survey-modal-header"), document.querySelector(".survey-modal-content"));
+
     // About modal controls
     const aboutTrigger = document.getElementById("about-trigger");
     const aboutModal = document.getElementById("about-modal");
     const aboutBackdrop = document.getElementById("about-backdrop");
     const aboutClose = document.getElementById("about-close");
+    const aboutContent = document.querySelector(".about-content");
     let aboutLastFocus = null;
 
     function toggleAbout(show) {
@@ -412,8 +480,11 @@
             aboutLastFocus = document.activeElement;
             const firstFocus = aboutModal.querySelector("button, a, [tabindex]:not([tabindex=\"-1\"])");
             if (firstFocus) firstFocus.focus();
-        } else if (aboutLastFocus) {
-            aboutLastFocus.focus();
+        } else {
+            resetModalPosition(aboutContent);
+            if (aboutLastFocus) {
+                aboutLastFocus.focus();
+            }
         }
     }
 
@@ -457,6 +528,7 @@
     let surveyForm = null;
     let surveyIntro = null;
     let wizardProgress = null;
+    const surveyModalContent = document.querySelector(".survey-modal-content");
 
     function toggleSurvey(show) {
         if (!surveyModal) return;
@@ -466,6 +538,7 @@
             surveyModal.removeAttribute("inert");
         } else {
             surveyModal.setAttribute("inert", "");
+            resetModalPosition(surveyModalContent);
         }
         document.body.classList.toggle("nav-open", show);
     }
@@ -678,6 +751,7 @@
     const glossarySearchAcm = document.getElementById("glossary-search-acm");
     const glossaryImage = document.getElementById("glossary-image");
     const glossaryPanel = document.querySelector(".glossary-panel");
+    const glossaryContent = document.querySelector(".glossary-content");
 
     const keywordGlossary = {
         "ai": {
@@ -1411,6 +1485,7 @@
         glossaryModal.classList.remove("show");
         glossaryModal.setAttribute("aria-hidden", "true");
         glossaryModal.setAttribute("inert", "");
+        resetModalPosition(glossaryContent);
     }
 
     function openGlossary(termEl) {

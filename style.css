@@ -1557,6 +1557,18 @@ footer[id] {
     color: #fff;
 }
 
+.glossary-header,
+.about-header,
+.survey-modal-header {
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+}
+
+.modal-drag-handle--dragging {
+    cursor: grabbing;
+}
+
 .glossary-header h3 {
     margin: 0;
     font-size: 1.1rem;
