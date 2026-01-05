@@ -890,6 +890,14 @@
                 "IBM|https://www.ibm.com/topics/ide"
             ]
         },
+        "information": {
+            definition: "Information is data interpreted in context to convey meaning.",
+            image: "/images/glossary/information.webp",
+            links: [
+                "Wikipedia|https://en.wikipedia.org/wiki/Information",
+                "Britannica|https://www.britannica.com/topic/information"
+            ]
+        },
         "intelligence": {
             definition: "The ability to learn, reason, and solve problems.",
             image: "/images/glossary/intelligence.webp",
