@@ -1701,6 +1701,7 @@ footer[id] {
     gap: 1rem;
     align-items: flex-start;
     padding: 1rem;
+    overflow: auto;
 }
 
 .about-media {
@@ -1752,7 +1753,7 @@ footer[id] {
 
 .about-body {
     padding: 0;
-    overflow-y: auto;
+    overflow: visible;
     flex: 1;
     min-height: 0;
     min-width: 0;
