@@ -1412,6 +1412,78 @@
         }
     };
 
+    const glossaryTermList = Object.keys(keywordGlossary)
+        .map(term => term.trim())
+        .filter(term => term && !term.includes("->"));
+
+    const glossaryTermMap = glossaryTermList.reduce((acc, term) => {
+        acc[term.toLowerCase()] = term;
+        return acc;
+    }, {});
+
+    function escapeHtml(value) {
+        return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/\"/g, "&quot;")
+            .replace(/'/g, "&#39;");
+    }
+
+    function escapeRegExp(value) {
+        return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    }
+
+    function buildGlossaryRegex(terms) {
+        const sorted = terms.slice().sort((a, b) => b.length - a.length);
+        const pattern = sorted
+            .map(term => escapeRegExp(term).replace(/\s+/g, "\\s+"))
+            .join("|");
+        return pattern ? new RegExp(`\\b(${pattern})\\b`, "gi") : null;
+    }
+
+    function linkifyGlossaryDefinition(text, currentTerm) {
+        const definitionText = text || "";
+        if (!definitionText) return "";
+        const current = (currentTerm || "").trim().toLowerCase();
+        const linkableTerms = glossaryTermList.filter(term => term.toLowerCase() !== current);
+        if (!linkableTerms.length) return escapeHtml(definitionText);
+        const termRegex = buildGlossaryRegex(linkableTerms);
+        if (!termRegex) return escapeHtml(definitionText);
+
+        let result = "";
+        let lastIndex = 0;
+        let match;
+        while ((match = termRegex.exec(definitionText)) !== null) {
+            const start = match.index;
+            const end = start + match[0].length;
+            result += escapeHtml(definitionText.slice(lastIndex, start));
+            const normalized = match[0].toLowerCase();
+            const canonical = glossaryTermMap[normalized] || match[0];
+            result += `<a href="#" class="glossary-term" data-term="${escapeHtml(canonical)}">${escapeHtml(match[0])}</a>`;
+            lastIndex = end;
+        }
+        result += escapeHtml(definitionText.slice(lastIndex));
+        return result;
+    }
+
+    function bindGlossaryTermHandlers(container) {
+        if (!container) return;
+        const terms = container.querySelectorAll(".glossary-term");
+        terms.forEach(termEl => {
+            termEl.addEventListener("click", (event) => {
+                event.preventDefault();
+                openGlossary(termEl);
+            });
+            termEl.addEventListener("keydown", (event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    openGlossary(termEl);
+                }
+            });
+        });
+    }
+
     // Make keyword strip terms clickable glossary entries.
     const keywordTerms = document.querySelectorAll(".keyword-strip a");
     keywordTerms.forEach(termEl => {
@@ -1504,7 +1576,10 @@
         setGlossaryImage(term, termEl, lookup);
 
         if (glossaryTitle) glossaryTitle.textContent = term;
-        if (glossaryDefinition) glossaryDefinition.textContent = definition;
+        if (glossaryDefinition) {
+            glossaryDefinition.innerHTML = linkifyGlossaryDefinition(definition, term);
+            bindGlossaryTermHandlers(glossaryDefinition);
+        }
 
         const termQuery = encodeURIComponent(term);
         if (glossarySearchGoogle) glossarySearchGoogle.href = `https://www.google.com/search?q=${termQuery}`;
