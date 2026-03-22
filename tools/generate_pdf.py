@@ -82,7 +82,7 @@ def generate_combined_pdf(
     title: str,
     version: str,
     pdf_engine: str = "auto",
-    margin: str = "2cm"
+    margin: str = "1.5cm"
 ) -> int:
     """Generate a single PDF from all markdown files."""
     if not check_pandoc():
