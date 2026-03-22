@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Myth Of Less Code Is Better In Programming Languages | rafageist.com</title>
+    <meta name="description" content="The Myth Of Less Code Is Better In Programming Languages">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/articles/article.css">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/25892480?v=4" type="image/x-icon">
+    <link rel="canonical" href="https://rafageist.com/articles/2024/000-The-myth-of-less-code-is-better-in-programming-languages.html">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-left">
+            <img src="https://avatars.githubusercontent.com/u/25892480?v=4&s=96" alt="Rafa Rodr&iacute;guez"
+                class="header-avatar" loading="lazy" width="56" height="56">
+            <div class="header-text">
+                <div class="header-name"><a href="/">Software Engineering Mentorship</a></div>
+                <div class="header-role">by <a href="/#about-trigger" class="header-name-link">Rafa Rodr&iacute;guez</a></div>
+            </div>
+        </div>
+        <div class="header-social">
+            <nav class="header-nav header-menu" aria-label="Primary">
+                <a class="nav-link" href="/"><i class="nav-icon fas fa-home"></i>Home</a>
+                <a class="nav-link" href="/articles/"><i class="nav-icon fas fa-book"></i>Articles</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="article-main">
+        <article class="article">
+            <div class="article-hero">
+                <img src="/articles/images/8f7a059c31f3.jpg" alt="">
+            </div>
+            <div class="article-meta">
+                <span class="article-date">2024.000</span>
+                <div class="article-tags">
+                    
+                </div>
+            </div>
+            <h1 class="article-title">The Myth Of Less Code Is Better In Programming Languages</h1>
+            <div class="article-content">
+                <p>In the world of programming, many developers compare Python to other languages, often highlighting the advantage that Python allows you to &quot;write less code.&quot; While this may sound appealing, it&#x27;s essential to understand that writing less code does not inherently make a language better or easier to read. And they end up saying, this language is good for beginners, not knowing that every language is good for starting out.</p>
+<p>First, let&#x27;s look at the language which in my opinion is the best language for beginners: BASIC, the Beginner&#x27;s All-Purpose Symbolic Instruction Code. This is usually expected to focus on the programming logic and not worry about resources and other issues.</p>
+<p>Important: I intentionally do not highlight the example codes :)</p>
+<pre><code>&#x27; Program to add two numbers in BASIC
+
+INPUT &quot;Enter the first number: &quot;, num1
+
+INPUT &quot;Enter the second number: &quot;, num2
+
+sum = num1 + num2
+
+PRINT &quot;The sum of &quot;; num1; &quot; and &quot;; num2; &quot; is &quot;; sum</code></pre>
+<p>What do you think? Is it a lot of code? Is it difficult to understand? Wait! Let&#x27;s cause a little headache. COBOL!, come here:</p>
+<pre><code>IDENTIFICATION DIVISION.
+PROGRAM-ID. ADD-NUMBERS.
+
+DATA DIVISION.
+WORKING-STORAGE SECTION.
+	01 NUM1       PIC 9(4).
+	01 NUM2       PIC 9(4).
+	01 SUM        PIC 9(5).
+
+PROCEDURE DIVISION.
+   DISPLAY &quot;Enter the first number: &quot; WITH NO ADVANCING.
+   ACCEPT NUM1.
+
+   DISPLAY &quot;Enter the second number: &quot; WITH NO ADVANCING.
+   ACCEPT NUM2.
+
+   COMPUTE SUM = NUM1 + NUM2.
+
+   DISPLAY &quot;The sum of &quot; NUM1 &quot; and &quot; NUM2 &quot; is &quot; SUM.
+
+   STOP RUN.</code></pre>
+<p>Don&#x27;t be scared. Let&#x27;s see then in the much acclaimed Python:</p>
+<pre><code># Program to add two numbers in Python
+
+num1 = int(input(&quot;Enter the first number: &quot;))
+
+num2 = int(input(&quot;Enter the second number: &quot;))
+
+sum = num1 + num2
+
+print(f&quot;The sum of {num1} and {num2} is {sum}&quot;)</code></pre>
+<p>As you can see, the number of lines of code is not a decision variable in this case. What follows is pure C code, not C++, and maybe someone will get dizzy when seeing a main function:</p>
+<pre><code>#include &lt;stdio.h&gt;
+
+// Program to add two numbers in C
+int main() {
+    int num1, num2, sum;
+
+    printf(&quot;Enter the first number: &quot;);
+    scanf(&quot;%d&quot;, &amp;num1);
+
+    printf(&quot;Enter the second number: &quot;);
+    scanf(&quot;%d&quot;, &amp;num2);
+
+    sum = num1 + num2;
+
+    printf(&quot;The sum of %d and %d is %d\n&quot;, num1, num2, sum);
+
+    return 0;
+}</code></pre>
+<h2>Less code or black box?</h2>
+<p>Is C harder to read? Or are we reading code that is more verbose and less black box? So let&#x27;s turn that into a black box. With this library we can simplify data entry and reduce lines:</p>
+<p><strong>custom_io.h</strong></p>
+<pre><code>#ifndef CUSTOM_IO_H
+#define CUSTOM_IO_H
+
+void input(const char* prompt, const char* format, void* var);
+void print(const char* format, ...);
+
+#endif // CUSTOM_IO_H</code></pre>
+<p><strong>custom_io.c</strong></p>
+<pre><code>#include &quot;custom_io.h&quot;
+#include &lt;stdarg.h&gt;
+#include &lt;stdio.h&gt;
+
+void input(const char* prompt, const char* format, void* var) {
+    printf(&quot;%s&quot;, prompt);
+    scanf(format, var);
+}
+
+void print(const char* format, ...) {
+    va_list args;
+    va_start(args, format);
+    vprintf(format, args);
+    va_end(args);
+}</code></pre>
+<p>The first transformation of our program would be like this:</p>
+<pre><code>#include &quot;custom_io.h&quot;
+
+int main() {
+    int num1, num2, sum;
+
+    input(&quot;Enter the first number: &quot;, &quot;%d&quot;, &amp;num1);
+    input(&quot;Enter the second number: &quot;, &quot;%d&quot;, &amp;num2);
+
+    sum = num1 + num2;
+
+    print(&quot;The sum of %d and %d is %d\n&quot;, num1, num2, sum);
+
+    return 0;
+}</code></pre>
+<p>If you want more brevity, you can get it:</p>
+<pre><code>// custom_io.h
+
+int input_int(const char* prompt);
+
+// custom_io.c
+
+int input_int(const char* prompt) {
+    int value;
+    input(prompt, &quot;%d&quot;, &amp;value); // Usa la función input interna
+    return value;
+}</code></pre>
+<p>And then I got almost the same clarity as Python and BASIC:</p>
+<pre><code>#include &quot;custom_io.h&quot;
+
+int main() {
+    int num1 = input_int(&quot;Enter the first number: &quot;);
+    int num2 = input_int(&quot;Enter the second number: &quot;);
+
+    int sum = num1 + num2;
+
+    print(&quot;The sum of %d and %d is %d\n&quot;, num1, num2, sum);
+
+    return 0;
+}</code></pre>
+<h2>We reduce, but we can also amplify</h2>
+<p>In the end it all ends up being this in some way, even more so when it comes to machine code. Let&#x27;s use NASM (Netwide Assembler) on Linux. Now you&#x27;ll get dizzy and tired:</p>
+<pre><code>section .data
+    prompt1 db &#x27;Enter the first number: &#x27;, 0
+    prompt2 db &#x27;Enter the second number: &#x27;, 0
+    result_msg db &#x27;The sum of &#x27;, 0
+    newline db 0xA, 0
+    num1 db 0         ; Variable to store the first number (in ASCII)
+    num2 db 0         ; Variable to store the second number (in ASCII)
+    sum_msg db &#x27; and &#x27;, 0
+    sum_result db &#x27; is &#x27;, 0
+
+section .bss
+    sum resb 4        ; Variable to store the sum (in ASCII format)
+
+section .text
+    global _start
+
+_start:
+    ; Prompt the user for the first number
+    mov eax, 4            ; syscall number 4: sys_write
+    mov ebx, 1            ; file descriptor 1: stdout
+    mov ecx, prompt1      ; address of the message
+    mov edx, 22           ; length of the message
+    int 0x80              ; call the system
+
+    ; Read the first number
+    mov eax, 3            ; syscall number 3: sys_read
+    mov ebx, 0            ; file descriptor 0: stdin
+    mov ecx, num1         ; address to store input
+    mov edx, 1            ; length of input
+    int 0x80              ; call the system
+
+    ; Prompt the user for the second number
+    mov eax, 4            ; sys_write
+    mov ebx, 1            ; stdout
+    mov ecx, prompt2      ; address of the message
+    mov edx, 23           ; length of the message
+    int 0x80              ; call the system
+
+    ; Read the second number
+    mov eax, 3            ; sys_read
+    mov ebx, 0            ; stdin
+    mov ecx, num2         ; address to store input
+    mov edx, 1            ; length of input
+    int 0x80              ; call the system
+
+    ; Convert the ASCII characters to integers by subtracting &#x27;0&#x27;
+    sub byte [num1], &#x27;0&#x27;
+    sub byte [num2], &#x27;0&#x27;
+
+    ; Add the two numbers
+    movzx eax, byte [num1]  ; load num1 into eax
+    add eax, [num2]         ; add num2
+
+    ; Convert the result back to ASCII
+    add eax, &#x27;0&#x27;
+    mov [sum], al
+
+    ; Display the result
+    mov eax, 4              ; syscall sys_write
+    mov ebx, 1              ; stdout
+    mov ecx, result_msg     ; message
+    mov edx, 12             ; length of the message
+    int 0x80                ; call the system
+
+    mov eax, 4              ; sys_write to display the first number
+    mov ebx, 1
+    mov ecx, num1           ; the first number converted
+    mov edx, 1              ; length of the number
+    int 0x80
+
+    mov eax, 4              ; display &quot; and &quot;
+    mov ebx, 1
+    mov ecx, sum_msg
+    mov edx, 5
+    int 0x80
+
+    mov eax, 4              ; sys_write to display the second number
+    mov ebx, 1
+    mov ecx, num2           ; the second number converted
+    mov edx, 1
+    int 0x80
+
+    mov eax, 4              ; display &quot; is &quot;
+    mov ebx, 1
+    mov ecx, sum_result
+    mov edx, 4
+    int 0x80
+
+    mov eax, 4              ; sys_write to display the sum
+    mov ebx, 1
+    mov ecx, sum            ; result
+    mov edx, 1              ; length of the result
+    int 0x80
+
+    mov eax, 4              ; new line
+    mov ebx, 1
+    mov ecx, newline
+    mov edx, 1
+    int 0x80
+
+    ; Exit the program
+    mov eax, 1              ; syscall number 1: sys_exit
+    xor ebx, ebx            ; exit code 0
+    int 0x80</code></pre>
+<p>So you end up asking yourself the question that answers your question.</p>
+<h2>Short syntax or different purpose?</h2>
+<p>One common point of comparison is the use of semicolons to terminate statements. Languages like C++ require a semicolon at the end of each statement, while Python does not. At first glance, it might seem like Python is simpler because it has fewer syntactical requirements.</p>
+<p>However, the absence of semicolons doesn&#x27;t necessarily make Python objectively easier to read. In both cases, the programmer needs to be aware of where a statement ends—whether it&#x27;s marked by a semicolon or a newline character. The cognitive load is similar; it&#x27;s just a different convention.</p>
+<p>The idea that writing less code is always better sounds appealing but can sometimes be a sign of laziness. If the syntax is sufficiently descriptive, the length of the code should not matter.</p>
+<p>Consider reading books or poems: a concise news summary might be ideal for those who want to quickly get the gist of current events, but a novel requires detailed descriptions to immerse the reader in the story. Similarly, in programming, clarity and descriptiveness are often more important than brevity.</p>
+<p>There&#x27;s a misconception, especially among beginner programmers, that writing less, using indentation, and avoiding semicolons is universally better. This belief ignores the complexity and richness that detailed and descriptive code can offer.</p>
+<p>Moreover, Python is not the only language that doesn&#x27;t require semicolons. Several other languages, such as Ruby and Swift, also omit this requirement, proving that the absence of semicolons is not a unique advantage of Python but rather a design choice present in various programming languages.</p>
+<p>While Python is more concise and its syntax is simpler, the C version may appear more explicit and, for some, easier to understand in terms of how resources are managed and data is manipulated. C can offer a more detailed view of low-level control, which in certain contexts makes the code easier to follow and debug.</p>
+<p>The example can help illustrate how brevity in code does not always equate to clarity or better maintainability, and how the greater explicitness in C might be preferable in some cases.</p>
+<h2>Hello, World!</h2>
+<p>In the world of programming, brevity in code is often celebrated, but as we&#x27;ve seen, it doesn&#x27;t always equate to better readability or maintainability. The choice of language and the approach to solving a problem can significantly impact how understandable and manageable the code is in the long run. Ultimately, the cleanest code is often the one you don&#x27;t have to write—where simplicity and thoughtful design eliminate the need for unnecessary complexity.</p>
+<p>Every language has a purpose. So many of these claims that language A is better understood than language B end up being useless. You can&#x27;t compare English to American Sign Language. Furthermore, sometimes you want brevity and other times you want detail.</p>
+<p>And the first code many people teach beginners, as a flag of simplicity and clarity, is a Hello World example. In Python:</p>
+<pre><code>print(&quot;Hello, World!&quot;)</code></pre>
+<p>Ok. So the beginner understands what the program is trying to do.</p>
+<p>But as I told you before, every language has its purpose, now I will try to show the best example of Hello World so that the beginner understands one of the main concepts of PHP, and you tell me if you can reduce the number of lines of this valid PHP code:</p>
+<pre><code>Hello, World!</code></pre>
+<p>I hope these examples have helped you understand the delicate balance between code length and clarity, and the relativity of what is best for a given purpose.</p>
+<p>Thanks for reading and happy coding!</p>
+            </div>
+            <footer class="article-footer">
+                <a href="/articles/2024/" class="back-link">← Back to 2024 Articles</a>
+            </footer>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-card">
+                <h3>Contact</h3>
+                <p class="footer-contact"><i class="fas fa-envelope"></i><a href="mailto:rafageist@divengine.com">rafageist@divengine.com</a></p>
+            </div>
+            <div class="footer-card">
+                <h3>Social</h3>
+                <ul class="social-links">
+                    <li><a href="https://x.com/rafageist" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://github.com/rafageist" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://linkedin.com/in/rafageist" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

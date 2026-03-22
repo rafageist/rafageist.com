@@ -1,0 +1,80 @@
+name: Generate Articles
+
+on:
+  workflow_dispatch:
+    inputs:
+      commit_message:
+        description: 'Commit message (optional)'
+        required: false
+        default: 'Article update'
+        type: string
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run article generator
+        run: python tools/generate-articles.py
+
+      - name: Configure git
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+
+      - name: Create branch
+        id: branch
+        run: |
+          TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+          BRANCH_NAME="articles-update-$TIMESTAMP"
+          echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          git checkout -b $BRANCH_NAME
+
+      - name: Commit changes
+        env:
+          COMMIT_MSG: ${{ inputs.commit_message }}
+        run: |
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            git commit -m "${COMMIT_MSG:-Article update}: $(date +'%Y-%m-%d')"
+          fi
+
+      - name: Push changes
+        if: env.HAS_CHANGES != 'false'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ steps.branch.outputs.branch_name }}
+          force_with_lease: true
+
+      - name: Create Pull Request
+        if: env.HAS_CHANGES != 'false'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          title: "Articles update: $(date +'%Y-%m-%d')"
+          body: |
+            Auto-generated PR with article updates.
+
+            Triggered by GitHub Action.
+          base: main
+          head: ${{ steps.branch.outputs.branch_name }}
+          delete-branch: true
+
+      - name: Show result
+        if: env.HAS_CHANGES == 'false'
+        run: echo "No articles with #published tag found. No changes made."
