@@ -22,10 +22,33 @@ WIKI_REPO = "https://github.com/rafageist/blog-reflections.wiki.git"
 WIKI_DIR = Path("_wiki_clone")
 ARTICLES_DIR = Path("articles")
 IMAGES_DIR = ARTICLES_DIR / "images"
-TEMPLATE_DIR = Path("templates")
+PARTS_DIR = Path("parts")
 MARKDOWN_EXT = ".md"
 
 PUBLISHED_TAG = "#published"
+
+HEADER_PART = None
+FOOTER_PART = None
+
+
+def load_parts():
+    """Load header and footer parts from the parts directory."""
+    global HEADER_PART, FOOTER_PART
+    
+    header_path = PARTS_DIR / "header.html"
+    footer_path = PARTS_DIR / "footer.html"
+    
+    if header_path.exists():
+        HEADER_PART = header_path.read_text(encoding="utf-8")
+    else:
+        HEADER_PART = ""
+        print(f"Warning: {header_path} not found")
+    
+    if footer_path.exists():
+        FOOTER_PART = footer_path.read_text(encoding="utf-8")
+    else:
+        FOOTER_PART = ""
+        print(f"Warning: {footer_path} not found")
 
 
 def run_cmd(cmd, cwd=None):
@@ -936,23 +959,7 @@ def generate_article_html(article_path, year, url_slug, title, number, tags, ima
     <link rel="canonical" href="https://rafageist.com{article_url}">
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-left">
-            <img src="https://avatars.githubusercontent.com/u/25892480?v=4&s=96" alt="Rafa Rodr&iacute;guez"
-                class="header-avatar" loading="lazy" width="56" height="56">
-            <div class="header-text">
-                <div class="header-name"><a href="/">Software Engineering Mentorship</a></div>
-                <div class="header-role">by <a href="/#about-trigger" class="header-name-link">Rafa Rodr&iacute;guez</a></div>
-            </div>
-        </div>
-        <div class="header-social">
-            <nav class="header-nav header-menu" aria-label="Primary">
-                <a class="nav-link" href="/"><i class="nav-icon fas fa-home"></i>Home</a>
-                <a class="nav-link" href="/articles/"><i class="nav-icon fas fa-book"></i>Articles</a>
-            </nav>
-        </div>
-    </header>
-
+{HEADER_PART}
     <main class="article-main">
         <article class="article">
             <div class="article-hero">
@@ -973,23 +980,7 @@ def generate_article_html(article_path, year, url_slug, title, number, tags, ima
             </footer>
         </article>
     </main>
-
-    <footer class="footer">
-        <div class="footer-grid">
-            <div class="footer-card">
-                <h3>Contact</h3>
-                <p class="footer-contact"><i class="fas fa-envelope"></i><a href="mailto:rafageist@divengine.com">rafageist@divengine.com</a></p>
-            </div>
-            <div class="footer-card">
-                <h3>Social</h3>
-                <ul class="social-links">
-                    <li><a href="https://x.com/rafageist" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="https://github.com/rafageist" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
-                    <li><a href="https://linkedin.com/in/rafageist" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+{FOOTER_PART}
 </body>
 </html>"""
     
@@ -1026,23 +1017,7 @@ def generate_years_index_html(years_data):
     <meta property="og:type" content="website">
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-left">
-            <img src="https://avatars.githubusercontent.com/u/25892480?v=4&s=96" alt="Rafa Rodr&iacute;guez"
-                class="header-avatar" loading="lazy" width="56" height="56">
-            <div class="header-text">
-                <div class="header-name"><a href="/">Software Engineering Mentorship</a></div>
-                <div class="header-role">by <a href="/#about-trigger" class="header-name-link">Rafa Rodr&iacute;guez</a></div>
-            </div>
-        </div>
-        <div class="header-social">
-            <nav class="header-nav header-menu" aria-label="Primary">
-                <a class="nav-link" href="/"><i class="nav-icon fas fa-home"></i>Home</a>
-                <a class="nav-link nav-link-active" href="/articles/"><i class="nav-icon fas fa-book"></i>Articles</a>
-            </nav>
-        </div>
-    </header>
-
+{HEADER_PART}
     <main class="articles-main">
         <div class="articles-header">
             <h1>Articles</h1>
@@ -1052,23 +1027,7 @@ def generate_years_index_html(years_data):
             {''.join(years_html)}
         </div>
     </main>
-
-    <footer class="footer">
-        <div class="footer-grid">
-            <div class="footer-card">
-                <h3>Contact</h3>
-                <p class="footer-contact"><i class="fas fa-envelope"></i><a href="mailto:rafageist@divengine.com">rafageist@divengine.com</a></p>
-            </div>
-            <div class="footer-card">
-                <h3>Social</h3>
-                <ul class="social-links">
-                    <li><a href="https://x.com/rafageist" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="https://github.com/rafageist" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
-                    <li><a href="https://linkedin.com/in/rafageist" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+{FOOTER_PART}
 </body>
 </html>"""
     
@@ -1115,23 +1074,7 @@ def generate_year_index_html(year, articles_data):
     <meta property="og:type" content="website">
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-left">
-            <img src="https://avatars.githubusercontent.com/u/25892480?v=4&s=96" alt="Rafa Rodr&iacute;guez"
-                class="header-avatar" loading="lazy" width="56" height="56">
-            <div class="header-text">
-                <div class="header-name"><a href="/">Software Engineering Mentorship</a></div>
-                <div class="header-role">by <a href="/#about-trigger" class="header-name-link">Rafa Rodr&iacute;guez</a></div>
-            </div>
-        </div>
-        <div class="header-social">
-            <nav class="header-nav header-menu" aria-label="Primary">
-                <a class="nav-link" href="/"><i class="nav-icon fas fa-home"></i>Home</a>
-                <a class="nav-link" href="/articles/"><i class="nav-icon fas fa-book"></i>Articles</a>
-            </nav>
-        </div>
-    </header>
-
+{HEADER_PART}
     <main class="articles-main">
         <div class="articles-header">
             <h1>{year} Articles</h1>
@@ -1142,23 +1085,7 @@ def generate_year_index_html(year, articles_data):
             {''.join(cards_html)}
         </div>
     </main>
-
-    <footer class="footer">
-        <div class="footer-grid">
-            <div class="footer-card">
-                <h3>Contact</h3>
-                <p class="footer-contact"><i class="fas fa-envelope"></i><a href="mailto:rafageist@divengine.com">rafageist@divengine.com</a></p>
-            </div>
-            <div class="footer-card">
-                <h3>Social</h3>
-                <ul class="social-links">
-                    <li><a href="https://x.com/rafageist" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="https://github.com/rafageist" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
-                    <li><a href="https://linkedin.com/in/rafageist" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+{FOOTER_PART}
 </body>
 </html>"""
     
@@ -1241,14 +1168,12 @@ def process_article(md_path):
 
 
 def main():
-    """Main function to generate all articles."""
+    """Main function to generate articles."""
     print("=" * 50)
     print("Article Generator for rafageist.com")
     print("=" * 50)
     
-    os.makedirs(ARTICLES_DIR, exist_ok=True)
-    os.makedirs(IMAGES_DIR, exist_ok=True)
-    
+    load_parts()
     clone_wiki()
     
     articles = get_articles_with_published_tag()
