@@ -82,7 +82,7 @@ def generate_combined_pdf(
     title: str,
     version: str,
     pdf_engine: str = "auto",
-    margin: str = "2.5cm"
+    margin: str = "2cm"
 ) -> int:
     """Generate a single PDF from all markdown files."""
     if not check_pandoc():
@@ -226,7 +226,7 @@ def main() -> int:
     )
     parser.add_argument(
         "--margin",
-        default="2.5cm",
+        default="2cm",
         help="Page margin (default: %(default)s)"
     )
 
