@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Current Challenge of Software Engineering | rafageist.com</title>
+    <meta name="description" content="The Current Challenge of Software Engineering">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/articles/article.css">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/25892480?v=4" type="image/x-icon">
+    <link rel="canonical" href="https://rafageist.com/articles/2026/003-The-Current-Challenge-of-Software-Engineering.html">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-left">
+            <img src="https://avatars.githubusercontent.com/u/25892480?v=4&s=96" alt="Rafa Rodr&iacute;guez"
+                class="header-avatar" loading="lazy" width="56" height="56">
+            <div class="header-text">
+                <div class="header-name"><a href="/">Software Engineering Mentorship</a></div>
+                <div class="header-role">by <a href="/#about-trigger" class="header-name-link">Rafa Rodr&iacute;guez</a></div>
+            </div>
+        </div>
+        <div class="header-social">
+            <nav class="header-nav header-menu" aria-label="Primary">
+                <a class="nav-link" href="/"><i class="nav-icon fas fa-home"></i>Home</a>
+                <a class="nav-link" href="/articles/"><i class="nav-icon fas fa-book"></i>Articles</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="article-main">
+        <article class="article">
+            <div class="article-hero">
+                <img src="/articles/images/de2bb24b8cb8.jpg" alt="">
+            </div>
+            <div class="article-meta">
+                <span class="article-date">2026.003</span>
+                <div class="article-tags">
+                    <a href="#" class="article-tag">#1</a><a href="#" class="article-tag">#2</a><a href="#" class="article-tag">#3</a><a href="#" class="article-tag">#31</a><a href="#" class="article-tag">#32</a><a href="#" class="article-tag">#33</a><a href="#" class="article-tag">#34</a><a href="#" class="article-tag">#35</a><a href="#" class="article-tag">#4</a><a href="#" class="article-tag">#41</a><a href="#" class="article-tag">#5</a><a href="#" class="article-tag">#51</a><a href="#" class="article-tag">#6</a><a href="#" class="article-tag">#7</a>
+                </div>
+            </div>
+            <h1 class="article-title">The Current Challenge of Software Engineering</h1>
+            <div class="article-content">
+                <h2>Table of Contents</h2>
+<ol>
+<li><a href="#1-introduction">1. Introduction</a></li>
+<li><a href="#2-historical-context-from-the-software-crisis-to-the-discipline">2. Historical Context: From the Software Crisis to the Discipline</a></li>
+<li><a href="#3-conceptual-framework-for-the-current-debate">3. Conceptual Framework for the Current Debate</a></li>
+<li><a href="#31-software-and-software-system">3.1. Software and Software System</a></li>
+<li><a href="#32-implicit-and-explicit-engineering">3.2. Implicit and Explicit Engineering</a></li>
+<li><a href="#33-formal-methods-and-formalization-gradients">3.3. Formal Methods and Formalization Gradients</a></li>
+<li><a href="#34-systemic-complexity">3.4. Systemic Complexity</a></li>
+<li><a href="#35-speed-and-formalization">3.5. Speed and Formalization</a></li>
+<li><a href="#4-automation-acceleration-and-systemic-complexity">4. Automation, Acceleration, and Systemic Complexity</a></li>
+<li><a href="#41-architectural-proportionality-and-induced-complexity">4.1. Architectural Proportionality and Induced Complexity</a></li>
+<li><a href="#5-technical-responsibility-and-explicit-formalization">5. Technical Responsibility and Explicit Formalization</a></li>
+<li><a href="#51-formalization-as-an-organizational-capability">5.1. Formalization as an Organizational Capability</a></li>
+<li><a href="#6-conclusion">6. Conclusion</a></li>
+<li><a href="#7-references">7. References</a></li>
+</ol>
+<h2>1. Introduction</h2>
+<p>Software engineering emerged as a response to a concrete problem: the inability to sustain complex systems through ad hoc programming alone. From its beginnings in the NATO conferences of 1968 and 1969, the discipline recognized that writing code was not enough; it was necessary to model, structure, and formalize technical decisions to keep systems reliable and evolvable.</p>
+<p>Today, the technological landscape is radically different. Cloud infrastructure, distributed platforms, and advanced automation have significantly reduced technical friction when building and deploying software. However, this reduction in friction does not remove systemic complexity; in many cases, it amplifies it.</p>
+<p>The contemporary challenge of software engineering is not to produce more code or to adopt new tools faster. It is to preserve intelligibility, traceability, and structural coherence in systems that are increasingly interdependent. The availability of powerful abstractions does not replace the need for explicit modeling; it shifts engineering effort toward decisions with higher structural impact.</p>
+<p>Under these conditions, the central question is no longer whether we can build faster, but whether we can understand, verify, and sustain what we build.</p>
+<h2>2. Historical Context: From the Software Crisis to the Discipline</h2>
+<p>What is commonly called the software crisis of the 1960s described a mismatch between the growing ambition of systems and the limited ability to build them reliably. In that context, the NATO conferences of 1968 (Garmisch) and 1969 (Rome) consolidated the term &quot;software engineering&quot; to emphasize that the problem was not merely programming, but organizing development as a disciplined technical activity.</p>
+<p>Authors such as Edsger W. Dijkstra and C. A. R. Hoare were decisive in this shift. Dijkstra stressed the need for structure, reasoning, and logical precision to control complexity; Hoare provided a formal basis for reasoning about programs through preconditions, postconditions, and invariants. Together, these contributions reinforced a persistent idea: software quality depends not only on implementation skill, but on the quality of the conceptual model that precedes and governs implementation.</p>
+<p>Decades later, the evolution toward systematic modeling and design approaches, in which contributions by Grady Booch are relevant, expanded that same agenda: abstraction not to hide the problem, but to make it tractable, communicable, and verifiable. Viewed historically, the discipline advances when its capacity for explicitness increases, not when that capacity is delegated away.</p>
+<h2>3. Conceptual Framework for the Current Debate</h2>
+<h3>3.1. Software and Software System</h3>
+<p>It is useful to distinguish software as an executable artifact from a software system as a social and technical assemblage in operation. The former can be evaluated by immediate functionality; the latter additionally requires reliability, maintainability, observability, security, evolution, and governance criteria. This difference explains why a product can &quot;work&quot; in a demo and still fail under real conditions of use, load, or integration.</p>
+<h3>3.2. Implicit and Explicit Engineering</h3>
+<p>Implicit engineering can describe a mode of work in which critical decisions remain tacit knowledge: undeclared assumptions, unspecified invariants, ambiguous design limits, and justifications that are not recorded. This approach may be sufficient for bounded prototypes, but it tends to degrade in large systems, distributed teams, and continuous change cycles.</p>
+<p>Explicit engineering, by contrast, seeks traceability for the structural elements of the system: what was decided, under which hypotheses, with which tradeoffs, and with which expected impact. This explicitness is not equivalent to documentary bureaucracy; it is equivalent to knowledge transferability and technical auditability.</p>
+<h3>3.3. Formal Methods and Formalization Gradients</h3>
+<p>Formal methods can be understood as techniques based on mathematical languages to specify and verify system properties. Their purpose is not to replace all engineering practice, but to reduce ambiguity at critical points through contracts, invariants, state models, and evidence based on properties. In practice, they operate as a gradient: from lighter formalization in modules with high change to strict verification in components with higher risk.</p>
+<h3>3.4. Systemic Complexity</h3>
+<p>Systemic complexity does not depend only on code size. It emerges from the interaction among distributed services, concurrency, asynchrony, external dependencies, and organizational constraints. For that reason, failure is rarely local: it emerges from couplings that are not explicit among parts that are technically correct in isolation.</p>
+<p>Complexity is often expressed as uncontrolled couplings among components, teams, and technical decisions made at different levels of abstraction.</p>
+<h3>3.5. Speed and Formalization</h3>
+<p>Delivery speed and formalization are not mutually exclusive variables, but they do introduce near term tensions. Formalization introduces explicit constraints that reduce the space of interpretive ambiguity in system evolution. Reducing implementation time without increasing conceptual clarity tends to shift costs to later stages: operational incidents, technical debt, regressions, and loss of evolutionary capacity. For that reason, rigorous productivity evaluation must include coordination cost, failure cost, and change cost, not only initial release time.</p>
+<h2>4. Automation, Acceleration, and Systemic Complexity</h2>
+<p>Current automation modifies the cognitive economy of development. If part of syntactic production can be generated or assisted, the engineer&#x27;s differential value shifts toward higher level tasks: problem framing, model selection, definition of acceptance criteria, and validation of assumptions.</p>
+<p>Several researchers have warned that current automatic generation systems operate on statistical correlations rather than comprehensive domain models. This distinction is relevant for engineering because a system can produce functional results without understanding the structural consequences of its integration in complex environments. In this sense, automatic generation does not imply structural understanding of the system in which it operates.</p>
+<p>From an epistemological perspective, automatic generation expands the space of possible solutions, but it does not reduce the need for explicit models that allow reasoning about their correctness.</p>
+<p>This shift coincides with a structural increase in systemic complexity. Contemporary systems are distributed, dependent on multiple services, subject to frequent deployments, and exposed to high operational variability. Under such conditions, failures emerge less from missing functionality and more from unmodeled interactions among components, teams, and processes.</p>
+<p>Technical debt operates as a structural liability: it reduces change margin, increases coordination cost, and compromises the sustainable rate of evolution. In safety critical systems, modeling errors are not expressed only as functional defects; they can materialize as operational incidents with physical, economic, or regulatory impact. In that context, acceleration amplifies both delivery capacity and the propagation of design defects.</p>
+<p>From this perspective, technological acceleration does not reduce the need for rigor; it changes its locus. The main risk is not automation itself, but its adoption without robust mechanisms for explicitness and technical control.</p>
+<p>Technological acceleration substantially expands architectural decision space by multiplying available deployment patterns, managed services, and distribution strategies. If this abundance of infrastructure options is not evaluated against domain constraints and verifiable operational objectives, it can introduce complexity that comes not from the problem itself but from the selected environment.</p>
+<h3>4.1. Architectural Proportionality and Induced Complexity</h3>
+<p>The availability of infrastructure programmable at global scale has deeply changed architectural practice. Cloud platforms, managed services, and distributed orchestrators make it possible to build systems with capabilities that, two decades ago, were available only to organizations with their own infrastructure. However, an expanded space of possibilities does not remove the need for proportionality.</p>
+<p>Induced complexity can describe complexity that does not emerge from the intrinsic requirements of the problem, but from preventive or aspirational adoption of oversized architectures. In these cases, the system incorporates layers of distribution, fault tolerance, automation, and external dependency whose scale exceeds the real criticality of the domain it seeks to solve.</p>
+<p>This phenomenon is not necessarily the result of technical ignorance. It often responds to structural incentives in the technology market: tools designed for maximum scalability, growth narratives, and platform economies that favor adoption of integrated services. Infrastructure becomes easy to access, and therefore easy to oversize.</p>
+<p>The critical question is not whether advanced infrastructure is legitimate, because it is in contexts of high concurrency, strict regulation, or systemic impact. Rather, the question is whether its adoption responds to a verifiable need or to hypothetical anticipation. In engineering, power does not replace precision.</p>
+<p>When architecture comes before explicit modeling of the problem, an inversion of priorities can appear: the product starts adapting to the available infrastructure instead of infrastructure adapting to the product. This inversion introduces operational complexity, cognitive load, and structural dependency that are not always justified by the real risk or scale of the system.</p>
+<p>Engineering maturity does not consist of maximizing sophistication, but of keeping correspondence between the adopted structure and the problem being addressed. Architectural proportionality thus becomes a fundamental technical criterion to prevent technological acceleration from turning into structural opacity.</p>
+<p>From this perspective, architectural proportionality stops being only a design criterion and becomes a requirement of organizational responsibility. Complexity induced by oversized architectural decisions affects coordination costs, traceability, and control capacity, so its management belongs to the domain of technical governance.</p>
+<h2>5. Technical Responsibility and Explicit Formalization</h2>
+<p>In software engineering, technical responsibility means being able to explain and justify a system&#x27;s expected behavior, as well as account for deviations on the basis of evidence. This responsibility is not merely individual; it is organizational, because it depends on shared practices of design, review, and operation.</p>
+<p>Explicit formalization connects intent, model, and execution under verifiable criteria. It enables articulation of assumptions, definition of invariants, delimitation of service boundaries, recording of architectural decisions, and sustained traceability among model, implementation, and operation. This includes not only formal specifications, but also operational models that allow reasoning about possible system states under real conditions. It also supports intergenerational continuity of technical knowledge, a critical point when there is staff turnover or team scaling.</p>
+<p>In industrial contexts, especially in regulated sectors such as energy, transportation, healthcare, or advanced manufacturing, software engineering cannot be limited to observable functionality. It requires integration with quality processes, requirements traceability, systematic validation, and explicit verification mechanisms. In these environments, formalization is not a methodological preference, but a condition for certification and operation.</p>
+<p>In the current context, the relevant distinction is not &quot;human versus machine,&quot; but &quot;grounded decision versus unguided production.&quot; Automatic generation can expand productive capacity; it does not by itself replace the judgment required to evaluate systemic consequences, acceptable risk, and reliability obligations.</p>
+<h3>5.1. Formalization as an Organizational Capability</h3>
+<p>Explicit formalization is not only an individual practice, but an organizational capability. Teams that record architectural decisions, document assumptions, and keep models updated preserve technical memory and reduce dependence on tacit knowledge. In environments with high turnover and rapid growth, this capability determines the system&#x27;s structural resilience.</p>
+<h2>6. Conclusion</h2>
+<p>A historical and technical reading suggests that software engineering matures when it transforms tacit knowledge into explicit structure. The crisis of the 1960s had already anticipated this pattern: the central problem was not writing programs, but building reliable systems under increasing complexity. Contemporary automation reactivates that same challenge at a larger scale.</p>
+<p>Architectural proportionality adds, in this framework, a criterion of disciplinary maturity: architecture must correspond to the nature of the domain, and the model must correspond to the architecture that is implemented and operated. When this correspondence is maintained, complexity becomes interpretable and manageable; when it breaks, opaque couplings and rising coordination costs appear. Explicit formalization makes this relation between problem, structure, and operational behavior verifiable. For this reason, engineering quality depends not only on the ability to build, but also on the ability to sustain coherence between domain, architecture, and model across the life cycle.</p>
+<p>Therefore, the current challenge of the discipline can be formulated analytically: how to sustain high production rates without degrading intelligibility, verifiability, and responsibility. Current conditions favor explicitness, not as a slogan, but as an operational response to complexity. In this framework, the next maturity step is to make explicit what currently remains implicit. In the absence of such mechanisms, technical acceleration tends to erode the system&#x27;s structural intelligibility and governability.</p>
+<h2>7. References</h2>
+<ul>
+<li>Buxton, J. N., and Randell, B. (eds.). <em>Software Engineering Techniques: Report on a Conference Sponsored by the NATO Science Committee (Rome, 1969)</em>. NATO Scientific Affairs Division.</li>
+<li>Brooks, F. P. (1987). &quot;No Silver Bullet: Essence and Accidents of Software Engineering&quot;. <em>IEEE Computer</em>, 20(4), 10-19.</li>
+<li>Dijkstra, E. W. (1972). &quot;The Humble Programmer&quot;. <em>Communications of the ACM</em>, 15(10), 859-866.</li>
+<li>Hoare, C. A. R. (1969). &quot;An Axiomatic Basis for Computer Programming&quot;. <em>Communications of the ACM</em>, 12(10), 576-580.</li>
+<li>Naur, P., and Randell, B. (eds.). <em>Software Engineering: Report on a Conference Sponsored by the NATO Science Committee (Garmisch, 1968)</em>. NATO Scientific Affairs Division.</li>
+<li>Booch, G. (1994). <em>Object-Oriented Analysis and Design with Applications</em> (2nd ed.). Benjamin/Cummings.</li>
+</ul>
+            </div>
+            <footer class="article-footer">
+                <a href="/articles/2026/" class="back-link">← Back to 2026 Articles</a>
+            </footer>
+        </article>
+    </main>
+    <footer class="footer" id="contact">
+        <div class="keyword-strip" aria-label="Software topics and focus areas">
+            <div class="keyword-strip-track">
+                <a href="#" class="glossary-term keyword-term">backend -> tradeoffs</a>
+                <a href="#" class="glossary-term keyword-term">APIs -> boundaries</a>
+                <a href="#" class="glossary-term keyword-term">debugging -> reasoning</a>
+                <a href="#" class="glossary-term keyword-term">databases -> invariants</a>
+                <a href="#" class="glossary-term keyword-term">distributed systems -> failure modes</a>
+                <a href="#" class="glossary-term keyword-term">AI tools -> assumptions</a>
+                <a href="#" class="glossary-term keyword-term">production -> responsibility</a>
+                <a href="#" class="glossary-term keyword-term">documentation -> shared memory</a>
+            </div>
+            <div class="keyword-strip-track" aria-hidden="true">
+                <a href="#" class="glossary-term keyword-term">backend -> tradeoffs</a>
+                <a href="#" class="glossary-term keyword-term">APIs -> boundaries</a>
+                <a href="#" class="glossary-term keyword-term">debugging -> reasoning</a>
+                <a href="#" class="glossary-term keyword-term">databases -> invariants</a>
+                <a href="#" class="glossary-term keyword-term">distributed systems -> failure modes</a>
+                <a href="#" class="glossary-term keyword-term">AI tools -> assumptions</a>
+                <a href="#" class="glossary-term keyword-term">production -> responsibility</a>
+                <a href="#" class="glossary-term keyword-term">documentation -> shared memory</a>
+            </div>
+        </div>
+        <div class="footer-grid">
+            <div class="footer-card">
+                <h3>Contact</h3>
+                <p class="footer-contact"><i class="fas fa-envelope" aria-hidden="true"></i><a
+                        href="mailto:rafageist@divengine.com">rafageist@divengine.com</a></p>
+                <p class="footer-contact"><i class="fas fa-phone" aria-hidden="true"></i><a
+                        href="https://wa.me/5978401275" target="_blank" rel="noopener">+597 8401275</a></p>
+            </div>
+            <div class="footer-card">
+                <h3>Social</h3>
+                <ul class="social-links">
+                    <li><a href="https://x.com/rafageist" target="_blank" rel="noopener" aria-label="X"><i
+                                class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://github.com/rafageist" target="_blank" rel="noopener" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a></li>
+                    <li><a href="https://linkedin.com/in/rafageist" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-card">
+                <h3>Based in</h3>
+                <div class="footer-map">
+                    <a class="footer-location" href="https://www.google.com/maps/place/Paramaribo,+Suriname"
+                        target="_blank" rel="noopener">
+                        <i class="fas fa-location-dot" aria-hidden="true"></i>
+                        <span>Paramaribo, Suriname</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a id="whatsapp-button" href="https://wa.me/5978401275" target="_blank" aria-label="WhatsApp chat">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+</body>
+</html>

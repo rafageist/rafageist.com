@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The False Battle Between SQL and ORM | rafageist.com</title>
+    <meta name="description" content="The False Battle Between SQL and ORM">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/articles/article.css">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/25892480?v=4" type="image/x-icon">
+    <link rel="canonical" href="https://rafageist.com/articles/2026/001-The-False-Battle-Between-SQL-and-ORM.html">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-left">
+            <img src="https://avatars.githubusercontent.com/u/25892480?v=4&s=96" alt="Rafa Rodr&iacute;guez"
+                class="header-avatar" loading="lazy" width="56" height="56">
+            <div class="header-text">
+                <div class="header-name"><a href="/">Software Engineering Mentorship</a></div>
+                <div class="header-role">by <a href="/#about-trigger" class="header-name-link">Rafa Rodr&iacute;guez</a></div>
+            </div>
+        </div>
+        <div class="header-social">
+            <nav class="header-nav header-menu" aria-label="Primary">
+                <a class="nav-link" href="/"><i class="nav-icon fas fa-home"></i>Home</a>
+                <a class="nav-link" href="/articles/"><i class="nav-icon fas fa-book"></i>Articles</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="article-main">
+        <article class="article">
+            <div class="article-hero">
+                <img src="/articles/images/ef8b1bcc8363.jpg" alt="">
+            </div>
+            <div class="article-meta">
+                <span class="article-date">2026.001</span>
+                <div class="article-tags">
+                    
+                </div>
+            </div>
+            <h1 class="article-title">The False Battle Between SQL and ORM</h1>
+            <div class="article-content">
+                <p>For years, the ORM vs SQL debate has been framed as a war of tools. Some say ORMs are slow and hide the real power of the database. Others argue that a &quot;well used&quot; ORM solves every problem. Both approaches fail for the same reason: they start from a misunderstanding of what problem each one solves.</p>
+<p>An ORM lives in memory. SQL is a language for communicating with persistent storage. They do not compete; they operate at different layers. SQL is designed to talk to disks, indexes, pages, execution plans, and data sets. The ORM exists to work with state in RAM, with live objects, identity, transactions, and consistency while the application is running. Confusing those roles is the origin of many bad designs.</p>
+<pre><code>flowchart TB
+    UI[UI / API&lt;br/&gt;Requests &amp; Responses]
+    APP[Application / Domain&lt;br/&gt;Objects, State, Business Logic]
+    ORM[ORM&lt;br/&gt;Mapping, Identity, Unit of Work]
+    SQL[SQL&lt;br/&gt;Declarative Queries]
+    DB[(Database&lt;br/&gt;Storage Engine)]
+
+    UI --&gt; APP
+    APP --&gt; ORM
+    ORM --&gt; SQL
+    SQL --&gt; DB
+
+    DB --&gt; SQL
+    SQL --&gt; ORM
+    ORM --&gt; APP</code></pre>
+<p>When you write good SQL, you are optimizing the conversation with storage. You are saying: &quot;bring me this data, filtered, aggregated, ordered, in the most efficient way possible.&quot; When you use an ORM, you are saying: &quot;I want to work with this data as objects, with behavior, with semantics, with a clear lifecycle inside my application.&quot; The ORM does not replace SQL; it generates the SQL you do not want to write over and over, and it keeps a coherent state before persisting changes.</p>
+<p>That is why, if you decide to work in an object-oriented paradigm, using structures like arrays of arrays starts to lose semantic sense. It is not just an aesthetic issue. It is a matter of mental model. It does not mean the same thing to write an array with data as to create an object with identity and behavior. An object is not just a container of values; it represents a domain entity with intent and lifecycle.</p>
+<p>When you write something like:</p>
+<pre><code>$person = new Person();
+$person-&gt;setName(&#x27;John&#x27;);</code></pre>
+<p>semantically you are saying much more than &quot;I have data.&quot; You are saying that a person exists in your model, that it can be validated, modified, persisted, or discarded, and that its state can accumulate until you decide to commit a transaction. That idea of &quot;prepare changes and commit at the end&quot; is not an implementation detail: it is one of the main reasons ORMs exist, through concepts like unit of work and dirty checking.</p>
+<p>The same happens when you access relationships. If you write:</p>
+<pre><code>$person-&gt;getNotes();</code></pre>
+<p>what you expect is not a raw array, but a collection of Note objects, built from the necessary tables, with the proper SQL running underneath. Whether the ORM executes joins, extra queries, or uses lazy loading is not an error in itself. The error is not understanding what SQL is being executed or when. The ORM should not be a black box, but there is nothing wrong with it doing its job.</p>
+<p>Another point that is often missed is that an object does not have to correspond to a single table, nor does a table have to map one-to-one to a class. A domain object can be built from multiple tables, views, or aggregations. Solving that only with SQL can quickly become verbose and repetitive. Solving it only with objects, ignoring the database, can be inefficient. The value lies in knowing when to use each approach.</p>
+<p>PostgreSQL also allows business rules to live in the database: complex constraints, triggers, functions, validations. That is perfectly valid and, in many cases, desirable. Not everything has to live in the application. But not everything should live in the database either. The right question is not &quot;ORM or SQL?&quot; but &quot;where does this responsibility make the most sense to live, and what is the real cost of keeping it there?&quot;</p>
+<p>The underlying problem is not technical, it is conceptual. The ORM does not exist to avoid thinking about SQL, nor does SQL exist to replace the domain model. The ORM exists to solve the mismatch between objects and relations, to allow working with in-memory state coherently, and to generate reasonable SQL when there is no need to write it by hand. SQL exists to do what it does best: operate efficiently on persistent data.</p>
+<p>Being a SQL lover does not force you to become a purist. Using an ORM does not force you to delegate everything to the framework. Mature engineering appears when the concepts are understood and used as convenient, without dogma. If an ORM &quot;feels slow,&quot; many times it is not the ORM&#x27;s fault, but a poor mental model of what problem is being solved and in which layer.</p>
+<p>Understanding that changes the discussion completely. And, curiously, it makes ORM and SQL stop looking like enemies and become what they always were: complementary tools, each with a clear role inside a well-designed system.</p>
+            </div>
+            <footer class="article-footer">
+                <a href="/articles/2026/" class="back-link">← Back to 2026 Articles</a>
+            </footer>
+        </article>
+    </main>
+    <footer class="footer" id="contact">
+        <div class="keyword-strip" aria-label="Software topics and focus areas">
+            <div class="keyword-strip-track">
+                <a href="#" class="glossary-term keyword-term">backend -> tradeoffs</a>
+                <a href="#" class="glossary-term keyword-term">APIs -> boundaries</a>
+                <a href="#" class="glossary-term keyword-term">debugging -> reasoning</a>
+                <a href="#" class="glossary-term keyword-term">databases -> invariants</a>
+                <a href="#" class="glossary-term keyword-term">distributed systems -> failure modes</a>
+                <a href="#" class="glossary-term keyword-term">AI tools -> assumptions</a>
+                <a href="#" class="glossary-term keyword-term">production -> responsibility</a>
+                <a href="#" class="glossary-term keyword-term">documentation -> shared memory</a>
+            </div>
+            <div class="keyword-strip-track" aria-hidden="true">
+                <a href="#" class="glossary-term keyword-term">backend -> tradeoffs</a>
+                <a href="#" class="glossary-term keyword-term">APIs -> boundaries</a>
+                <a href="#" class="glossary-term keyword-term">debugging -> reasoning</a>
+                <a href="#" class="glossary-term keyword-term">databases -> invariants</a>
+                <a href="#" class="glossary-term keyword-term">distributed systems -> failure modes</a>
+                <a href="#" class="glossary-term keyword-term">AI tools -> assumptions</a>
+                <a href="#" class="glossary-term keyword-term">production -> responsibility</a>
+                <a href="#" class="glossary-term keyword-term">documentation -> shared memory</a>
+            </div>
+        </div>
+        <div class="footer-grid">
+            <div class="footer-card">
+                <h3>Contact</h3>
+                <p class="footer-contact"><i class="fas fa-envelope" aria-hidden="true"></i><a
+                        href="mailto:rafageist@divengine.com">rafageist@divengine.com</a></p>
+                <p class="footer-contact"><i class="fas fa-phone" aria-hidden="true"></i><a
+                        href="https://wa.me/5978401275" target="_blank" rel="noopener">+597 8401275</a></p>
+            </div>
+            <div class="footer-card">
+                <h3>Social</h3>
+                <ul class="social-links">
+                    <li><a href="https://x.com/rafageist" target="_blank" rel="noopener" aria-label="X"><i
+                                class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://github.com/rafageist" target="_blank" rel="noopener" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a></li>
+                    <li><a href="https://linkedin.com/in/rafageist" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-card">
+                <h3>Based in</h3>
+                <div class="footer-map">
+                    <a class="footer-location" href="https://www.google.com/maps/place/Paramaribo,+Suriname"
+                        target="_blank" rel="noopener">
+                        <i class="fas fa-location-dot" aria-hidden="true"></i>
+                        <span>Paramaribo, Suriname</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a id="whatsapp-button" href="https://wa.me/5978401275" target="_blank" aria-label="WhatsApp chat">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+</body>
+</html>

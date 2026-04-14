@@ -113,47 +113,53 @@ def ensure_article_css():
     font-size: 1rem;
 }
 
-.years-grid {
-    display: grid;
-    gap: 1rem;
-}
-
-.year-card {
-    border: 1px solid var(--border);
-    background: rgba(255, 255, 255, 0.92);
-    transition: box-shadow 0.2s ease;
-}
-
-.year-card:hover {
-    box-shadow: 0 8px 20px rgba(42, 36, 30, 0.12);
-}
-
-.year-link {
+.timeline {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.2rem 1.4rem;
-    color: var(--text);
-    text-decoration: none;
+    flex-direction: column;
+    gap: 0;
 }
 
-.year-link:hover {
-    color: var(--accent);
+.timeline-year {
+    position: relative;
+    padding-left: 2rem;
+    padding-bottom: 2.5rem;
+    border-left: 2px solid var(--border);
 }
 
-.year-number {
+.timeline-year:last-child {
+    border-left-color: transparent;
+    padding-bottom: 0;
+}
+
+.timeline-year::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 0.45rem;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.timeline-year-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+}
+
+.timeline-year-number {
+    margin: 0;
     font-size: 1.4rem;
     font-weight: 700;
+    color: var(--text);
 }
 
-.year-count {
+.timeline-year-count {
     color: var(--muted);
-    font-size: 0.95rem;
-}
-
-.year-arrow {
-    font-size: 1.2rem;
-    color: var(--accent);
+    font-size: 0.9rem;
 }
 
 .articles-grid {
@@ -163,7 +169,6 @@ def ensure_article_css():
 
 .article-card {
     display: grid;
-    grid-template-columns: 200px 1fr;
     border: 1px solid var(--border);
     background: rgba(255, 255, 255, 0.92);
     overflow: hidden;
@@ -175,7 +180,7 @@ def ensure_article_css():
 }
 
 .article-card-image {
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 21 / 9;
     overflow: hidden;
     background: #f4e5cf;
 }
@@ -451,14 +456,6 @@ def ensure_article_css():
 }
 
 @media (max-width: 640px) {
-    .article-card {
-        grid-template-columns: 1fr;
-    }
-
-    .article-card-image {
-        aspect-ratio: 16 / 9;
-    }
-
     .article {
         padding: 1.25rem;
     }
@@ -987,19 +984,45 @@ def generate_article_html(article_path, year, url_slug, title, number, tags, ima
     return html
 
 
-def generate_years_index_html(years_data):
-    """Generate HTML index page with years."""
+def generate_years_index_html(years_articles):
+    """Generate HTML index page with timeline of years and article cards."""
     
-    years_html = []
-    for year, count in years_data:
-        years_html.append(f"""
-        <article class="year-card">
-            <a href="/articles/{year}/" class="year-link">
-                <span class="year-number">{year}</span>
-                <span class="year-count">{count} article{'s' if count != 1 else ''}</span>
-                <span class="year-arrow">→</span>
-            </a>
-        </article>""")
+    timeline_html = []
+    for year, articles in sorted(years_articles.items(), reverse=True):
+        sorted_articles = sorted(articles, key=lambda x: x["number"])
+        count = len(sorted_articles)
+        
+        cards_html = []
+        for article in sorted_articles:
+            a_year, number, url_slug = article["year"], article["number"], article["url_slug"]
+            title = article["title"]
+            image_path = article["image_path"]
+            summary = article["summary"]
+            article_url = f"/articles/{a_year}/{url_slug}.html"
+            
+            cards_html.append(f"""
+                <article class="article-card">
+                    <div class="article-card-image">
+                        <img src="{image_path}" alt="">
+                    </div>
+                    <div class="article-card-content">
+                        <span class="article-card-date">{a_year}.{number}</span>
+                        <h2 class="article-card-title">{escape(title)}</h2>
+                        <p class="article-card-summary">{escape(summary)}...</p>
+                        <a href="{article_url}" class="read-more">Read more →</a>
+                    </div>
+                </article>""")
+        
+        timeline_html.append(f"""
+        <section class="timeline-year">
+            <div class="timeline-year-header">
+                <h2 class="timeline-year-number">{year}</h2>
+                <span class="timeline-year-count">{count} article{'s' if count != 1 else ''}</span>
+            </div>
+            <div class="articles-grid">
+                {''.join(cards_html)}
+            </div>
+        </section>""")
     
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -1023,8 +1046,8 @@ def generate_years_index_html(years_data):
             <h1>Articles</h1>
             <p class="articles-description">Reflections on software engineering, technology, and philosophy.</p>
         </div>
-        <div class="years-grid">
-            {''.join(years_html)}
+        <div class="timeline">
+            {''.join(timeline_html)}
         </div>
     </main>
 {FOOTER_PART}
@@ -1105,7 +1128,7 @@ def process_article(md_path):
         title_from_slug = filename_slug
         if title_from_slug.startswith(f"{number}-"):
             title_from_slug = title_from_slug[len(number)+1:]
-        metadata["title"] = title_from_slug.replace('-', ' ').title()
+        metadata["title"] = title_from_slug.replace('-', ' ')
     
     if not metadata["image_url"]:
         metadata["image_url"] = "/articles/images/placeholder.webp"
@@ -1227,8 +1250,7 @@ def main():
         years_articles[year].append(article)
     
     print("\nGenerating years index...")
-    years_data = [(year, len(articles)) for year, articles in sorted(years_articles.items(), reverse=True)]
-    years_html = generate_years_index_html(years_data)
+    years_html = generate_years_index_html(years_articles)
     index_path = ARTICLES_DIR / "index.html"
     with open(index_path, 'w', encoding='utf-8') as f:
         f.write(years_html)

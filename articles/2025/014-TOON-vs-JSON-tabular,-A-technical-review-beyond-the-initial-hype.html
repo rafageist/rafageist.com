@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOON vs JSON tabular, A technical review beyond the initial hype | rafageist.com</title>
+    <meta name="description" content="TOON vs JSON tabular, A technical review beyond the initial hype">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/articles/article.css">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/25892480?v=4" type="image/x-icon">
+    <link rel="canonical" href="https://rafageist.com/articles/2025/014-TOON-vs-JSON-tabular,-A-technical-review-beyond-the-initial-hype.html">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-left">
+            <img src="https://avatars.githubusercontent.com/u/25892480?v=4&s=96" alt="Rafa Rodr&iacute;guez"
+                class="header-avatar" loading="lazy" width="56" height="56">
+            <div class="header-text">
+                <div class="header-name"><a href="/">Software Engineering Mentorship</a></div>
+                <div class="header-role">by <a href="/#about-trigger" class="header-name-link">Rafa Rodr&iacute;guez</a></div>
+            </div>
+        </div>
+        <div class="header-social">
+            <nav class="header-nav header-menu" aria-label="Primary">
+                <a class="nav-link" href="/"><i class="nav-icon fas fa-home"></i>Home</a>
+                <a class="nav-link" href="/articles/"><i class="nav-icon fas fa-book"></i>Articles</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="article-main">
+        <article class="article">
+            <div class="article-hero">
+                <img src="/articles/images/4587fd3f288c.jpg" alt="">
+            </div>
+            <div class="article-meta">
+                <span class="article-date">2025.014</span>
+                <div class="article-tags">
+                    
+                </div>
+            </div>
+            <h1 class="article-title">TOON vs JSON tabular, A technical review beyond the initial hype</h1>
+            <div class="article-content">
+                <p>This article explores <a href="https://github.com/toon-format/toon">TOON</a> with a calm and objective view. The goal is to understand where TOON brings real value and where a simple tabular form of JSON or YAML can provide the same result without the need for a new format.</p>
+<p>The motivation comes from a public discussion in the TOON community and from many parallel debates in other technical spaces. This is not an attack on TOON. It is simply an attempt to reach clarity.</p>
+<p>It is important to note that TOON belongs to the category of <strong>prompt shorthand formats</strong>, not data serialization formats. Unlike JSON, Protocol Buffers, or MessagePack—which are designed for data exchange, storage, and network transport—TOON is specifically crafted to compact data within language model prompts. This distinction is critical: TOON does not compete with JSON as a general purpose standard, but rather occupies a narrow niche focused on reducing token usage in constrained conversational contexts.</p>
+<blockquote><strong>Executive summary</strong>: TOON offers a novel syntax but no measurable technical advantage over JSON or YAML tabular conventions, which already eliminate repeated keys while remaining within established standards with mature tooling. Until reproducible benchmarks demonstrate otherwise, tabular JSON and YAML remain the safer, more interoperable choice.</blockquote>
+<h2>What TOON tries to solve</h2>
+<p>TOON presents itself as a compact format that is friendly for language models. It reduces repeated keys, uses indentation for structure, and adds a marker N to declare the size of rows or lists.</p>
+<p>Example from the official documentation:</p>
+<pre><code>users[3]{id,name,role}:
+  1,Alice,admin
+  2,Bob,user
+  3,Carol,user</code></pre>
+<p>The idea is to remove repeated keys and reduce the amount of text needed to describe data rows.</p>
+<p>It is important to note that <strong>TOON optimizes the syntax surface, not the structural semantics</strong>. The format does not enable new expressive capabilities or data relationships that JSON cannot represent. It simply changes how information is written—trading standard punctuation for custom markers and indentation rules. This means TOON is a notational variation, not a semantic innovation.</p>
+<h2>Technical foundations</h2>
+<p>Before comparing formats, it is useful to understand three key concepts:</p>
+<p><strong>Compact representation</strong>: The practice of removing redundant information from data structures. In tabular data, the most obvious redundancy is the repetition of field names across every row.</p>
+<p><strong>Repeated-key elimination</strong>: A technique where field names appear once (typically in a header) and subsequent rows contain only values. This approach is common in CSV, database query results, and spreadsheet exports.</p>
+<p><strong>The role of tokenization in LLMs</strong>: Language models do not process text character by character. Instead, they break input into tokens—units that can be whole words, parts of words, or symbols. The relationship between character count and token count is non-linear and depends on patterns the tokenizer has seen during training. Removing a bracket may not save a token if that bracket is part of a common sequence. Adding a rare symbol may cost more tokens than a familiar multi-character sequence. This means that visual compactness does not guarantee token efficiency.</p>
+<p><strong>Contextual overhead</strong>: TOON introduces a hidden cost that is often overlooked. Because the format is not part of the standard training corpus that language models learn from, every use of TOON requires additional prompt tokens to explain the syntax, provide examples, and clarify parsing rules. JSON, by contrast, is ubiquitous in training data—models have seen millions of JSON documents and can parse them with no instruction. This means that even if TOON saves a few tokens in the data itself, those savings may be offset or erased by the tokens spent teaching the model how to read TOON.</p>
+<p>These concepts form the technical foundation for evaluating any format that claims to optimize data representation for language models.</p>
+<h2>JSON tabular</h2>
+<p>The same idea with no new syntax. A very simple approach uses JSON in tabular form. The first row is the header and the next rows are the data. It removes repeated keys but stays inside the JSON standard.</p>
+<p>Example:</p>
+<pre><code>{
+  &quot;users&quot;: [
+    [&quot;id&quot;, &quot;name&quot;, &quot;role&quot;],
+    [1, &quot;Alice&quot;, &quot;admin&quot;],
+    [2, &quot;Bob&quot;, &quot;user&quot;]
+  ]
+}</code></pre>
+<p>This representation:</p>
+<ul>
+<li>avoids repeated keys,</li>
+<li>remains one hundred percent standard JSON,</li>
+<li>is easy to read for any library,</li>
+<li>introduces no new rules and no new parser, and</li>
+<li>provides a clear structure for models when the first row is interpreted as the header.</li>
+</ul>
+<p><strong>Tabular JSON is particularly effective for LLMs</strong> because it preserves JSON&#x27;s hierarchical structure and type safety while eliminating textual redundancy, allowing models to navigate, transform, and validate data with fewer tokens and no new syntax.</p>
+<p>It is important to emphasize that <strong>JSON tabular is a convention, not a new format</strong>. It relies entirely on standard JSON syntax and semantics. Any JSON parser can read it without modification. Any JSON schema validator, linter, or transformation tool works immediately. This full compatibility with the existing JSON ecosystem is a significant technical advantage: there is no need to build, maintain, or explain custom tooling.</p>
+<h2>YAML tabular</h2>
+<p>Even more compact. YAML allows a clean tabular form. This is compact, familiar for many users, and needs no extra rules.</p>
+<pre><code>users:
+  - [id, name, role]
+  - [1, Alice, admin]
+  - [2, Bob, user]</code></pre>
+<h2>Comparative analysis</h2>
+<p>A direct technical comparison across six key dimensions reveals the following:</p>
+<p><strong>Standardization</strong> TOON is an experimental format with no formal specification. JSON tabular relies on the full JSON standard (RFC 8259), and YAML tabular on the YAML 1.2 specification. Both established formats benefit from formal governance and industry consensus.</p>
+<p><strong>Parser requirement</strong> TOON requires a custom parser. JSON tabular works with any JSON parser, and YAML tabular with any YAML parser. This means zero integration friction for the established formats.</p>
+<p><strong>Compactness</strong> TOON is slightly more compact in visual terms. JSON tabular is very compact, removing repeated keys while staying within standard syntax. YAML tabular is the most compact due to minimal punctuation.</p>
+<p><strong>Safety</strong> TOON&#x27;s N marker can catch errors but also introduces inconsistency risk when the marker diverges from actual data. JSON tabular and YAML tabular both support standard validation mechanisms (JSON Schema and YAML schema) without embedding counts in the data itself.</p>
+<p><strong>Readability by LLMs</strong> TOON requires format explanation in every prompt. JSON tabular and YAML tabular are widely seen during model training and immediately recognized without instruction.</p>
+<p><strong>Real world tooling</strong> TOON has limited, experimental tooling. JSON tabular benefits from a massive ecosystem including jq, validators, IDEs, and debuggers. YAML tabular has a strong ecosystem with yq, validators, and IDE support.</p>
+<p>This comparison shows that for uniform tabular data, the established conventions offer clear advantages in tooling, standardization, and model familiarity, while TOON&#x27;s benefits remain theoretical without supporting benchmarks.</p>
+<p><strong>A critical absence</strong>: This analysis does not include empirical performance metrics—token counts, parsing accuracy, regeneration fidelity—because no such public data exists. Until TOON is tested against JSON tabular and YAML tabular in reproducible conditions, claims of superiority remain unsubstantiated. In methodological terms, the burden of proof rests on the proponents of the new format.</p>
+<h2>The original technical question was simple</h2>
+<p>These questions do not require theory, speculation, or subjective judgment. They are directly measurable through straightforward experiments: encode identical datasets in each format, count tokens with real tokenizers, test model accuracy, and compare results. Such experiments have not been presented.</p>
+<ol>
+<li>When does TOON offer a real advantage over JSON tabular for uniform data?</li>
+<li>Is the value of the N marker real or only a source of extra complexity?</li>
+<li>Are there benchmarks that compare TOON with JSON tabular in terms of tokens and data accuracy?</li>
+</ol>
+<p>These questions need careful answers.</p>
+<h3>What the TOON maintainers responded — and what they did not</h3>
+<p>The discussion that motivated this article began in <strong>TOON Discussion #138</strong>, where I raised these same questions directly to the maintainers: https://github.com/toon-format/toon/discussions/138</p>
+<p>Their reply was concise, friendly, and transparent. This is the relevant portion, quoted verbatim:</p>
+<blockquote><em>&quot;If you&#x27;re happy to stay in JSON and your data is flat-ish, uniform, not huge… your header-row JSON is totally reasonable! The JSON-with-header pattern is already close to TOON. The gaps are: TOON still removes more syntax (no per-row [], fewer quotes, CSV-like rows). [N]{fields} are normative guardrails: decoders must enforce row count/width + delimiter. Same rules recurse for nested arrays-of-objects. If [N] is wrong, that&#x27;s a feature in strict mode: it fails validation instead of silently accepting truncated data.&quot;</em></blockquote>
+<blockquote>— TOON maintainers, Discussion #138</blockquote>
+<p>Their response was polite and clear—but it did not address the core technical questions raised in this article:</p>
+<ul>
+<li>They confirmed that tabular JSON is &quot;totally reasonable&quot; for flat and uniform data.</li>
+<li>They acknowledged that JSON-with-header is already close to TOON.</li>
+<li>They listed differences (syntax removal and the N marker) but did not provide evidence that these differences yield advantages for LLM performance.</li>
+<li>They did not present token measurements.</li>
+<li>They did not provide accuracy benchmarks.</li>
+<li>They did not compare regeneration fidelity.</li>
+<li>They did not evaluate tabular JSON directly in any experiment.</li>
+</ul>
+<p>In other words, the reply explains what TOON does, but not whether TOON performs better than established tabular conventions under LLM tokenization, accuracy, or reasoning workloads.</p>
+<p>As a result, the original questions remain unanswered, and claims of superiority for TOON over JSON/YAML tabular remain unverified.</p>
+<h2>Technical analysis</h2>
+<h3>Token savings</h3>
+<p>The token savings of TOON over JSON tabular are often very small. Removing quotes or braces does not always reduce tokens because language models use complex token rules that do not follow characters one by one. The following examples illustrate why visual compression does not guarantee token savings:</p>
+<ul>
+<li>The sequence <code>{&quot;id&quot;:</code> might tokenize as <code>[{, &quot;, id, &quot;, :]</code> — five tokens.</li>
+<li>A rare marker like <code>⊗</code> might tokenize as <code>[&lt;0xE2&gt;, &lt;0x8A&gt;, &lt;0x97&gt;]</code> — three tokens for one character.</li>
+<li>The string <code>users[3]</code> might tokenize as <code>[users, [, 3, ]]</code> — four tokens, the same as <code>&quot;users&quot;:</code> which is <code>[&quot;, users, &quot;, :]</code>.</li>
+</ul>
+<p>This means:</p>
+<ul>
+<li>sometimes a strange symbol costs more tokens than normal text</li>
+<li>sometimes removing braces does not change token count</li>
+<li>the explanation of the TOON format itself also consumes tokens</li>
+</ul>
+<p>There is no strong evidence that TOON always saves tokens in practice. <strong>Visual reduction does not equal token reduction.</strong></p>
+<p>Therefore, <strong>TOON offers aesthetic compactness, not guaranteed token efficiency</strong>.</p>
+<h3>Value and risk of N</h3>
+<p>N is a form of internal validation. It can help detect errors in strict controlled flows. But it also creates a second truth that can become incorrect.</p>
+<p>If N is wrong, the format breaks. This may be useful in tightly controlled scenarios, but it also becomes a systematic source of fragility. JSON tabular does not have this risk because the shape of the data is clear without markers.</p>
+<p><strong>N introduces a dual source of truth</strong>: the marker must stay synchronized with actual row count, creating a failure point that JSON tabular avoids through self-evident structure. JSON Schema and similar validators can enforce constraints externally without embedding counts in data.</p>
+<p><strong>A concrete failure scenario</strong> illustrates this risk. Suppose a model generates:</p>
+<pre><code>users[6]{id,name,role}:
+  1,Alice,admin
+  2,Bob,user
+  3,Carol,user
+  4,Dave,moderator
+  5,Eve,guest
+  6,Frank,admin
+  7,Grace,user</code></pre>
+<p>The marker declares six rows, but seven are present. A strict TOON parser rejects this entirely despite valid data. JSON tabular avoids this: array length is self-evident, and external validation introduces no fragility.</p>
+<h2>TOON is a prompt only format, not a data format</h2>
+<h3>TOON is not for network transport</h3>
+<p>TOON is not designed for network transmission or storage. It is not a standard and has no real ecosystem. It only exists to feed prompts to language models. For all real world systems, JSON, CSV, Protobuf or MessagePack are far better choices.</p>
+<p><strong>TOON cannot be used safely in systems requiring round trip fidelity</strong>—that is, workflows where data travels from an API to an LLM and back to a client. Because TOON is not a standard, any deviation in parsing, regeneration, or formatting can be fatal for the pipeline. A model that returns malformed TOON breaks the entire flow. JSON, by contrast, can be validated, repaired, and transformed with robust tooling at every step.</p>
+<h2>What the wider technical community says</h2>
+<p>These observations come from practitioners across machine learning, backend engineering, data engineering, and prompt engineering—disciplines with direct experience in token optimization, model behavior, and production system constraints.</p>
+<p>In different platforms there are repeated points:</p>
+<ul>
+<li>TOON may save tokens in some cases but not in many others</li>
+<li>token savings depend on the exact words and do not follow character count</li>
+<li>a simple tabular form of JSON or YAML often gives the same benefit</li>
+<li>new formats add mental cost and bring no clear long term value</li>
+<li>the benefits of TOON are sometimes smaller than the cost of teaching the model the format</li>
+<li><strong>every new syntax requires mental and instructional overhead that JSON and YAML avoid due to universal familiarity</strong>—developers, models, and tooling already understand JSON; introducing TOON means documentation, examples, error handling, and cognitive load with no guaranteed payoff</li>
+</ul>
+<p>These points match the analysis done here.</p>
+<h2>Hype and common misunderstandings around TOON</h2>
+<p>Many public posts describe TOON as a fresh standard or even as a replacement for JSON. <strong>TOON circulates heavily on social platforms because it promises savings in cost and performance, two themes that spread faster than verified evidence.</strong> When a format claims to reduce API expenses or improve model reasoning, that message travels quickly—often before rigorous testing can validate or refute the claims. This creates a cycle where enthusiasm precedes measurement, driven by both economic incentives (token costs translate to API expenses) and psychological incentives (novelty and early adopter status). Together, these forces create disproportionate expectations that outpace empirical validation.</p>
+<h2>Popular claims and the corresponding technical reality</h2>
+<p><strong>1. &quot;TOON is already a standard.&quot;</strong> In reality, a true standard requires broad industry adoption, mature tooling, sustained support, and formal governance bodies. TOON is still experimental and has no production deployments.</p>
+<p>_How to act_: Treat TOON as a community experiment, not as the foundation for critical systems.</p>
+<p><strong>2. &quot;TOON will replace JSON.&quot;</strong> JSON dominates transport, storage, APIs, configuration files, databases, and logging. TOON only attempts to compact data inside LLM prompts; it does not compete in any other domain.</p>
+<p>_How to act_: Each format solves a different problem. Do not plan infrastructure migrations toward TOON.</p>
+<p><strong>3. &quot;Models struggle with JSON.&quot;</strong> Current language models read, repair, and complete JSON—including header based tables—with high accuracy. No evidence shows that TOON is easier.</p>
+<p>_How to act_: JSON remains a safe and mature choice.</p>
+<p><strong>4. &quot;Fewer characters equals fewer tokens.&quot;</strong> Tokenizers operate on learned patterns, not character counts. Rare symbols can cost more tokens than common JSON structures, and teaching new syntax consumes tokens. See Technical analysis section for details.</p>
+<p>_How to act_: Always measure with real token counts.</p>
+<p><strong>5. &quot;We need a new format for compact tables.&quot;</strong> Tabular JSON and YAML already remove repeated keys while remaining completely within established standards. Validation can be performed externally without introducing custom syntax.</p>
+<p>_How to act_: Before adopting TOON, verify whether a standard tabular variant already satisfies the need with less risk and more interoperability.</p>
+<p><strong>6. &quot;TOON improves model reasoning.&quot;</strong> No published study demonstrates improved reasoning, coherence, logical accuracy, or transformation fidelity using TOON compared to JSON tabular. The claim assumes that compactness enhances comprehension, but models are trained on verbose natural language and structured JSON—not minimalist notations.</p>
+<p>_How to act_: Treat the claim as unverified until benchmarked in controlled conditions with multiple models and diverse reasoning tasks.</p>
+<h2>Conclusion</h2>
+<p><strong>TOON optimizes aesthetics; tabular JSON optimizes standards compliance.</strong> The former prioritizes visual compactness and novel syntax; the latter prioritizes interoperability, tooling maturity, and zero onboarding cost. _<strong>Elegance without interoperability is fragile; interoperability without elegance is robust.</strong>_ Systems built on standards survive because they integrate seamlessly and benefit from collective tooling investment. Custom notations survive only within the boundaries where they are understood.</p>
+<p>TOON serves a narrow prompt compaction niche where inline validation and strict row counts justify custom syntax. For uniform datasets, JSON tabular and YAML tabular provide compact encodings within mature standards and should remain the default.</p>
+<p><strong>Innovation is healthy, but the burden of proof rests on those proposing new formats.</strong> TOON has not yet demonstrated measurable benefits through reproducible benchmarks. Until that evidence exists, treating TOON as an experiment rather than a standard keeps expectations aligned with reality.</p>
+<h2>Moving forward: What future debates should include</h2>
+<p>To move beyond speculation and reach technical clarity, any future discussion or evaluation of TOON—or any similar format—should include:</p>
+<ul>
+<li><strong>Reproducible token benchmarks</strong>: Measure token counts for identical datasets encoded in TOON, JSON tabular, and YAML tabular using the actual tokenizers of production LLMs (e.g., GPT-4, Claude, Llama). Publish the raw data and methodology.</li>
+</ul>
+<ul>
+<li><strong>Model accuracy comparisons</strong>: Test how accurately models parse, transform, and regenerate data in each format. Track error rates, hallucinations, and structural failures across multiple prompts and models.</li>
+</ul>
+<ul>
+<li><strong>Real LLM round-trip tests</strong>: Execute full cycles: provide data in a format, ask the model to reason about it, request regeneration in the same format, then validate the output programmatically. Measure success rates and token costs at each step.</li>
+</ul>
+<ul>
+<li><strong>Schema behavior under recursion and nested data</strong>: Test TOON, JSON tabular, and YAML tabular with deeply hierarchical structures such as arrays within objects within arrays, recursive references, and mixed type collections. Flat tabular data is only one use case; many real world datasets require nesting, and it is unclear how TOON handles complexity beyond uniform rows.</li>
+</ul>
+<p>Without these concrete measurements, debates remain trapped in speculation. With them, the technical community can make informed decisions based on evidence rather than aesthetics or hope.</p>
+<h2>References</h2>
+<p>The following references are not endorsements of TOON, JSON, or any particular format; they are cited to ground the discussion in established work on serialization, tokenization, and software engineering principles.</p>
+<h3>Standards and Specifications</h3>
+<ul>
+<li><strong>JSON Standard (RFC 8259)</strong>: Bray, T. (Ed.). (2017). _The JavaScript Object Notation (JSON) Data Interchange Format_. Internet Engineering Task Force (IETF). &lt;https://tools.ietf.org/html/rfc8259&gt;</li>
+</ul>
+<ul>
+<li><strong>YAML Specification</strong>: Ben-Kiki, O., Evans, C., &amp; döt Net, I. (2009). _YAML Ain&#x27;t Markup Language (YAML™) Version 1.2_. &lt;https://yaml.org/spec/1.2/spec.html&gt;</li>
+</ul>
+<h3>Tokenization and Language Models</h3>
+<ul>
+<li><strong>Tokenization in Neural Language Models</strong>: Sennrich, R., Haddow, B., &amp; Birch, A. (2016). _Neural Machine Translation of Rare Words with Subword Units_. Proceedings of ACL 2016. This seminal paper explains how subword tokenization works, demonstrating that character count does not directly correlate with token count.</li>
+</ul>
+<ul>
+<li><strong>BPE and Tokenizer Training</strong>: Gage, P. (1994). _A New Algorithm for Data Compression_. C Users Journal, 12(2). The foundation of Byte Pair Encoding used in modern tokenizers like GPT&#x27;s tiktoken.</li>
+</ul>
+<ul>
+<li><strong>OpenAI Tokenizer Documentation</strong>: OpenAI. (2023). _How to count tokens with tiktoken_. &lt;https://github.com/openai/tiktoken&gt; - Official documentation showing non-linear relationships between text length and token count.</li>
+</ul>
+<h3>Data Serialization and Interchange Formats</h3>
+<ul>
+<li><strong>JSON Schema Specification</strong>: Wright, A., Andrews, H., Hutton, B., &amp; Dennis, G. (2020). _JSON Schema: A Media Type for Describing JSON Documents_. &lt;https://json-schema.org/specification.html&gt; - Demonstrates standard validation approaches for JSON without embedded metadata.</li>
+</ul>
+<ul>
+<li><strong>Protocol Buffers Documentation</strong>: Google. (2023). _Protocol Buffers Language Guide_. &lt;https://protobuf.dev/&gt; - Example of a mature binary serialization format designed for efficiency and interoperability.</li>
+</ul>
+<ul>
+<li><strong>MessagePack Specification</strong>: Furuhashi, S. (2013). _MessagePack: It&#x27;s like JSON, but fast and small_. &lt;https://msgpack.org/&gt; - Another established compact serialization format with proven ecosystem.</li>
+</ul>
+<h3>Software Engineering Principles</h3>
+<ul>
+<li><strong>Separation of Concerns</strong>: Dijkstra, E. W. (1982). _On the role of scientific thought_. Selected Writings on Computing: A Personal Perspective. Discusses the principle of separating validation from data representation.</li>
+</ul>
+<ul>
+<li><strong>Hyrum&#x27;s Law (Law of Implicit Interfaces)</strong>: Wright, H. (2017). _The Law of Implicit Interfaces_. Discusses how systems with sufficient users will depend on every observable behavior, relevant to format fragility.</li>
+</ul>
+<ul>
+<li><strong>The Robustness Principle</strong>: Postel, J. (1980). _DOD Standard Transmission Control Protocol_. RFC 761. &quot;Be conservative in what you send, be liberal in what you accept&quot; - relevant to standard format adoption.</li>
+</ul>
+<h3>Technology Adoption and Standards</h3>
+<ul>
+<li><strong>Crossing the Chasm</strong>: Moore, G. A. (1991). _Crossing the Chasm: Marketing and Selling High-Tech Products to Mainstream Customers_. Explains adoption curves relevant to new format acceptance.</li>
+</ul>
+<ul>
+<li><strong>Network Effects and Standards</strong>: Shapiro, C., &amp; Varian, H. R. (1998). _Information Rules: A Strategic Guide to the Network Economy_. Harvard Business School Press. Explains why established standards dominate.</li>
+</ul>
+<h3>Related Discussions</h3>
+<ul>
+<li><strong>TOON GitHub Repository</strong>: &lt;https://github.com/toon-format/toon&gt; - Official TOON format specification and documentation.</li>
+</ul>
+<ul>
+<li><strong>TOON Discussion #138</strong>: &lt;https://github.com/toon-format/toon/discussions/138&gt; - The discussion referenced in this article regarding JSON tabular comparison.</li>
+</ul>
+<h3>CSV and Tabular Data</h3>
+<ul>
+<li><strong>RFC 4180 - Common Format and MIME Type for CSV Files</strong>: Shafranovich, Y. (2005). _Common Format and MIME Type for Comma-Separated Values (CSV) Files_. &lt;https://tools.ietf.org/html/rfc4180&gt; - Demonstrates how header-based tabular data is a long-established convention.</li>
+</ul>
+            </div>
+            <footer class="article-footer">
+                <a href="/articles/2025/" class="back-link">← Back to 2025 Articles</a>
+            </footer>
+        </article>
+    </main>
+    <footer class="footer" id="contact">
+        <div class="keyword-strip" aria-label="Software topics and focus areas">
+            <div class="keyword-strip-track">
+                <a href="#" class="glossary-term keyword-term">backend -> tradeoffs</a>
+                <a href="#" class="glossary-term keyword-term">APIs -> boundaries</a>
+                <a href="#" class="glossary-term keyword-term">debugging -> reasoning</a>
+                <a href="#" class="glossary-term keyword-term">databases -> invariants</a>
+                <a href="#" class="glossary-term keyword-term">distributed systems -> failure modes</a>
+                <a href="#" class="glossary-term keyword-term">AI tools -> assumptions</a>
+                <a href="#" class="glossary-term keyword-term">production -> responsibility</a>
+                <a href="#" class="glossary-term keyword-term">documentation -> shared memory</a>
+            </div>
+            <div class="keyword-strip-track" aria-hidden="true">
+                <a href="#" class="glossary-term keyword-term">backend -> tradeoffs</a>
+                <a href="#" class="glossary-term keyword-term">APIs -> boundaries</a>
+                <a href="#" class="glossary-term keyword-term">debugging -> reasoning</a>
+                <a href="#" class="glossary-term keyword-term">databases -> invariants</a>
+                <a href="#" class="glossary-term keyword-term">distributed systems -> failure modes</a>
+                <a href="#" class="glossary-term keyword-term">AI tools -> assumptions</a>
+                <a href="#" class="glossary-term keyword-term">production -> responsibility</a>
+                <a href="#" class="glossary-term keyword-term">documentation -> shared memory</a>
+            </div>
+        </div>
+        <div class="footer-grid">
+            <div class="footer-card">
+                <h3>Contact</h3>
+                <p class="footer-contact"><i class="fas fa-envelope" aria-hidden="true"></i><a
+                        href="mailto:rafageist@divengine.com">rafageist@divengine.com</a></p>
+                <p class="footer-contact"><i class="fas fa-phone" aria-hidden="true"></i><a
+                        href="https://wa.me/5978401275" target="_blank" rel="noopener">+597 8401275</a></p>
+            </div>
+            <div class="footer-card">
+                <h3>Social</h3>
+                <ul class="social-links">
+                    <li><a href="https://x.com/rafageist" target="_blank" rel="noopener" aria-label="X"><i
+                                class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://github.com/rafageist" target="_blank" rel="noopener" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a></li>
+                    <li><a href="https://linkedin.com/in/rafageist" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-card">
+                <h3>Based in</h3>
+                <div class="footer-map">
+                    <a class="footer-location" href="https://www.google.com/maps/place/Paramaribo,+Suriname"
+                        target="_blank" rel="noopener">
+                        <i class="fas fa-location-dot" aria-hidden="true"></i>
+                        <span>Paramaribo, Suriname</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a id="whatsapp-button" href="https://wa.me/5978401275" target="_blank" aria-label="WhatsApp chat">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+</body>
+</html>

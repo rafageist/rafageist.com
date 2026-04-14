@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don&#x27;t use AI to rewrite the world | rafageist.com</title>
+    <meta name="description" content="Don&#x27;t use AI to rewrite the world">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/articles/article.css">
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/25892480?v=4" type="image/x-icon">
+    <link rel="canonical" href="https://rafageist.com/articles/2026/004-Don't-use-AI-to-rewrite-the-world.html">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-left">
+            <img src="https://avatars.githubusercontent.com/u/25892480?v=4&s=96" alt="Rafa Rodr&iacute;guez"
+                class="header-avatar" loading="lazy" width="56" height="56">
+            <div class="header-text">
+                <div class="header-name"><a href="/">Software Engineering Mentorship</a></div>
+                <div class="header-role">by <a href="/#about-trigger" class="header-name-link">Rafa Rodr&iacute;guez</a></div>
+            </div>
+        </div>
+        <div class="header-social">
+            <nav class="header-nav header-menu" aria-label="Primary">
+                <a class="nav-link" href="/"><i class="nav-icon fas fa-home"></i>Home</a>
+                <a class="nav-link" href="/articles/"><i class="nav-icon fas fa-book"></i>Articles</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="article-main">
+        <article class="article">
+            <div class="article-hero">
+                <img src="/articles/images/5f499b3e5542.jpg" alt="">
+            </div>
+            <div class="article-meta">
+                <span class="article-date">2026.004</span>
+                <div class="article-tags">
+                    
+                </div>
+            </div>
+            <h1 class="article-title">Don&#x27;t use AI to rewrite the world</h1>
+            <div class="article-content">
+                <div class="callout callout-important">
+<strong>Important</strong>
+<p>Use AI to extend what already works</p>
+</div>
+<p>Why does generating everything from scratch tend to be the wrong level of abstraction? Artificial intelligence has accelerated software development in a remarkable way. Today there are tools capable of generating complete files, modules, and even entire applications in a matter of minutes. This capability has changed the way many teams work and has drastically reduced the time needed to write code.</p>
+<p>However, this new speed is also creating a well-known problem: more and more teams are using AI to build complete systems from scratch, even when mature solutions already exist that solve most of the problem. Instead of leveraging existing platforms, they use AI to produce large amounts of new code.</p>
+<p>The problem is not that AI writes code. The problem is <strong>what kind of code we are choosing to write</strong>. The fundamental question is no longer whether AI can do it, but whether it is truly <strong>worth doing</strong>.</p>
+<h1>A principle older than AI</h1>
+<p>Avoiding unnecessary code has always been one of the core principles of software engineering. From its very beginnings, the discipline has sought mechanisms to reuse proven solutions.</p>
+<p>First came reusable functions. Then libraries appeared, allowing complete solutions to common problems to be encapsulated. Later came frameworks, which provided complete structures for developing applications. Finally, full platforms emerged that already include much of the infrastructure needed to run complex systems.</p>
+<p>Each step in this evolution had a clear objective: <strong>solve a problem once and reuse the solution as many times as possible</strong>. This principle remains valid today, even in the age of artificial intelligence.</p>
+<h1>The 80/20 reality in enterprise software</h1>
+<img width="100%" alt="image" src="https://github.com/user-attachments/assets/cc6a6af8-e620-4224-9204-da987a06c4d9" />
+<p>When you analyze the architecture of many enterprise systems, a recurring pattern appears: most of the software does not actually belong to the specific business domain.</p>
+<p>In practice, a large portion of any enterprise system consists of common infrastructure. This includes user management, permission systems, data models, reports, administrative interfaces, APIs, notification systems, automated processes, and many other technical pieces that appear in nearly every system.</p>
+<p>In many projects, an approximate ratio can be observed: around 80% of the system corresponds to common infrastructure and only about 20% belongs to business-specific logic.</p>
+<p>This fact has an important consequence. When a team decides to build everything from scratch, they are typically reimplementing that 80% of infrastructure that has already been solved many times in other systems. In that process, errors reappear that other platforms solved years ago.</p>
+<h1>The illusion of speed</h1>
+<p>Artificial intelligence tools can generate code at great speed, and this produces an initial sense of efficiency. Many teams perceive that building complete systems has become easier because code generation is no longer a significant obstacle.</p>
+<p>However, writing speed does not eliminate system complexity. If a project needs thousands of lines of infrastructure, those lines will still exist even if they were generated automatically. Each one of them will still need maintenance, testing, and evolution.</p>
+<p>For this reason, initial speed can create a dangerous illusion. A system can grow quickly during its early phases, but maintenance costs begin to appear when the system enters production and must be sustained for years.</p>
+<h1>Building with bricks or with prefabricated components</h1>
+<p>A useful analogy for understanding this situation comes from the world of construction.</p>
+<p>One way to build a house is to lay each brick individually. With enough automation, a robot can perform this task quickly. However, the robot still has to place every single brick in the structure.</p>
+<p>Something similar happens when complete systems are built using only low-level frameworks. Even though AI can generate the code quickly, the team still has to define and integrate every piece of infrastructure.</p>
+<p>There is another way to build: using prefabricated components. In this case, instead of assembling thousands of individual bricks, you use complete walls that are already designed, tested, and optimized to fit together.</p>
+<p>In software, something similar happens when mature platforms are used. Systems like Odoo, PrestaShop, or Drupal provide a large amount of infrastructure already solved. On that foundation, the team can focus on building the parts that truly differentiate the system.</p>
+<h1>Using AI at the right level</h1>
+<img width="100%" alt="image" src="https://github.com/user-attachments/assets/98a99a27-5999-435e-9d62-30d97cbee705" />
+<p>Artificial intelligence should not replace engineering discipline. Its true potential appears when it is used at the right level of abstraction.</p>
+<p>Instead of generating complete systems from scratch, AI can be used to create extensions on top of existing platforms. It can generate modules, integrations, workflows, or specific adaptations for a particular domain.</p>
+<p>For example, instead of developing a complete enterprise system from scratch, a team could use AI to generate specific modules on a stable platform like Odoo. This way, the common infrastructure remains solid and tested, while AI accelerates the creation of the business-specific logic.</p>
+<p>This approach does not reduce innovation. On the contrary, it allows creative effort to be concentrated exactly where it adds the most value.</p>
+<h1>Learning new tools is easier than ever</h1>
+<p>Another frequent argument for avoiding existing platforms is familiarity. Many teams prefer to work only with technologies they already know.</p>
+<p>However, this situation has changed significantly. Today documentation is abundant, countless learning resources exist, and AI tools themselves can help quickly understand new frameworks or platforms.</p>
+<p>Learning a new tool may require a few days of adaptation, but that investment is usually much smaller than the time needed to maintain infrastructure built from scratch for years.</p>
+<p>For this reason, the most important technical decision should not be based on team familiarity, but on how well the tool fits the problem.</p>
+<h1>The refactor that never comes</h1>
+<p>In many projects, a recurring promise appears: the idea that certain technical problems will be fixed later through refactoring.</p>
+<p>Experience shows that this rarely happens. Once the system enters production, priorities change. New features arise, business demands appear, and users begin depending on the existing system.</p>
+<p>In that context, technical debt accumulates and structural improvements are postponed indefinitely. For this reason, choosing a solid technological foundation from the start is usually a much more important decision than it seems.</p>
+<h1>Conclusion</h1>
+<p>Software engineering always involves making trade-off decisions between speed, control, complexity, and maintainability. Artificial intelligence introduces a powerful tool, but it does not change the fundamental principles of the discipline.</p>
+<p>The ability to generate code quickly does not eliminate the need for architecture. In fact, it makes it even more important to carefully decide <strong>which parts of the system should be built and which should be reused</strong>.</p>
+<p>Ultimately, engineering maturity is not about writing more code, but about knowing <strong>what code does not need to be written</strong>.</p>
+<p>Artificial intelligence can help us produce enormous amounts of software. But true progress happens when we use it to build better systems, not simply bigger ones.</p>
+            </div>
+            <footer class="article-footer">
+                <a href="/articles/2026/" class="back-link">← Back to 2026 Articles</a>
+            </footer>
+        </article>
+    </main>
+    <footer class="footer" id="contact">
+        <div class="keyword-strip" aria-label="Software topics and focus areas">
+            <div class="keyword-strip-track">
+                <a href="#" class="glossary-term keyword-term">backend -> tradeoffs</a>
+                <a href="#" class="glossary-term keyword-term">APIs -> boundaries</a>
+                <a href="#" class="glossary-term keyword-term">debugging -> reasoning</a>
+                <a href="#" class="glossary-term keyword-term">databases -> invariants</a>
+                <a href="#" class="glossary-term keyword-term">distributed systems -> failure modes</a>
+                <a href="#" class="glossary-term keyword-term">AI tools -> assumptions</a>
+                <a href="#" class="glossary-term keyword-term">production -> responsibility</a>
+                <a href="#" class="glossary-term keyword-term">documentation -> shared memory</a>
+            </div>
+            <div class="keyword-strip-track" aria-hidden="true">
+                <a href="#" class="glossary-term keyword-term">backend -> tradeoffs</a>
+                <a href="#" class="glossary-term keyword-term">APIs -> boundaries</a>
+                <a href="#" class="glossary-term keyword-term">debugging -> reasoning</a>
+                <a href="#" class="glossary-term keyword-term">databases -> invariants</a>
+                <a href="#" class="glossary-term keyword-term">distributed systems -> failure modes</a>
+                <a href="#" class="glossary-term keyword-term">AI tools -> assumptions</a>
+                <a href="#" class="glossary-term keyword-term">production -> responsibility</a>
+                <a href="#" class="glossary-term keyword-term">documentation -> shared memory</a>
+            </div>
+        </div>
+        <div class="footer-grid">
+            <div class="footer-card">
+                <h3>Contact</h3>
+                <p class="footer-contact"><i class="fas fa-envelope" aria-hidden="true"></i><a
+                        href="mailto:rafageist@divengine.com">rafageist@divengine.com</a></p>
+                <p class="footer-contact"><i class="fas fa-phone" aria-hidden="true"></i><a
+                        href="https://wa.me/5978401275" target="_blank" rel="noopener">+597 8401275</a></p>
+            </div>
+            <div class="footer-card">
+                <h3>Social</h3>
+                <ul class="social-links">
+                    <li><a href="https://x.com/rafageist" target="_blank" rel="noopener" aria-label="X"><i
+                                class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://github.com/rafageist" target="_blank" rel="noopener" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a></li>
+                    <li><a href="https://linkedin.com/in/rafageist" target="_blank" rel="noopener" aria-label="LinkedIn"><i
+                                class="fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-card">
+                <h3>Based in</h3>
+                <div class="footer-map">
+                    <a class="footer-location" href="https://www.google.com/maps/place/Paramaribo,+Suriname"
+                        target="_blank" rel="noopener">
+                        <i class="fas fa-location-dot" aria-hidden="true"></i>
+                        <span>Paramaribo, Suriname</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a id="whatsapp-button" href="https://wa.me/5978401275" target="_blank" aria-label="WhatsApp chat">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+</body>
+</html>

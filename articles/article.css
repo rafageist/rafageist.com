@@ -22,47 +22,91 @@
     font-size: 1rem;
 }
 
-.years-grid {
-    display: grid;
-    gap: 1rem;
-}
-
-.year-card {
-    border: 1px solid var(--border);
-    background: rgba(255, 255, 255, 0.92);
-    transition: box-shadow 0.2s ease;
-}
-
-.year-card:hover {
-    box-shadow: 0 8px 20px rgba(42, 36, 30, 0.12);
-}
-
-.year-link {
+.timeline {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.2rem 1.4rem;
-    color: var(--text);
-    text-decoration: none;
+    flex-direction: column;
+    gap: 0;
 }
 
-.year-link:hover {
-    color: var(--accent);
+.timeline-year {
+    position: relative;
+    padding-left: 2rem;
+    padding-bottom: 2.5rem;
+    border-left: 2px solid var(--border);
 }
 
-.year-number {
+.timeline-year:last-child {
+    border-left-color: transparent;
+    padding-bottom: 0;
+}
+
+.timeline-year::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 0.45rem;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.timeline-year-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+}
+
+.timeline-year-number {
+    margin: 0;
     font-size: 1.4rem;
     font-weight: 700;
+    color: var(--text);
 }
 
-.year-count {
+.timeline-year-count {
     color: var(--muted);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
-.year-arrow {
-    font-size: 1.2rem;
+.timeline-year-link {
+    font-size: 0.85rem;
+    font-weight: 700;
     color: var(--accent);
+}
+
+.timeline-year-link:hover {
+    color: #4f3f2c;
+}
+
+.timeline-article-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.timeline-article {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.timeline-article-number {
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.timeline-article-title {
+    color: var(--text);
 }
 
 .articles-grid {
@@ -72,7 +116,6 @@
 
 .article-card {
     display: grid;
-    grid-template-columns: 200px 1fr;
     border: 1px solid var(--border);
     background: rgba(255, 255, 255, 0.92);
     overflow: hidden;
