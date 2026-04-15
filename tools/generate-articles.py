@@ -257,7 +257,6 @@ def ensure_article_css():
 }
 
 .article-hero {
-    margin: -2rem -2rem 1.5rem;
     aspect-ratio: 21 / 9;
     overflow: hidden;
     background: #f4e5cf;
